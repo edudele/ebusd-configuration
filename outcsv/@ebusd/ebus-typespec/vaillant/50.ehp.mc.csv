@@ -1,0 +1,110 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+*u,
+*[cfgheatsinktype],,,cfgheatsinktype,,value
+*[id_sw],scan,,,,SW
+[cfgheatsinktype=1]r,,,TempDesired,DayRoomSetPoint_MC: Room set point for day operation and mixer circuit,,,b509,0d3200,value,,D1C,,°C,temperature
+[cfgheatsinktype=1]w,,,TempDesired,DayRoomSetPoint_MC: Room set point for day operation and mixer circuit,,,b509,0e3200,value,,D1C,,°C,temperature
+[cfgheatsinktype=1]r,,,TempDesiredLow,NightRoomSetPoint_MC: Room set point for night operation and mixer circuit,,,b509,0d3300,value,,D1C,,°C,temperature
+[cfgheatsinktype=1]w,,,TempDesiredLow,NightRoomSetPoint_MC: Room set point for night operation and mixer circuit,,,b509,0e3300,value,,D1C,,°C,temperature
+[cfgheatsinktype=1]r,,,HeatingCurve,BMR:Heating curve for whole system,,,b509,0d3500,value,,UIN,100,,Heating curve
+[cfgheatsinktype=1]w,,,HeatingCurve,BMR:Heating curve for whole system,,,b509,0e3500,value,,UIN,100,,Heating curve
+[cfgheatsinktype=2]r,,,TempDesired,FixValueDay: Fix value day flow set point,,,b509,0d3200,value,,D1C,,°C,temperature
+[cfgheatsinktype=2]w,,,TempDesired,FixValueDay: Fix value day flow set point,,,b509,0e3200,value,,D1C,,°C,temperature
+[cfgheatsinktype=2]r,,,TempDesiredLow,FixValueNight: Fix value night flow set point,,,b509,0d3300,value,,D1C,,°C,temperature
+[cfgheatsinktype=2]w,,,TempDesiredLow,FixValueNight: Fix value night flow set point,,,b509,0e3300,value,,D1C,,°C,temperature
+[id_sw<=339]r,,,FloorProtectionLimit,Floor_Protection_Limit: Floor protection temperature at which the heat pump goes to error mode.,,,b509,0d7b01,value,,UCH,,°C,desired temperature
+[id_sw<=339]w,,install,FloorProtectionLimit,Floor_Protection_Limit: Floor protection temperature at which the heat pump goes to error mode.,,,b509,0e7b01,value,,UCH,,°C,desired temperature
+[id_sw>=340]r,,,FloorProtectionLimit,Floor_Protection_Limit: Floor protection temperature at which the heat pump goes to error mode.,,,b509,0d7b01,value,,UCH,,°C,desired temperature
+[id_sw>=350]r,,,CoolingOperatingModeHc2,"CoolingOperatingMode_HK2: Cooling operating mode: Available options: 3=Auto, 1=On, 2=Off",,,b509,0d8c01,value,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode
+[id_sw>=350]w,,,CoolingOperatingModeHc2,"CoolingOperatingMode_HK2: Cooling operating mode: Available options: 3=Auto, 1=On, 2=Off",,,b509,0e8c01,value,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode
+[id_sw>=350]r,,,CoolingSupportedHc2,CoolingSupported_HK2: Defines if a specific circuit is allowed for cooling operation. In this case HK2.,,,b509,0d8601,value,,UCH,0=no;1=yes,,
+[id_sw>=350]w,,install,CoolingSupportedHc2,CoolingSupported_HK2: Defines if a specific circuit is allowed for cooling operation. In this case HK2.,,,b509,0e8601,value,,UCH,0=no;1=yes,,
+[id_sw>=350]r,,,Tot24hHc2,Tot_24h_HK2: 24h outside temperature average. Circuit specific value.,,,b509,0d8801,value,,D2C,,°C,temperature
+[id_sw>=350]r,,,CoolingStartOffsetHc2,CoolingStartOffset_HK2: Circuit specific offset to the adjusted outside temperature cut-off value for demanding cooling operation. HK2 value.,,,b509,0d8701,value,,D1C,,°C,temperature
+[id_sw>=350]w,,install,CoolingStartOffsetHc2,CoolingStartOffset_HK2: Circuit specific offset to the adjusted outside temperature cut-off value for demanding cooling operation. HK2 value.,,,b509,0e8701,value,,D1C,,°C,temperature
+[id_sw>=350]r,,,TotAverageTimeHc2,Tot_AverageTime_HK2: Circuit specific averaging time span in hours. HK2 value,,,b509,0d8901,value,,UCH,,h,hours
+[id_sw>=350]r,,,DWMOffToHeatingDelayHc2,DWMOffToHeatingDelay_HK2: Circuit specific delay for standby to heating operation change: HK2,,,b509,0d8401,value,,UCH,,h,hours
+[id_sw>=350]w,,install,DWMOffToHeatingDelayHc2,DWMOffToHeatingDelay_HK2: Circuit specific delay for standby to heating operation change: HK2,,,b509,0e8401,value,,UCH,,h,hours
+[id_sw>=350]r,,,DWMOffToCoolingDelayHc2,DWMOffToCoolingDelay_HK2: Circuit specific delay for standby to cooling operation change: HK2,,,b509,0d8501,value,,UCH,,h,hours
+[id_sw>=350]w,,install,DWMOffToCoolingDelayHc2,DWMOffToCoolingDelay_HK2: Circuit specific delay for standby to cooling operation change: HK2,,,b509,0e8501,value,,UCH,,h,hours
+[id_sw>=350]r,,,EfficiencyHysteresisHc2Min,"MinEfficiencyHysteresis_HK2: If remote control with room temperature measurement used, minimum general flow (VF2) to heat circuit room temperature difference to release cooling operation.",,,b509,0d8b01,value,,D1C,,K,
+[id_sw>=350]w,,install,EfficiencyHysteresisHc2Min,"MinEfficiencyHysteresis_HK2: If remote control with room temperature measurement used, minimum general flow (VF2) to heat circuit room temperature difference to release cooling operation.",,,b509,0e8b01,value,,D1C,,K,
+[id_sw>=350]r,,,CoolingWhileHolidaySupportedHc2,CoolingWhileHolidaySupported_HK2: Indicates if cooling while holiday is desired (can be used for source regeneration).,,,b509,0d9501,value,,UCH,0=no;1=yes,,
+[id_sw>=350]w,,install,CoolingWhileHolidaySupportedHc2,CoolingWhileHolidaySupported_HK2: Indicates if cooling while holiday is desired (can be used for source regeneration).,,,b509,0e9501,value,,UCH,0=no;1=yes,,
+[id_sw>=350]r,,,CoolingCircuitStatesHc2,CoolingCircuitStates_HK2: Contains bits for different states in the cooling circuit. Helpfull for problem identification. Should be given to development department together with problem description.,,,b509,0d9701,value,,UIN,,,
+[id_sw>=350]r,,,DesiredWorkingModeHc2,"DesiredWorkingMode_HK2: f. Autocool : HeatingAutomatic, OffAutomatic, CoolingAutomatic; SM1",,,b509,0d7e01,value,,UCH,,,
+[id_sw>=350]r,,,LastDesiredWorkingModeHc2,"LastDesiredWorkingMode_HK2: f. Autocool : Standby, Heating or Cooling",,,b509,0d8001,value,,UCH,,,
+[id_sw>=350]r,,,CoolingRequestHc2,"CoolingRequest_HK2: Circuit specific cooling demand, dependant on cooling operating mode and cooling time frames and so on…",,,b509,0d8301,value,,UCH,0=no;1=yes,,
+[id_sw>=350]r,,,CoolingEfficiencyStateHc2,CoolingEfficiencyState_HK2: SM2,,,b509,0d8a01,value,,UCH,,,
+[id_sw>=350]r,,,CoolingModeStateCounterHc2,CoolingModeStateCounter_HK2: Counts up if pump is runnig in cooling mode,,,b509,0d8d01,value,,UCH,,,
+[id_sw>=350]r,,,HcManualWorkingModeTriggeringActiveHc2,HCManualWorkingModeTriggeringActive_HK2: f. Autocool :Automatic or Manual,,,b509,0d8f01,value,,UCH,,,
+[id_sw>=350]r,,,AutocoolTestModeActiveHc2,"AutocoolTestModeActive_HK2: Test mode, only for developement!",,,b509,0d8201,value,,UCH,0=off;1=on,,
+[id_sw>=407]r,,,HcPumpStatus,CHPumpStatus: 0=HEP_ok: 1= HEP_error; >=2=noHEP,,,b509,0db901,value,,UCH,,,
+[id_sw>=407]r,,,HcPumpPWM,CHPumpPWM: actual speed of central heating CH pump (7%=off),,,b509,0dba01,value,,UIN,,%,
+[id_sw>=407]r,,,Hc1PumpSpeedControlHeatBuffer,CH1P_PumpSpeedControlHeatBuffer: CH pump speed setpoint while buffer is loaded [%],,,b509,0dbf01,value,,UIN,,%,
+[id_sw>=407]w,,install,Hc1PumpSpeedControlHeatBuffer,CH1P_PumpSpeedControlHeatBuffer: CH pump speed setpoint while buffer is loaded [%],,,b509,0ebf01,value,,UIN,,%,
+[id_sw>=407]r,,,Hc1PumpSpeedControlDirectCircuit,CH1P_PumpSpeedControlDirectCircuit: CH pump speed setpoint while energybalancing and compressor=on [%],,,b509,0dc001,value,,UIN,,%,
+[id_sw>=407]w,,install,Hc1PumpSpeedControlDirectCircuit,CH1P_PumpSpeedControlDirectCircuit: CH pump speed setpoint while energybalancing and compressor=on [%],,,b509,0ec001,value,,UIN,,%,
+[id_sw>=414]r,,,Hc1PumpSpeedControlDirectCircuitWhileO,CH1P_PumpSpeedControlDirectCircuitWhileOff: CH pump speed setpoint while energybalancing and compressor=off,,,b509,0de101,value,,UIN,,%,
+[id_sw>=414]w,,install,Hc1PumpSpeedControlDirectCircuitWhileO,CH1P_PumpSpeedControlDirectCircuitWhileOff: CH pump speed setpoint while energybalancing and compressor=off,,,b509,0ee101,value,,UIN,,%,
+r,,,CfgHeatSinkType,"CfgHeatSinkType: BMR: configuration of heating circuit; for heat pumps, only ""mixer circuit"" or ""fix value circuit"" possible",,,b509,0d3c00,value,,UCH,0=inactive;1=mixer;2=fixed;3=hwc;4=returnincr;5=pool,,mixer type
+w,,install,CfgHeatSinkType,"CfgHeatSinkType: BMR: configuration of heating circuit; for heat pumps, only ""mixer circuit"" or ""fix value circuit"" possible",,,b509,0e3c00,value,,UCH,0=inactive;1=mixer;2=fixed;3=hwc;4=returnincr;5=pool,,mixer type
+r,,,OperatingMode,OperatingMode: Operating mode for the first heating circuit,,,b509,0d2b00,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+w,,,OperatingMode,OperatingMode: Operating mode for the first heating circuit,,,b509,0e2b00,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+r,,,OtShutdownLimit,OtShutdownLimit: BMR: Outside temperature above which heating circuits switch off,,,b509,0d3600,value,,UCH,,°C,desired temperature
+w,,,OtShutdownLimit,OtShutdownLimit: BMR: Outside temperature above which heating circuits switch off,,,b509,0e3600,value,,UCH,,°C,desired temperature
+r,,,FlowTempMin,MinFlowTemp: BMR:Minimum Flow Temperature for circuit,,,b509,0d3000,value,,UCH,,°C,temperature
+w,,install,FlowTempMin,MinFlowTemp: BMR:Minimum Flow Temperature for circuit,,,b509,0e3000,value,,UCH,,°C,temperature
+r,,,FlowTempDesired,Flow setpoint: BMR:flow temperature that is actually desired by circuit,,,b509,0d4600,value,,D1C,,°C,temperature
+w,,,FlowTempDesired,Flow setpoint: BMR:flow temperature that is actually desired by circuit,,,b509,0e4600,value,,D1C,,°C,temperature
+u,,,FlowTempDesired,Flow setpoint: BMR:flow temperature that is actually desired by circuit,,,b509,294600,ign,,IGN:2,,,,value,,D1C,,°C,temperature
+r,,,FlowTempMax,MaxFlowTemp: BMR:Maximum Flow Temperature for circuit,,,b509,0d3100,value,,UCH,,°C,temperature
+w,,install,FlowTempMax,MaxFlowTemp: BMR:Maximum Flow Temperature for circuit,,,b509,0e3100,value,,UCH,,°C,temperature
+r,,,HcMaxPreHeating,HcMaxPreHeating: BMR: Maximum Preheating time in minutes,,,b509,0d3800,value,,UCH,-5,min,minutes
+w,,install,HcMaxPreHeating,HcMaxPreHeating: BMR: Maximum Preheating time in minutes,,,b509,0e3800,value,,UCH,-5,min,minutes
+r,,,FloorPavingDryingDay,FloorPavingDryingDay: BMR: actual day of floor paving drying program (1...29),,,b509,0d3b00,value,,UCH,,,
+w,,install,FloorPavingDryingDay,FloorPavingDryingDay: BMR: actual day of floor paving drying program (1...29),,,b509,0e3b00,value,,UCH,,,
+r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp,,D2B,,°C,temperature
+r,,,Mode,Operation mode,,,b504,01,tempdesired,,UCH,,°C,temperature,mcmode,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode,floorpavingdryingday,,UCH,,,days,floorpavingdryingtemp,,UCH,,°C,temperature,teleswitchmode,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode,mctype,,BI0:7,0=inactive;1=mixer;2=fixed;3=hwc;4=returnincr;5=pool;6=circulation,,mixer type,ign,,IGN,,,,daynight,,UCH,0=night;1=day;4=load;7=floorpaving,,day/night mode
+w,,,SetTempDesired,Set desired temperature,,,b505,01,value,,UCH,,°C,temperature
+w,,,SetMode,Set operation mode,,,b505,02,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+w,,,SetFloorPavingDryingDay,Set floor paving drying day,,,b505,03,value,,UCH,,,days
+w,,,SetFloorPavingDryingTemp,Set floor paving drying temperature,,,b505,04,value,,UCH,,°C,temperature
+w,,,SetType,Set type,,,b505,08,value,,UCH,0=inactive;1=mixer;2=fixed;3=hwc;4=returnincr;5=pool,,mixer type
+w,,,SetTempDesiredLow,Set desired low temperature,,,b505,0a,value,,UCH,,°C,temperature
+w,,,SetHeatingCurve,Set heating curve,,,b505,0b,value,,UIN,100,,Heating curve
+w,,,SetShutdownTemp,Set outside shutdown temperature,,,b505,0c,value,,UCH,,°C,temperature
+w,,,SetPumpIdlePeriod,Set pump idle period,,,b505,0d,value,,UCH,,min,minutes
+w,,,SetFlowTempMin,Set min flow temperature,,,b505,0e,value,,UCH,,°C,temperature
+w,,,SetFlowTempMax,Set max flow temperature,,,b505,0f,value,,UCH,,°C,temperature
+w,,,SetMaxPreHeating,Set max pre-heating,,,b505,10,value,,UCH,,h,hours
+w,,,SetMaxPreHeatingFine,Set max pre-heating,,,b505,3f,value,,UCH,-5,min,minutes
+r,,,Params,Parameters,,,b504,09,tempdesired,,UCH,,°C,temperature,tempdesiredlow,,SCH,,°C,temperature,curve,,UIN,100,,Heating curve,mctype,,BI0:7,0=inactive;1=mixer;2=fixed;3=hwc;4=returnincr;5=pool;6=circulation,,mixer type,shutdowntemp,,SCH,,°C,temperature,pumpidleperiod,,UCH,,min,minutes,flowtempmin,,SCH,,°C,temperature,flowtempmax,,SCH,,°C,temperature,maxpreheating,,UCH,,h,hours
+r,,,Status0a,Status flow temperature/mixer/pump/desired flow temperature,,,b504,0a,flowtemp,,D2C,,°C,temperature,mixer,,UCH,0=off;1=open;2=close,,mixer State,pump,,UCH,0=off;1=on,,,onoff,,UCH,0=off;1=on,,,flowtempdesired,,UCH,,°C,temperature
+r,,,Status,Status flow desired/current,,,b504,0d,flowtempdesired,,UCH,,°C,temperature,onoff,,UCH,0=off;1=on,,,flowtemp,,D2C,,°C,temperature,tempdesired,,UCH,,°C,temperature
+r,,,Status16,outside temperature,,,b504,16,value,,D2C,,°C,temperature
+r,,,Timer_Monday,Periods Monday,,,b504,02,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Monday,Periods Monday,,,b505,0901,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Tuesday,Periods Tuesday,,,b504,03,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Tuesday,Periods Tuesday,,,b505,0902,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Wednesday,Periods Wednesday,,,b504,04,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Wednesday,Periods Wednesday,,,b505,0903,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Thursday,Periods Thursday,,,b504,05,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Thursday,Periods Thursday,,,b505,0904,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Friday,Periods Friday,,,b504,06,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Friday,Periods Friday,,,b505,0905,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Saturday,Periods Saturday,,,b504,07,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Saturday,Periods Saturday,,,b505,0906,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Sunday,Periods Sunday,,,b504,08,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Sunday,Periods Sunday,,,b505,0907,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,install,Iotest,I/O test,,,b506,02,value,,UCH,0=off;1=coolvalve;2=sourcepump;3=hcpump;4=injector;5=caseheater;6=backup;7=hwchcvalve;8=cirpump;9=sc2pump;10=hc2pump;11=hc2mixeropen;12=hc2mixerclose,,
+w,,install,Ioteststop,stop I/O test,,,b506,01,
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
+w,,,RoomTempOffset,Room offset calculation,,,b505,2d,value,,D2C,,°C,temperature
+w,,,Party,Quick - party,,,b505,05,value,,UCH,0=off;1=on,,
+w,,,Load,quick - hot water tank filling,,,b505,06,value,,UCH,0=off;1=on,,
+w,,,Save,Quick - cleaning lady,,,b505,07,value,,TTH,,,

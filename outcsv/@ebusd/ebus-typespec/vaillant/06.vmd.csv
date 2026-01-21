@@ -1,0 +1,10 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,T5,T5 Sensor: Solar collector Temperature,,,b509,0d0500,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,T1,T1 Sensor: Temperature in solar back flow (from solar collector),,,b509,0d0700,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,T7,T7 Sensor: Average temperature in tank (computed from T6 and mid tank sensor values)),,,b509,0d0c00,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,PowerOnCounter,PowerOnCounter: Power On Counter (in hours),,,b509,0d1900,value,,UIN,,,
+r,,,T6,T6 Sensor: Average temperature in tank (computed from T6 and mid tank sensor values)),,,b509,0da100,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,FlowRate,FlowRate,,,b509,0d9e00,value,,SIN,10,l/min,chosen flow rate of the collector pump (to calculate solar gain)
+w,,install,FlowRate,FlowRate,,,b509,0e9e00,value,,SIN,10,l/min,chosen flow rate of the collector pump (to calculate solar gain)

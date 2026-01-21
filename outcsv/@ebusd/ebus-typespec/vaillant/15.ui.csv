@@ -1,0 +1,188 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+*[id_sw],scan,,,,SW
+r,,,OutsideTemp,Aussentemperatur: out door temperature,,,b509,0d0100,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,FlowTemp,SystemFlowTemp: system temperature at the hydraulic diverter (VF1),,,b509,0d0200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,SystemTempGradient,SystemTempGradient: gradient of the system temperature (VF1),,,b509,0d8c00,value,,D2C,,°C,temperature
+r,,,FlowTempDesired,SystemDesiredFlowTemp: system desired flow temperature,,,b509,0d0500,value,,D2C,,°C,temperature
+r,,,StateEM,StateEM,,,b509,0d4b00,value,,UCH,0=off;1=heat;2=water;3=wateroverrun,,"OFF=0, CH=1, DHW=2, DHW-Overrun=3"
+r,,,HydraulicMap,SolarHydraulicMap: hydraulic scheme (1..9); this parameter has to change at the IO-pcb,,,b509,0d1e00,value,,UCH,,,
+r,,,PreShutDownTime,PreShutDownTime,,,b509,0d2d00,value,,UCH,,min,minutes
+w,,,PreShutDownTime,PreShutDownTime,,,b509,0e2d00,value,,UCH,,min,minutes
+r,,,FrostOverRideTime,FrostOverRideTime,,,b509,0d2e00,value,,UCH,,h,hours
+w,,,FrostOverRideTime,FrostOverRideTime,,,b509,0e2e00,value,,UCH,,h,hours
+r,,,TempIncrease,TempIncrease,,,b509,0d2f00,value,,D2C,,°C,temperature
+w,,,TempIncrease,TempIncrease,,,b509,0e2f00,value,,D2C,,°C,temperature
+r,,,ContinuousHeatingLimit,"ContinuousHeatingLimit: -128=off, (0x80, -128 = off)",,,b509,0d6400,value,,SCH,,,
+w,,,ContinuousHeatingLimit,"ContinuousHeatingLimit: -128=off, (0x80, -128 = off)",,,b509,0e6400,value,,SCH,,,
+r,,,MixerDetected,Mk2Detected: detected VR60 (bit counted),,,b509,0d1800,value,,UCH,,,
+r,,,BoilerDetected,"BkDetected: detected bus coppler e.g. VR30,31,32 (bit counted)",,,b509,0d1900,value,,UCH,,,
+r,,,RemoteDetected,FbgDetected: detected VR80 or VR90 (bit counted),,,b509,0d1a00,value,,UCH,,,
+r,,,ActoStorModulDetected,ActoStorModulDetected: detected VLR (bit counted),,,b509,0d5a00,value,,UCH,,,
+r,,,AscBigModulDetected,AscBigModulDetected: detected VPM-S (bit counted),,,b509,0d7f00,value,,UCH,,,
+r,,,AscSmallModulDetected,AscSmallModulDetected: detected VMS (bit counted),,,b509,0d8000,value,,UCH,,,
+r,,,WaterstationModulDetected,FwsModulDetected: detected VPM-W (bit counted),,,b509,0d8100,value,,UCH,,,
+r,,,BoilerCount,NumberOfBoiler: active boiler in the system,,,b509,0d1c00,value,,UCH,,,
+r,,,BoilerSwitchSteps,BoilerSwitchSteps: set of the steps from the switching boiler,,,b509,0d3500,value,,UCH,,,
+w,,install,BoilerSwitchSteps,BoilerSwitchSteps: set of the steps from the switching boiler,,,b509,0e3500,value,,UCH,,,
+r,,,SourceType,SourceType,,,b509,0d4e00,value,,UCH,0=noSystem;1=SSR;2=VRC;3=eSys;4=mixedSys,,"noSystem=0, SSR=1, VRC=2, eSys=3, mixedSys=4"
+r,,,RoomTemp,RaumtemperaturIst: room temperature,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0d1f00,value,,D2C,,°C,temperature
+w,,install,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0e1f00,value,,D2C,,°C,temperature
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm,,,b509,0d2000,value,,D2C,,°C,temperature
+r,,,OutsideTempOffset,OutDoorTempCorr,,,b509,0d2100,value,,D2C,,°C,temperature
+w,,install,OutsideTempOffset,OutDoorTempCorr,,,b509,0e2100,value,,D2C,,°C,temperature
+r,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0d2200,value,,D2C,,°C,temperature
+w,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0e2200,value,,D2C,,°C,temperature
+r,,,HolidayPeriod,HolidayPeriod,,,b509,0d4300,hfrom,,HDA:3,,,holiday period from,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
+w,,,HolidayPeriod,HolidayPeriod,,,b509,0e4300,hfrom,,HDA:3,,,holiday period from,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
+r,,,ServicePeriod,ServicePeriod,,,b509,0d2b00,value,,HDA:3,,,date
+w,,install,ServicePeriod,ServicePeriod,,,b509,0e2b00,value,,HDA:3,,,date
+r,,,PhoneNumberPart1,aucPhoneNumber_part1,,,b509,0d4200,value,,STR:9,,,phone number
+w,,install,PhoneNumberPart1,aucPhoneNumber_part1,,,b509,0e4200,value,,STR:9,,,phone number
+r,,,PhoneNumberPart2,aucPhoneNumber_part2,,,b509,0d4208,value,,STR:9,,,phone number
+w,,install,PhoneNumberPart2,aucPhoneNumber_part2,,,b509,0e4208,value,,STR:9,,,phone number
+r,,,KeyCodeforConfigMenu,KeyCodeforConfigMenue,,,b509,0d2c00,value,,HEX:4,,,
+w,,install,KeyCodeforConfigMenu,KeyCodeforConfigMenue,,,b509,0e2c00,value,,HEX:4,,,
+r,,,TempFailDetectTime,TempFailDetectTime: temperature fail detection time,,,b509,0d3300,value,,UCH,,,
+w,,install,TempFailDetectTime,TempFailDetectTime: temperature fail detection time,,,b509,0e3300,value,,UCH,,,
+r,,,LcdContrastPwmValue,LcdContrastPwmValue: contrast for the display,,,b509,0d3600,value,,UCH,,,display contrast
+w,,install,LcdContrastPwmValue,LcdContrastPwmValue: contrast for the display,,,b509,0e3600,value,,UCH,,,display contrast
+r,,,Time,time,,,b509,0d5f00,value,,VTI,,,time
+r,,,Day,Day of week,,,b509,0d6000,value,,BDY,,,weekday
+r,,,Date,date,,,b509,0d6100,value,,HDA:3,,,date
+r,,,SummerWinterTimeAdjust,SummerWinterTimeAdjust,,,b509,0d6700,value,,UCH,0=off;1=on,,
+w,,,SummerWinterTimeAdjust,SummerWinterTimeAdjust,,,b509,0e6700,value,,UCH,0=off;1=on,,
+r,,,ClockSwitchSummerWinterDone,ClockSwitchSummerWinterDone,,,b509,0d6800,value,,UCH,0=off;1=on,,
+r,,,InstallationCompleted,InstallationCompleted: Installation assistant is done,,,b509,0d6900,value,,UCH,0=no;1=yes,,
+r,,,DisplayType,"DisplayTyp: display misubishi=0x07, mtek=0x70",,,b509,0d8d00,value,,UCH,,,
+r,,,ScanPrevention,ScanPrevention: cyclic scan are started,,,b509,0d8400,value,,UCH,0=off;1=on,,
+r,,,BoilerSwitchHyster,BoilerSwitchHyster,,,b509,0d2300,value,,D2C,,°C,temperature
+w,,install,BoilerSwitchHyster,BoilerSwitchHyster,,,b509,0e2300,value,,D2C,,°C,temperature
+r,,,BoilerTempMax,BoilerMaxTemp,,,b509,0d2400,value,,D2C,,°C,temperature
+w,,install,BoilerTempMax,BoilerMaxTemp,,,b509,0e2400,value,,D2C,,°C,temperature
+r,,,BoilerTempMin,BoilerMinTemp,,,b509,0d2500,value,,D2C,,°C,temperature
+w,,install,BoilerTempMin,BoilerMinTemp,,,b509,0e2500,value,,D2C,,°C,temperature
+r,,,StartPowerVantage,StartPowerVantage: start power for DHW loading (x boiler),,,b509,0d2800,value,,UCH,,,
+w,,install,StartPowerVantage,StartPowerVantage: start power for DHW loading (x boiler),,,b509,0e2800,value,,UCH,,,
+r,,,SeparationShift,SeparationShift,,,b509,0d2a00,value,,UCH,0=off;1=on,,
+w,,install,SeparationShift,SeparationShift,,,b509,0e2a00,value,,UCH,0=off;1=on,,
+r,,,TurnOnDelay,TurnOnDelay,,,b509,0d3000,value,,UCH,,,
+w,,install,TurnOnDelay,TurnOnDelay,,,b509,0e3000,value,,UCH,,,
+r,,,TurnOffDelay,TurnOffDelay,,,b509,0d3100,value,,UCH,,,
+w,,install,TurnOffDelay,TurnOffDelay,,,b509,0e3100,value,,UCH,,,
+r,,,BoilerSequence,BoilerSequence: activation of boiler sequence,,,b509,0d3200,value,,UCH,0=off;1=on,,
+w,,install,BoilerSequence,BoilerSequence: activation of boiler sequence,,,b509,0e3200,value,,UCH,0=off;1=on,,
+r,,,BoilerSequenceChangeTime,BoilerSequenceChangeTime: if this xx hours reachred between the first and the last boiler in the actual sequence then the boiler sequensce is new sorted,,,b509,0d3700,value,,UCH,,h,hours
+w,,install,BoilerSequenceChangeTime,BoilerSequenceChangeTime: if this xx hours reachred between the first and the last boiler in the actual sequence then the boiler sequensce is new sorted,,,b509,0e3700,value,,UCH,,h,hours
+r,,,SequenceOfBoiler,SequenceOfBoiler,,,b509,0d6600,value,,HEX:8,,,row of sequence
+r,,,BoilerHoursB1,BurnerHours_boiler1,,,b509,0d4c00,value,,ULG,,h,hours
+r,,,BoilerHoursB2,BurnerHours_boiler2,,,b509,0d4c08,value,,ULG,,h,hours
+r,,,BoilerHoursB3,BurnerHours_boiler3,,,b509,0d4c10,value,,ULG,,h,hours
+r,,,BoilerHoursB4,BurnerHours_boiler4,,,b509,0d4c18,value,,ULG,,h,hours
+r,,,BoilerHoursB5,BurnerHours_boiler5,,,b509,0d4c20,value,,ULG,,h,hours
+r,,,BoilerHoursB6,BurnerHours_boiler6,,,b509,0d4c28,value,,ULG,,h,hours
+r,,,BoilerHoursB7,BurnerHours_boiler7,,,b509,0d4c30,value,,ULG,,h,hours
+r,,,BoilerHoursB8,BurnerHours_boiler8,,,b509,0d4c38,value,,ULG,,h,hours
+r,,,SystemModeStream1,SystemModeStream1,,,b509,0d6e00,value,,UCH,0=off;1=heat;2=cool;3=water;4=waterduringheat;5=waterduringcool,,"Off=0, Heating=1, Cooling=2, Dhw=3, DhwDuringCH=4, DhwDuringCooling=5"
+r,,,SystemModeStream2,SystemModeStream2,,,b509,0d6f00,value,,UCH,0=off;1=heat;2=cool;3=water;4=waterduringheat;5=waterduringcool,,"Off=0, Heating=1, Cooling=2, Dhw=3, DhwDuringCH=4, DhwDuringCooling=5"
+r,,,SystemModeStream3,SystemModeStream3,,,b509,0d7000,value,,UCH,0=off;1=heat;2=cool;3=water;4=waterduringheat;5=waterduringcool,,"Off=0, Heating=1, Cooling=2, Dhw=3, DhwDuringCH=4, DhwDuringCooling=5"
+r,,,SystemDemand1,SystemDemand1,,,b509,0d8800,value,,HEX:4,,,"Struct[TIte DesFlowTemp, Mode, CoolingReq]Mode: Off=0, Ch=1, Dhw=2, BoilerOverrun=3, BoilerPrerun=4CoolingReq: Off=0, On=1"
+r,,,HcForceMode,"HcForceMode: ForceComsumDisable=0, ForceComsumNoHeating=1, ForceComsumMaxHeating=2",,,b509,0d7100,value,,UCH,,,
+r,,,HwcRequestAsc,DhwRequestAsc,,,b509,0d7200,value,,UCH,0=off;1=on,,
+r,,,HcRequestAsc,ChRequestAsc,,,b509,0d7300,value,,UCH,0=off;1=on,,
+r,,,FlowTempDesiredAscHwc,FlowSetpointAscDhw,,,b509,0d7400,value,,D2C,,°C,temperature
+r,,,FlowTempDesiredAscHc,FlowSetpointAscCh,,,b509,0d7500,value,,D2C,,°C,temperature
+r,,,SolLoadingDelayHwc,SolarLoadingDelay_Dhw,,,b509,0d7600,value,,UCH,,min,minutes
+r,,,SolLoadingDelayHc,SolarLoadingDelay_Ch,,,b509,0d8900,value,,UCH,,min,minutes
+r,,,BufferFlowThresholdOn,BufferFlowThreshold_On,,,b509,0d7700,value,,D2C,,°C,temperature
+r,,,BufferFlowThresholdOff,BufferFlowThreshold_Off,,,b509,0d7800,value,,D2C,,°C,temperature
+r,,,OffsetFlowTempDesiredBufToBoiler,OffsetFlowSetpointBufToBoiler,,,b509,0d7900,value,,D2C,,°C,temperature
+r,,,ASCStatus,ASC_Status,,,b509,0d7a00,value,,UCH,0=off;1=heat;2=water,,"ASC_OFF=0, ASC_CH=1, ASC_DHW=2"
+r,,,StorageSensorTop,TankSensorAbove,,,b509,0d7b00,value,,D2C,,°C,temperature
+r,,,StorageSensorMiddle,TankSensorMittel,,,b509,0d7c00,value,,D2C,,°C,temperature
+r,,,StorageSensorBottom,TankSensorBottom,,,b509,0d7d00,value,,D2C,,°C,temperature
+r,,,FlowTempDesiredB1,DesiredFlowTempBoiler_1,,,b509,0d4808,value,,UCH,,°C,temperature
+r,,,FlowTempDesiredB2,DesiredFlowTempBoiler_2,,,b509,0d4810,value,,UCH,,°C,temperature
+r,,,FlowTempDesiredB3,DesiredFlowTempBoiler_3,,,b509,0d4818,value,,UCH,,°C,temperature
+r,,,FlowTempDesiredB4,DesiredFlowTempBoiler_4,,,b509,0d4820,value,,UCH,,°C,temperature
+r,,,FlowTempDesiredB5,DesiredFlowTempBoiler_5,,,b509,0d4828,value,,UCH,,°C,temperature
+r,,,FlowTempDesiredB6,DesiredFlowTempBoiler_6,,,b509,0d4830,value,,UCH,,°C,temperature
+r,,,FlowTempDesiredB7,DesiredFlowTempBoiler_7,,,b509,0d4838,value,,UCH,,°C,temperature
+r,,,FlowTempDesiredB8,DesiredFlowTempBoiler_8,,,b509,0d4840,value,,UCH,,°C,temperature
+r,,,DesiredDegreeB1,DesiredDegreeBoiler_1: modulation in percent,,,b509,0d4908,value,,UIN,,%,
+r,,,DesiredDegreeB2,DesiredDegreeBoiler_2: modulation in percent,,,b509,0d4910,value,,UIN,,%,
+r,,,DesiredDegreeB3,DesiredDegreeBoiler_3: modulation in percent,,,b509,0d4918,value,,UIN,,%,
+r,,,DesiredDegreeB4,DesiredDegreeBoiler_4: modulation in percent,,,b509,0d4920,value,,UIN,,%,
+r,,,DesiredDegreeB5,DesiredDegreeBoiler_5: modulation in percent,,,b509,0d4928,value,,UIN,,%,
+r,,,DesiredDegreeB6,DesiredDegreeBoiler_6: modulation in percent,,,b509,0d4930,value,,UIN,,%,
+r,,,DesiredDegreeB7,DesiredDegreeBoiler_7: modulation in percent,,,b509,0d4938,value,,UIN,,%,
+r,,,DesiredDegreeB8,DesiredDegreeBoiler_8: modulation in percent,,,b509,0d4940,value,,UIN,,%,
+r,,,DesiredStateB1,DesiredStateBoiler_1,,,b509,0d4a08,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,DesiredStateB2,DesiredStateBoiler_2,,,b509,0d4a10,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,DesiredStateB3,DesiredStateBoiler_3,,,b509,0d4a18,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,DesiredStateB4,DesiredStateBoiler_4,,,b509,0d4a20,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,DesiredStateB5,DesiredStateBoiler_5,,,b509,0d4a28,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,DesiredStateB6,DesiredStateBoiler_6,,,b509,0d4a30,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,DesiredStateB7,DesiredStateBoiler_7,,,b509,0d4a38,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,DesiredStateB8,DesiredStateBoiler_8,,,b509,0d4a40,value,,UCH,0=off_auto;1=forceoff;2=forceheat;3=forcewater;85=water;170=heat;238=modulation,,"service B5 10 00: 0=auto, 1=force_off, 2=force_ch, 3=forced_dhwservice 05 01: 0=off, 85(0x55)=dhw, 170(0xAA)=ch, 238(0xEE)=modulation"
+r,,,LoadingPumpB1,"LoadingPumpBoiler_1: Off=0, On=100",,,b509,0d8508,value,,UCH,,,
+r,,,LoadingPumpB2,"LoadingPumpBoiler_2: Off=0, On=100",,,b509,0d8510,value,,UCH,,,
+r,,,LoadingPumpB3,"LoadingPumpBoiler_3: Off=0, On=100",,,b509,0d8518,value,,UCH,,,
+r,,,LoadingPumpB4,"LoadingPumpBoiler_4: Off=0, On=100",,,b509,0d8520,value,,UCH,,,
+r,,,LoadingPumpB5,"LoadingPumpBoiler_5: Off=0, On=100",,,b509,0d8528,value,,UCH,,,
+r,,,LoadingPumpB6,"LoadingPumpBoiler_6: Off=0, On=100",,,b509,0d8530,value,,UCH,,,
+r,,,LoadingPumpB7,"LoadingPumpBoiler_7: Off=0, On=100",,,b509,0d8538,value,,UCH,,,
+r,,,LoadingPumpB8,"LoadingPumpBoiler_8: Off=0, On=100",,,b509,0d8540,value,,UCH,,,
+r,,,HcPumpB1,ChPumpBoiler_1,,,b509,0d8608,value,,UCH,0=off;1=on,,
+r,,,HcPumpB2,ChPumpBoiler_2,,,b509,0d8610,value,,UCH,0=off;1=on,,
+r,,,HcPumpB3,ChPumpBoiler_3,,,b509,0d8618,value,,UCH,0=off;1=on,,
+r,,,HcPumpB4,ChPumpBoiler_4,,,b509,0d8620,value,,UCH,0=off;1=on,,
+r,,,HcPumpB5,ChPumpBoiler_5,,,b509,0d8628,value,,UCH,0=off;1=on,,
+r,,,HcPumpB6,ChPumpBoiler_6,,,b509,0d8630,value,,UCH,0=off;1=on,,
+r,,,HcPumpB7,ChPumpBoiler_7,,,b509,0d8638,value,,UCH,0=off;1=on,,
+r,,,HcPumpB8,ChPumpBoiler_8,,,b509,0d8640,value,,UCH,0=off;1=on,,
+r,,,FlagsB1,FlagsBoiler_1,,,b509,0d8708,value,,UCH,,,
+r,,,FlagsB2,FlagsBoiler_2,,,b509,0d8710,value,,UCH,,,
+r,,,FlagsB3,FlagsBoiler_3,,,b509,0d8718,value,,UCH,,,
+r,,,FlagsB4,FlagsBoiler_4,,,b509,0d8720,value,,UCH,,,
+r,,,FlagsB5,FlagsBoiler_5,,,b509,0d8728,value,,UCH,,,
+r,,,FlagsB6,FlagsBoiler_6,,,b509,0d8730,value,,UCH,,,
+r,,,FlagsB7,FlagsBoiler_7,,,b509,0d8738,value,,UCH,,,
+r,,,FlagsB8,FlagsBoiler_8,,,b509,0d8740,value,,UCH,,,
+r,,,HcName1,aaucHcNames_1: name of heating circuit No 1,,,b509,0d4100,value,,STR:11,,,heat circuit name
+w,,,HcName1,aaucHcNames_1: name of heating circuit No 1,,,b509,0e4100,value,,STR:11,,,heat circuit name
+r,,,HcName2,aaucHcNames_2: name of heating circuit No 2,,,b509,0d4108,value,,STR:11,,,heat circuit name
+w,,,HcName2,aaucHcNames_2: name of heating circuit No 2,,,b509,0e4108,value,,STR:11,,,heat circuit name
+r,,,HcName3,aaucHcNames_3: name of heating circuit No 3,,,b509,0d4110,value,,STR:11,,,heat circuit name
+w,,,HcName3,aaucHcNames_3: name of heating circuit No 3,,,b509,0e4110,value,,STR:11,,,heat circuit name
+r,,,HcName4,aaucHcNames_4: name of heating circuit No 4,,,b509,0d4118,value,,STR:11,,,heat circuit name
+w,,,HcName4,aaucHcNames_4: name of heating circuit No 4,,,b509,0e4118,value,,STR:11,,,heat circuit name
+r,,,HcName5,aaucHcNames_5: name of heating circuit No 5,,,b509,0d4120,value,,STR:11,,,heat circuit name
+w,,,HcName5,aaucHcNames_5: name of heating circuit No 5,,,b509,0e4120,value,,STR:11,,,heat circuit name
+r,,,HcName6,aaucHcNames_6: name of heating circuit No 6,,,b509,0d4128,value,,STR:11,,,heat circuit name
+w,,,HcName6,aaucHcNames_6: name of heating circuit No 6,,,b509,0e4128,value,,STR:11,,,heat circuit name
+r,,,HcName7,aaucHcNames_7: name of heating circuit No 7,,,b509,0d4130,value,,STR:11,,,heat circuit name
+w,,,HcName7,aaucHcNames_7: name of heating circuit No 7,,,b509,0e4130,value,,STR:11,,,heat circuit name
+r,,,HcName8,aaucHcNames_8: name of heating circuit No 8,,,b509,0d4138,value,,STR:11,,,heat circuit name
+w,,,HcName8,aaucHcNames_8: name of heating circuit No 8,,,b509,0e4138,value,,STR:11,,,heat circuit name
+r,,,HcName9,aaucHcNames_9: name of heating circuit No 9,,,b509,0d4140,value,,STR:11,,,heat circuit name
+w,,,HcName9,aaucHcNames_9: name of heating circuit No 9,,,b509,0e4140,value,,STR:11,,,heat circuit name
+r,,,HcName10,aaucHcNames_10: name of heating circuit No 10,,,b509,0d4148,value,,STR:11,,,heat circuit name
+w,,,HcName10,aaucHcNames_10: name of heating circuit No 10,,,b509,0e4148,value,,STR:11,,,heat circuit name
+r,,,HcName11,aaucHcNames_11: name of heating circuit No 11,,,b509,0d4150,value,,STR:11,,,heat circuit name
+w,,,HcName11,aaucHcNames_11: name of heating circuit No 11,,,b509,0e4150,value,,STR:11,,,heat circuit name
+r,,,HcName12,aaucHcNames_12: name of heating circuit No 12,,,b509,0d4158,value,,STR:11,,,heat circuit name
+w,,,HcName12,aaucHcNames_12: name of heating circuit No 12,,,b509,0e4158,value,,STR:11,,,heat circuit name
+r,,,HcName13,aaucHcNames_13: name of heating circuit No 13,,,b509,0d4160,value,,STR:11,,,heat circuit name
+w,,,HcName13,aaucHcNames_13: name of heating circuit No 13,,,b509,0e4160,value,,STR:11,,,heat circuit name
+r,,,HcName14,aaucHcNames_14: name of heating circuit No 14,,,b509,0d4168,value,,STR:11,,,heat circuit name
+w,,,HcName14,aaucHcNames_14: name of heating circuit No 14,,,b509,0e4168,value,,STR:11,,,heat circuit name
+r,,,HcName15,aaucHcNames_15: name of heating circuit No 15,,,b509,0d4170,value,,STR:11,,,heat circuit name
+w,,,HcName15,aaucHcNames_15: name of heating circuit No 15,,,b509,0e4170,value,,STR:11,,,heat circuit name
+[id_sw>=400]r9,,,YieldThisYear,yield this year,,,b509,0d4400:2;0d4408:2;0d4410:2;0d4418:2;0d4420:2;0d4428:2;0d4430:2;0d4438:2;0d4440:2;0d4448:2;0d4450:2;0d4458:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
+[id_sw>=400]r,,,YieldLastYear,yield last year,,,b509,0d4500:2;0d4508:2;0d4510:2;0d4518:2;0d4520:2;0d4528:2;0d4530:2;0d4538:2;0d4540:2;0d4548:2;0d4550:2;0d4558:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

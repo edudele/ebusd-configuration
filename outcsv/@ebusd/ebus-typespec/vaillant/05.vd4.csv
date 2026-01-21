@@ -1,0 +1,132 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+*[id_sw],scan,,,,SW
+[id_sw>=200]r,,,ComErrorDelay,,,,b509,0d4300,value,,UIN,,,Control interface
+[id_sw>=200]w,,service,ComErrorDelay,,,,b509,0e4300,value,,UIN,,,Control interface
+r,,,SoftwareVersion,,,,b509,0d0000,value,,HEX:4,,,
+w,,install,SoftwareVersion,,,,b509,0e0000,value,,HEX:4,,,
+r,,,EnableMonitoring,,,,b509,0d0100,value,,HEX:5,,,
+w,,install,EnableMonitoring,,,,b509,0e0100,value,,HEX:5,,,
+r,,,FlexibleMonitoring,,,,b509,0d0200,value,,HEX:8,,,
+w,,install,FlexibleMonitoring,,,,b509,0e0200,value,,HEX:8,,,
+r,,,DataCollectionRequest,installer level register,,,b509,0d0300,value,,UCH,,,
+w,,install,DataCollectionRequest,installer level register,,,b509,0e0300,value,,UCH,,,
+r,,,DataCollectionBuffer,installer level register,,,b509,0d0400,value,,UCH,,,
+w,,install,DataCollectionBuffer,installer level register,,,b509,0e0400,value,,UCH,,,
+r,,,DataCollCycle,installer level register,,,b509,0d0500,value,,ULG,,,
+w,,install,DataCollCycle,installer level register,,,b509,0e0500,value,,ULG,,,
+r,,,DataCollBufSize,installer level register,,,b509,0d0600,value,,ULG,,,
+w,,install,DataCollBufSize,installer level register,,,b509,0e0600,value,,ULG,,,
+r,,,EnableBcErrMsg,Enable broadcast error messages: Brodcast error messages on the eBUS will be send to the server,,,b509,0d0700,value,,UCH,0=no;1=yes,,
+w,,install,EnableBcErrMsg,Enable broadcast error messages: Brodcast error messages on the eBUS will be send to the server,,,b509,0e0700,value,,UCH,0=no;1=yes,,
+r,,,BoxSerialNumber1,,,,b509,0d0800,value,,HEX:9,,,
+w,,install,BoxSerialNumber1,,,,b509,0e0800,value,,HEX:9,,,
+r,,,BoxSerialNumber2,,,,b509,0d0900,value,,HEX:9,,,
+w,,install,BoxSerialNumber2,,,,b509,0e0900,value,,HEX:9,,,
+r,,,BoxSerialNumber3,,,,b509,0d0a00,value,,HEX:9,,,
+w,,install,BoxSerialNumber3,,,,b509,0e0a00,value,,HEX:9,,,
+r,,,BoxSerialNumber4,,,,b509,0d0b00,value,,HEX:9,,,
+w,,install,BoxSerialNumber4,,,,b509,0e0b00,value,,HEX:9,,,
+r,,,DeviceLayout,Device Layout,,,b509,0d0c00,value,,UCH,0=_unknown;1=JV_PC;2=H2B;3=_1_16;4=complex;5=eBUSheater,,Type of Interface which will be used and definition of appliance
+w,,install,DeviceLayout,Device Layout,,,b509,0e0c00,value,,UCH,0=_unknown;1=JV_PC;2=H2B;3=_1_16;4=complex;5=eBUSheater,,Type of Interface which will be used and definition of appliance
+r,,,DeviceLayoutCRC,Layout Checksum: Checksum over all devives connected to vrnetDIALOG. Will be used from the server to find out if new devices added or devices are deleted,,,b509,0d0d00,value,,UCH,,,
+w,,install,DeviceLayoutCRC,Layout Checksum: Checksum over all devives connected to vrnetDIALOG. Will be used from the server to find out if new devices added or devices are deleted,,,b509,0e0d00,value,,UCH,,,
+r,,,AutoSyncEnable,AutoSync enabled: Enabling or disabling of the AutoYync on the eBUS. Only usefull if there problems with outher AutoSync devices on the eBUS.,,,b509,0d0e00,value,,UCH,0=off;1=on,,
+w,,install,AutoSyncEnable,AutoSync enabled: Enabling or disabling of the AutoYync on the eBUS. Only usefull if there problems with outher AutoSync devices on the eBUS.,,,b509,0e0e00,value,,UCH,0=off;1=on,,
+r,,,LastConnectionError,Last connection error,,,b509,0d0f00,value,,UCH,0=none;1=connection;2=PPP;3=TCPopen;4=TCPauth;5=TCPsend,,Shows the last state where the connection has failed.
+w,,install,LastConnectionError,Last connection error,,,b509,0e0f00,value,,UCH,0=none;1=connection;2=PPP;3=TCPopen;4=TCPauth;5=TCPsend,,Shows the last state where the connection has failed.
+r,,,ConnErrorRetryDelay,Connection error retry delay [minutes]: Delay between two connection tries in case of a connection error,,,b509,0d1000,value,,UCH,,,
+w,,install,ConnErrorRetryDelay,Connection error retry delay [minutes]: Delay between two connection tries in case of a connection error,,,b509,0e1000,value,,UCH,,,
+r,,,ConnectionDelay,Connection Delay [minutes]: Minimum delay between two server connections established by the dialog box.,,,b509,0d1100,value,,UCH,,,
+w,,install,ConnectionDelay,Connection Delay [minutes]: Minimum delay between two server connections established by the dialog box.,,,b509,0e1100,value,,UCH,,,
+r,,,ErrorMessage,installer level register,,,b509,0d1200,value,,UCH,,,
+w,,install,ErrorMessage,installer level register,,,b509,0e1200,value,,UCH,,,
+r,,,ConnErrorCnt,Connection error counter: Number of connection tries. Will be reset to zero after a successful connection,,,b509,0d1300,value,,UCH,,,
+w,,install,ConnErrorCnt,Connection error counter: Number of connection tries. Will be reset to zero after a successful connection,,,b509,0e1300,value,,UCH,,,
+r,,,PppPhoneNumber1,PPP phone number 1,,,b509,0d1400,value,,STR:21,,,Fon number or ATN of the first PPP provider selected by server
+w,,install,PppPhoneNumber1,PPP phone number 1,,,b509,0e1400,value,,STR:21,,,Fon number or ATN of the first PPP provider selected by server
+r,,,PppLogin1,PPP Login 1,,,b509,0d1500,value,,STR:21,,,Login for the first internetprovider
+w,,install,PppLogin1,PPP Login 1,,,b509,0e1500,value,,STR:21,,,Login for the first internetprovider
+r,,,PppPassword1,PPP Password 1,,,b509,0d1600,value,,STR:21,,,Password for the first internet provider
+w,,install,PppPassword1,PPP Password 1,,,b509,0e1600,value,,STR:21,,,Password for the first internet provider
+r,,,PppPhoneNumber2,Phone number provider 1,,,b509,0d1700,value,,STR:21,,,
+w,,install,PppPhoneNumber2,Phone number provider 1,,,b509,0e1700,value,,STR:21,,,
+r,,,PppLogin2,PPP Login 2,,,b509,0d1800,value,,STR:21,,,Login for second internetprovide
+w,,install,PppLogin2,PPP Login 2,,,b509,0e1800,value,,STR:21,,,Login for second internetprovide
+r,,,PppPassword2,PPP Password 2,,,b509,0d1900,value,,STR:21,,,Paswword for second internetprovider
+w,,install,PppPassword2,PPP Password 2,,,b509,0e1900,value,,STR:21,,,Paswword for second internetprovider
+r,,,ServerIpAddr,Server IP address,,,b509,0d1a00,uch,,UCH,,,,uch_1,,UCH,,,,uch_2,,UCH,,,,uch_3,,UCH,,,
+w,,install,ServerIpAddr,Server IP address,,,b509,0e1a00,uch,,UCH,,,,uch_1,,UCH,,,,uch_2,,UCH,,,,uch_3,,UCH,,,
+r,,,ActualGsmProvider,Actual GSM/GPRS provider,,,b509,0d1b00,value,,STR:5,,,Information which provider has been selectet. Only valid in case of GSM/GPRS modem.
+w,,install,ActualGsmProvider,Actual GSM/GPRS provider,,,b509,0e1b00,value,,STR:5,,,Information which provider has been selectet. Only valid in case of GSM/GPRS modem.
+r,,,ModemInitString,Modem init string,,,b509,0d1c00,value,,STR:21,,,Special string for initialsing the modem. Default empty. Wrong values can cause a dialog box which can't communicate.
+w,,install,ModemInitString,Modem init string,,,b509,0e1c00,value,,STR:21,,,Special string for initialsing the modem. Default empty. Wrong values can cause a dialog box which can't communicate.
+r,,,RingTimeGsmCB,Call back delay GSM/GPRS [s]: Time between the last ring and the call back.,,,b509,0d1e00,value,,UCH,,,
+w,,install,RingTimeGsmCB,Call back delay GSM/GPRS [s]: Time between the last ring and the call back.,,,b509,0e1e00,value,,UCH,,,
+r,,,RingsBeforePickup,Rings before pickup: Only for analog modems used. 0 = will never pick up.,,,b509,0d1f00,value,,UCH,,,
+w,,install,RingsBeforePickup,Rings before pickup: Only for analog modems used. 0 = will never pick up.,,,b509,0e1f00,value,,UCH,,,
+r,,,RingTimeTSM1,installer level register,,,b509,0d2000,value,,UCH,,,
+w,,install,RingTimeTSM1,installer level register,,,b509,0e2000,value,,UCH,,,
+r,,,RingTimeTSM2,installer level register,,,b509,0d2100,value,,UCH,,,
+w,,install,RingTimeTSM2,installer level register,,,b509,0e2100,value,,UCH,,,
+r,,,MessageThreshold,installer level register,,,b509,0d2200,value,,UCH,,,
+w,,install,MessageThreshold,installer level register,,,b509,0e2200,value,,UCH,,,
+r,,,ConnectionCycle,installer level register,,,b509,0d2300,value,,UCH,,,
+w,,install,ConnectionCycle,installer level register,,,b509,0e2300,value,,UCH,,,
+r,,,FieldStrengthMax,Max. signal strength GSM/GPRS: Max value since last power on (0..31),,,b509,0d2400,value,,UCH,,,
+w,,install,FieldStrengthMax,Max. signal strength GSM/GPRS: Max value since last power on (0..31),,,b509,0e2400,value,,UCH,,,
+r,,,FieldStrengthMin,Min. signal strength GSM/GPRS: Min. value since last power on (0..31),,,b509,0d2500,value,,UCH,,,
+w,,install,FieldStrengthMin,Min. signal strength GSM/GPRS: Min. value since last power on (0..31),,,b509,0e2500,value,,UCH,,,
+r,,,EnableDisErrorMsg,Enable OK message: If on a error free message will be sent to the server.,,,b509,0d2600,value,,UCH,0=off;1=on,,
+w,,install,EnableDisErrorMsg,Enable OK message: If on a error free message will be sent to the server.,,,b509,0e2600,value,,UCH,0=off;1=on,,
+r,,,SwitchRelays,Relay outputs,,,b509,0d2700,bi,,BI0,,,,bi_1,,BI1,,,
+w,,install,SwitchRelays,Relay outputs,,,b509,0e2700,bi,,BI0,,,,bi_1,,BI1,,,
+r,,,StandbySignal,installer level register,,,b509,0d2b00,value,,UCH,,,
+w,,install,StandbySignal,installer level register,,,b509,0e2b00,value,,UCH,,,
+r,,,PowerOnMessage,Power on alarm: If on a alarm message is sent after power on,,,b509,0d2c00,value,,UCH,0=off;1=on,,
+w,,install,PowerOnMessage,Power on alarm: If on a alarm message is sent after power on,,,b509,0e2c00,value,,UCH,0=off;1=on,,
+r,,,AlarmOnDelay,,,,b509,0d2e00,uin,,UIN,,,,uin_1,,UIN,,,
+w,,install,AlarmOnDelay,,,,b509,0e2e00,uin,,UIN,,,,uin_1,,UIN,,,
+r,,,AlarmOffDelay,,,,b509,0d2f00,uin,,UIN,,,,uin_1,,UIN,,,
+w,,install,AlarmOffDelay,,,,b509,0e2f00,uin,,UIN,,,,uin_1,,UIN,,,
+r,,,ScanLayoutCycle,installer level register,,,b509,0d3000,value,,UCH,,,
+w,,install,ScanLayoutCycle,installer level register,,,b509,0e3000,value,,UCH,,,
+r,,,PredMaintConnectionCycle,installer level register,,,b509,0d3100,value,,UCH,,,
+w,,install,PredMaintConnectionCycle,installer level register,,,b509,0e3100,value,,UCH,,,
+r,,,LastKnownEbusAddr,installer level register,,,b509,0d3200,value,,UCH,,,
+w,,install,LastKnownEbusAddr,installer level register,,,b509,0e3200,value,,UCH,,,
+r,,,Time,installer level register,,,b509,0d3300,value,,VTI,,,time
+w,,install,Time,installer level register,,,b509,0e3300,value,,VTI,,,time
+r,,,Date,installer level register,,,b509,0d3400,value,,HDA:3,,,date
+w,,install,Date,installer level register,,,b509,0e3400,value,,HDA:3,,,date
+r,,,Weekday,installer level register,,,b509,0d3500,value,,BDY,,,weekday
+w,,install,Weekday,installer level register,,,b509,0e3500,value,,BDY,,,weekday
+r,,,CurrentPppProvider,,,,b509,0d3600,value,,UCH,0=1;1=2;2=emergency_provider,,
+w,,install,CurrentPppProvider,,,,b509,0e3600,value,,UCH,0=1;1=2;2=emergency_provider,,
+r,,,GsmGprsPin,GSM SIM Pin,,,b509,0d3700,value,,STR:4,,,Wrong pin disables the box functionality
+w,,install,GsmGprsPin,GSM SIM Pin,,,b509,0e3700,value,,STR:4,,,Wrong pin disables the box functionality
+r,,,ModemType,,,,b509,0d3800,value,,UCH,0=analogue;1=GSM;2=GPRS,,
+w,,install,ModemType,,,,b509,0e3800,value,,UCH,0=analogue;1=GSM;2=GPRS,,
+r,,,H2BusLayout,installer level register,,,b509,0d3900,value,,UCH,,,
+w,,install,H2BusLayout,installer level register,,,b509,0e3900,value,,UCH,,,
+r,,,ActualDigitalInputs,Digital input actual values,,,b509,0d3a00,bi,,BI0,,,,bi_1,,BI1,,,
+w,,install,ActualDigitalInputs,Digital input actual values,,,b509,0e3a00,bi,,BI0,,,,bi_1,,BI1,,,
+r,,,ActualAnalogInputs,Analog inputs actual values,,,b509,0d3b00,uin,,UIN,,,,uin_1,,UIN,,,
+w,,install,ActualAnalogInputs,Analog inputs actual values,,,b509,0e3b00,uin,,UIN,,,,uin_1,,UIN,,,
+r,,,ActualCounterValue,Counter inputs actual values,,,b509,0d3c00,uin,,UIN,,,,uin_1,,UIN,,,
+w,,install,ActualCounterValue,Counter inputs actual values,,,b509,0e3c00,uin,,UIN,,,,uin_1,,UIN,,,
+r,,,ModemDialPrefix,Modem dial prefix,,,b509,0d3d00,value,,STR:4,,,Prefix which will be sent to the modem befor dialing
+w,,install,ModemDialPrefix,Modem dial prefix,,,b509,0e3d00,value,,STR:4,,,Prefix which will be sent to the modem befor dialing
+r,,,DebugFlags,installer level register,,,b509,0d3e00,value,,ULG,,,
+w,,install,DebugFlags,installer level register,,,b509,0e3e00,value,,ULG,,,
+r,,,ModemCountryCode,Modem country code,,,b509,0d3f00,value,,UCH,,,
+w,,install,ModemCountryCode,Modem country code,,,b509,0e3f00,value,,UCH,,,
+r,,,DoReset,installer level register,,,b509,0d4000,value,,UCH,,,
+w,,install,DoReset,installer level register,,,b509,0e4000,value,,UCH,,,
+r,,,DataCollectionLimit,installer level register,,,b509,0d4100,value,,ULG,,,
+w,,install,DataCollectionLimit,installer level register,,,b509,0e4100,value,,ULG,,,
+r,,,Temp3WayValve,installer level register,,,b509,0d4200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,install,Temp3WayValve,installer level register,,,b509,0e4200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,RfWakeupCycle,service level register,,,b509,0d4600,value,,UIN,,,
+w,,service,RfWakeupCycle,service level register,,,b509,0e4600,value,,UIN,,,

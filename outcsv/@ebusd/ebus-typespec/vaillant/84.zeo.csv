@@ -1,0 +1,255 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,FlowDemand,FlowDemand: vom UI,,,b509,0d2700,value,,UCH,0=off;1=on,,
+r,,,BoilerDemand,BurnerDemand: von der BMU,,,b509,0d4f00,value,,UCH,0=off;1=on,,
+r,,,B1Press,P_B1: Pumpe Kondensatorkreis,,,b509,0d5c00,value,,UCH,0=off;1=on,,
+r,,,PrimaryCircuitPump2Power,PrimaryCircuitPump2Power: aktuelle Leistung in %,,,b509,0d5f00,value,,UIN,,,
+r,,,B2Press,P_B2: Pumpe Umweltkreis,,,b509,0d6000,value,,UCH,,,
+r,,,SMPrimaryCircuitCycleOKState,SM_PrimaryCircuitCycle_OKState: Prozesszustand,,,b509,0d6200,value,,UCH,,,
+r,,,Pos1,Pos1: Umschalterposition Direktheizbetrieb,,,b509,0d6500,value,,UCH,0=off;1=on,,
+r,,,Pos2,Pos2: Umschalterposition Desorption mit Bypass,,,b509,0d6600,value,,UCH,0=off;1=on,,
+r,,,PrimaryCircuitCycleState,PrimaryCircuitCycleState,,,b509,0d6800,value,,UCH,,,
+r,,,VentilatorRelease,Ventilatorfreigabe: Kollektorventilator,,,b509,0d6a00,value,,UCH,0=off;1=on,,
+r,,,FlowPumpP1,Volumenstrom_P_P1: in %,,,b509,0d6b00,value,,UIN,,,
+r,,,FlowPumpP2,Volumenstrom_P_P2: in %,,,b509,0d6c00,value,,UIN,,,
+r,,,ManualContinue,man_weiter,,,b509,0d7000,value,,UCH,0=off;1=on,,
+w,,service,ManualContinue,man_weiter,,,b509,0e7000,value,,UCH,0=off;1=on,,
+r,,,HeatDemand,W_Anfo,,,b509,0d7200,value,,UCH,0=off;1=on,,
+r,,,Source,Quelle: 1=DHB 2=Kollektorbetrieb 3=Wärmetauscherbetrieb,,,b509,0d7300,value,,UCH,,,
+r,,,PrimaryCircuitPumpsControlState,PrimaryCircuitPumpsControlState,,,b509,0d7400,value,,UCH,,,
+r,,,PlValve,V_Pl: Primärkreisumschalter Linkslauf,,,b509,0d7700,value,,UCH,0=off;1=on,,
+r,,,PrValve,V_Pr: Primärkreisumschalter Rechtslauf,,,b509,0d7800,value,,UCH,0=off;1=on,,
+r,,,TestMode,testbetrieb,,,b509,0d7a00,value,,UCH,0=off;1=on,,
+r,,,HwcDemand,BW_Anfo,,,b509,0d7b00,value,,UCH,0=off;1=on,,
+r,,,BrDemand,Br_Anfo: Ansteuerung Gasventil,,,b509,0d8200,value,,UCH,0=off;1=on,,
+r,,,DesiredPositionReached,DesiredPositionReached,,,b509,0d8300,value,,UCH,0=off;1=on,,
+r,,,GFAError,GFA_Stoerung,,,b509,0d8500,value,,UCH,0=off;1=on,,
+r,,,TadsOff,Tads_aus: °C,,,b509,0d8600,value,,D2C,,°C,temperature
+r,,,MSWMax,MSW_max: in %,,,b509,0d8800,value,,UCH,,,
+r,,,TdesOn,Tdes_ein: °C,,,b509,0d8900,value,,D2C,,°C,temperature
+r,,,ActualEnvironmentalPower,ActualEnvironmentalPower: in kW (Näherungswert),,,b509,0d8a00,value,,UCH,,kW,
+r,,,PWTDesired,PWT_Soll: °C,,,b509,0d8b00,value,,D2C,,°C,temperature
+r,,,PrimVol,Prim_Vol: in %,,,b509,0d8c00,value,,UCH,,,
+r,,,TsolOn,Tsole_ein: °C; hinten,,,b509,0d8f00,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,TsolOff,Tsole_aus: °C; vorne,,,b509,0d9000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,PLH,PL_H: Umschalterposition Desorption ohne Bypass,,,b509,0d9100,value,,UCH,0=off;1=on,,
+r,,,PLPump,PL_P: Umschalterposition Adsorption,,,b509,0d9200,value,,UCH,0=off;1=on,,
+r,,,PrimaryCircuitPump1Power,PrimaryCircuitPump1Power: in %,,,b509,0da700,value,,UIN,,,
+r,,,PrimaryCircuitSwitchControlState,PrimaryCircuitSwitchControlState,,,b509,0da900,value,,UCH,,,
+r,,,PrimaryCircuitPump1PowerCorrected,PrimaryCircuitPump1PowerCorrected,,,b509,0db300,value,,UIN,,,
+r,,,PrimaryCircuitPump2PowerCorrected,PrimaryCircuitPump2PowerCorrected,,,b509,0db400,value,,UIN,,,
+r,,,TdesSwitch,tdes_um,,,b509,0dba00,value,,D2C,,°C,temperature
+r,,,QZeo,Q_zeo: in kWh,,,b509,0ddd00,value,,UIN,,,
+r,,,PumpB1Valve,V_P_B1: Durchflussmenge durch Verdampfer,,,b509,0dde00,value,,UIN,,,
+r,,,ZSpAfter,Z_Sp_nach: Nachlaufzeit Speicherpumpe/min,,,b509,0ddf00,value,,UCH,,,
+r,,,Partload,Partload: 0..100% MSW_max in Testbetrieb,,,b509,0df800,value,,UCH,,,
+r,,,PrimaryCircuitMicroSwitchPattern,PrimaryCircuitMicroSwitchPattern: 1=Des.o.B. 2=Adsorption 4=Des.m.B. 8=Direktheizbetrieb,,,b509,0df900,value,,UCH,,,
+r,,,Code1Code2Valid,Code1Code2Valid,,,b509,0d0100,value,,UCH,0=off;1=on,,
+r,,,DcfStatus,DCF status,,,b509,0d3a00,value,,UCH,,,
+r,,,StackeBUSTaskMax,MaxStackeBUSTask,,,b509,0d3b00,value,,UCH,,,
+r,,,StackMainTaskMax,MaxStackMainTask,,,b509,0d3c00,value,,UCH,,,
+r,,,StackLifeCheckTaskMax,MaxStackLifeCheckTask,,,b509,0d3d00,value,,UCH,,,
+r,,,ErrorActual,Error_Actual,,,b509,0d4600,value,,UCH,,,
+r,,,Global_ErrorActual,Error_Actual,,,b509,0d4602,value,,UCH,,,
+r,,,ErrorHistory,Error_History,,,b509,0d4700,value,,UCH,,,
+r,,,Global_ErrorHistory,Error_History,,,b509,0d4702,value,,UCH,,,
+r,,,Reset,Reset,,,b509,0d4800,value,,UCH,0=off;1=on,,
+r,,,RebootCounter,RebootCounter: incremented each time Firmware boots,,,b509,0d5100,value,,UIN,,,
+r,,,ContactThermostat,Anlegethermostat,,,b509,0da100,value,,UCH,0=off;1=on,,
+r,,,IsInHoliday,Holiday function active,,,b509,0d0200,value,,UCH,,,
+r,,,OutsideTempCorrection,"OutsideTempSensorCorrection: 0,5°C resolution",,,b509,0d0800,value,,SCH,,°C,temperature
+r,,,HolidayTempDesired,DesiredHolidayTemperature: 1/2 °C resolution,,,b509,0d0f00,value,,D1C,,°C,temperature
+r,,,HeatingCurve,Heating curve: 1/100 resolution,,,b509,0d1000,value,,UIN,100,,Heating curve
+r,,,OtShutdownLimit,OtShutdownLimit: 1 °C resolution Bedarfsabhängige Heizungsabschaltung,,,b509,0d1100,value,,UCH,,°C,temperature
+r,,,BoilerMaxPreShutdown,BoilerMaxPreShutdown: 15..120min,,,b509,0d1400,value,,UCH,,,
+r,,,HcFlowIncrease,HcFlowIncrease,,,b509,0d1500,value,,UCH,,,
+r,,,CircuitPeriods,CircuitPeriods,,,b509,0d1900,value,,UCH,,,
+r,,,LegioProtectionEnabled,LegioProtectionEnabled: Global for all DHW circuits,,,b509,0d1a00,value,,UCH,0=off;1=on,,
+r,,,IsInStorageFilling,IsInTankFilling,,,b509,0d2000,value,,UCH,0=off;1=on,,
+r,,,FrostProtectDelay,FrostProtectDelay: 1h,,,b509,0d2200,value,,UCH,,,
+r,,,IsInParty,IsInParty,,,b509,0d2600,value,,UCH,,,
+r,,,HcPreShutdownActive,HcPreShutdownActive: One bit for each heating circuit,,,b509,0d2800,value,,UCH,,,
+r,,,HcPreHeatingActive,HcPreHeatingActive: One bit for each heating circuit,,,b509,0d2900,value,,UCH,,,
+r,,,InitCircuit,InitCircuit: One bit for each heating circuit,,,b509,0d2b00,value,,UCH,,,
+r,,,StartOneOffFilling,StartOneOffFilling: One bit for each heating circuit,,,b509,0d2e00,value,,UCH,,,
+r,,,StorageFlowTemp,TankFlowTemperature: 1°C resolution,,,b509,0d2f00,value,,UCH,,°C,temperature
+r,,,HwcLoadingRequest,DhwLoadingRequest: One bit for each heating circuit,,,b509,0d3000,value,,UCH,,,
+r,,,HwcLoadingEnabled,DhwLoadingEnabled: One bit for each heating circuit,,,b509,0d3100,value,,UCH,0=off;1=on,,
+r,,,HwcLaggingTime,DhwLaggingTime: 3..9min 1min Auflösung,,,b509,0d3600,value,,UCH,,,
+r,,,HwcLoadingDelay,DhwLoadingDelay: 0..30min / 1min,,,b509,0d3700,value,,UCH,,,
+r,,,RestartBlockingTime,RestartBlockingTime,,,b509,0d3800,value,,UIN,,,
+r,,,ReturnTempMax,Max_Return_Temperature,,,b509,0d3f00,value,,D2C,,°C,temperature
+r,,,OutputTesting,OutputTesting,,,b509,0d4200,value,,UCH,0=off;1=on,,
+r,,,OneTimeCirSwitch,OneTimeCirculationSwitch,,,b509,0d5400,value,,UCH,0=off;1=on,,
+w,,service,OneTimeCirSwitch,OneTimeCirculationSwitch,,,b509,0e5400,value,,UCH,0=off;1=on,,
+r,,,HwcTempMax,Max_DHW_Temperature: 1°C resolution,,,b509,0d5900,value,,UCH,,°C,temperature
+r,,,Dt12,"dt1_2: Kalibrierwert T1,T2",,,b509,0d1b00,value,,D2C,,°C,temperature
+w,,service,Dt12,"dt1_2: Kalibrierwert T1,T2",,,b509,0e1b00,value,,D2C,,°C,temperature
+r,,,Dt56,"dt5_6: Kalibrierwert T5,T6",,,b509,0d1c00,value,,D2C,,°C,temperature
+w,,service,Dt56,"dt5_6: Kalibrierwert T5,T6",,,b509,0e1c00,value,,D2C,,°C,temperature
+r,,,TriggerCalibrationT1t2,"TriggerCalibration_t1t2: löst Kalibriervorgang T1,T2 aus",,,b509,0d1d00,value,,UCH,0=off;1=on,,
+w,,service,TriggerCalibrationT1t2,"TriggerCalibration_t1t2: löst Kalibriervorgang T1,T2 aus",,,b509,0e1d00,value,,UCH,0=off;1=on,,
+r,,,PrimaryCircuitPumpDemandByBoiler,PrimaryCircuitPumpDemandByBurner,,,b509,0d2100,value,,UCH,0=off;1=on,,
+r,,,TriggerCalibrationT5t6,"TriggerCalibration_t5t6: löst Kalibriervorgang T5,T6 aus",,,b509,0d2a00,value,,UCH,0=off;1=on,,
+w,,service,TriggerCalibrationT5t6,"TriggerCalibration_t5t6: löst Kalibriervorgang T5,T6 aus",,,b509,0e2a00,value,,UCH,0=off;1=on,,
+r,,,InhibitT1T2T3Counting,"InhibitT1T2T3Counting: stoppt Zeitglieder t1, t2, t3",,,b509,0d3900,value,,UCH,0=off;1=on,,
+r,,,StateSoftwareCode,State_Software_Code,,,b509,0d4e00,value,,ULG,,,
+r,,,ApplianceCode,Appliance_Code,,,b509,0d5800,value,,UCH,,,
+r,,,ForcedParameter,Forced Parameter: 0=no forcing 1=kleinste Leistung 2=mittlere Leistung 3=max. Leistung,,,b509,0da800,value,,UCH,,,
+r,,,TwoPointRegulatorHysteresisHc,TwoPointRegulatorHysteresis_CH,,,b509,0db500,value,,D2C,,°C,temperature
+w,,service,TwoPointRegulatorHysteresisHc,TwoPointRegulatorHysteresis_CH,,,b509,0eb500,value,,D2C,,°C,temperature
+r,,,TwoPointRegulatorHysteresisHwc,TwoPointRegulatorHysteresis_DHW,,,b509,0db600,value,,D2C,,°C,temperature
+w,,service,TwoPointRegulatorHysteresisHwc,TwoPointRegulatorHysteresis_DHW,,,b509,0eb600,value,,D2C,,°C,temperature
+r,,,ModuleDisplayedFilling,ModuleDisplayedFilling: Schwärzungsgrad in %,,,b509,0dcc00,value,,UCH,,,
+r,,,P1Voltage38,P1_Voltage_38: gemessene P1 Spannung bei 38% in 1/100V,,,b509,0de400,value,,UIN,,,
+w,,service,P1Voltage38,P1_Voltage_38: gemessene P1 Spannung bei 38% in 1/100V,,,b509,0ee400,value,,UIN,,,
+r,,,P2Voltage38,P2_Voltage_38: gemessene P2 Spannung bei 38% in 1/100V,,,b509,0de600,value,,UIN,,,
+w,,service,P2Voltage38,P2_Voltage_38: gemessene P2 Spannung bei 38% in 1/100V,,,b509,0ee600,value,,UIN,,,
+r,,,FillSourceCircuit,FillBrineCircuit,,,b509,0df600,value,,UCH,0=off;1=on,,
+r,,,DeaerateSourceCircuit,DeaerateBrineCircuit,,,b509,0df700,value,,UCH,0=off;1=on,,
+r,,,Ymin,PI-Regelung: Ymin,,,b509,0dfb00,value,,UCH,,,
+r,,,Ymax,PI-Regelung: Ymax,,,b509,0dfc00,value,,UCH,,,
+r,,,BandPress,P_Band: PI-Regelung: Xp,,,b509,0dfd00,value,,D2C,,°C,temperature
+r,,,FillDearatePrimCircuit,FillDearatePrimCircuit,,,b509,0dfe00,value,,UCH,,,
+r,,,Timer1,t1: verbleibende Zeit mit Kleinstlast in s,,,b509,0d6d00,value,,ULG,,,
+r,,,Timer2,t2: verbleibende Zeit mit mittlerer Leistung in s,,,b509,0d6e00,value,,ULG,,,
+r,,,Timer3,t3: verbleibende Zeit bis Umschaltung in Direktheizbetrieb in s,,,b509,0d6f00,value,,ULG,,,
+r,,,TimerCompensation1,ZeitgliedAusgleichszeit1: in s,,,b509,0d7500,value,,ULG,,s,seconds
+r,,,TimerCompensation2,ZeitgliedAusgleichszeit2: in s,,,b509,0d7600,value,,ULG,,s,seconds
+r,,,TimerMaxRuntime,ZeitgliedMaxLaufzeit: des Primärkreisumschalters in s,,,b509,0d7e00,value,,ULG,,s,seconds
+w,,service,TimerMaxRuntime,ZeitgliedMaxLaufzeit: des Primärkreisumschalters in s,,,b509,0e7e00,value,,ULG,,s,seconds
+r,,,PrimPumpPostrunTimer,PrimPumpPostrunTimer: in s,,,b509,0da600,value,,UIN,,s,seconds
+r,,,PrimPumpPostrunTime,PrimPumpPostrunTime: in s,,,b509,0daa00,value,,UIN,,s,seconds
+r,,,Compensation1Duration,Ausgleichszeit1Dauer: in s,,,b509,0dab00,value,,UIN,,s,seconds
+r,,,Param1Compensation1Duration,ParamSatz_1_Ausgleichszeit1Dauer: in s,,,b509,0dab02,value,,UIN,,s,seconds
+w,,service,Param1Compensation1Duration,ParamSatz_1_Ausgleichszeit1Dauer: in s,,,b509,0eab02,value,,UIN,,s,seconds
+r,,,Param2Compensation1Duration,ParamSatz_2_Ausgleichszeit1Dauer: in s,,,b509,0dab04,value,,UIN,,s,seconds
+w,,service,Param2Compensation1Duration,ParamSatz_2_Ausgleichszeit1Dauer: in s,,,b509,0eab04,value,,UIN,,s,seconds
+r,,,Param3Compensation1Duration,ParamSatz_3_Ausgleichszeit1Dauer: in s,,,b509,0dab06,value,,UIN,,s,seconds
+w,,service,Param3Compensation1Duration,ParamSatz_3_Ausgleichszeit1Dauer: in s,,,b509,0eab06,value,,UIN,,s,seconds
+r,,,T1Duration,t1Dauer: in Minuten,,,b509,0dac00,value,,UCH,,,
+w,,service,T1Duration,t1Dauer: in Minuten,,,b509,0eac00,value,,UCH,,,
+r,,,T2Duration,t2Dauer: in Minuten,,,b509,0dad00,value,,UCH,,,
+w,,service,T2Duration,t2Dauer: in Minuten,,,b509,0ead00,value,,UCH,,,
+r,,,T3Duration,t3Dauer: in Minuten,,,b509,0dae00,value,,UCH,,,
+w,,service,T3Duration,t3Dauer: in Minuten,,,b509,0eae00,value,,UCH,,,
+r,,,RestartBlockingTimer,RestartBlockingTimer,,,b509,0db200,value,,UIN,,,
+r,,,VUVPumpLockTime,VUVPumpLockTime: time to block pump when VUV moves,,,b509,0de000,value,,UCH,,,
+w,,service,VUVPumpLockTime,VUVPumpLockTime: time to block pump when VUV moves,,,b509,0ee000,value,,UCH,,,
+r,,,ZHzAfter,Z_Hz_nach: Nachlaufzeit Heizpumpe/min,,,b509,0de100,value,,UCH,,,
+r,,,ParamCompensationTime2,ParamSatz_AusglZeit2: in s,,,b509,0de700,value,,UIN,,s,seconds
+r,,,RuntimeDurationMax,MaxLaufzeitDauer: des Primärkreisumschalters,,,b509,0de800,value,,UCH,,,
+r,,,Param1Compensation2Duration,ParamSatz_1_Ausgleichszeit2Dauer: in s,,,b509,0de702,value,,UIN,,s,seconds
+r,,,Param2Compensation2Duration,ParamSatz_2_Ausgleichszeit2Dauer: in s,,,b509,0de704,value,,UIN,,s,seconds
+r,,,Param3Compensation2Duration,ParamSatz_3_Ausgleichszeit2Dauer: in s,,,b509,0de706,value,,UIN,,s,seconds
+r,,,P2Peaktime,"P2Peaktime: Dauer in sec, die P2 beim Einschalten mit 100% gefahren wird",,,b509,0dff00,value,,UCH,,,
+r,,,P1PressStarts,P_P1_starts: Einschaltungen P1,,,b509,0de900,value,,ULG,,,start count
+r,,,P1PressHours,P_P1_hours: Laufzeit P1/h,,,b509,0dea00,value,,ULG,,h,hours
+r,,,P2PressStarts,P_P2_starts: Einschaltungen P2,,,b509,0deb00,value,,ULG,,,start count
+r,,,P2PressHours,P_P2_hours: Laufzeit P2/h,,,b509,0dec00,value,,ULG,,h,hours
+r,,,HPressStarts,P_H_starts: Einschaltungen P_H,,,b509,0ded00,value,,ULG,,,start count
+r,,,HPressHours,P_H_hours: Laufzeit P_H,,,b509,0dee00,value,,ULG,,h,hours
+r,,,CPressStarts,P_c_starts: Einschaltungen P_c,,,b509,0def00,value,,ULG,,,start count
+r,,,CPressHours,P_c_hours: Laufzeit P_c,,,b509,0df000,value,,ULG,,h,hours
+r,,,SPressStarts,P_s_starts: Einschaltungen P_s,,,b509,0df100,value,,ULG,,,start count
+r,,,SPressHours,P_s_hours: Laufzeit P_s,,,b509,0df200,value,,ULG,,h,hours
+r,,,VHwcStarts,VDHW_starts: Einschaltungen VDHW,,,b509,0df300,value,,ULG,,,start count
+r,,,VHwcHours,VDHW_hours: Laufzeit VDHW,,,b509,0df400,value,,ULG,,h,hours
+r,,,LimitDirectHeat,EckpunktDhb: Grenze für Direktheizbetrieb,,,b509,0d4500,value,,D2C,,°C,temperature
+w,,service,LimitDirectHeat,EckpunktDhb: Grenze für Direktheizbetrieb,,,b509,0e4500,value,,D2C,,°C,temperature
+r,,,FlowTempDesired,FlowTemperatureSetPoint,,,b509,0d5000,value,,D2C,,°C,temperature
+r,,,CPress,P_c: Circulation pump,,,b509,0d9600,value,,UCH,0=off;1=on,,
+w,,service,CPress,P_c: Circulation pump,,,b509,0e9600,value,,UCH,0=off;1=on,,
+r,,,FColl,F_coll: Ventilator im Luftkollektor,,,b509,0d9700,value,,UCH,0=off;1=on,,
+w,,service,FColl,F_coll: Ventilator im Luftkollektor,,,b509,0e9700,value,,UCH,0=off;1=on,,
+r,,,SPress,P_s: Solarpumpe,,,b509,0d9800,value,,UCH,0=off;1=on,,
+w,,service,SPress,P_s: Solarpumpe,,,b509,0e9800,value,,UCH,0=off;1=on,,
+r,,,HPress,P_H: Heizungspumpe,,,b509,0d9900,value,,UCH,0=off;1=on,,
+w,,service,HPress,P_H: Heizungspumpe,,,b509,0e9900,value,,UCH,0=off;1=on,,
+r,,,HwcValve,V_DHW: Vorrangumschaltventil,,,b509,0d9a00,value,,UCH,0=off;1=on,,
+w,,service,HwcValve,V_DHW: Vorrangumschaltventil,,,b509,0e9a00,value,,UCH,0=off;1=on,,
+r,,,EnvTemp,T_env: Aussentemperatur,,,b509,0d9b00,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,CollRTemp,T_coll_R: Kollektorrücklauftemperatur,,,b509,0d9c00,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,S1Temp,TS_1: Speicherfühler oben,,,b509,0d9d00,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,S2Temp,TS_2: Speicherfühler unten,,,b509,0d9e00,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,CollTemp,T_coll: Kollektortemperatur,,,b509,0d9f00,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,F1Temp,TF_1: Vorlauftemperatur,,,b509,0da200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,RTemp,TR: CH return temp.,,,b509,0da300,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,T5,T5: °C; Desorberausgang (hinten),,,b509,0da400,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,T6,T6: °C; Desorbereingang (vorne),,,b509,0da500,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,DesiredSwitchPos,DesiredSwitchPos: 1=Des.o.B. 2=Adsorption 3=Des.m.B. 4=Direktheizbetrieb,,,b509,0daf00,value,,UCH,,,
+r,,,ZeoStatus,"ZeoStatus: Bereitschaft = 0,Heizbetrieb=1,Speicherladung=2,Legionellenschutz=3,Frostschutz=4,Speicherfrostschutz=5",,,b509,0db700,value,,UCH,,,
+r,,,ActualDevicePower,ActualDevicePower: in kW,,,b509,0db900,value,,UCH,,kW,
+r,,,FlameOn,FlameOn: von der BMU,,,b509,0dbe00,value,,UCH,0=off;1=on,,
+r,,,LPress,P_l: Legionellenschutz-Pumpe,,,b509,0dc500,value,,UCH,0=off;1=on,,
+r,,,HzVol,Hz_Vol: in %,,,b509,0dc700,value,,UCH,,,
+r,,,T3,T3: °C; rechts,,,b509,0dc900,value,,D2C,,°C,temperature
+r,,,T4,T4: °C; links,,,b509,0dca00,value,,D2C,,°C,temperature
+r,,,Parameter,Parameter,,,b509,0d6700,value,,UCH,,,
+r,,,TimerAdsorption1,ZeitgliedAdsorption1,,,b509,0d7100,value,,ULG,,,
+r,,,Param1Vol,ParamSatz_1_Vol: Parametersatz 1: Volumenstrom (Ads 2),,,b509,0d7f02,value,,UIN,,,
+w,,service,Param1Vol,ParamSatz_1_Vol: Parametersatz 1: Volumenstrom (Ads 2),,,b509,0e7f02,value,,UIN,,,
+r,,,Param2Vol,ParamSatz_2_Vol: Parametersatz 2: Volumenstrom (Ads 2),,,b509,0d7f04,value,,UIN,,,
+w,,service,Param2Vol,ParamSatz_2_Vol: Parametersatz 2: Volumenstrom (Ads 2),,,b509,0e7f04,value,,UIN,,,
+r,,,Param3Vol,ParamSatz_3_Vol: Parametersatz 3: Volumenstrom (Ads 2),,,b509,0d7f06,value,,UIN,,,
+w,,service,Param3Vol,ParamSatz_3_Vol: Parametersatz 3: Volumenstrom (Ads 2),,,b509,0e7f06,value,,UIN,,,
+r,,,Param1DTadsEnd,ParamSatz_1_dTads_end: Parametersatz 1: Dauer (Ads 1),,,b509,0d8002,value,,D2C,,°C,temperature
+w,,service,Param1DTadsEnd,ParamSatz_1_dTads_end: Parametersatz 1: Dauer (Ads 1),,,b509,0e8002,value,,D2C,,°C,temperature
+r,,,Param2DTadsEnd,ParamSatz_2_dTads_end: Parametersatz 2: Dauer (Ads 1),,,b509,0d8004,value,,D2C,,°C,temperature
+w,,service,Param2DTadsEnd,ParamSatz_2_dTads_end: Parametersatz 2: Dauer (Ads 1),,,b509,0e8004,value,,D2C,,°C,temperature
+r,,,Param3DTadsEnd,ParamSatz_3_dTads_end: Parametersatz 3: Dauer (Ads 1),,,b509,0d8006,value,,D2C,,°C,temperature
+w,,service,Param3DTadsEnd,ParamSatz_3_dTads_end: Parametersatz 3: Dauer (Ads 1),,,b509,0e8006,value,,D2C,,°C,temperature
+r,,,Param1Time,ParamSatz_1_Zeit: Parametersatz 1: Adsorptionsende (Temp.Differenz),,,b509,0d8102,value,,UIN,,,
+w,,service,Param1Time,ParamSatz_1_Zeit: Parametersatz 1: Adsorptionsende (Temp.Differenz),,,b509,0e8102,value,,UIN,,,
+r,,,Param2Time,ParamSatz_2_Zeit: Parametersatz 2: Adsorptionsende (Temp.Differenz),,,b509,0d8104,value,,UIN,,,
+w,,service,Param2Time,ParamSatz_2_Zeit: Parametersatz 2: Adsorptionsende (Temp.Differenz),,,b509,0e8104,value,,UIN,,,
+r,,,Param3Time,ParamSatz_3_Zeit: Parametersatz 3: Adsorptionsende (Temp.Differenz),,,b509,0d8106,value,,UIN,,,
+w,,service,Param3Time,ParamSatz_3_Zeit: Parametersatz 3: Adsorptionsende (Temp.Differenz),,,b509,0e8106,value,,UIN,,,
+r,,,TdesDesired,Tdes_soll: °C,,,b509,0d8400,value,,D2C,,°C,temperature
+r,,,DUm3,d_um_3: Offset Desorptionsendtemperatur,,,b509,0de500,value,,D2C,,°C,temperature
+r,,,InstallAssistantFinished,InstallAssistantFinished,,,b509,0d4000,value,,UCH,0=off;1=on,,
+w,,service,InstallAssistantFinished,InstallAssistantFinished,,,b509,0e4000,value,,UCH,0=off;1=on,,
+r,,,HeatingPumpOverrunDuration,HeatingPumpOverrunDuration,,,b509,0d0001,value,,UIN,,,
+w,,service,HeatingPumpOverrunDuration,HeatingPumpOverrunDuration,,,b509,0e0001,value,,UIN,,,
+r,,,HeatingPumpKickDuration,HeatingPumpKickDuration,,,b509,0d0101,value,,UIN,,,
+w,,service,HeatingPumpKickDuration,HeatingPumpKickDuration,,,b509,0e0101,value,,UIN,,,
+r,,,HeatingPumpKickPause,HeatingPumpKickPause,,,b509,0d0201,value,,UIN,,,
+w,,service,HeatingPumpKickPause,HeatingPumpKickPause,,,b509,0e0201,value,,UIN,,,
+r,,,HeatingPumpMaxPwm,HeatingPumpMaxPwm: in %,,,b509,0d0301,value,,UCH,,,
+w,,service,HeatingPumpMaxPwm,HeatingPumpMaxPwm: in %,,,b509,0e0301,value,,UCH,,,
+r,,,HeatingPumpMinPwm,HeatingPumpMinPwm: in %,,,b509,0d0401,value,,UCH,,,
+w,,service,HeatingPumpMinPwm,HeatingPumpMinPwm: in %,,,b509,0e0401,value,,UCH,,,
+r,,,HeatingPumpFactor,HeatingPumpFaktor: % pro Kelvin Regelabweichung,,,b509,0d0501,value,,UCH,,,
+w,,service,HeatingPumpFactor,HeatingPumpFaktor: % pro Kelvin Regelabweichung,,,b509,0e0501,value,,UCH,,,
+r,,,SHU,aktiviert/deaktiviert die SHU-Funktionalität,,,b509,0d0601,value,,UCH,0=off;1=on,,
+r,,,SVUV1,SVUV1: Sole-Vuv1,,,b509,0d0701,value,,UCH,0=off;1=on,,
+r,,,SVUV2,SVUV2: Sole-Vuv2,,,b509,0d0801,value,,UCH,0=off;1=on,,
+r,,,BrinePumpPowerSHU,Solepumpenleistung_SHU: Solepumpenleistung während SHU,,,b509,0d0901,value,,UCH,,,
+w,,service,BrinePumpPowerSHU,Solepumpenleistung_SHU: Solepumpenleistung während SHU,,,b509,0e0901,value,,UCH,,,
+r,,,BrinePumpPowerDesorption,Solepumpenleistung_Desorption: Solepumpenleistung während Desorption,,,b509,0d0a01,value,,UCH,,,
+w,,service,BrinePumpPowerDesorption,Solepumpenleistung_Desorption: Solepumpenleistung während Desorption,,,b509,0e0a01,value,,UCH,,,
+r,,,BrinePumpPowerAdsorption,Solepumpenleistung_Adsorption: Solepumpenleistung während Adsorption,,,b509,0d0b01,value,,UCH,,,
+w,,service,BrinePumpPowerAdsorption,Solepumpenleistung_Adsorption: Solepumpenleistung während Adsorption,,,b509,0e0b01,value,,UCH,,,
+r,,,DHROff,dHR_aus: delta-Rücklauftemp für SHU,,,b509,0d0c01,value,,D2C,,°C,temperature
+w,,service,DHROff,dHR_aus: delta-Rücklauftemp für SHU,,,b509,0e0c01,value,,D2C,,°C,temperature
+r,,,Tvmax,Tvmax,,,b509,0d0d01,value,,D2C,,°C,temperature
+r,,,NotTestedYet,not_tested_yet: Merker für erfolgreichen Selbsttest,,,b509,0d0e01,value,,UCH,0=off;1=on,,
+w,,service,NotTestedYet,not_tested_yet: Merker für erfolgreichen Selbsttest,,,b509,0e0e01,value,,UCH,0=off;1=on,,
+r,,,StartupTest,startup_test: löst den selbsttest aus,,,b509,0d0f01,value,,UCH,0=off;1=on,,
+r,,,TimerStartupTest,ZeitgliedStartupTest: aktuelle Selbsttestzeit,,,b509,0d1001,value,,UCH,,,
+r,,,TimerTestDesDuration,ZeitgliedTestDesDauer: in sec,,,b509,0d1101,value,,UIN,,,
+r,,,TimerTestAdsDuration,ZeitgliedTestAdsDauer: in sec,,,b509,0d1201,value,,UIN,,,
+r,,,StartupTestError,startup_test_fehler: zeigt Fehler im selbsttest an,,,b509,0d1301,value,,UCH,0=off;1=on,,
+w,,service,StartupTestError,startup_test_fehler: zeigt Fehler im selbsttest an,,,b509,0e1301,value,,UCH,0=off;1=on,,
+r,,,ExtChPump,ExtChPump: s. Mantis 7915,,,b509,0d1401,value,,UCH,0=off;1=on,,
+r,,,DTMax,Max_dT: für die berechnung von Tvmax,,,b509,0d1501,value,,D2C,,°C,temperature
+w,,service,DTMax,Max_dT: für die berechnung von Tvmax,,,b509,0e1501,value,,D2C,,°C,temperature
+r,,,DVTMax,Max_dVT: für die berechnung von Tvmax,,,b509,0d1601,value,,D2C,,°C,temperature
+r,,,StartupTestTempDelta,StartupTestTempDelta: Nötige Temp.differenz für selbsttest (Mantis 8022) in Kelvin,,,b509,0d1701,value,,UCH,,°C,temperature
+w,,service,StartupTestTempDelta,StartupTestTempDelta: Nötige Temp.differenz für selbsttest (Mantis 8022) in Kelvin,,,b509,0e1701,value,,UCH,,°C,temperature
+r,,,SMStartupTestState,SM_startup_test_state: mantis 8021,,,b509,0d1801,value,,UCH,,,
+r,,,DHROn,dHR_ein: delta-Rücklauftemp für SHU,,,b509,0d1901,value,,D2C,,°C,temperature
+w,,service,DHROn,dHR_ein: delta-Rücklauftemp für SHU,,,b509,0e1901,value,,D2C,,°C,temperature
+r,,,DTQuick,dT_schnell: Nötige Temp.differenz für sofortigen DHB (Mantis 8305),,,b509,0d1a01,value,,UCH,,,
+w,,service,DTQuick,dT_schnell: Nötige Temp.differenz für sofortigen DHB (Mantis 8305),,,b509,0e1a01,value,,UCH,,,

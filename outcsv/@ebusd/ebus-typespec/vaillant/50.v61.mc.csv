@@ -1,0 +1,110 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+*[id_sw],scan,,,,SW
+[id_sw<202]r,,,InternalOperatingMode430,InternalOperatingMode430,,,b509,0d3100,value,,UCH,0=off;1=manual;2=auto,,operation mode of the second heating circuit for 430
+[id_sw<202]w,,,InternalOperatingMode430,InternalOperatingMode430,,,b509,0e3100,value,,UCH,0=off;1=manual;2=auto,,operation mode of the second heating circuit for 430
+[id_sw>=202]r,,,InternalOperatingMode470,InternalOperatingMode470,,,b509,0d3100,value,,UCH,2=auto;3=on;4=night;5=summer,,operation mode of the second heating circuit for 470
+[id_sw>=202]w,,,InternalOperatingMode470,InternalOperatingMode470,,,b509,0e3100,value,,UCH,2=auto;3=on;4=night;5=summer,,operation mode of the second heating circuit for 470
+r,,,TempDesiredLow,DesiredLowTemperature: lowering temperature setpoint of the second heating circuit,,,b509,0d1300,value,,D1C,,°C,temperature
+w,,,TempDesiredLow,DesiredLowTemperature: lowering temperature setpoint of the second heating circuit,,,b509,0e1300,value,,D1C,,°C,temperature
+r,,,TempDesiredHigh,DesiredHighTemperature: day temperature setpoint of the second heating circuit,,,b509,0d3800,value,,D1C,,°C,temperature
+w,,,TempDesiredHigh,DesiredHighTemperature: day temperature setpoint of the second heating circuit,,,b509,0e3800,value,,D1C,,°C,temperature
+r,,,HolidayTempDesired,"DesiredHolidayTemperature: 4.5=frostprotect, holiday temperature of the second heating circuit",,,b509,0d1400,value,,D1C,,°C,temperature
+w,,,HolidayTempDesired,"DesiredHolidayTemperature: 4.5=frostprotect, holiday temperature of the second heating circuit",,,b509,0e1400,value,,D1C,,°C,temperature
+r,,,Hc2ManualOPRoomTempDesired,HC2_ManualOPRoomSetpoint: room setpoint in operation mode manual of the second heating circuit,,,b509,0d3400,value,,D1C,,°C,temperature
+w,,,Hc2ManualOPRoomTempDesired,HC2_ManualOPRoomSetpoint: room setpoint in operation mode manual of the second heating circuit,,,b509,0e3400,value,,D1C,,°C,temperature
+r,,,Hc2QuickVetoTemp,HC2_QuickVetoTemp: manual override setpoint of the second heating circuit,,,b509,0d3200,value,,D1C,,°C,temperature
+r,,,DisplayedRoomTempDesired,DisplayedRoomSetpoint,,,b509,0d4800,value,,D2C,,°C,temperature
+r,,,SunMoonInfo,"SunMoonInfo: (2 = sun, 4 = moon)",,,b509,0d4700,value,,UCH,,,
+r,,,Flow1Sensor,Flow1Sensor: second heating circuit's flow temperature and sensorstate,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,BoilerCircuitPump,BurnerCircuitPump: first heating circuit (burner circuit) pump's state,,,b509,0d2000,value,,UCH,0=off;1=on,,
+r,,,CirPump,CirculationPump: control state of the circulation respectively loading pump (functionality of the pump depends on the configuration),,,b509,0d0100,value,,UCH,0=off;1=on,,
+r,,,Hc1PumpKol1PP1Port,Hk1P_Kol1P_P1_Port: first heating circuit pump's state,,,b509,0d4200,value,,UCH,0=off;1=on,,
+r,,,Hc2PumpAlPort,Hk2P_Al_Port: second heating circuit (mixer circuit) pump's state,,,b509,0d4300,value,,UCH,0=off;1=on,,
+r,,,Mixer1DutyCycle,"Mixer1DutyCycle: velocity by which the mixer is driven to its end position (positive value: end position is open, negative value: end position is shut)",,,b509,0d0200,value,,SCH,,%,
+r,,,Mixer1State,Mixer1State: mixer's state,,,b509,0d0300,value,,UCH,,,
+r,,,Hc2CircuitType,HC2_CircuitType,,,b509,0d1e00,value,,UCH,0=disabled;1=mixing;2=zone,,type of the second heating circuit
+r,,,FlowTempMin,MinFlowTemp: lower limitation of the second heating circuit's flow temperature,,,b509,0d1000,value,,D1C,,°C,temperature
+w,,install,FlowTempMin,MinFlowTemp: lower limitation of the second heating circuit's flow temperature,,,b509,0e1000,value,,D1C,,°C,temperature
+r,,,FlowTempMax,MaxFlowTemp: upper limitation of the second heating circuit's flow temperature,,,b509,0d1100,value,,D1C,,°C,temperature
+w,,install,FlowTempMax,MaxFlowTemp: upper limitation of the second heating circuit's flow temperature,,,b509,0e1100,value,,D1C,,°C,temperature
+r,,,HeatingCurve,heating curve of the second heating circuit,,,b509,0d1500,value,,UIN,100,,Heating curve
+w,,install,HeatingCurve,heating curve of the second heating circuit,,,b509,0e1500,value,,UIN,100,,Heating curve
+r,,,Hc2RoomControlMode,HC2_RoomControlMode,,,b509,0d3500,value,,UCH,0=off;1=modulating;2=thermostat,,room temperature modulation of the second heating circuit
+w,,install,Hc2RoomControlMode,HC2_RoomControlMode,,,b509,0e3500,value,,UCH,0=off;1=modulating;2=thermostat,,room temperature modulation of the second heating circuit
+r,,,Hc2SummerOffset,"HC2_SummerOffset: summer offset of the second heating circuit (if outside temperature > room setpoint + summer offset => heating is OFF; applies to comfort and night setback setpoint; no influence if room temperature modulation is set to ""thermostat"")",,,b509,0d3700,value,,D1C,,K,
+w,,install,Hc2SummerOffset,"HC2_SummerOffset: summer offset of the second heating circuit (if outside temperature > room setpoint + summer offset => heating is OFF; applies to comfort and night setback setpoint; no influence if room temperature modulation is set to ""thermostat"")",,,b509,0e3700,value,,D1C,,K,
+r,,,AutoOffMode,AutoOFF_Mode,,,b509,0d1f00,value,,UCH,0=frostprotection;1=lowering;2=eco,,operation during the auto-off period
+w,,install,AutoOffMode,AutoOFF_Mode,,,b509,0e1f00,value,,UCH,0=frostprotection;1=lowering;2=eco,,operation during the auto-off period
+r,,,HcParallelStorageFillingEnabled,HcParallelTankFillingEnabled: enable parallel tank loading,,,b509,0d2d00,value,,UCH,0=off;1=on,,
+r,,,FlowTempDesired,Flow setpoint: flow temperature setpoint of the second heating circuit,,,b509,0d2200,value,,D1C,,°C,temperature
+r,,,FloorPavingDryingDay,FloorPavingDryingDay: active day of the floor pavement drying function,,,b509,0d1a00,value,,UCH,,,
+w,,install,FloorPavingDryingDay,FloorPavingDryingDay: active day of the floor pavement drying function,,,b509,0e1a00,value,,UCH,,,
+r,,,FloorPavingDryingTemp,FloorPavingDryingTemperature: flow temperature setpoint for the current day of floor pavement drying,,,b509,0d0400,value,,D1C,,°C,temperature
+r,,,Weekday,Weekday: current day of week,,,b509,0d0b00,value,,BDY,,,weekday
+r,,,Date,current date,,,b509,0d0a00,value,,HDA:3,,,date
+r,,,Time,current time,,,b509,0d0900,value,,VTI,,,time
+r,,,ActualTempDesired,ActualDesiredTemp: current setpoint for the second heating circuit considering all basic conditions passed to the control algorithms,,,b509,0d2f00,value,,D1C,,°C,temperature
+r,,,DayNightState,"DayNightState: 0 = day, 1 = night",,,b509,0d5000,value,,UCH,,,
+r,,,FrostProtectDelay,FrostProtectDelay: delay before frost protection is activated,,,b509,0d2500,value,,UCH,,h,hours
+r,,,HcPumpIdlePeriod,"HcPumpIdlePeriod: 0=off, heating circuit pump's maximum blocking time for pump's energy saving function",,,b509,0d2800,value,,UCH,,,
+r,,,PreheatingMinutesMax,"MaxPreheatingMinutes: in steps of 10, maximum time of enabling the heating before the heating time window starts",,,b509,0d2400,value,,UIN,,,
+r,,,BoilerMaxPreShutdown,"BoilerMaxPreShutdown: in steps of 10, maximum time of starting the lowering operation before the heating time window ends",,,b509,0d1800,value,,UCH,,,
+r,,,Hc2ContinuosHeating,"HC2_ContinuosHeating: -26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)",,,b509,0d3600,value,,SCH,,,
+r,,,HcFlowIncrease,HcFlowIncrease: excess temperature (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range),,,b509,0d1900,value,,D1C,,K,
+r,,,IsInHoliday,Holiday function active,,,b509,0d0800,value,,UCH,0=no;1=yes,,
+r,,,IsInOneDayHoliday,IsInOneDayHoliday: indicates that the VR61 is in one day holiday mode,,,b509,0d5600,value,,UCH,0=no;1=yes,,
+r,,,IsInBankHoliday,IsInBankHoliday: indicates that the VR61 is in bank holiday mode,,,b509,0d5300,value,,UCH,0=no;1=yes,,
+r,,,IsInOneDayBankHoliday,IsInOneDayBankHoliday: indicates that the VR61 is in one day bank holiday mode,,,b509,0d5200,value,,UCH,0=no;1=yes,,
+r,,,IsInParty,IsInParty,,,b509,0d5500,value,,UCH,0=no;1=yes,,
+r,,,IsInImpactVentilation,IsInImpactVentilation: indicates that the VR61 is in impact ventilation mode,,,b509,0d5700,value,,UCH,0=no;1=yes,,
+r,,,IsInSystemOff,IsInSystemOff: indicates that the VR61 is in system off mode,,,b509,0d5400,value,,UCH,0=no;1=yes,,
+r,,,Hc2QuickVetoActive,HC2_QuickVetoActive: manual override of the second heating circuit enabled,,,b509,0d3300,value,,UCH,0=no;1=yes,,
+r,,,HcPreHeatingActive,HcPreHeatingActive: bit-array where a set bit indicates that preheating is active for the corresponding heating circuit,,,b509,0d2a00,value,,UCH,0=no;1=yes,,
+r,,,HcPreShutdownActive,HcPreShutdownActive: bit-array where a set bit indicates that early cut off is active for the corresponding heating circuit,,,b509,0d2900,value,,UCH,0=no;1=yes,,
+r,,,HcPumpIdlePeriodActive,HcPumpIdlePeriodActive: bit-array where a set bit indicates that pump's energy saving function is active for the corresponding heating circuit,,,b509,0d2b00,value,,UCH,0=no;1=yes,,
+r,,,MonitorEEpromInconsCnt,MonitorEEpromInkonsiNumber,,,b509,0d4600,value,,HEX:8,,,identification of the last eight EEPROM inconsistencies
+r,,,Hc2aLegPumpP2Port,Hk2a_LegP_P2_Port: port: open mixer,,,b509,0d4400,value,,UCH,0=off;1=on,,
+r,,,Hc2zPort,Hk2z_Port: port: close mixer,,,b509,0d4500,value,,UCH,0=off;1=on,,
+r,,,Hc2pDemand,Hk2pDemand,,,b509,0d4900,value,,UCH,0=off;1=on,,
+r,,,SfState,"SfState: 0 = _SfsNone, 1 = _SfsForceConsumption, 2 = _SfsFloorPavingDrying, 3 = _SfsSummerSwitchOff, 4 =_SfsTankFilling",,,b509,0d4a00,value,,UCH,,,
+r,,,PsTempDesired,PsSetpoint,,,b509,0d4c00,value,,D2C,,°C,temperature
+r,,,PumpSavingState,"PumpSavingState: 0 = _PssInactive, 1 = _PssMonitoring, 2 = _PssCounting, 3 = _PssPostrun, 4 = _PssSaving",,,b509,0d4d00,value,,UCH,,,
+r,,,OffConfig,"0 = _OffConfig_Off, 1 = _OffConfig_Low",,,b509,0d4e00,value,,UCH,,,
+r,,,FrostProtConfig,"0 = _FrostProtConfig_Low, 1 = _FrostProtConfig_PumpKick",,,b509,0d4f00,value,,UCH,,,
+r,,,FrostProtState,"FrostProtState: 0 = _Fps_NoFrost, 1 = _Fps_Delay, 2 = _Fps_PumpKick, 3 = _Fps_KickOff, 4 = _Fps_Active",,,b509,0d4b00,value,,UCH,,,
+r,,,ThermostatState,"ThermostatState: 0 = _ThermOn, 1 =_ThermOff",,,b509,0d5100,value,,UCH,,,
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
+r,,,HcTimer_Monday,Periods Monday,,,b515,0000,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,HcTimer_Monday,Periods Monday,,,b515,0000,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,HcTimer_Tuesday,Periods Tuesday,,,b515,0100,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,HcTimer_Tuesday,Periods Tuesday,,,b515,0100,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,HcTimer_Wednesday,Periods Wednesday,,,b515,0200,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,HcTimer_Wednesday,Periods Wednesday,,,b515,0200,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,HcTimer_Thursday,Periods Thursday,,,b515,0300,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,HcTimer_Thursday,Periods Thursday,,,b515,0300,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,HcTimer_Friday,Periods Friday,,,b515,0400,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,HcTimer_Friday,Periods Friday,,,b515,0400,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,HcTimer_Saturday,Periods Saturday,,,b515,0500,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,HcTimer_Saturday,Periods Saturday,,,b515,0500,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,HcTimer_Sunday,Periods Sunday,,,b515,0600,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,HcTimer_Sunday,Periods Sunday,,,b515,0600,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Setpoints_Monday,Temperatures Monday,,,b504,1901,ign,,IGN:1,,,,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,,Setpoints_Monday,Temperatures Monday,,,b505,2e01,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+r,,,Setpoints_Tuesday,Temperatures Tuesday,,,b504,1902,ign,,IGN:1,,,,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,,Setpoints_Tuesday,Temperatures Tuesday,,,b505,2e02,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+r,,,Setpoints_Wednesday,Temperatures Wednesday,,,b504,1903,ign,,IGN:1,,,,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,,Setpoints_Wednesday,Temperatures Wednesday,,,b505,2e03,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+r,,,Setpoints_Thursday,Temperatures Thursday,,,b504,1904,ign,,IGN:1,,,,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,,Setpoints_Thursday,Temperatures Thursday,,,b505,2e04,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+r,,,Setpoints_Friday,Temperatures Friday,,,b504,1905,ign,,IGN:1,,,,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,,Setpoints_Friday,Temperatures Friday,,,b505,2e05,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+r,,,Setpoints_Saturday,Temperatures Saturday,,,b504,1906,ign,,IGN:1,,,,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,,Setpoints_Saturday,Temperatures Saturday,,,b505,2e06,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+r,,,Setpoints_Sunday,Temperatures Sunday,,,b504,1907,ign,,IGN:1,,,,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,,Setpoints_Sunday,Temperatures Sunday,,,b505,2e07,temp,,D1C,,°C,temperature,temp_1,,D1C,,°C,temperature,temp_2,,D1C,,°C,temperature
+w,,install,Iotest,I/O test,,,b506,02,value,,UCH,1=off_cirpump;2=hcpump;4=hc2mixeropen;8=hc2mixerclose;16=hc2pump,,
+w,,install,Ioteststop,stop I/O test,,,b506,01,

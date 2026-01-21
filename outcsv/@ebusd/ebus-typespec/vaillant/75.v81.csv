@@ -1,0 +1,28 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,DisplayedRoomTemp,DisplayedRoomTemp: displayed room temperature,,,b509,0d1b00,value,,D2C,,°C,temperature
+r,,,RoomTemp,RaumtemperaturIst: raw value current room temperature and sensorstate (without any correction),,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,DesiredHcRoomTempDesired,DesiredHCRoomSetPoint: current room setpoint,,,b509,0d1d00,value,,D2C,,°C,temperature
+r,,,HcRoomTempDesiredAdjustable,HCRoomSetPointAdjustable: room temperature setpoint is currently adjustable,,,b509,0d1e00,value,,UCH,0=no;1=yes,,
+r,,,HcActiveSpecialFunction,"HCActiveSpecialFunction: if unequal zero a special function (e.g. holidays, floor pavement drying …) has been activated",,,b509,0d1f00,value,,UCH,,,
+r,,,OperatingMode430,OperatingMode430,,,b509,0d0400,value,,UCH,0=off;1=manual;2=auto,,operation mode of the heating circuit for 430
+w,,,OperatingMode430,OperatingMode430,,,b509,0e0400,value,,UCH,0=off;1=manual;2=auto,,operation mode of the heating circuit for 430
+r,,,SelectedHc,SelectedHeatCircuit: number of heating circuit to which this remote control is assigned,,,b509,0d1c00,value,,UCH,,,
+r,,,RoomTempOffset,RaumtemperaturIstOffset: room temperature correction,,,b509,0d0200,value,,D2C,,°C,temperature
+w,,,RoomTempOffset,RaumtemperaturIstOffset: room temperature correction,,,b509,0e0200,value,,D2C,,°C,temperature
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm: room temperature intrinsic heating offset,,,b509,0d0100,value,,D2C,,°C,temperature
+r,,,StackeBUSTaskMax,MaxStackeBUSTask: maximum number of bytes needed for the eBUS task stack,,,b509,0d0c00,value,,UCH,,,
+r,,,StackMainTaskMax,MaxStackMainTask: maximum number of bytes needed for the main task stack,,,b509,0d0d00,value,,UCH,,,
+r,,,StackLifeCheckTaskMax,MaxStackLifeCheckTask: maximum number of bytes needed for the life check task stack,,,b509,0d0e00,value,,UCH,,,
+r,,,Variant,Variant,,,b509,0d0f00,uin,,UIN,,,identifier for the variant,uin_1,,UIN,,,
+r,,,EBUSCRC,eBUS_CRC: last calculated eBUS CRC,,,b509,0d1000,value,,UCH,,,
+r,,,EBUSFifoDiffCntMax,eBUSFifoDiffCntMax: max. eBUS-fifo level,,,b509,0d1100,value,,UCH,,,
+r,,,EEpromMaxInconsCnt,EEpromMaxInkonsCnt: EEPROM inconsistency counter,,,b509,0d1300,value,,UIN,,,
+r,,,POCResetCnt,POCResetCnt: power on resets,,,b509,0d1400,value,,UIN,,,
+r,,,WDResetCnt,WDResetCnt: watchdog resets,,,b509,0d1500,value,,UIN,,,
+r,,,LVResetCnt,LVResetCnt: low voltage resets,,,b509,0d1600,value,,UIN,,,
+r,,,CMResetCnt,CMResetCnt: clock monitor resets,,,b509,0d1700,value,,UIN,,,
+r,,,COMErrorCnt,COMErrorCnt: eBUS-communication errors,,,b509,0d1800,value,,UIN,,,
+r,,,VariantDKRefreshCnt,VariantDKRefreshCnt: counts how often variant ID has been corrected,,,b509,0d1900,value,,UCH,,,
+r,,,FiFoResetCnt,FiFoResetCnt: counter how often eBUS Fifo was cleared,,,b509,0d1a00,value,,UCH,,,

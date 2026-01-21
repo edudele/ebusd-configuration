@@ -1,0 +1,22 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,SolCollPumpDcIntegrator,SolarCollPumpDcIntegrator: -50..50,,,b509,0dcb00,value,,SIN,,,
+r,,,SolEnableDiffTemp,SolEnableDiffTemp: 5..12K / 1K Auflösung,,,b509,0dcd00,value,,UCH,,°C,temperature
+w,,service,SolEnableDiffTemp,SolEnableDiffTemp: 5..12K / 1K Auflösung,,,b509,0ecd00,value,,UCH,,°C,temperature
+r,,,SolDisableDiffTemp,SolDisableDiffTemp: 1..10K / 1K Auflösung,,,b509,0dce00,value,,UCH,,°C,temperature
+w,,service,SolDisableDiffTemp,SolDisableDiffTemp: 1..10K / 1K Auflösung,,,b509,0ece00,value,,UCH,,°C,temperature
+r,,,SolHwcMaxLoadTemp,SolDhwMaxLoadTemp: 35..80°C / 1°C,,,b509,0dcf00,value,,UCH,,°C,temperature
+w,,service,SolHwcMaxLoadTemp,SolDhwMaxLoadTemp: 35..80°C / 1°C,,,b509,0ecf00,value,,UCH,,°C,temperature
+r,,,SolConfigFlags,SolarConfigFlags,,,b509,0dd000,value,,UCH,,,
+r,,,SolCollPumpED,SolarCollectorPumpED: 0..100%,,,b509,0dd100,value,,UCH,,,
+r,,,CollPumpSRuntime,CollectorPumpSRuntime: runtime in seconds base for runtime in hours,,,b509,0dd200,value,,UIN,,,
+w,,service,CollPumpSRuntime,CollectorPumpSRuntime: runtime in seconds base for runtime in hours,,,b509,0ed200,value,,UIN,,,
+r,,,CollPumpHRuntime,CollectorPumpHRuntime: runtime in hours,,,b509,0dd300,value,,UIN,,,
+w,,service,CollPumpHRuntime,CollectorPumpHRuntime: runtime in hours,,,b509,0ed300,value,,UIN,,,
+r,,,YieldMinute,SolarYieldMinute: nur Summe von dT ohne Volumenstrom nur mit PWM,,,b509,0dd400,value,,UIN,,,
+w,,service,YieldMinute,SolarYieldMinute: nur Summe von dT ohne Volumenstrom nur mit PWM,,,b509,0ed400,value,,UIN,,,
+r,,,Yield,SolarYieldKw: um den Wert in KW zu bekommenmuß gerechnet werden:kW=x*SolarVolumnFlowUser*c,,,b509,0dd500,value,,UIN,,,
+w,,service,Yield,SolarYieldKw: um den Wert in KW zu bekommenmuß gerechnet werden:kW=x*SolarVolumnFlowUser*c,,,b509,0ed500,value,,UIN,,,
+r,,,SolFlowRate,SolarFlowRate: 0..20l/h Wert des Taco-Setters für Ertragsermittlung,,,b509,0dd600,value,,UIN,,,
+w,,service,SolFlowRate,SolarFlowRate: 0..20l/h Wert des Taco-Setters für Ertragsermittlung,,,b509,0ed600,value,,UIN,,,

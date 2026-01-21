@@ -1,0 +1,89 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,Storage1Sensor,Cyl. temp. probe 1,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,install,Storage1Sensor,Cyl. temp. probe 1,,,b509,0e0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Storage2Sensor,Cyl. temp. probe 2,,,b509,0d0100,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,install,Storage2Sensor,Cyl. temp. probe 2,,,b509,0e0100,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Storage3Sensor,Cyl. temp. probe 3,,,b509,0d0200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,install,Storage3Sensor,Cyl. temp. probe 3,,,b509,0e0200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Coll1Sensor,Solar panel temp. 1,,,b509,0d0300,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,install,Coll1Sensor,Solar panel temp. 1,,,b509,0e0300,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Coll2Sensor,Solar panel temp. 2,,,b509,0d0400,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,install,Coll2Sensor,Solar panel temp. 2,,,b509,0e0400,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,YieldSensor,Solar gain probe,,,b509,0d0500,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,install,YieldSensor,Solar gain probe,,,b509,0e0500,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,CollPump1,Status solar panel pump 1,,,b509,0d0600,value,,UCH,0=off;1=on,,
+w,,install,CollPump1,Status solar panel pump 1,,,b509,0e0600,value,,UCH,0=off;1=on,,
+r,,,CollPump1ActualPower,Current power solar pumps,,,b509,0d0700,value,,UIN,,%,,ignore,,IGN,,,
+w,,install,CollPump1ActualPower,Current power solar pumps,,,b509,0e0700,value,,UIN,,%,,ignore,,IGN,,,
+r,,,CollPump2,Status solar panel pump 2,,,b509,0d0800,value,,UCH,0=off;1=on,,
+w,,install,CollPump2,Status solar panel pump 2,,,b509,0e0800,value,,UCH,0=off;1=on,,
+r,,,ThreeWayValve1,UV 1,,,b509,0d0900,value,,UCH,0=off;1=on,,
+w,,install,ThreeWayValve1,UV 1,,,b509,0e0900,value,,UCH,0=off;1=on,,
+r,,,LegioPump,Status legionella pump,,,b509,0d0a00,value,,UCH,0=off;1=on,,
+w,,install,LegioPump,Status legionella pump,,,b509,0e0a00,value,,UCH,0=off;1=on,,
+r,,,CirPump,Circulation pump,,,b509,0d0b00,value,,UCH,0=off;1=on,,
+w,,install,CirPump,Circulation pump,,,b509,0e0b00,value,,UCH,0=off;1=on,,
+r,,,ElectronicCartridge,Status electrical heater,,,b509,0d0c00,value,,UCH,0=off;1=on,,
+w,,install,ElectronicCartridge,Status electrical heater,,,b509,0e0c00,value,,UCH,0=off;1=on,,
+r,,,C1C2,Status C1/C2,,,b509,0d0d00,value,,UCH,0=off;1=on,,
+w,,install,C1C2,Status C1/C2,,,b509,0e0d00,value,,UCH,0=off;1=on,,
+r,,,BypassValve,Bypass valve,,,b509,0d0e00,value,,UCH,0=off;1=on,,
+w,,install,BypassValve,Bypass valve,,,b509,0e0e00,value,,UCH,0=off;1=on,,
+r,,,ActualTempDesired,Target temperature,,,b509,0d1400,value,,D1C,,°C,temperature
+w,,install,ActualTempDesired,Target temperature,,,b509,0e1400,value,,D1C,,°C,temperature
+r,,,OperatingMode,Operation mode,,,b509,0d1500,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+w,,install,OperatingMode,Operation mode,,,b509,0e1500,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+r,,,Weekday,Day of week,,,b509,0d1600,value,,BDY,,,weekday
+w,,install,Weekday,Day of week,,,b509,0e1600,value,,BDY,,,weekday
+r,,,Time,time,,,b509,0d1700,value,,VTI,,,time
+w,,install,Time,time,,,b509,0e1700,value,,VTI,,,time
+r1,,,Yield,Solar gain,,,b509,0d1e00,value,,UIN,,,
+w,,install,Yield,Solar gain,,,b509,0e1e00,value,,UIN,,,
+r1,,,CollPumpHours,Operation time solar pump,,,b509,0d1f00,value,,ULG,,h,hours
+w,,install,CollPumpHours,Operation time solar pump,,,b509,0e1f00,value,,ULG,,h,hours
+r,,,Date,date,,,b509,0d2000,value,,HDA:3,,,date
+w,,install,Date,date,,,b509,0e2000,value,,HDA:3,,,date
+r,,,IsInHoliday,Holiday,,,b509,0d2800,value,,UCH,,,
+w,,install,IsInHoliday,Holiday,,,b509,0e2800,value,,UCH,,,
+r,,,IsInParty,override (partyfunction),,,b509,0d2900,value,,UCH,0=off;1=on,,
+w,,install,IsInParty,override (partyfunction),,,b509,0e2900,value,,UCH,0=off;1=on,,
+r,,,IsInSingleHwcLoading,cylinder boost,,,b509,0d2a00,value,,UCH,0=off;1=on,,
+w,,install,IsInSingleHwcLoading,cylinder boost,,,b509,0e2a00,value,,UCH,0=off;1=on,,
+r,,,HydraulicScheme,Hzdraulic plan,,,b509,0d3d00,value,,UCH,,,
+w,,install,HydraulicScheme,Hzdraulic plan,,,b509,0e3d00,value,,UCH,,,
+r,,,SolHwcMaxLoadTemp,Max. temp. solar cylinder,,,b509,0d3e00,value,,UCH,,°C,temperature,ignore,,IGN,,,
+w,,install,SolHwcMaxLoadTemp,Max. temp. solar cylinder,,,b509,0e3e00,value,,UCH,,°C,temperature,ignore,,IGN,,,
+r,,,SolEnableDiffTemp,Switch-on diff. solar cyl.,,,b509,0d3f00,value,,UCH,,K,,ignore,,IGN,,,
+w,,install,SolEnableDiffTemp,Switch-on diff. solar cyl.,,,b509,0e3f00,value,,UCH,,K,,ignore,,IGN,,,
+r,,,SolDisableDiffTemp,Switch/off diff. solar cyl.,,,b509,0d4000,value,,UCH,,K,,ignore,,IGN,,,
+w,,install,SolDisableDiffTemp,Switch/off diff. solar cyl.,,,b509,0e4000,value,,UCH,,K,,ignore,,IGN,,,
+r,,,LegioProtectionEnabled,Legionella protection,,,b509,0d4100,value,,UCH,,,
+w,,install,LegioProtectionEnabled,Legionella protection,,,b509,0e4100,value,,UCH,,,
+r,,,StartTimeFillingMode,Starting time filling mode (tFIL),,,b509,0d4200,value,,UCH,,,
+w,,install,StartTimeFillingMode,Starting time filling mode (tFIL),,,b509,0e4200,value,,UCH,,,
+r,,,StartTimeOperatingMode,Starting time operatiion mode (tOP),,,b509,0d4300,value,,UCH,,,
+w,,install,StartTimeOperatingMode,Starting time operatiion mode (tOP),,,b509,0e4300,value,,UCH,,,
+r,,,NumCollPanels,No. of solar panels,,,b509,0d4400,value,,UCH,,,
+w,,install,NumCollPanels,No. of solar panels,,,b509,0e4400,value,,UCH,,,
+r,,,SolPumpBlockingTime,Blocking time solar pumps (tBLK),,,b509,0d4500,value,,UCH,,,
+w,,install,SolPumpBlockingTime,Blocking time solar pumps (tBLK),,,b509,0e4500,value,,UCH,,,
+r,,,HwcLoadingDelay,Re-charge delay,,,b509,0d4600,value,,UCH,0=off;1=on,,
+w,,install,HwcLoadingDelay,Re-charge delay,,,b509,0e4600,value,,UCH,0=off;1=on,,
+r,,,SolFlowRate,Solar flow rate [l/h],,,b509,0d4700,value,,UIN,,,
+w,,install,SolFlowRate,Solar flow rate [l/h],,,b509,0e4700,value,,UIN,,,
+r,,,SolEDEnable,Solarpump durat.ratio ctrl,,,b509,0d4800,value,,UCH,0=off;1=on,,
+w,,install,SolEDEnable,Solarpump durat.ratio ctrl,,,b509,0e4800,value,,UCH,0=off;1=on,,
+r,,,ResetYield,Reset solar gain,,,b509,0d4900,value,,UCH,0=off;1=on,,
+w,,install,ResetYield,Reset solar gain,,,b509,0e4900,value,,UCH,0=off;1=on,,
+r,,,ResetOperatingTimes,Reset operation hours,,,b509,0d4a00,value,,UCH,0=off;1=on,,
+w,,install,ResetOperatingTimes,Reset operation hours,,,b509,0e4a00,value,,UCH,0=off;1=on,,
+r,,,SolPumpPower,Power solar pump [%],,,b509,0d4b00,value,,UCH,,kW,
+w,,install,SolPumpPower,Power solar pump [%],,,b509,0e4b00,value,,UCH,,kW,
+r,,,DisableAutoSync,De-activation autosync,,,b509,0d5100,value,,UCH,0=off;1=on,,
+w,,install,DisableAutoSync,De-activation autosync,,,b509,0e5100,value,,UCH,0=off;1=on,,
+r,,,SolEnableDiffTempMin,Min. switch-on diff. solar cylinder [K],,,b509,0d5200,value,,HEX:2,,,
+w,,install,SolEnableDiffTempMin,Min. switch-on diff. solar cylinder [K],,,b509,0e5200,value,,HEX:2,,,
+r,,,SolEnableDiffTempMax,Max. switch-on diff. solar cylinder [K],,,b509,0d5300,value,,HEX:2,,,
+w,,install,SolEnableDiffTempMax,Max. switch-on diff. solar cylinder [K],,,b509,0e5300,value,,HEX:2,,,

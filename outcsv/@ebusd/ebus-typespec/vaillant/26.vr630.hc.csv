@@ -1,0 +1,71 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+*uw,
+*[id_sw],scan,,,,SW
+[id_sw<=400]r,,,HcMaxPreHeating,Max. Voraufheizung,,,b509,0d3800,value,,UCH,,h,hours
+[id_sw<=400]w,,,HcMaxPreHeating,Max. Voraufheizung,,,b509,0e3800,value,,UCH,,h,hours
+[id_sw>=401]r,,,HcMaxPreHeating,Max. Voraufheizung,,,b509,0d3800,value,,UCH,-5,min,minutes
+[id_sw>=401]w,,install,HcMaxPreHeating,Max. Voraufheizung,,,b509,0e3800,value,,UCH,-5,min,minutes
+r,,,StatPowerOn,StatPowerOn,,,b509,0dcc00,value,,UIN,,,
+r,,,StatOperatingHours,StatOperatingHours,,,b509,0dcd00,value,,UIN,,h,hours
+r,,,StatMonthOfInstallation,StatMonthOfInstallation,,,b509,0dce00,value,,UCH,,,
+r,,,StatYearOfInstallation,StatYearOfInstallation,,,b509,0dcf00,value,,UCH,,,
+r,,,Stat15MinBusTimeout,Stat15MinBusTimeout,,,b509,0dd000,value,,UCH,,,
+r,,,StatRTOSErrorcode,StatRTOSErrorcode,,,b509,0dd100,value,,UIN,,,
+r,,,StatRestarts,StatRestarts,,,b509,0dd200,value,,UIN,,,start count
+r,,,StatRTOSErrorCounter,StatRTOSErrorCounter,,,b509,0dd300,value,,UIN,,,
+r,,,SumFlowSensor,Vorlauftemp. IST,,,b509,0d0400,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,OutsideTemp,Außentemperatur,,,b509,0d0600,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,FlowTempDesired,Vorlauftemp. SOLL,,,b509,0d4600,value,,D1C,,°C,temperature
+r,,,TeleSwitch,TeleSwitch,,,b509,0d0a00,value,,UCH,0=off;1=on,,
+r,,,IsInHoliday,Ferienmodus aktiv,,,b509,0d2700,value,,UCH,,,
+r,,,IsInStorageFilling,Abschaltung wegen Speicherladung,,,b509,0d4700,value,,UCH,0=no;1=yes,,
+r,,,CleaningLady,Sparfunktion,,,b509,0d4b00,value,,UCH,,,
+r,,,IsInParty,Partymodus aktiv,,,b509,0d4e00,value,,UCH,,,
+r,,,Hc1PumpPort,Pump Status,,,b509,0d8e00,value,,UCH,0=off;1=on,,
+r,,,OtShutdownLimit,AT-Abschaltgrenze,,,b509,0d3600,value,,UCH,,°C,desired temperature
+w,,,OtShutdownLimit,AT-Abschaltgrenze,,,b509,0e3600,value,,UCH,,°C,desired temperature
+r,,,FlowTempMin,Minimaltemperatur,,,b509,0d3000,value,,UCH,,°C,temperature
+w,,,FlowTempMin,Minimaltemperatur,,,b509,0e3000,value,,UCH,,°C,temperature
+r,,,TempDesiredLow,Absenktemperatur,,,b509,0d3300,value,,D1C,,°C,temperature
+w,,,TempDesiredLow,Absenktemperatur,,,b509,0e3300,value,,D1C,,°C,temperature
+r,,,BoilerCircuitDisabled,Kreis deaktivieren,,,b509,0daa00,value,,UCH,0=no;1=yes,,
+w,,install,BoilerCircuitDisabled,Kreis deaktivieren,,,b509,0eaa00,value,,UCH,0=no;1=yes,,
+r,,,OperatingMode,Operation mode,,,b509,0d2b00,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+w,,,OperatingMode,Operation mode,,,b509,0e2b00,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+r,,,FlowTempMax,Maximaltemperatur,,,b509,0d3100,value,,UCH,,°C,temperature
+w,,,FlowTempMax,Maximaltemperatur,,,b509,0e3100,value,,UCH,,°C,temperature
+r,,,TempDesired,Solltemperatur,,,b509,0d3200,value,,D1C,,°C,temperature
+w,,,TempDesired,Solltemperatur,,,b509,0e3200,value,,D1C,,°C,temperature
+r,,,HeatingCurve,Heating curve,,,b509,0d3500,value,,UIN,100,,Heating curve
+w,,,HeatingCurve,Heating curve,,,b509,0e3500,value,,UIN,100,,Heating curve
+r,,,TeleswitchOperatingMode,TeleSwitch,,,b509,0d3f00,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+w,,,TeleswitchOperatingMode,TeleSwitch,,,b509,0e3f00,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp,,D2B,,°C,temperature
+r,,,Status16,outside temperature,,,b504,16,value,,D2C,,°C,temperature
+uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,disablehc,,BI0,,,,disablehwctapping,,BI1,,,,disablehwcload,,BI2,,,,ign_1,,IGN:1,,,,remotecontrolhcpump,,BI0,,,,releasebackup,,BI1,,,,releasecooling,,BI2,,,
+w,,install,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,disablehc,,BI0,,,,disablehwctapping,,BI1,,,,disablehwcload,,BI2,,,,ign_1,,IGN:1,,,,remotecontrolhcpump,,BI0,,,,releasebackup,,BI1,,,,releasecooling,,BI2,,,
+r,,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatur/Speichertemperatur/Pumpenstatus,,,b511,01,temp,,D1C,,°C,flow temperature,temp_1,,D1C,,°C,return temperature,temp_2,,D2B,,°C,outside temperature,temp_3,,D1C,,°C,hot water temperature,temp_4,,D1C,,°C,storage temperature,pumpstate,,UCH,0=off;1=on;2=overrun;4=hwc,,pump status
+r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/ReglerCurrentTemp,,,b511,02,hwcmode,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode,temp,,UCH,,°C,max temperature,temp_1,,D1C,,°C,current temperature,temp_2,,UCH,,°C,max temperature,temp_3,,D1C,,°C,current temperature
+r,,,Status,Status,,,b511,03,temp,,D2C,,°C,temperature,press,,FLT,,bar,pressure,press_1,,FLT,,bar,pressure,hcmode,,UCH,0=off;1=cooling;3=heat;4=water,,boiler mode,hex,,HEX,,,
+uw,,,StatusCirPump,Status circulation pump,,,b512,00,value,,UCH,0=off;100=on,,
+r,,,Timer_Monday,Periods Monday,,,b504,02,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Monday,Periods Monday,,,b505,0901,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Tuesday,Periods Tuesday,,,b504,03,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Tuesday,Periods Tuesday,,,b505,0902,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Wednesday,Periods Wednesday,,,b504,04,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Wednesday,Periods Wednesday,,,b505,0903,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Thursday,Periods Thursday,,,b504,05,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Thursday,Periods Thursday,,,b505,0904,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Friday,Periods Friday,,,b504,06,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Friday,Periods Friday,,,b505,0905,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Saturday,Periods Saturday,,,b504,07,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Saturday,Periods Saturday,,,b505,0906,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+r,,,Timer_Sunday,Periods Sunday,,,b504,08,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,,Timer_Sunday,Periods Sunday,,,b505,0907,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
+w,,install,Iotest,I/O test,,,b506,02,value,,UCH,0=valve1;1=cirpump;2=pump1;3=hc2mixeropen;4=hc2mixerclose;5=hc2pump;6=hc3mixeropen;7=hc3mixerclose;8=hc3pump;9=level1;10=level2;11=av;12=c1c2,,
+w,,install,Ioteststop,stop I/O test,,,b506,01,
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

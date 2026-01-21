@@ -1,0 +1,5 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*uw,
+uw,,,Yields,Ertrag,,,5018,,power,,D2B,,,Solarleistung,yieldday,,UIN,,,Ertrag Tag,yieldsum,,UIN,,,Summe Ertrag,yieldm,,UCH,,,Summe Ertrag M
+uw,,,Status,Status,,,5017,,pump,,UCH,188=off;189=on,,Solar Pumpe,ign,,IGN:1,,,,collectortemp,,D2C,,°C,Kollektortemperatur,hwcsolartemp,,D2C,,°C,Solartemperatur Warmwasser
+uw,,,Operation,Operation,,,5014,,status,,HEX,,,Status Solar,ign,,IGN:1,,,,hctempdesired,,D2B,,°C,Mischer Solltemperatur,roomtemp,,D1C,,°C,Raumtemperatur,hwctempdesired,,D1C,,°C,Warmwasser Solltemperatur

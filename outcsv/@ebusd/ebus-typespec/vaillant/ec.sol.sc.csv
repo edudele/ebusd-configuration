@@ -1,0 +1,76 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,Col,KOL: value and sensorstate of the collector sensor,,,b509,0d0400,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,SP1,value and sensorstate of upper tank temperature sensor SP1,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,SP2,value and sensorstate of lower tank temperature sensor SP2,,,b509,0d0100,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,D1Temp,value and sensorstate of middle tank temperature sensor TD1,,,b509,0d0200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,D2Temp,value and sensorstate of the system's return flow sensor TD2,,,b509,0d0800,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,SolGain,Sensor Solarertrag: value and sensorstate of the solar gain sensor,,,b509,0d0300,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,SolOperationMode,"SolarOperationMode: solar operation mode (permanently on, off)",,,b509,0d3600,value,,UCH,0=off;1=on,,
+r,,,CollPump,CollectorPump: collector pump's state,,,b509,0d0600,value,,UCH,0=off;1=on,,
+r,,,RuntimeCollPump,RuntimeCollectorPump: accumulated runtime of the collector pump,,,b509,0d2a00,value,,UIN,,h,hours
+r,,,RuntimeCollPumpSeconds,RuntimeCollectorPumpSeconds: runtime in seconds base for runtime in hours,,,b509,0d2900,value,,UIN,,,
+r,,,KickFunction,KickFunction: enable kick function,,,b509,0d3200,value,,UCH,0=off;1=on,,
+w,,install,KickFunction,KickFunction: enable kick function,,,b509,0e3200,value,,UCH,0=off;1=on,,
+r,,,ColKickPumpTime,ColKickPumpTime: time pump is running when collector kick function is activated,,,b509,0d3b00,value,,UCH,,s,seconds
+r,,,ColKickTempDelta,ColKickTempDelta: temperature difference necessary for activating the pump kick,,,b509,0d3c00,value,,UCH,,°C,temperature
+r,,,FlowRate,FlowRate,,,b509,0d2d00,value,,SIN,10,l/min,chosen flow rate of the collector pump (to calculate solar gain)
+w,,install,FlowRate,FlowRate,,,b509,0e2d00,value,,SIN,10,l/min,chosen flow rate of the collector pump (to calculate solar gain)
+r,,,SolCollPumpDcIntegrator,SolarCollPumpDcIntegrator: integral part of the solar collector pump's control if duty ratio control is active,,,b509,0d1900,value,,SIN,,,
+r,,,MaximalTemp,MaximalTemperature: solar storage 1 maximum temperature for solar charge,,,b509,0d2600,value,,UCH,,°C,temperature
+w,,install,MaximalTemp,MaximalTemperature: solar storage 1 maximum temperature for solar charge,,,b509,0e2600,value,,UCH,,°C,temperature
+r,,,TempDifferenceOn,TempDifferenceEIN: solar difference control's switch on temperature of storage 1,,,b509,0d2400,value,,UCH,,°C,temperature
+w,,install,TempDifferenceOn,TempDifferenceEIN: solar difference control's switch on temperature of storage 1,,,b509,0e2400,value,,UCH,,°C,temperature
+r,,,TempDifferenceOff,TempDifferenceAUS: solar difference control's switch off temperature of storage 1,,,b509,0d2500,value,,UCH,,°C,temperature
+w,,install,TempDifferenceOff,TempDifferenceAUS: solar difference control's switch off temperature of storage 1,,,b509,0e2500,value,,UCH,,°C,temperature
+r,,,MaximalTemp2,MaximalTemperature2: maximum temperature for solar charge of storage 2,,,b509,0d2630,value,,UCH,,°C,temperature
+w,,install,MaximalTemp2,MaximalTemperature2: maximum temperature for solar charge of storage 2,,,b509,0e2630,value,,UCH,,°C,temperature
+r,,,TempDifferenceOn2,TempDifferenceEIN2: solar difference control's switch on temperature of storage 2,,,b509,0d2430,value,,UCH,,°C,temperature
+w,,install,TempDifferenceOn2,TempDifferenceEIN2: solar difference control's switch on temperature of storage 2,,,b509,0e2430,value,,UCH,,°C,temperature
+r,,,TempDifferenceOff2,TempDifferenceAUS2: solar difference control's switch off temperature of storage 2,,,b509,0d2530,value,,UCH,,°C,temperature
+w,,install,TempDifferenceOff2,TempDifferenceAUS2: solar difference control's switch off temperature of storage 2,,,b509,0e2530,value,,UCH,,°C,temperature
+r,,,EDFunction,EDFunktion: enable duty ratio control,,,b509,0d3400,value,,UCH,0=off;1=on,,
+w,,install,EDFunction,EDFunktion: enable duty ratio control,,,b509,0e3400,value,,UCH,0=off;1=on,,
+r,,,SolCollPumpED,SolarCollectorPumpED: percentage of 'pump is on' during one minute (if duty ratio control is enabled),,,b509,0d2800,value,,UIN,,%,
+r,,,ScProtectionLimit,SolarCircuitProtectionLimit: switch off temperature for collector protection (109 <=> off),,,b509,0d3000,value,,UCH,,°C,desired temperature
+w,,install,ScProtectionLimit,SolarCircuitProtectionLimit: switch off temperature for collector protection (109 <=> off),,,b509,0e3000,value,,UCH,,°C,desired temperature
+r,,,ScProtectionHysteresis,SolarCircuitProtectionHysteresis: temperature hysteresis for activating solar pump after collector protection,,,b509,0d3100,value,,UCH,,K,
+r,,,ScProtectionTime,SolarCircuitProtectionTime: time for which KOL temperature has to exceed the protection temperature to enter solar circuit protection mode,,,b509,0d3e00,value,,UCH,,s,seconds
+r,,,EnableScProtection,EnableSolarCircuitProtection: enable solar circuit protection,,,b509,0d5900,value,,UCH,0=off;1=on,,
+w,,install,EnableScProtection,EnableSolarCircuitProtection: enable solar circuit protection,,,b509,0e5900,value,,UCH,0=off;1=on,,
+r,,,FrostProtectionEnabled,FrostProtectionEnabled: set TRUE to enable solar frost protection,,,b509,0d5a00,value,,UCH,0=no;1=yes,,
+r,,,FrostProtectionLimit,FrostProtectionLimit: temperature level for activating solar frost protection,,,b509,0d5b00,value,,SIN,,°C,temperature
+r,,,ResetSolGain,ResetSolarGain: reset solar gain,,,b509,0d3500,value,,UCH,0=no;1=yes,,
+w,,,ResetSolGain,ResetSolarGain: reset solar gain,,,b509,0e3500,value,,UCH,0=no;1=yes,,
+r,,,SumSolGainDayBefore,SumSolarGain_day_before: sum of yesterday's solar gain,,,b509,0d4c00,value,,ULG,,kWh,
+r,,,SumSolGain,SumSolarGain: accumulated solar gain,,,b509,0d3300,value,,ULG,,kWh,
+r,,,Weekday,Weekday: current day of week,,,b509,0d0e00,value,,BDY,,,weekday
+r,,,Date,current date,,,b509,0d0d00,value,,HDA:3,,,date
+r,,,Time,current time,,,b509,0d0c00,value,,VTI,,,time
+r,,,HydraulicScheme,Hzdraulic plan: 1..8 nur Solar,,,b509,0d2100,value,,UCH,,,
+r,,,SystemMode,"SystemMode: 0 = heatpump; 1 = 430 system, must be cyclicly written by the CI",,,b509,0d3d00,value,,UCH,0=off;1=on,,
+r,,,MultifunctionOutput,MultifunctionOutput: Output of multifunction relay,,,b509,0d0a00,value,,UCH,0=off;1=on,,
+r,,,OMultifunction,"O_Multifunction: multifunction relay: 0 = 2nd storage, 1 = differential control",,,b509,0d3a00,value,,UCH,0=off;1=on,,
+w,,install,OMultifunction,"O_Multifunction: multifunction relay: 0 = 2nd storage, 1 = differential control",,,b509,0e3a00,value,,UCH,0=off;1=on,,
+r,,,MAPreferredStorage,MAPreferredStorage: prefered storage,,,b509,0d3700,value,,UCH,,,
+w,,install,MAPreferredStorage,MAPreferredStorage: prefered storage,,,b509,0e3700,value,,UCH,,,
+r,,,TempDifferenceOnTD12,TempDifferenceOnTD12: temperature difference for the multifunction-output relay to switch on,,,b509,0d4200,value,,UCH,,°C,temperature
+w,,install,TempDifferenceOnTD12,TempDifferenceOnTD12: temperature difference for the multifunction-output relay to switch on,,,b509,0e4200,value,,UCH,,°C,temperature
+r,,,TempDifferenceOffTD12,TempDifferenceOffTD12: temperature difference for the multifunction-output relay to switch off,,,b509,0d4300,value,,UCH,,°C,temperature
+w,,install,TempDifferenceOffTD12,TempDifferenceOffTD12: temperature difference for the multifunction-output relay to switch off,,,b509,0e4300,value,,UCH,,°C,temperature
+r,,,PumpAntiLockingFlags,PumpAntiLockingFlags: each set bit represents a pump that has not run in the last 24h,,,b509,0d0900,value,,UIN,,,
+r,,,InitCircuit,InitCircuit: true if DHW and CP circuits are in init phase,,,b509,0d1800,value,,UCH,0=no;1=yes,,
+r,,,IsInBoostMode,IsInBoostMode: heatpump in boost mode,,,b509,0d3900,value,,UCH,0=off;1=on,,
+r,,,QuickVetoStart,QuickVetoStart: Signal for starting quick veto (will be reset after quick veto has been started),,,b509,0d4500,value,,UCH,0=no;1=yes,,
+r,,,LpZpMaPort,Lp_Zp_Ma_Port: multifunction-output port replay,,,b509,0d5400,value,,UCH,0=off;1=on,,
+r,,,Hc1PumpKol1PP1Port,Hk1P_Kol1P_P1_Port: collector 1 pump port replay,,,b509,0d5500,value,,UCH,0=off;1=on,,
+r,,,Hc2aLegPumpP2Port,Hk2a_LegP_P2_Port: legionella pump port replay,,,b509,0d5700,value,,UCH,0=off;1=on,,
+r,,,Hc2zPort,Hk2z_Port: Port replay,,,b509,0d5800,value,,UCH,0=off;1=on,,
+r9,,,YieldThisYear,yield this year,,,b509,0d3f00:2;0d3f08:2;0d3f10:2;0d3f18:2;0d3f20:2;0d3f28:2;0d3f30:2;0d3f38:2;0d3f40:2;0d3f48:2;0d3f50:2;0d3f58:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
+r,,,YieldLastYear,yield last year,,,b509,0d4000:2;0d4008:2;0d4010:2;0d4018:2;0d4020:2;0d4028:2;0d4030:2;0d4038:2;0d4040:2;0d4048:2;0d4050:2;0d4058:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
+w,,install,Iotest,I/O test,,,b506,02,value,,UCH,1=off;2=col1pump;4=legiopump;8=ma,,
+w,,install,Ioteststop,stop I/O test,,,b506,01,

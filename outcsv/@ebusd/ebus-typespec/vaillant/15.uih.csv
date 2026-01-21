@@ -1,0 +1,98 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+*[id_sw],scan,,,,SW
+[id_sw>=202]r,,,YieldSum,EarnedEnergySum,,,b509,0d8700,value,,ULG,,,
+[id_sw>=202]r,,,YieldOld,EarnedEnergyOld: Contains earned energy sum stored from AMU last midnight. Required for data transmission between PCBs.,,,b509,0d8600,value,,ULG,,,
+[id_sw>=202]w,,install,YieldOld,EarnedEnergyOld: Contains earned energy sum stored from AMU last midnight. Required for data transmission between PCBs.,,,b509,0e8600,value,,ULG,,,
+[id_sw<=345]r,,,ChildProtection,Child protection,,,b509,0d6e00,value,,UCH,0=no;1=yes,,
+[id_sw>=220]r,,,CoolingDay,CoolingDay,,,b509,0d7c00,value,,UCH,,,
+[id_sw>=220]w,,,CoolingDay,CoolingDay,,,b509,0e7c00,value,,UCH,,,
+[id_sw>=220]r,,,CoolingActive,CoolingActive,,,b509,0d8300,value,,UCH,0=off;1=on,,
+[id_sw>=220]w,,,CoolingActive,CoolingActive,,,b509,0e8300,value,,UCH,0=off;1=on,,
+[id_sw>=250]r,,,DiagnoseMode,"DiagnoseMode: _DiaMode_Not=0, _DiaMode_Off, _DiaMode_CH, _DiaMode_DhwLoading, _DiaMode_Cooling, _DiaMode_Deicing",,,b509,0d8f00,value,,UCH,,,
+[id_sw>=250]r,,,EmStateWorkingMode,EmState_WorkingMode: 0 = Standby1 = CH2 = Cooling,,,b509,0d9000,value,,UCH,,,
+[id_sw>=250]r,,,EmStateCooling,EmStateCooling: 0=off1=DhwReq2=Dhw3=TankPOverrun4=Heating5=OverpresFDhw6=OverpresFCh7=WaitChDemOverp8=WaitChDemCH9=WaitChDemEndDhw10=CoolingHSOff11=CoolingHSOn12=DhwWhileCool13=CoolingDhw14=StandbyHSOff15=DhwWhileStandby,,,b509,0d9100,value,,UCH,,,
+[id_sw>=250]r,,,EmStateStandby,EmStateStandby: 0=off1=DhwReq2=Dhw3=TankPOverrun4=Heating5=OverpresFDhw6=OverpresFCh7=WaitChDemOverp8=WaitChDemCH9=WaitChDemEndDhw10=CoolingHSOff11=CoolingHSOn12=DhwWhileCool13=CoolingDhw14=StandbyHSOff15=DhwWhileStandby,,,b509,0d9200,value,,UCH,,,
+[id_sw>=250]r,,,EmStateHc,EmStateCH: 0=off1=DhwReq2=Dhw3=TankPOverrun4=Heating5=OverpresFDhw6=OverpresFCh7=WaitChDemOverp8=WaitChDemCH9=WaitChDemEndDhw10=CoolingHSOff11=CoolingHSOn12=DhwWhileCool13=CoolingDhw14=StandbyHSOff15=DhwWhileStandby,,,b509,0d9300,value,,UCH,,,
+[id_sw>=250]r,,,HwcDemand,DHW_Demand,,,b509,0d9400,value,,UCH,0=off;1=on,,
+[id_sw>=250]r,,,HcDemand,CH_Demand,,,b509,0d9500,value,,UCH,0=off;1=on,,
+[id_sw>=250]r,,,CoolingDemand,Cooling_Demand,,,b509,0d9600,value,,UCH,0=off;1=on,,
+[id_sw>=250]r,,,EmSystemMode,EmSystemMode: 0 = Off1 = Heating2 = Cooling3 = Dhw4 = DhwDuringCH5 = DhwDuringCooling,,,b509,0d9700,value,,UCH,,,
+[id_sw>=250]r,,,ParallelCoolingHwcPossible,ParallelCoolingDhwPossible,,,b509,0d9800,value,,UCH,0=off;1=on,,
+[id_sw>=250]r,,,DesiredWorkingMode,DesiredWorkingMode: 0 = Standby1 = CH2 = Cooling,,,b509,0d9a00,value,,UCH,,,
+[id_sw>=250]r,,,SysWithCoolingSupport,SysWithCoolingSupport,,,b509,0d9b00,value,,UCH,0=off;1=on,,
+[id_sw>=362]r,,,Reserve1,reserve 1: for future use,,,b509,0d9d00,value,,UCH,,,
+r,,,OutsideTemp,Aussentemperatur: out door temperature,,,b509,0d0100,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,EhpHydraulicMap,EhpHydraulicMap: hydraulic scheme,,,b509,0d2900,value,,UCH,,,
+w,,service,EhpHydraulicMap,EhpHydraulicMap: hydraulic scheme,,,b509,0e2900,value,,UCH,,,
+r,,,EhpBasicStatus,EhpBasicStatus: AMU basic state (copy from AMU),,,b509,0d5000,value,,UCH,,,
+r,,,StateEM,"StateEM: state of energie manager:0: EmOff,1: EmDhwRequest,2: EmDhw,3: EmTankPunmpOverrun,4: EmHeating,5: EmOverpressureFromDhw,6: EmOverpressureFromCh,7: EmWaitForChDemandOverpressure,8: EmWaitForChDemandHeating,9: EmWaitForChDemandEndOfDhw",,,b509,0d4b00,value,,UCH,,,
+r,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0d2600,value,,UCH,,,
+w,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0e2600,value,,UCH,,,
+r,,,HolidayPeriods,Holiday periods,,,b509,0d4300,hfrom,,HDA:3,,,Holiday periods,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
+w,,,HolidayPeriods,Holiday periods,,,b509,0e4300,hfrom,,HDA:3,,,Holiday periods,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
+r,,,RoomTempHoliday,RoomSetTempHoliday: desired room setpoint for holiday,,,b509,0d2200,value,,D2C,,°C,temperature
+w,,,RoomTempHoliday,RoomSetTempHoliday: desired room setpoint for holiday,,,b509,0e2200,value,,D2C,,°C,temperature
+r,,,KeyCodeforConfigMenu,KeyCodeforConfigMenue,,,b509,0d2c00,value,,HEX:4,,,key code for the config menue
+w,,install,KeyCodeforConfigMenu,KeyCodeforConfigMenue,,,b509,0e2c00,value,,HEX:4,,,key code for the config menue
+r,,,FlowTempDesired,SystemDesiredFlowTemp,,,b509,0d0500,value,,D2C,,°C,temperature
+r,,,FlowTemp,SystemFlowTemp: systen flow temperature,,,b509,0d0200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,HcSupportTimeMax,MaxChSupportTime: Maximum CH loading period when there is a DHW simultaneous demand,,,b509,0d4d00,value,,UCH,,min,minutes
+w,,install,HcSupportTimeMax,MaxChSupportTime: Maximum CH loading period when there is a DHW simultaneous demand,,,b509,0e4d00,value,,UCH,,min,minutes
+r,,,HwcLoadingTimeMax,MaxDhwLoadingTime: Maximum DHW loading period when there is a Central Heating simultaneous demand,,,b509,0d4c00,value,,UCH,,min,minutes
+w,,install,HwcLoadingTimeMax,MaxDhwLoadingTime: Maximum DHW loading period when there is a Central Heating simultaneous demand,,,b509,0e4c00,value,,UCH,,min,minutes
+r,,,TempIncrease,TempIncrease: temperature increase,,,b509,0d2f00,value,,D2C,,°C,temperature
+w,,install,TempIncrease,TempIncrease: temperature increase,,,b509,0e2f00,value,,D2C,,°C,temperature
+r,,,PreShutDownTime,PreShutDownTime: pre shut down time,,,b509,0d2d00,value,,UCH,,min,minutes
+w,,install,PreShutDownTime,PreShutDownTime: pre shut down time,,,b509,0e2d00,value,,UCH,,min,minutes
+r,,,FrostOverRideTime,FrostOverRideTime: frost over ride time,,,b509,0d2e00,value,,UCH,,h,hours
+w,,install,FrostOverRideTime,FrostOverRideTime: frost over ride time,,,b509,0e2e00,value,,UCH,,h,hours
+r,,,EhpBackupRelease,EhpBackupHeaterRelease: backup heater release,,,b509,0d7100,value,,UCH,0=off;1=on,,
+r,,,EhpTimeOfPredictedPowerCut,EhpTimeOfPredictedPowerCut: time of the next predicted power cut,,,b509,0d7300,value,,VTI,,,time
+r,,,TempFailDetectTime,TempFailDetectTime: temperature fail detection time,,,b509,0d3300,value,,UCH,,,
+w,,install,TempFailDetectTime,TempFailDetectTime: temperature fail detection time,,,b509,0e3300,value,,UCH,,,
+r,,,LcdContrastPwmValue,LcdContrastPwmValue: contrast for the display,,,b509,0d3600,value,,UCH,,,display contrast
+w,,install,LcdContrastPwmValue,LcdContrastPwmValue: contrast for the display,,,b509,0e3600,value,,UCH,,,display contrast
+r,,,EhpHeatBufferAvailable,EhpHeatBufferAvailable: heat buffer is available,,,b509,0d5c00,value,,UCH,0=off;1=on,,
+w,,install,EhpHeatBufferAvailable,EhpHeatBufferAvailable: heat buffer is available,,,b509,0e5c00,value,,UCH,0=off;1=on,,
+r,,,HcName2,aaucHcNames CH2: name of CH2,,,b509,0d4108,value,,STR:11,,,heat circuit name
+w,,,HcName2,aaucHcNames CH2: name of CH2,,,b509,0e4108,value,,STR:11,,,heat circuit name
+r,,,HcName3,aaucHcNames CH3: name of CH3,,,b509,0d4110,value,,STR:11,,,heat circuit name
+w,,,HcName3,aaucHcNames CH3: name of CH3,,,b509,0e4110,value,,STR:11,,,heat circuit name
+r,,,HcName4,aaucHcNames CH4: name of CH4,,,b509,0d4118,value,,STR:11,,,heat circuit name
+w,,,HcName4,aaucHcNames CH4: name of CH4,,,b509,0e4118,value,,STR:11,,,heat circuit name
+r,,,HcName5,aaucHcNames CH5: name of CH5,,,b509,0d4120,value,,STR:11,,,heat circuit name
+w,,,HcName5,aaucHcNames CH5: name of CH5,,,b509,0e4120,value,,STR:11,,,heat circuit name
+r,,,HcName6,aaucHcNames CH6: name of CH6,,,b509,0d4128,value,,STR:11,,,heat circuit name
+w,,,HcName6,aaucHcNames CH6: name of CH6,,,b509,0e4128,value,,STR:11,,,heat circuit name
+r,,,HcName7,aaucHcNames CH7: name of CH7,,,b509,0d4130,value,,STR:11,,,heat circuit name
+w,,,HcName7,aaucHcNames CH7: name of CH7,,,b509,0e4130,value,,STR:11,,,heat circuit name
+r,,,HcName8,aaucHcNames CH8: name of CH8,,,b509,0d4138,value,,STR:11,,,heat circuit name
+w,,,HcName8,aaucHcNames CH8: name of CH8,,,b509,0e4138,value,,STR:11,,,heat circuit name
+r,,,HcName9,aaucHcNames CH9: name of CH9,,,b509,0d4140,value,,STR:11,,,heat circuit name
+w,,,HcName9,aaucHcNames CH9: name of CH9,,,b509,0e4140,value,,STR:11,,,heat circuit name
+r,,,HcName10,aaucHcNames CH10: name of CH10,,,b509,0d4148,value,,STR:11,,,heat circuit name
+w,,,HcName10,aaucHcNames CH10: name of CH10,,,b509,0e4148,value,,STR:11,,,heat circuit name
+r,,,HcName11,aaucHcNames CH11: name of CH11,,,b509,0d4150,value,,STR:11,,,heat circuit name
+w,,,HcName11,aaucHcNames CH11: name of CH11,,,b509,0e4150,value,,STR:11,,,heat circuit name
+r,,,HcName12,aaucHcNames CH12: name of CH12,,,b509,0d4158,value,,STR:11,,,heat circuit name
+w,,,HcName12,aaucHcNames CH12: name of CH12,,,b509,0e4158,value,,STR:11,,,heat circuit name
+r,,,HcName13,aaucHcNames CH13: name of CH13,,,b509,0d4160,value,,STR:11,,,heat circuit name
+w,,,HcName13,aaucHcNames CH13: name of CH13,,,b509,0e4160,value,,STR:11,,,heat circuit name
+r,,,HcName14,aaucHcNames CH14: name of CH14,,,b509,0d4168,value,,STR:11,,,heat circuit name
+w,,,HcName14,aaucHcNames CH14: name of CH14,,,b509,0e4168,value,,STR:11,,,heat circuit name
+r,,,HcName15,aaucHcNames CH15: name of CH15,,,b509,0d4170,value,,STR:11,,,heat circuit name
+w,,,HcName15,aaucHcNames CH15: name of CH15,,,b509,0e4170,value,,STR:11,,,heat circuit name
+r,,,HcName16,aaucHcNames CH16: name of CH16,,,b509,0d4178,value,,STR:11,,,heat circuit name
+w,,,HcName16,aaucHcNames CH16: name of CH16,,,b509,0e4178,value,,STR:11,,,heat circuit name
+r,,,PhoneNumberPart1,aucPhoneNumber part 1: phone number part 1,,,b509,0d4200,value,,STR:9,,,phone number
+w,,install,PhoneNumberPart1,aucPhoneNumber part 1: phone number part 1,,,b509,0e4200,value,,STR:9,,,phone number
+r,,,PhoneNumberPart2,aucPhoneNumber part 2: phone number part 2,,,b509,0d4208,value,,STR:9,,,phone number
+w,,install,PhoneNumberPart2,aucPhoneNumber part 2: phone number part 2,,,b509,0e4208,value,,STR:9,,,phone number
+[id_sw<=349]r9,,,YieldThisYear,yield this year,,,b509,0d8400:2;0d8408:2;0d8410:2;0d8418:2;0d8420:2;0d8428:2;0d8430:2;0d8438:2;0d8440:2;0d8448:2;0d8450:2;0d8458:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
+[id_sw<=349]r,,,YieldLastYear,yield last year,,,b509,0d8500:2;0d8508:2;0d8510:2;0d8518:2;0d8520:2;0d8528:2;0d8530:2;0d8538:2;0d8540:2;0d8548:2;0d8550:2;0d8558:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
+[id_sw=350-363]r9,,,YieldThisYear,yield this year,,,b509,0d8400:2;0d8408:2;0d8410:2;0d8418:2;0d8420:2;0d8428:2;0d8430:2;0d8438:2;0d8440:2;0d8448:2;0d8450:2;0d8458:2,energyr,,UIR,,kWh,,energyr_1,,UIR,,kWh,,energyr_2,,UIR,,kWh,,energyr_3,,UIR,,kWh,,energyr_4,,UIR,,kWh,,energyr_5,,UIR,,kWh,,energyr_6,,UIR,,kWh,,energyr_7,,UIR,,kWh,,energyr_8,,UIR,,kWh,,energyr_9,,UIR,,kWh,,energyr_10,,UIR,,kWh,,energyr_11,,UIR,,kWh,
+[id_sw=350-363]r,,,YieldLastYear,yield last year,,,b509,0d8500:2;0d8508:2;0d8510:2;0d8518:2;0d8520:2;0d8528:2;0d8530:2;0d8538:2;0d8540:2;0d8548:2;0d8550:2;0d8558:2,energyr,,UIR,,kWh,,energyr_1,,UIR,,kWh,,energyr_2,,UIR,,kWh,,energyr_3,,UIR,,kWh,,energyr_4,,UIR,,kWh,,energyr_5,,UIR,,kWh,,energyr_6,,UIR,,kWh,,energyr_7,,UIR,,kWh,,energyr_8,,UIR,,kWh,,energyr_9,,UIR,,kWh,,energyr_10,,UIR,,kWh,,energyr_11,,UIR,,kWh,
+[id_sw>=364]r9,,,YieldThisYear,yield this year,,,b509,0d8400:2;0d8408:2;0d8410:2;0d8418:2;0d8420:2;0d8428:2;0d8430:2;0d8438:2;0d8440:2;0d8448:2;0d8450:2;0d8458:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
+[id_sw>=364]r,,,YieldLastYear,yield last year,,,b509,0d8500:2;0d8508:2;0d8510:2;0d8518:2;0d8520:2;0d8528:2;0d8530:2;0d8538:2;0d8540:2;0d8548:2;0d8550:2;0d8558:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,

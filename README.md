@@ -1,4 +1,123 @@
-# ebusd-configuration
+# edudele
+
+## Generación de archivos CSV desde TypeSpec
+
+Este repositorio utiliza **TypeSpec** (`.tsp`) como formato fuente para definir los mensajes eBUS. Los archivos CSV utilizados por ebusd se generan automáticamente a partir de estos archivos TypeSpec.
+
+### Cómo generar los archivos CSV
+
+1. **Prerequisitos**: Asegúrate de tener Node.js instalado en tu sistema.
+
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Compilar los archivos TypeSpec a CSV**:
+   ```bash
+   npm run compile-en
+   ```
+   
+   Este comando compilará todos los archivos `.tsp` del directorio `src/` y generará los archivos CSV correspondientes en el directorio `outcsv/en/`.
+
+4. **Para otros idiomas**, utiliza los comandos correspondientes:
+   ```bash
+   npm run compile-de  # Para alemán
+   npm run compile-fr  # Para francés
+   # etc.
+   ```
+
+### Flujo de trabajo para modificar configuraciones
+
+1. **Edita los archivos `.tsp`** en el directorio `src/` (por ejemplo, `src/vaillant/08.hmu.tsp`)
+2. **Compila** usando `npm run compile-en` (u otro idioma)
+3. **Verifica** los archivos CSV generados en `outcsv/`
+4. **Prueba** con ebusd usando los archivos generados
+
+### Estructura de archivos TypeSpec
+
+- **`src/`**: Archivos fuente TypeSpec (`.tsp`)
+- **`outcsv/`**: Archivos CSV generados (no versionados, se generan localmente)
+- **Archivos principales**:
+  - `src/vaillant/08.hmu.tsp` - Definiciones para heat pump module
+  - `src/vaillant/15.basv0.tsp` - Definiciones para VRC 700 controller
+  - etc.
+
+**Nota**: Los archivos en la carpeta `archived/` son versiones antiguas en formato CSV y ya no se mantienen. Todas las modificaciones deben realizarse en los archivos TypeSpec del directorio `src/`.
+
+### Proceso de migración de CSV a TypeSpec
+
+Si necesitas migrar archivos CSV antiguos al nuevo formato TypeSpec, sigue estos pasos:
+
+#### 1. **Analizar el archivo CSV origen**
+   - Localiza el archivo CSV antiguo en `ebusd-configuration-old-master/ebusd-2.1.x/en/vaillant/`
+   - Examina su estructura y mensajes definidos
+
+#### 2. **Crear el archivo TypeSpec**
+   - Crea un nuevo archivo `.tsp` en `src/vaillant/` con el mismo nombre base
+   - Por ejemplo: `15.basv0.csv` → `src/vaillant/15.basv0.tsp`
+
+#### 3. **Estructura básica del archivo TypeSpec**
+   ```typespec
+   import "@ebusd/ebus-typespec";
+   import "./_templates.tsp";
+   import "./errors_inc.tsp";
+   using Ebus;
+   using Ebus.Num;
+   using Ebus.Dtm;
+   using Ebus.Str;
+   namespace Vaillant;
+   
+   namespace NombreDispositivo {
+     // Definir modelos base con @base
+     // Definir mensajes con @inherit y @ext
+     // Definir enums para valores
+   }
+   ```
+
+#### 4. **Mapeo de elementos CSV a TypeSpec**
+
+| CSV | TypeSpec |
+|-----|----------|
+| `*r,,,,,,B524,02000000` | `@base(MF, 0x24, 0x2, 0, 0, 0) model r_1 {}` |
+| `r;w,,Name,,,,0200,,,tempv` | `@inherit(r_1, w_1) @ext(0x2, 0) model Name { value: tempv; }` |
+| Tipos: `UCH`, `UIN`, `temp`, etc. | Usar los mismos tipos de `Ebus.Num` o `_templates.tsp` |
+| `@unit`, `@divisor` | Usar decoradores TypeSpec correspondientes |
+
+#### 5. **Casos especiales**
+
+- **Herencia múltiple**: Archivos similares pueden heredar de otros
+  ```typespec
+  // 15.bass0.tsp hereda de 15.basv0.tsp
+  union _includes {
+    Basv0,
+    Errors_inc,
+  }
+  ```
+
+- **Archivos complementarios**: Si hay mensajes adicionales, crear archivos separados
+  - Ejemplo: `08.hmu.tsp` (principal) + `08.hmu00.tsp` (complementario)
+
+#### 6. **Validar la migración**
+   ```bash
+   npm run compile-en
+   ```
+   - Corregir errores de compilación
+   - Verificar que los CSV generados en `outcsv/en/` sean correctos
+
+#### 7. **Ejemplos de migraciones realizadas**
+   - ✅ `15.basv0.csv` → `src/vaillant/15.basv0.tsp` (migración completa)
+   - ✅ `08.hmu00.csv` → `src/vaillant/08.hmu00.tsp` (complementario)
+   - ✅ `15.bass0.csv` → `src/vaillant/15.bass0.tsp` (hereda de basv0)
+   - ✅ `15.bass1.csv` → `src/vaillant/15.bass1.tsp` (hereda de basv0)
+   - ✅ `15.bass2.csv` → `src/vaillant/15.bass2.tsp` (hereda de basv0)
+   - ✅ `15.bass3.csv` → `src/vaillant/15.bass3.tsp` (hereda de basv0)
+   - ✅ `15.ctlv0.csv` → `src/vaillant/15.ctlv0.tsp` (hereda de basv0)
+   - ✅ `15.ctlv1.csv` → `src/vaillant/15.ctlv1.tsp` (hereda de basv0)
+   - ✅ `15.ctlv2.csv` → `src/vaillant/15.ctlv2.tsp` (hereda de basv0)
+   - ✅ `15.ctlv3.csv` → `src/vaillant/15.ctlv3.tsp` (hereda de basv0)
+
+## ebusd-configuration
 
 This repository serves vendor specific configuration files for [ebusd](https://github.com/john30/ebusd).
 
@@ -100,3 +219,4 @@ primary heating circuit the number is not appended, though.
 ## Contact
 
 The author can be contacted at ebusd@ebusd.eu .
+

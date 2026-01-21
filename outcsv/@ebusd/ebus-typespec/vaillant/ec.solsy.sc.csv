@@ -1,0 +1,76 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,StatPowerOn,StatPowerOn,,,b509,0dcc00,value,,UIN,,,
+r,,,StatOperatingHours,StatOperatingHours,,,b509,0dcd00,value,,UIN,,h,hours
+r,,,StatMonthOfInstallation,StatMonthOfInstallation,,,b509,0dce00,value,,UCH,,,
+r,,,StatYearOfInstallation,StatYearOfInstallation,,,b509,0dcf00,value,,UCH,,,
+r,,,Stat15MinBusTimeout,Stat15MinBusTimeout,,,b509,0dd000,value,,UCH,,,
+r,,,StatRTOSErrorcode,StatRTOSErrorcode,,,b509,0dd100,value,,UIN,,,
+r,,,StatRestarts,StatRestarts,,,b509,0dd200,value,,UIN,,,start count
+r,,,StatRTOSErrorCounter,StatRTOSErrorCounter,,,b509,0dd300,value,,UIN,,,
+r,,,Storage1Sensor3,Storage1Sensor3: Temperature of SP1 sensor,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Storage2Sensor3,Storage2Sensor3: Temperature of SP2 sensor,,,b509,0d0200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Storage3Sensor3,Storage3Sensor3: Temperature of SP3 sensor,,,b509,0d0500,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,CollPumpHRuntime1,CollectorPumpHRuntime1: Overall runtime of COL1 pump,,,b509,0d6e00,value,,UIN,,h,hours
+r,,,CollPumpHRuntime2,CollectorPumpHRuntime2: Overall runtime of COL2 pump,,,b509,0d6e08,value,,UIN,,h,hours
+r,,,YieldSensor,"YieldSensor: Temperature of ""Ertrag"" sensor",,,b509,0d0800,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,,YieldSensor,"YieldSensor: Temperature of ""Ertrag"" sensor",,,b509,0e0800,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Coll1Sensor,Collector1Sensor: Temperature of COL1 sensor,,,b509,0d0900,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Storage4Sensor3,Storage4Sensor3: Temperature of SP4 sensor,,,b509,0d1400,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,SumBackflowSensor,SumBackflowSensor: Temperature of TD2 sensor,,,b509,0d0700,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Coll2Sensor,Collector2Sensor: Temperature of COL2 sensor,,,b509,0d1500,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,SolCollPumpED1,SolarCollectorPumpED1: Percantage of power COL1 pump is running actually,,,b509,0d6700,value,,UIN,,%,
+r,,,SolCollPumpED2,SolarCollectorPumpED2: Percantage of power COL2 pump is running actually,,,b509,0d6708,value,,UIN,,%,
+r,,,TeleSwitch,State of the Teleswitch,,,b509,0d0a00,value,,UCH,0=off;1=on,,
+r,,,HasSolCollVolumeSensor,HasSolarCollectorVolumeSensor: -,,,b509,0d9a00,value,,UCH,0=no;1=yes,,
+r,,,SolCollVolumeSensorPowerLastMinut,SolarCollectorVolumeSensorPowerLastMinute,,,b509,0d9b00,value,,UIN,,l/h,
+r,,,OutputMA,State of multi purpose output,,,b509,0d1c00,value,,UCH,0=off;1=on,,
+r,,,SolEnableDiffTemp1,"SolEnableDiffTemp1: Temperature difference between collector 1 and tank, which is necassary to start solar pump",,,b509,0d6300,value,,UCH,,°C,temperature
+w,,,SolEnableDiffTemp1,"SolEnableDiffTemp1: Temperature difference between collector 1 and tank, which is necassary to start solar pump",,,b509,0e6300,value,,UCH,,°C,temperature
+r,,,DeltaTOnFlexDtController,"DeltaTOnFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to start solar pump",,,b509,0da600,value,,UCH,,K,
+w,,,DeltaTOnFlexDtController,"DeltaTOnFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to start solar pump",,,b509,0ea600,value,,UCH,,K,
+r,,,DeltaTOffFlexDtController,"DeltaTOffFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to stop solar pump",,,b509,0da700,value,,UCH,,K,
+w,,,DeltaTOffFlexDtController,"DeltaTOffFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to stop solar pump",,,b509,0ea700,value,,UCH,,K,
+r,,,SolEnableDiffTemp2,"SolEnableDiffTemp2: Temperature difference between collector 2 and tank, which is necassary to start solar pump",,,b509,0d6308,value,,UCH,,°C,temperature
+w,,,SolEnableDiffTemp2,"SolEnableDiffTemp2: Temperature difference between collector 2 and tank, which is necassary to start solar pump",,,b509,0e6308,value,,UCH,,°C,temperature
+r,,,SolDisableDiffTemp1,"SolDisableDiffTemp1: Temperature difference between collector 1 and tank, at which pump stops",,,b509,0d6400,value,,UCH,,°C,temperature
+w,,,SolDisableDiffTemp1,"SolDisableDiffTemp1: Temperature difference between collector 1 and tank, at which pump stops",,,b509,0e6400,value,,UCH,,°C,temperature
+r,,,SolDisableDiffTemp2,"SolDisableDiffTemp2: Temperature difference between collector 2 and tank, at which pump stops",,,b509,0d6408,value,,UCH,,°C,temperature
+w,,,SolDisableDiffTemp2,"SolDisableDiffTemp2: Temperature difference between collector 2 and tank, at which pump stops",,,b509,0e6408,value,,UCH,,°C,temperature
+r,,,SolHwcMaxLoadTemp1,SolDhwMaxLoadTemp1: Maximal temperature for solar loading of tank1,,,b509,0d6500,value,,UCH,,°C,temperature
+w,,,SolHwcMaxLoadTemp1,SolDhwMaxLoadTemp1: Maximal temperature for solar loading of tank1,,,b509,0e6500,value,,UCH,,°C,temperature
+r,,,SolHwcMaxLoadTemp2,SolDhwMaxLoadTemp2: Maximal temperature for solar loading of tank2,,,b509,0d6508,value,,UCH,,°C,temperature
+w,,,SolHwcMaxLoadTemp2,SolDhwMaxLoadTemp2: Maximal temperature for solar loading of tank2,,,b509,0e6508,value,,UCH,,°C,temperature
+r,,,SolProtection,SolarProtection: Collector pump should not start for high temperatures,,,b509,0d8100,value,,UCH,0=off;1=on,,
+w,,,SolProtection,SolarProtection: Collector pump should not start for high temperatures,,,b509,0e8100,value,,UCH,0=off;1=on,,
+r,,,SolProtectionStartTemp,SolarProtectionStartTemp: Temperature for collector pump protection in case of high temperatures,,,b509,0d8200,value,,UCH,,°C,temperature
+w,,,SolProtectionStartTemp,SolarProtectionStartTemp: Temperature for collector pump protection in case of high temperatures,,,b509,0e8200,value,,UCH,,°C,temperature
+r,,,ColKickGradient,ColKickGradient,,,b509,0d9d00,value,,UCH,300,°min,
+w,,service,ColKickGradient,ColKickGradient,,,b509,0e9d00,value,,UCH,300,°min,
+r,,,ColKickPumpTime,ColKickPumpTime,,,b509,0d9e00,value,,UCH,,s,seconds
+w,,service,ColKickPumpTime,ColKickPumpTime,,,b509,0e9e00,value,,UCH,,s,seconds
+r,,,ScProtectionHysteresis,"SolarCircuitProtectionHysteresis: After collector pump protection in case of too high temperatures, the collector has to cool down at least this temperature",,,b509,0d9f00,value,,UCH,,°C,desired temperature
+w,,,ScProtectionHysteresis,"SolarCircuitProtectionHysteresis: After collector pump protection in case of too high temperatures, the collector has to cool down at least this temperature",,,b509,0e9f00,value,,UCH,,°C,desired temperature
+r,,,FrostProtectionLimit,FrostProtectionLimit,,,b509,0da200,value,,SCH,,K,limits for the solar collector frost protection
+r,,,FrostProtectionEnabled,FrostProtectionEnabled: Solar collector frost protection on/off,,,b509,0da300,value,,UCH,0=off;1=on,,
+r,,,SolCollVolumeSensorTicksPer10Lite,SolarCollectorVolumeSensorTicksPer10Liter,,,b509,0db000,value,,UCH,,,How often the volume sensor has to pulse for the detection of 10 liters
+r,,,SolFlowRate,SolarFlowRate,,,b509,0d7400,value,,UIN,60,l/min,Flow rate the collector pumps are able to deliver for 100% power
+w,,,SolFlowRate,SolarFlowRate,,,b509,0e7400,value,,UIN,60,l/min,Flow rate the collector pumps are able to deliver for 100% power
+r,,,SolEnablePumpPWM,SolEnablePumpPWM: Collector pumps should be driven by a slow pulse width modulation,,,b509,0dae00,value,,UCH,0=off;1=on,,
+w,,,SolEnablePumpPWM,SolEnablePumpPWM: Collector pumps should be driven by a slow pulse width modulation,,,b509,0eae00,value,,UCH,0=off;1=on,,
+r,,,ExtendedYieldCalculation,ExtendedYieldCalculation: calculate solar yield like specified by austrian regulation. Uses SP3 or this purpose!,,,b509,0d7f00,value,,UCH,0=off;1=on,,
+w,,,ExtendedYieldCalculation,ExtendedYieldCalculation: calculate solar yield like specified by austrian regulation. Uses SP3 or this purpose!,,,b509,0e7f00,value,,UCH,0=off;1=on,,
+r,,,SolPriority,SolarPriority,,,b509,0d9900,value,,UCH,16=_1_2;4=_2_1,,Priority of water tanks for solar loading algorithms. 1 = SP2 2 = SP3
+w,,,SolPriority,SolarPriority,,,b509,0e9900,value,,UCH,16=_1_2;4=_2_1,,Priority of water tanks for solar loading algorithms. 1 = SP2 2 = SP3
+r,,,SolOperatingMode,SolOperatingMode: Operating mode solar,,,b509,0dac00,value,,UCH,,,
+r,,,SolTeleswitchOperatingMode,SolTeleswitchOperatingMode: Teleswitch operating mode solar,,,b509,0dad00,value,,UCH,,,
+r,,,KolTempMin1,KolMinTemperature1: Temperature COL1 sensor has to reach before starting pumps at least,,,b509,0da000,value,,UCH,,°C,temperature
+w,,,KolTempMin1,KolMinTemperature1: Temperature COL1 sensor has to reach before starting pumps at least,,,b509,0ea000,value,,UCH,,°C,temperature
+r,,,KolTempMin2,KolMinTemperature2: Temperature COL2 sensor has to reach before starting pumps at least,,,b509,0da008,value,,UCH,,°C,temperature
+w,,,KolTempMin2,KolMinTemperature2: Temperature COL2 sensor has to reach before starting pumps at least,,,b509,0ea008,value,,UCH,,°C,temperature
+w,,install,Iotest,I/O test,,,b506,02,value,,UCH,0=valve1;1=cirpump;2=pump1;3=hc2mixeropen;4=hc2mixerclose;5=hc2pump;6=col1pump;7=col2pump;8=valve2;9=valve3;10=legiopump;11=valve4;12=c1c2,,
+w,,install,Ioteststop,stop I/O test,,,b506,01,
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

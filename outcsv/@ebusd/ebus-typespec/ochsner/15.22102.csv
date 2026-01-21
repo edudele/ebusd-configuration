@@ -1,0 +1,40 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+r,,,OutsideTemp,outside temperature,,,0621,00800040,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,WaterTemp,hot water temperature,,,0621,00840040,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,FlowTemp,flow temperature,,,0621,00e00040,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,Status,,,,0621,77800008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,status,,UCH,,,
+r,,,HcOutsideTemp,,,,0621,77810008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,HcOutsideTempAvg,,,,0621,77820008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,RoomTemp,,,,0621,77830008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,DesiredRoomTemp,,,,0621,77840008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,HcFlowTemp,,,,0621,77850008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,DesiredFlowTemp,,,,0621,77860008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,Humidity,,,,0621,77870008,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,humidity,,UIN,,%,
+r,,,HwcStatus,,,,0621,7980000e,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,status,,UCH,,,
+r,,,HwcTemp,,,,0621,7981000e,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,DesiredHwcTemp,,,,0621,7982000e,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,StoreTempTop,,,,0621,7a800010,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,StoreTempBottom,,,,0621,7a810010,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,StoreFlow,,,,0621,7a820010,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,DesiredStoreFlow,,,,0621,7a830010,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,HcPart,,,,0621,7a840010,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,percent100,,SIN,100,%,
+r,,,HwcPart,,,,0621,7a850010,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,percent100,,SIN,100,%,
+r,,,StoreStatus,,,,0621,7a860010,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,status,,UCH,,,
+r,,,HpMode,,,,0621,02b50040,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,status,,UCH,0=off;1=heat;2=preload_heat;3=extern_off;4=cool;5=preload_cool;6=preload_defrost;7=defrost;8=error;9=drain;10=dT_monitor;11=preheat_defrost;12=defrost_1;13=defrost_2;14=defrost_3;15=alarm;16=error_1;17=blocked;21=tWVmax_shutdown;22=tWVdesired_shutdown;23=tWEmax_shutdown;24=tWAmin_shutdown;25=tKAmin_shutdown;26=bivalence_shutdown;27=hotwater_charge_lock;28=minimal_offtime;29=minimal_ontime,,heat pump status
+r,,,HpStatus,,,,0621,7d800002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,status,,UCH,,,
+r,,,HpFlowTemp,,,,0621,7d810002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,DesiredHpFlow,,,,0621,7d820002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,HpReturnTemp,,,,0621,7d830002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,HpSourceTempIn,,,,0621,7d840002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,HpSourceTempOut,,,,0621,7d850002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,temp,,SIN,10,°C,temperature
+r,,,HpCycles,,,,0621,7d860002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,cycles,,HCD,100,,
+r,,,HpHours,,,,0621,7d870002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,hours,,HCD,,h,
+r,,,HpVolume1,,,,0621,7d880002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,volume,,UIN,10,,
+r,,,HpVolume2,,,,0621,7d890002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,volume,,UIN,10,,
+r,,,HpHeatKwh,,,,0621,7d8a0002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,kwh,,UIN,10,kWh,
+r,,,HpHeatMwh,,,,0621,7d8b0002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,mwh,,UIN,,MWh,
+r,,,HpCoolKwh,,,,0621,7d8c0002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,kwh,,UIN,10,kWh,
+r,,,HpCoolMwh,,,,0621,7d8d0002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,mwh,,UIN,,MWh,
+r,,,HpWaterKwh,,,,0621,7d8e0002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,kwh,,UIN,10,kWh,
+r,,,HpWaterMwh,,,,0621,7d8f0002,group,,UCH,,,,value,,BI0:7,,,,type,,HEX,,,data type,unit,,HEX,,,,max,,SIN,,,maximum value,min,,SIN,,,minimum value,mwh,,UIN,,MWh,
