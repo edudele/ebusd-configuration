@@ -1,5 +1,7 @@
 import "@ebusd/ebus-typespec";
 import "./_templates.tsp";
+import "./hcmode_inc.tsp";
+import "./errors_inc.tsp";
 using Ebus;
 using Ebus.Num;
 using Ebus.Dtm;
@@ -38,6 +40,49 @@ namespace Hmu00 {
   @base(MF, 0x1a, 0x6, 0xff)
   model w_stats {}
 
+  /** State */
+  @inherit(r_b511)
+  @ext(7)
+  model State {
+    energy: UCH;
+    @unit("kWh")
+    energy_1: energy;
+    onoff: UCH;
+    state: UCH;
+  }
+
+  /** D.000 Heating energy yield current day */
+  @inherit(r_stats)
+  @ext(0)
+  model DayHeatingYield {
+    @divisor(10)
+    value: energy;
+  }
+
+  /** D.001 Cooling energy yield current day */
+  @inherit(r_stats)
+  @ext(1)
+  model DayCoolingYield {
+    @divisor(10)
+    value: energy;
+  }
+
+  /** D.002 Domestic energy yield current day */
+  @inherit(r_stats)
+  @ext(2)
+  model DayHwcYield {
+    @divisor(10)
+    value: energy;
+  }
+
+  /** D.014 Heating energy yield current month */
+  @inherit(r_stats)
+  @ext(0xe)
+  model MonthHeatingYield {
+    @divisor(10)
+    value: energy;
+  }
+
   /** D.015 Heating work factor current month */
   @inherit(r_stats)
   @ext(0xf)
@@ -46,10 +91,48 @@ namespace Hmu00 {
     value: D1B;
   }
 
+  /** D.016 Heating energy yield total */
+  @inherit(r_stats)
+  @ext(0x10)
+  model TotalHeatingYield {
+    value: energy;
+  }
+
+  /** D.017 Heating work factor total */
+  @inherit(r_stats)
+  @ext(0x11)
+  model TotalHeatingWorkFactor {
+    @divisor(10)
+    value: D1B;
+  }
+
+  /** D.018 HWC energy yield current month */
+  @inherit(r_stats)
+  @ext(0x12)
+  model MonthHwcEnergyYield {
+    @divisor(10)
+    value: energy;
+  }
+
   /** D.019 HWC work factor current month */
   @inherit(r_stats)
   @ext(0x13)
   model MonthHwcWorkFactor {
+    @divisor(10)
+    value: D1B;
+  }
+
+  /** D.022 Energy yield HWC total */
+  @inherit(r_stats)
+  @ext(0x16)
+  model TotalHwcYield {
+    value: energy;
+  }
+
+  /** D.023 HWC work factor total */
+  @inherit(r_stats)
+  @ext(0x17)
+  model TotalHwcWorkFactor {
     @divisor(10)
     value: D1B;
   }
@@ -79,6 +162,48 @@ namespace Hmu00 {
     value: D2C;
   }
 
+  /** D.033 Energy Integral */
+  @inherit(r_stats)
+  @ext(0x21)
+  model EnergyIntegral {
+    @unit("°min")
+    value: SLG;
+  }
+
+  /** D.035 Current yield power */
+  @inherit(r_stats)
+  @ext(0x23)
+  model CurrentYieldPower {
+    @unit("kW")
+    @divisor(10)
+    value: D1B;
+  }
+
+  /** D.036 Current consumed power */
+  @inherit(r_stats)
+  @ext(0x24)
+  model CurrentConsumedPower {
+    @unit("kW")
+    @divisor(10)
+    value: D1B;
+  }
+
+  /** D.037 Current compressor speed */
+  @inherit(r_stats)
+  @ext(0x25)
+  model CurrentCompressorUtil {
+    @unit("%")
+    @divisor(10)
+    value: D1B;
+  }
+
+  /** D.038 Air inlet temperature */
+  @inherit(r_stats)
+  @ext(0x26)
+  model AirInletTemp {
+    value: temps;
+  }
+
   /** D.042 Cooling energy yield current month */
   @inherit(r_stats)
   @ext(0x2a)
@@ -104,12 +229,64 @@ namespace Hmu00 {
     value: energy;
   }
 
+  /** D.044 Cooling energy yield total */
+  @inherit(r_stats)
+  @ext(0x2c)
+  model TotalCoolingYield {
+    value: energy;
+  }
+
   /** Water throughput */
   @inherit(r_stats)
   @ext(0x3c)
   model WaterThroughput {
     @unit("l/h")
     value: UIN;
+  }
+
+  /** Flow pressure */
+  @inherit(r_stats)
+  @ext(0x3d)
+  model FlowPressure {
+    @unit("bar")
+    @divisor(4)
+    value: D2C;
+  }
+
+  /** D.064 Total working hours */
+  @inherit(r_stats)
+  @ext(0x40)
+  model TotalHours {
+    value: hoursum2;
+  }
+
+  /** D.065 Total heating working hours */
+  @inherit(r_stats)
+  @ext(0x41)
+  model TotaHoursHeating {
+    value: hoursum2;
+  }
+
+  /** D.067 Total cooling working hours */
+  @inherit(r_stats)
+  @ext(0x43)
+  model TotaHoursCooling {
+    value: hoursum2;
+  }
+
+  /** D.068 Total HWC working hours */
+  @inherit(r_stats)
+  @ext(0x44)
+  model TotaHoursHwc {
+    value: hoursum2;
+  }
+
+  /** Total energy usage */
+  @inherit(r_stats)
+  @ext(0x4d)
+  model TotalEnergyUsage {
+    @unit("kWh")
+    value: energy;
   }
 
   /** default *r for configuration params */
@@ -183,12 +360,99 @@ namespace Hmu00 {
     value: UIN;
   }
 
+  /** D.100 Compressor hours */
+  @inherit(r_stats_ext)
+  @ext(0)
+  model CompressorHours {
+    value: hoursum;
+  }
+
+  /** D.101 Compressor starts */
+  @inherit(r_stats_ext)
+  @ext(1)
+  model CompressorStarts {
+    value: UIN;
+  }
+
+  /** D.102 Building hours */
+  @inherit(r_stats_ext)
+  @ext(2)
+  model BuildingPumpHours {
+    value: hoursum;
+  }
+
+  /** D.103 Building starts */
+  @inherit(r_stats_ext)
+  @ext(3)
+  model BuildingPumpStarts {
+    value: UIN;
+  }
+
+  /** D.106 4-port valve hours */
+  @inherit(r_stats_ext)
+  @ext(6)
+  model FourWayValveHours {
+    value: hoursum;
+  }
+
+  /** D.107 4-port valve switch oprations */
+  @inherit(r_stats_ext)
+  @ext(7)
+  model FourWayValveSwitchingOperations {
+    value: UIN;
+  }
+
+  /** D.113 EEV Steps */
+  @inherit(r_stats_ext)
+  @ext(0xd)
+  model EEVSteps {
+    value: UIN;
+  }
+
+  /** Domestic hot water mod (eco/normal/balance) */
+  @inherit(r_stats_ext, w_stats_ext)
+  @ext(0x34, 0x44)
+  model HwcMode {
+    @values(Values_HwcMode)
+    value: UCH;
+  }
+
+  /** D.181 Fan 1 hours */
+  @inherit(r_stats_ext)
+  @ext(0x51)
+  model Fan1Hours {
+    value: hoursum;
+  }
+
+  /** D.182 Fan 1 starts */
+  @inherit(r_stats_ext)
+  @ext(0x52)
+  model Fan1Starts {
+    value: UIN;
+  }
+
+  /** D.194 Fan 2 hours */
+  @inherit(r_stats_ext)
+  @ext(0x5e)
+  model Fan2Hours {
+    value: hoursum;
+  }
+
+  /** D.195 Fan 2 starts */
+  @inherit(r_stats_ext)
+  @ext(0x5f)
+  model Fan2Starts {
+    value: UIN;
+  }
+
   /** default *r for extended stats *r */
   @base(MF, 0x1a, 0x5, 0xff, 0x34)
-  model r_stats_ext {
-    @maxLength(3)
-    ign: IGN;
-  }
+  model r_stats_ext {}
+
+  /** default *w for extended stats */
+  @write
+  @base(MF, 0x1a, 0x6, 0xff, 0x34)
+  model w_stats_ext {}
 
   /** D.130 Total compressor starts */
   @inherit(r_stats_ext)
@@ -253,7 +517,7 @@ namespace Hmu00 {
 
   /** D.366 Fan boost */
   @inherit(r_stats_ext)
-  @ext(0x41, 0x5)
+  @ext(0x54, 0x1, 0x5)
   model FanBoost {
     value: UIN;
   }
@@ -820,10 +1084,17 @@ namespace Hmu00 {
     open: 1,
   }
 
-  // Additional scalar types
-  @unit("W")
-  scalar powerv extends UIN;
+  enum Values_HwcMode {
+    eco: 0,
+    normal: 1,
+    balance: 2,
+  }
 
-  scalar scode extends UCH;
+  // Included parts
+  union _includes {
+    Hcmode_inc,
+    Errors_inc,
+  }
 }
+
 

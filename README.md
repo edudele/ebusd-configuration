@@ -15,7 +15,7 @@ Este repositorio utiliza **TypeSpec** (`.tsp`) como formato fuente para definir 
 
 3. **Compilar los archivos TypeSpec a CSV**:
    ```bash
-   npm run compile-en
+   npm run maintsp && npm run compile-en
    ```
    
    Este comando compilará todos los archivos `.tsp` del directorio `src/` y generará los archivos CSV correspondientes en el directorio `outcsv/en/`.

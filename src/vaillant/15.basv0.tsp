@@ -1639,9 +1639,5 @@ enum Values_z1ValveStatus {
   open: 1,
 }
 
-scalar opmode3 extends UIN;
-
-scalar zoneStatus extends UIN;
-
 @unit("%")
 scalar percent0 extends UIN;

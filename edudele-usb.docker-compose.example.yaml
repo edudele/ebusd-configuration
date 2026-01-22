@@ -1,0 +1,34 @@
+services:
+  ebusd:
+    container_name: ebusd-latest
+    restart: unless-stopped
+    image: john30/ebusd:latest
+    privileged: true
+    environment:
+      # --- CONFIGURACIÓN DE ESCANEO Y RUTAS NUEVAS ---
+      - EBUSD_SCANCONFIG=full
+      # CAMBIO CRÍTICO: Apuntamos a la carpeta compilada 'outcsv'
+      # La ruta interna depende de tu volumen. Si mapeas /docker/ebusd -> /ebusd:
+      - EBUSD_CONFIGPATH=/ebusd/ebusd-configuration/outcsv/@ebusd/ebus-typespec
+      # --- LOGS (Útil para depurar al principio) ---
+      # - EBUSD_LOGLEVEL=info      
+      # --- DISPOSITIVO ---
+      - EBUSD_ACCESSLEVEL=*
+      - EBUSD_DEVICE=ens:/dev/ttyACM0
+      - EBUSD_LATENCY=10 # Necesario para adaptadores serial/USB      
+      # --- MQTT Y HOME ASSISTANT ---
+      - EBUSD_MQTTHOST=mosquitto
+      - EBUSD_MQTTPORT=1883
+      - EBUSD_MQTTUSER=edudele
+      - EBUSD_MQTTPASS=lohueles
+      # Si usas integración MQTT, es mejor poner JSON a true o short
+      - EBUSD_MQTTJSON=true
+      # CAMBIO: Usamos el archivo de configuración que estaba en la raíz del repo
+      - EBUSD_MQTTINT=/ebusd/ebusd-configuration/mqtt-hassio.cfg
+
+    volumes:
+      # Mapeamos toda la carpeta ebusd para tener acceso a 'ebusd-configuration'
+      - /docker/ebusd/:/ebusd
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0

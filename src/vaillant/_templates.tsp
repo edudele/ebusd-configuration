@@ -419,6 +419,9 @@ scalar opmode extends UIN;
 @values(Values_opmode2)
 scalar opmode2 extends UIN;
 
+@values(Values_opmode3)
+scalar opmode3 extends UIN;
+
 @values(Values_zmapping)
 scalar zmapping extends UIN;
 
@@ -546,6 +549,13 @@ enum Values_daysel2 {
   Sa: 6,
   Su: 7,
   daily: 8,
+}
+
+enum Values_opmode3 {
+  apagado: 0,
+  programado: 1,
+  manual: 2,
+  night: 3,
 }
 
 enum Values_hcmode {
@@ -1042,3 +1052,92 @@ model Timer<T> {
 @minValue(0)
 @maxValue(15)
 scalar displaycontrast extends UCH;
+
+/** zone status */
+@values(Values_zoneStatus)
+scalar zoneStatus extends UIN;
+
+/** power */
+@unit("W")
+scalar powerv extends EXP;
+
+/** Status code for heat pump operations */
+@values(Values_scode)
+scalar scode extends UIN;
+
+/** Zone status values */
+enum Values_zoneStatus {
+  auto: 0,
+  ventilation_boost: 1,
+  party: 3,
+  quick_veto: 4,
+  one_day_away_from_home: 5,
+  one_day_at_home: 6,
+  holiday_away: 7,
+  holiday_at_home: 8,
+  load: 9,
+}
+
+
+/** Status code values for heat pump */
+enum Values_scode {
+  S_34_Modo_calefaccion_Proteccion_heladas: 34,
+  S_100_En_espera: 100,
+  S_101_Calefaccion_desconexion_del_compresor: 101,
+  S_102_Calefaccion_compresor_bloqueado: 102,
+  S_103_Calefaccion_pre_funcionamiento: 103,
+  S_104_Calefaccion_compresor_activo: 104,
+  S_107_Calefaccion_post_funcionamiento: 107,
+  S_111_Refrigeracion_desconexion_del_compresor: 111,
+  S_112_Refrigeracion_compresor_bloqueado: 112,
+  S_113_Refrigeracion_pre_funcionamiento_compresor: 113,
+  S_114_Refrigeracion_compresor_activo: 114,
+  S_117_Refrigeracion_post_funcionamiento_compresor: 117,
+  S_125_Calefaccion_calentador_inmersion_activo: 125,
+  S_132_ACS_compresor_bloqueado: 132,
+  S_133_ACS_pre_funcionamiento: 133,
+  S_134_ACS_compresor_activo: 134,
+  S_135_ACS_calentador_inmersion_activo: 135,
+  S_137_ACS_post_funcionamiento: 137,
+  S_141_Calefaccion_desconexion_calentador_inmersion: 141,
+  S_142_Calefaccion_calentador_de_inmersion_bloqueado: 142,
+  S_151_ACS_desconexion_calentador_inmersion: 151,
+  S_152_ACS_calentador_inmersion_bloqueado: 152,
+  S_173_Tiempo_bloqueo_empresa_suministro_electricidad: 173,
+  S_202_Programa_comprobacion_purga_circuito_del_edificio_activa: 202,
+  S_203_Prueba_actuadores_activa: 203,
+  S_212_Error_conexion_regulador_no_detectado: 212,
+  S_240_Aceite_compresor_y_ambiente_demasiado_frios: 240,
+  S_252_Unidad_ventilador_1_ventilador_bloqueado: 252,
+  S_255_Unidad_ventilador_1_temperatura_entrada_aire_muy_alta: 255,
+  S_256_Unidad_ventilador_1_temperatura_entrada_aire_muy_baja: 256,
+  S_260_Unidad_ventilador_2_ventilador_bloqueado: 260,
+  S_272_Circuito_edificio_presion_disponible_bomba_limitacion_activa: 272,
+  S_273_Circuito_edificio_temperatura_ida_demasiado_baja: 273,
+  S_275_Circuito_edificio_caudal_demasiado_bajo: 275,
+  S_276_Circuito_edificio_contacto_bloqueo_S20_abierto: 276,
+  S_277_Circuito_edificio_error_en_bomba: 277,
+  S_280_Error_convertidor_Compresor: 280,
+  S_281_Error_convertidor_Tension_de_red: 281,
+  S_282_Error_convertidor_Sobrecalentamiento: 282,
+  S_283_Tiempo_eliminacion_hielo_demasiado_largo: 283,
+  S_284_Temperatura_ida_eliminacion_hielo_muy_justa: 284,
+  S_285_Temperatura_de_salida_compresor_muy_baja: 285,
+  S_286_Interruptor_temperatura_gas_caliente_abierto: 286,
+  S_287_Ventilador_1_viento: 287,
+  S_288_Ventilador_2_viento: 288,
+  S_289_Limitacion_tension_activada: 289,
+  S_290_Retardo_de_conexion_activo: 290,
+  S_302_Interruptor_de_alta_presion_abierto: 302,
+  S_303_Temperatura_salida_compresor_demasiado_alta: 303,
+  S_304_Temperatura_evaporacion_demasiado_baja: 304,
+  S_305_Temperatura_condensacion_demasiado_baja: 305,
+  S_306_Temperatura_evaporacion_demasiado_alta: 306,
+  S_308_Temperatura_condensacion_demasiado_alta: 308,
+  S_312_Circuito_edificio_temperatura_retorno_demasiado_baja: 312,
+  S_314_Circuito_edificio_temperatura_retorno_demasiado_alta: 314,
+  S_516_Eliminacion_de_hielo_activa: 516,
+  S_575_Convertidor_frecuencia_error_interno: 575,
+  S_581_Error_de_conexion_convertidor_frecuencia_no_detectado: 581,
+  S_590_Error_posicion_incorrecta_valvula_de_4_vias: 590,
+}

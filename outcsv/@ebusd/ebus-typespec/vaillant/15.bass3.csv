@@ -106,8 +106,8 @@ w,Basv0,,HwcBivalencePoint,Bivalence point heating HWC,,,b524,020100000100,value
 r,Basv0,,HwcEnabled,Indicates if Hwc is enabled/disabled,,,b524,020001000100,ign,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 w,Basv0,,HwcEnabled,Indicates if Hwc is enabled/disabled,,,b524,020101000100,value,,UCH,0=no;1=yes,,
 r,Basv0,,HwcCircPumpStatus,Hwc circulation pump status (also turns on during a legionella run),,,b524,020001000200,ign,,IGN:4,,,,value,,UCH,0=off;1=on,,
-r,Basv0,,HwcOpMode,hwc operation mode,,,b524,020001000300,ign,,IGN:4,,,,value,,UIN,,,operation mode of Hwc
-w,Basv0,,HwcOpMode,hwc operation mode,,,b524,020101000300,value,,UIN,,,operation mode of Hwc
+r,Basv0,,HwcOpMode,hwc operation mode,,,b524,020001000300,ign,,IGN:4,,,,value,,UIN,0=apagado;1=programado;2=manual;3=night,,operation mode of Hwc
+w,Basv0,,HwcOpMode,hwc operation mode,,,b524,020101000300,value,,UIN,0=apagado;1=programado;2=manual;3=night,,operation mode of Hwc
 r,Basv0,,HwcTempDesired,hwc temperature desired,,,b524,020001000400,ign,,IGN:4,,,,value,,EXP,,°C,setpoint of domestic hot water circuit
 w,Basv0,,HwcTempDesired,hwc temperature desired,,,b524,020101000400,value,,EXP,,°C,setpoint of domestic hot water circuit
 r,Basv0,,HwcStorageTemp,hwc storage temperature,,,b524,020001000500,ign,,IGN:4,,,,value,,EXP,,°C,Speicheristtemperatur
@@ -119,7 +119,7 @@ r,Basv0,,HwcHolidayEndPeriod,hwc holiday end period,,,b524,020001000a00,ign,,IGN
 w,Basv0,,HwcHolidayEndPeriod,hwc holiday end period,,,b524,020101000a00,value,,HDA:3,,,end date of holidays
 r,Basv0,,HwcSFMode,hwc SF mode,,,b524,020001000d00,ign,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
 w,Basv0,,HwcSFMode,hwc SF mode,,,b524,020101000d00,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
-r,Basv0,,HwcStatus,,,,b524,020001000f00,ign,,IGN:4,,,,value,,UIN,,,
+r,Basv0,,HwcStatus,,,,b524,020001000f00,ign,,IGN:4,,,,value,,UIN,0=auto;1=ventilation_boost;3=party;4=quick_veto;5=one_day_away_from_home;6=one_day_at_home;7=holiday_away;8=holiday_at_home;9=load,,zone status
 r,Basv0,,HwcHolidayStartTime,,,,b524,020001001000,ign,,IGN:4,,,,value,,HTI,,,
 w,Basv0,,HwcHolidayStartTime,,,,b524,020101001000,value,,HTI,,,
 r,Basv0,,HwcHolidayEndTime,,,,b524,020001001100,ign,,IGN:4,,,,value,,HTI,,,
@@ -257,7 +257,7 @@ r,Basv0,,Z1RoomHumidity,room humidity zone 1,,,b524,020003002800,ign,,IGN:4,,,,v
 r,Basv0,,Z1SFMode,SF mode zone 1,,,b524,020003000e00,ign,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
 w,Basv0,,Z1SFMode,SF mode zone 1,,,b524,020103000e00,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
 r,Basv0,,Z1RoomTemp,room temperature zone 1,,,b524,020003000f00,ign,,IGN:4,,,,value,,EXP,,°C,current room temperature in zone 1
-r,Basv0,,Z1Status,,,,b524,020003001b00,ign,,IGN:4,,,,value,,UIN,,,
+r,Basv0,,Z1Status,,,,b524,020003001b00,ign,,IGN:4,,,,value,,UIN,0=auto;1=ventilation_boost;3=party;4=quick_veto;5=one_day_away_from_home;6=one_day_at_home;7=holiday_away;8=holiday_at_home;9=load,,zone status
 r,Basv0,,Z1QuickVetoEndTime,Quick Veto End Time Zone 1,,,b524,020003001e00,ign,,IGN:4,,,,value,,HTI,,,manual override end time for zone 1
 r,Basv0,,Z2OpModeCooling,cooling operation mode zone 2,,,b524,020003010100,ign,,IGN:4,,,,value,,UIN,0=off;1=auto;2=day;3=night,,operation mode for cooling of zone 2
 w,Basv0,,Z2OpModeCooling,cooling operation mode zone 2,,,b524,020103010100,value,,UIN,0=off;1=auto;2=day;3=night,,operation mode for cooling of zone 2
