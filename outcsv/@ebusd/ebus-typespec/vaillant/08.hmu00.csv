@@ -54,7 +54,7 @@ r,,,FourWayValveHours,D.106 4-port valve hours,,,b51a,05ff3406,ign,,IGN:3,,,,val
 r,,,FourWayValveSwitchingOperations,D.107 4-port valve switch oprations,,,b51a,05ff3407,ign,,IGN:3,,,,value,,UIN,,,
 r,,,EEVSteps,D.113 EEV Steps,,,b51a,05ff340d,ign,,IGN:3,,,,value,,UIN,,,
 r,,,HwcMode,Domestic hot water mod (eco/normal/balance),,,b51a,05ff3444,ign,,IGN:3,,,,value,,UCH,0=eco;1=normal;2=balance,,hot water mode (eco/normal/balance)
-w,,,HwcMode,Domestic hot water mod (eco/normal/balance),,,b51a,06ff3444,ign,,IGN:3,,,,value,,UCH,0=eco;1=normal;2=balance,,hot water mode (eco/normal/balance)
+w,,,HwcMode,Domestic hot water mod (eco/normal/balance),,,b51a,06ff3444,value,,UCH,0=eco;1=normal;2=balance,,hot water mode (eco/normal/balance)
 r,,,Fan1Hours,D.181 Fan 1 hours,,,b51a,05ff3451,ign,,IGN:3,,,,value,,ULG,,h,hours
 r,,,Fan1Starts,D.182 Fan 1 starts,,,b51a,05ff3452,ign,,IGN:3,,,,value,,UIN,,,
 r,,,Fan2Hours,D.194 Fan 2 hours,,,b51a,05ff345e,ign,,IGN:3,,,,value,,ULG,,h,hours

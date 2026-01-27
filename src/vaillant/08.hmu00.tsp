@@ -459,10 +459,7 @@ namespace Hmu00 {
   /** default *rw for extended stats */
   @write
   @base(MF, 0x1a, 0x6, 0xff, 0x34)
-  model rw_stats_ext {
-    @maxLength(3)
-    ign: IGN;
-  }
+  model rw_stats_ext {}
 
   /** default *r for extended stats without ign (for special extended messages) */
   @base(MF, 0x1a, 0x5, 0xff, 0x34)
