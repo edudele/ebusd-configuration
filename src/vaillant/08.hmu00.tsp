@@ -299,10 +299,7 @@ namespace Hmu00 {
   /** default *rw for configuration params */
   @write
   @base(MF, 0x1a, 0x6, 0xff, 0x33)
-  model rw_config {
-    @maxLength(3)
-    ign: IGN;
-  }
+  model rw_config {}
 
   /** D.222 Building circuit pump speed (heating). 0-100% (49=auto). Step 1. Factory 49 */
   @inherit(r_config, rw_config)
@@ -497,7 +494,7 @@ namespace Hmu00 {
   }
 
   /** D.140 Noise reduction level min 30% max 60% */
-  @inherit(r_stats_ext, rw_config)
+  @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x28)
   model NoiseReductionLevel {
     @unit("%")
@@ -512,7 +509,7 @@ namespace Hmu00 {
   }
 
   /** D.145 Maximum block time hours. 0-9 h. Step 1 h. Factory 5 */
-  @inherit(r_stats_ext, rw_config)
+  @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x2d)
   model MaximunBlockTimeHours {
     @unit("h")
@@ -520,7 +517,7 @@ namespace Hmu00 {
   }
 
   /** D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K */
-  @inherit(r_stats_ext, rw_config)
+  @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x43)
   model CompressorHysteresis {
     value: UIN;
