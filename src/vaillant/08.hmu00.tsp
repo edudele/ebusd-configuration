@@ -410,11 +410,10 @@ namespace Hmu00 {
   }
 
   /** Domestic hot water mod (eco/normal/balance) */
-  @inherit(r_stats_ext, w_stats_ext)
-  @ext(0x34, 0x44)
+  @inherit(r_stats_ext, rw_stats_ext)
+  @ext(0x44)
   model HwcMode {
-    @values(Values_HwcMode)
-    value: UCH;
+    value: hmu_hwcmode;
   }
 
   /** D.181 Fan 1 hours */
@@ -447,12 +446,27 @@ namespace Hmu00 {
 
   /** default *r for extended stats *r */
   @base(MF, 0x1a, 0x5, 0xff, 0x34)
-  model r_stats_ext {}
+  model r_stats_ext {
+    @maxLength(3)
+    ign: IGN;
+  }
 
   /** default *w for extended stats */
   @write
   @base(MF, 0x1a, 0x6, 0xff, 0x34)
   model w_stats_ext {}
+
+  /** default *rw for extended stats */
+  @write
+  @base(MF, 0x1a, 0x6, 0xff, 0x34)
+  model rw_stats_ext {
+    @maxLength(3)
+    ign: IGN;
+  }
+
+  /** default *r for extended stats without ign (for special extended messages) */
+  @base(MF, 0x1a, 0x5, 0xff, 0x34)
+  model r_stats_ext_noign {}
 
   /** D.130 Total compressor starts */
   @inherit(r_stats_ext)
@@ -516,7 +530,7 @@ namespace Hmu00 {
   }
 
   /** D.366 Fan boost */
-  @inherit(r_stats_ext)
+  @inherit(r_stats_ext_noign)
   @ext(0x54, 0x1, 0x5)
   model FanBoost {
     value: UIN;
@@ -1084,11 +1098,6 @@ namespace Hmu00 {
     open: 1,
   }
 
-  enum Values_HwcMode {
-    eco: 0,
-    normal: 1,
-    balance: 2,
-  }
 
   // Included parts
   union _includes {

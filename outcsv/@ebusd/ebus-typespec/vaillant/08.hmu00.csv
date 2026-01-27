@@ -46,28 +46,28 @@ r,,,CoolingEnabled,D.227 Cooling Enabled,,,b51a,05ff331b,ign,,IGN:3,,,,value,,UI
 r,,,MaximunExteriorPowerUnit,D.231 Maximum exterior unit power,,,b51a,05ff331f,ign,,IGN:3,,,,value,,SCH,,A,
 w,,,MaximunExteriorPowerUnit,D.231 Maximum exterior unit power,,,b51a,06ff331f,ign,,IGN:3,,,,value,,SCH,,A,
 r,,,HeatExchangerEnabled,D.233 Heat exchanger,,,b51a,05ff3321,ign,,IGN:3,,,,value,,UIN,0=off;1=on,,
-r,,,CompressorHours,D.100 Compressor hours,,,b51a,05ff3400,value,,ULG,,h,hours
-r,,,CompressorStarts,D.101 Compressor starts,,,b51a,05ff3401,value,,UIN,,,
-r,,,BuildingPumpHours,D.102 Building hours,,,b51a,05ff3402,value,,ULG,,h,hours
-r,,,BuildingPumpStarts,D.103 Building starts,,,b51a,05ff3403,value,,UIN,,,
-r,,,FourWayValveHours,D.106 4-port valve hours,,,b51a,05ff3406,value,,ULG,,h,hours
-r,,,FourWayValveSwitchingOperations,D.107 4-port valve switch oprations,,,b51a,05ff3407,value,,UIN,,,
-r,,,EEVSteps,D.113 EEV Steps,,,b51a,05ff340d,value,,UIN,,,
-r,,,HwcMode,Domestic hot water mod (eco/normal/balance),,,b51a,05ff343444,value,,UCH,0=eco;1=normal;2=balance,,
-w,,,HwcMode,Domestic hot water mod (eco/normal/balance),,,b51a,06ff343444,value,,UCH,0=eco;1=normal;2=balance,,
-r,,,Fan1Hours,D.181 Fan 1 hours,,,b51a,05ff3451,value,,ULG,,h,hours
-r,,,Fan1Starts,D.182 Fan 1 starts,,,b51a,05ff3452,value,,UIN,,,
-r,,,Fan2Hours,D.194 Fan 2 hours,,,b51a,05ff345e,value,,ULG,,h,hours
-r,,,Fan2Starts,D.195 Fan 2 starts,,,b51a,05ff345f,value,,UIN,,,
-r,,,TotalCompressorStarts,D.130 Total compressor starts,,,b51a,05ff341e,value,,UIN,,,
-r,,,MaxWaterPumpPressure,D.131 Max water pump pressure,,,b51a,05ff341f,value_,,UIN,,mbar,,minimun,,UIN,,mbar,,maximun,,UIN,,mbar,,step,,SCH,,mbar,
-r,,,CoolingCompressorStartkMin,D.133 Cooling compressor start ºmin,,,b51a,05ff3421,value,,UIN,,,
-r,,,NoiseReductionLevel,D.140 Noise reduction level min 30% max 60%,,,b51a,05ff3428,value,,SCH,,%,
+r,,,CompressorHours,D.100 Compressor hours,,,b51a,05ff3400,ign,,IGN:3,,,,value,,ULG,,h,hours
+r,,,CompressorStarts,D.101 Compressor starts,,,b51a,05ff3401,ign,,IGN:3,,,,value,,UIN,,,
+r,,,BuildingPumpHours,D.102 Building hours,,,b51a,05ff3402,ign,,IGN:3,,,,value,,ULG,,h,hours
+r,,,BuildingPumpStarts,D.103 Building starts,,,b51a,05ff3403,ign,,IGN:3,,,,value,,UIN,,,
+r,,,FourWayValveHours,D.106 4-port valve hours,,,b51a,05ff3406,ign,,IGN:3,,,,value,,ULG,,h,hours
+r,,,FourWayValveSwitchingOperations,D.107 4-port valve switch oprations,,,b51a,05ff3407,ign,,IGN:3,,,,value,,UIN,,,
+r,,,EEVSteps,D.113 EEV Steps,,,b51a,05ff340d,ign,,IGN:3,,,,value,,UIN,,,
+r,,,HwcMode,Domestic hot water mod (eco/normal/balance),,,b51a,05ff3444,ign,,IGN:3,,,,value,,UCH,0=eco;1=normal;2=balance,,hot water mode (eco/normal/balance)
+w,,,HwcMode,Domestic hot water mod (eco/normal/balance),,,b51a,06ff3444,ign,,IGN:3,,,,value,,UCH,0=eco;1=normal;2=balance,,hot water mode (eco/normal/balance)
+r,,,Fan1Hours,D.181 Fan 1 hours,,,b51a,05ff3451,ign,,IGN:3,,,,value,,ULG,,h,hours
+r,,,Fan1Starts,D.182 Fan 1 starts,,,b51a,05ff3452,ign,,IGN:3,,,,value,,UIN,,,
+r,,,Fan2Hours,D.194 Fan 2 hours,,,b51a,05ff345e,ign,,IGN:3,,,,value,,ULG,,h,hours
+r,,,Fan2Starts,D.195 Fan 2 starts,,,b51a,05ff345f,ign,,IGN:3,,,,value,,UIN,,,
+r,,,TotalCompressorStarts,D.130 Total compressor starts,,,b51a,05ff341e,ign,,IGN:3,,,,value,,UIN,,,
+r,,,MaxWaterPumpPressure,D.131 Max water pump pressure,,,b51a,05ff341f,ign,,IGN:3,,,,value_,,UIN,,mbar,,minimun,,UIN,,mbar,,maximun,,UIN,,mbar,,step,,SCH,,mbar,
+r,,,CoolingCompressorStartkMin,D.133 Cooling compressor start ºmin,,,b51a,05ff3421,ign,,IGN:3,,,,value,,UIN,,,
+r,,,NoiseReductionLevel,D.140 Noise reduction level min 30% max 60%,,,b51a,05ff3428,ign,,IGN:3,,,,value,,SCH,,%,
 w,,,NoiseReductionLevel,D.140 Noise reduction level min 30% max 60%,,,b51a,06ff3328,ign,,IGN:3,,,,value,,SCH,,%,
-r,,,NoOfSwitchingOps,Number of switching operations,,,b51a,05ff3430,value,,UIN,,,
-r,,,MaximunBlockTimeHours,D.145 Maximum block time hours. 0-9 h. Step 1 h. Factory 5,,,b51a,05ff342d,value,,SCH,,h,
+r,,,NoOfSwitchingOps,Number of switching operations,,,b51a,05ff3430,ign,,IGN:3,,,,value,,UIN,,,
+r,,,MaximunBlockTimeHours,D.145 Maximum block time hours. 0-9 h. Step 1 h. Factory 5,,,b51a,05ff342d,ign,,IGN:3,,,,value,,SCH,,h,
 w,,,MaximunBlockTimeHours,D.145 Maximum block time hours. 0-9 h. Step 1 h. Factory 5,,,b51a,06ff332d,ign,,IGN:3,,,,value,,SCH,,h,
-r,,,CompressorHysteresis,D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K,,,b51a,05ff3443,value,,UIN,,,
+r,,,CompressorHysteresis,D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K,,,b51a,05ff3443,ign,,IGN:3,,,,value,,UIN,,,
 w,,,CompressorHysteresis,D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K,,,b51a,06ff3343,ign,,IGN:3,,,,value,,UIN,,,
 r,,,FanBoost,D.366 Fan boost,,,b51a,05ff34540105,value,,UIN,,,
 w,,,ReadLiveMonitorMain,Payload needed sent: 03FFFF,,,b503,00,m,,HEX:1,,,
