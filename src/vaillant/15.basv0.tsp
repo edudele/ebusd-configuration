@@ -1602,13 +1602,6 @@ namespace Basv0 {
   @base(MF, 0x8)
   model broadcast_w {}
 
-  /** noise reduction state */
-  @inherit(broadcast_b)
-  @ext()
-  model NoiseReduction {
-    value: onoff;
-  }
-
   // ##### Included parts #####
   union _includes {
     Errors_inc,

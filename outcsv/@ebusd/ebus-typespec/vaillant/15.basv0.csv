@@ -1,7 +1,6 @@
 type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
 *r,
 *w,
-*u,
 r,,,ContinuosHeating,continuos heating,,,b524,020000000200,ign,,IGN:4,,,,value,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
 w,,,ContinuosHeating,continuos heating,,,b524,020100000200,value,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
 r,,,FrostOverRideTime,frost delay time,,,b524,020000000300,ign,,IGN:4,,,,value,,UIN,,h,delay before frost protection is activated
@@ -333,7 +332,6 @@ r,,,Z3Name1,label zone 3 part 1,,,b524,020003021700,ign,,IGN:4,,,,value,,STR:5,,
 w,,,Z3Name1,label zone 3 part 1,,,b524,020103021700,value,,STR:5,,,name of zone 3
 r,,,Z3Name2,label zone 3 part 2,,,b524,020003021800,ign,,IGN:4,,,,value,,STR:5,,,name of zone 3
 w,,,Z3Name2,label zone 3 part 2,,,b524,020103021800,value,,STR:5,,,name of zone 3
-u,,,NoiseReduction,noise reduction state,,fe,b508,,ign,,IGN:1,,,,value,,UCH,0=off;1=on,,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
 r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

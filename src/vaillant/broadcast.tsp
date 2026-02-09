@@ -55,4 +55,19 @@ namespace Broadcast {
   model Load {
     value: onoff;
   }
+
+  /** default *b for b508 */
+  @passive
+  @zz(BROADCAST)
+  @base(MF, 0x08)
+  model b_b508 {}
+
+  /** noise reduction state */
+  @inherit(b_b508)
+  @ext()
+  model NoiseReduction {
+    @maxLength(1)
+    ign: IGN;
+    onoff: onoff;
+  }
 }

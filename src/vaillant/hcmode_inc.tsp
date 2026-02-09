@@ -55,16 +55,14 @@ namespace Hcmode_inc {
     @maxLength(1)
     ign: IGN;
 
-    disablehc: BI0;
-    disablehwctapping: BI1;
-    disablehwcload: BI2;
+    /** bits: disablehc, disablehwctapping, disablehwcload */
+    status: UCH;
 
     @maxLength(1)
     ign_1: IGN;
 
-    remoteControlHcPump: BI0;
-    releaseBackup: BI1;
-    releaseCooling: BI2;
+    /** bits: remoteControlHcPump, releaseBackup, releaseCooling */
+    status2: UCH;
   }
   // potential last byte: currentmode,s,UCH,0=off;1=standby;2=heat;3=water
 
@@ -132,11 +130,13 @@ namespace Hcmode_inc {
   @inherit(uw_1)
   @ext(0)
   model StatusCirPump {
-    @values(Values_StatusCirPump)
-    value: UCH;
+    onoff: StatusCirPump_Onoff;
   }
 
-  enum Values_StatusCirPump {
+  @values(Values_StatusCirPump_Onoff)
+  scalar StatusCirPump_Onoff extends UCH;
+
+  enum Values_StatusCirPump_Onoff {
     off: 0,
     on: 100,
   }
