@@ -3,10 +3,10 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *w,
 *uw,
 *[id_sw],scan,,,,SW
-[id_sw>=104]r,,,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0d4a00,value,,D2C,,°C,temperature
-[id_sw>=104]w,,install,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0e4a00,value,,D2C,,°C,temperature
-[id_sw>=104]r,,,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0d4b00,value,,D2C,,°C,temperature
-[id_sw>=104]w,,install,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0e4b00,value,,D2C,,°C,temperature
+[id_sw>=104]r,,,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0d4a00,value,,D2C,,K,
+[id_sw>=104]w,,install,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0e4a00,value,,D2C,,K,
+[id_sw>=104]r,,,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0d4b00,value,,D2C,,K,
+[id_sw>=104]w,,install,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0e4b00,value,,D2C,,K,
 [id_sw>=104]r,,,DeiceTimeMax,"MaxDeiceTime: max. deicing time. By exceeding this value, message unsuccessful deicing is released",,,b509,0d4500,value,,UIN,,min,minutes
 [id_sw>=104]w,,install,DeiceTimeMax,"MaxDeiceTime: max. deicing time. By exceeding this value, message unsuccessful deicing is released",,,b509,0e4500,value,,UIN,,min,minutes
 [id_sw>=104]r,,,DeicePeriodMin,"MinDeicePeriod: Min. time between deicings. If time is shorter, something is wrong",,,b509,0d4600,value,,UIN,,min,minutes
@@ -122,5 +122,4 @@ w,,,Timer_Saturday,Periods Saturday,,,b505,0906,from,,TTM,,,from,to,,TTM,,,to,fr
 r,,,Timer_Sunday,Periods Sunday,,,b504,08,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
 w,,,Timer_Sunday,Periods Sunday,,,b505,0907,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,daysel,,UCH,0=selected;1=Mo_Fr;2=Sa_Su;3=Mo_Su,,day selector
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

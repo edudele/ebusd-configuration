@@ -28,11 +28,11 @@ r,,,BoilerSwitchSteps,BoilerSwitchSteps: set of the steps from the switching boi
 w,,install,BoilerSwitchSteps,BoilerSwitchSteps: set of the steps from the switching boiler,,,b509,0e3500,value,,UCH,,,
 r,,,SourceType,SourceType,,,b509,0d4e00,value,,UCH,0=noSystem;1=SSR;2=VRC;3=eSys;4=mixedSys,,"noSystem=0, SSR=1, VRC=2, eSys=3, mixedSys=4"
 r,,,RoomTemp,RaumtemperaturIst: room temperature,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
-r,,,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0d1f00,value,,D2C,,°C,temperature
-w,,install,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0e1f00,value,,D2C,,°C,temperature
-r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm,,,b509,0d2000,value,,D2C,,°C,temperature
-r,,,OutsideTempOffset,OutDoorTempCorr,,,b509,0d2100,value,,D2C,,°C,temperature
-w,,install,OutsideTempOffset,OutDoorTempCorr,,,b509,0e2100,value,,D2C,,°C,temperature
+r,,,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0d1f00,value,,D2C,,K,
+w,,install,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0e1f00,value,,D2C,,K,
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm,,,b509,0d2000,value,,D2C,,K,
+r,,,OutsideTempOffset,OutDoorTempCorr,,,b509,0d2100,value,,D2C,,K,
+w,,install,OutsideTempOffset,OutDoorTempCorr,,,b509,0e2100,value,,D2C,,K,
 r,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0d2200,value,,D2C,,°C,temperature
 w,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0e2200,value,,D2C,,°C,temperature
 r,,,HolidayPeriod,HolidayPeriod,,,b509,0d4300,hfrom,,HDA:3,,,holiday period from,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
@@ -184,5 +184,4 @@ w,,,HcName15,aaucHcNames_15: name of heating circuit No 15,,,b509,0e4170,value,,
 [id_sw>=400]r9,,,YieldThisYear,yield this year,,,b509,0d4400:2;0d4408:2;0d4410:2;0d4418:2;0d4420:2;0d4428:2;0d4430:2;0d4438:2;0d4440:2;0d4448:2;0d4450:2;0d4458:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
 [id_sw>=400]r,,,YieldLastYear,yield last year,,,b509,0d4500:2;0d4508:2;0d4510:2;0d4518:2;0d4520:2;0d4528:2;0d4530:2;0d4538:2;0d4540:2;0d4548:2;0d4550:2;0d4558:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

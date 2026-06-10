@@ -43,11 +43,23 @@ namespace Hcmode_inc {
   @base(MF, 0x10)
   model wi_1 {}
 
+  /** boiler mode (auto/off/heat/acs/sync) */
+  @values(Values_hcmode_sm)
+  scalar hcmode_sm extends UCH;
+
+  enum Values_hcmode_sm {
+    auto: 0,
+    off: 1,
+    heat: 2,
+    acs: 3,
+    sync: 23,
+  }
+
   /** Operation mode */
-  @inherit(uw, wi_1)
+  @inherit(uw)
   @ext(0)
   model SetMode {
-    hcmode: hcmode;
+    hcmode: hcmode_sm;
     flowtempdesired: temp1;
     hwctempdesired: temp1;
     hwcflowtempdesired: temp0;
@@ -55,14 +67,16 @@ namespace Hcmode_inc {
     @maxLength(1)
     ign: IGN;
 
-    /** bits: disablehc, disablehwctapping, disablehwcload */
-    status: UCH;
+    disablehc: BI0;
+    disablehwctapping: BI1;
+    disablehwcload: BI2;
 
     @maxLength(1)
     ign_1: IGN;
 
-    /** bits: remoteControlHcPump, releaseBackup, releaseCooling */
-    status2: UCH;
+    remoteControlHcPump: BI0;
+    releaseBackup: BI1;
+    releaseCooling: BI2;
   }
   // potential last byte: currentmode,s,UCH,0=off;1=standby;2=heat;3=water
 

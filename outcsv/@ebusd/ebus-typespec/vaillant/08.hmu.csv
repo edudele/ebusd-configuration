@@ -24,9 +24,10 @@ r,,,FlowTemp,current flow temperature,,,b51a,05ff3220,ign,,IGN:3,,,,value,,D2C,,
 r,,,EnergyIntegral,current energy integral,,,b51a,05ff3221,ign,,IGN:3,,,,value,,SIN,,°min,
 r,,,CurrentYieldPower,current yielded energy from the environment,,,b51a,05ff3223,ign,,IGN:3,,,,value,,SCH,10,kW,
 r,,,CurrentConsumedPower,current power consumption,,,b51a,05ff3224,ign,,IGN:3,,,,value,,SCH,10,kW,
-r,,,CurrentCompressorUtil,current compressor utilization,,,b51a,05ff3225,ign,,IGN:3,,,,value,,SCH,,%,
+r,,,CurrentCompressorUtil,current compressor utilization,,,b51a,05ff3225,ign,,IGN:3,,,,value,,D2C,,%,
 r,,,AirIntakeTemp,air intake temperature,,,b51a,05ff3226,ign,,IGN:3,,,,value,,D2C,,°C,temperature
 r,,,TargetTempHc,heat circuit target temperature,,,b51a,05ff321c,ign,,IGN:3,,,,value,,D2C,,°C,temperature
+r,,,SourceTempInput,,,,b51a,05ff3222,ign,,IGN:3,,,,value,,D2C,,°C,temperature
 r,,,SourceTempOutput,,,,b51a,05ff3227,ign,,IGN:3,,,,value,,D2C,,°C,temperature
 r,,,BuildingCircuitFlow,,,,b51a,05ff323c,ign,,IGN:3,,,,value,,UIN,,l/h,
 r,,,FlowPressure,,,,b51a,05ff323d,ign,,IGN:3,,,,value,,D2C,4,bar,
@@ -196,11 +197,24 @@ r,,,RunDataAirInletTemp,,,,b509,540200de08,ign,,IGN:4,,,,value,,EXP,,°C,tempera
 r,,,RunStatsCompressorHc,compressor runtime in min and starts in Hc mode,,,b511,1801,ign,,IGN:1,,,,runtime,,ULG,,min,minutes,cycles,,ULG,,,start count
 r,,,RunStatsCompressorHwc,compressor runtime in min and starts in Hwc mode,,,b511,1802,ign,,IGN:1,,,,runtime,,ULG,,min,minutes,cycles,,ULG,,,start count
 r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp,,D2B,,°C,temperature
-uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,status,,UCH,,,"bits: disablehc, disablehwctapping, disablehwcload",ign_1,,IGN:1,,,,status2,,UCH,,,"bits: remoteControlHcPump, releaseBackup, releaseCooling"
-w,,install,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,status,,UCH,,,"bits: disablehc, disablehwctapping, disablehwcload",ign_1,,IGN:1,,,,status2,,UCH,,,"bits: remoteControlHcPump, releaseBackup, releaseCooling"
+uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=acs;23=sync,,boiler mode (auto/off/heat/acs/sync),flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,disablehc,,BI0,,,,disablehwctapping,,BI1,,,,disablehwcload,,BI2,,,,ign_1,,IGN:1,,,,remotecontrolhcpump,,BI0,,,,releasebackup,,BI1,,,,releasecooling,,BI2,,,
 r,,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatur/Speichertemperatur/Pumpenstatus,,,b511,01,temp,,D1C,,°C,flow temperature,temp_1,,D1C,,°C,return temperature,temp_2,,D2B,,°C,outside temperature,temp_3,,D1C,,°C,hot water temperature,temp_4,,D1C,,°C,storage temperature,pumpstate,,UCH,0=off;1=on;2=overrun;4=hwc,,pump status
 r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/ReglerCurrentTemp,,,b511,02,hwcmode,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode,temp,,UCH,,°C,max temperature,temp_1,,D1C,,°C,current temperature,temp_2,,UCH,,°C,max temperature,temp_3,,D1C,,°C,current temperature
 uw,,,StatusCirPump,Status circulation pump,,,b512,00,onoff,,UCH,0=off;100=on,,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
+r,,,StatEnergySumYear,,,,b516,1003ffff,source,m,UCH,1=solar;2=environment;3=electricity;4=gas,,the energy source,usage,m,UCH,0=all;3=heat;4=water;5=cool,,the energy usage,ign2,m,UCH,=0,,,year,m,UCH,2,,the year as offset from 2000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySum,,,,b516,1000ffff01000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySumHc,,,,b516,1000ffff01030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySumHwc,,,,b516,1000ffff01040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySum,,,,b516,1000ffff02000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumHc,,,,b516,1000ffff02030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumHwc,,,,b516,1000ffff02040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumCool,,,,b516,1000ffff02050000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySum,,,,b516,1000ffff03000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumHc,,,,b516,1000ffff03030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumHwc,,,,b516,1000ffff03040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumCool,,,,b516,1000ffff03050000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSum,,,,b516,1000ffff04000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSumHc,,,,b516,1000ffff04030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSumHwc,,,,b516,1000ffff04040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,

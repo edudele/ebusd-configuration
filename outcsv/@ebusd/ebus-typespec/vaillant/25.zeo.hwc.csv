@@ -5,8 +5,8 @@ r,,,OperatingMode,OperatingMode: 1=Ein 2=Aus 3=Auto,,,b509,0d0600,value,,UCH,0=d
 r,,,TempDesired,DesiredTemperature: 1/2 °C resolution,,,b509,0d0d00,value,,D1C,,°C,temperature
 r,,,CircuitDiaState,CircuitDiaState,,,b509,0d1800,value,,UCH,,,
 r,,,CircuitsStates,CircuitsStates,,,b509,0d1e00,value,,UCH,,,
-r,,,CleaningLady,"CleaningLady: 0,5h",,,b509,0d2300,value,,UCH,,,
-r,,,HwcLegioProtectionMaxTimer,DhwLegioProtectionMaxTimer,,,b509,0d2d00,value,,UCH,,,
+r,,,CleaningLady,CleaningLady: saving function is activated for that duration,,,b509,0d2300,value,,D1C,,h,hours
+r,,,HwcLegioProtectionMaxTimer,DhwLegioProtectionMaxTimer: Maximal time the legio protection state is hold (indepent of reached temperature),,,b509,0d2d00,value,,UCH,,min,minutes
 r,,,ActualTempDesired,ActualDesiredTemp: 1/2°C Auflösung,,,b509,0d3300,value,,D1C,,°C,temperature
 r,,,HwcLegioTempOkTimer,DhwLegioTempOkTimer,,,b509,0d3400,value,,UCH,,°C,temperature
 r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp,,D2B,,°C,temperature

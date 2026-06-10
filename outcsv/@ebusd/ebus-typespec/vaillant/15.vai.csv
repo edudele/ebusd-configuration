@@ -1,0 +1,37 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,RoomTemp,room temperature,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,,RoomTemp,room temperature,,,b509,0e0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,Mode,ventilation mode,,,b509,0d2400,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+w,,,Mode,ventilation mode,,,b509,0e2400,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
+r,,,HighDuration,temporary high duration,,,b509,0d5800,value,,UIN,,min,minutes
+w,,,HighDuration,temporary high duration,,,b509,0e5800,value,,UIN,,min,minutes
+r,,,CoolDays,cooling days,,,b509,0d3600,value,,UCH,,,days
+w,,,CoolDays,cooling days,,,b509,0e3600,value,,UCH,,,days
+r,,,CoolState,cooling status,,,b509,0d0a00,value,,UCH,1=heat;2=cool,,
+r,,,Party,party mode,,,b509,0d3200,value,,UCH,0=off;1=on,,
+r,,,EcoMode,eco mode,,,b509,0d4f00,value,,UCH,0=off;1=on,,
+w,,,EcoMode,eco mode,,,b509,0e4f00,value,,UCH,0=off;1=on,,
+r,,,EcoModeUntil,save mode until,,,b509,0d5000,ign,,IGN:1,,,,value,,VTM,,,time
+w,,,EcoModeUntil,save mode until,,,b509,0e5000,ign,,IGN:1,,,,value,,VTM,,,time
+r,,,Time,time,,,b509,0d2c00,value,,VTI,,,time,ign,,IGN:1,=0,,
+w,,,Time,time,,,b509,0e2c00,value,,VTI,,,time,ign,,IGN:1,=0,,
+r,,,Date,date,,,b509,0d2d00,value,,HDA:3,,,date,ign,,IGN:1,=0,,
+w,,,Date,date,,,b509,0e2d00,value,,HDA:3,,,date,ign,,IGN:1,=0,,
+r,,,NormalFlow,ventilation level in level 2 (day),,,b509,0d1700,value,,UIN,,m3/h,
+w,,,NormalFlow,ventilation level in level 2 (day),,,b509,0e1700,value,,UIN,,m3/h,
+r,,,ReducedFlow,ventilation level in level 1 (night),,,b509,0d1800,value,,UIN,,m3/h,
+w,,,ReducedFlow,ventilation level in level 1 (night),,,b509,0e1800,value,,UIN,,m3/h,
+r,,,IntenseFlow,ventilation level in level high,,,b509,0d4a00,value,,UIN,,m3/h,
+w,,,IntenseFlow,ventilation level in level high,,,b509,0e4a00,value,,UIN,,m3/h,
+r,,,BypassFlow,ventilation level in level bypass,,,b509,0d4800,value,,UIN,,m3/h,
+w,,,BypassFlow,ventilation level in level bypass,,,b509,0e4800,value,,UIN,,m3/h,
+r,,,HolidayFlow,ventilation level in level holiday,,,b509,0d4900,value,,UIN,,m3/h,
+w,,,HolidayFlow,ventilation level in level holiday,,,b509,0e4900,value,,UIN,,m3/h,
+r,,,FilterDays,filter days,,,b509,0d4600,value,,UCH,,,days
+w,,,FilterDays,filter days,,,b509,0e4600,value,,UCH,,,days
+r,,,FilterDaysAlarm,days between two filter change alarms,,,b509,0d4500,value,,UIN,,,
+w,,,FilterDaysAlarm,days between two filter change alarms,,,b509,0e4500,value,,UIN,,,
+r,,,Yield,total yield,,,b509,0d4d00,value,,UIN,,kWh,
+w,,,Yield,total yield,,,b509,0e4d00,value,,UIN,,kWh,

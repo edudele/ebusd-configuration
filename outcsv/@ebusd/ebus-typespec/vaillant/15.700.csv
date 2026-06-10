@@ -45,8 +45,8 @@ w,,,VentilationNight,night ventilation,,,b524,020100004300,value,,UIN,,,Ventilat
 r,,,HwcMaxFlowTempDesired,hwc max flow temp desired,,,b524,020000004600,ign,,IGN:4,,,,value,,EXP,,°C,maximum flow temperature setpoint of Hwc
 w,,,HwcMaxFlowTempDesired,hwc max flow temp desired,,,b524,020100004600,value,,EXP,,°C,maximum flow temperature setpoint of Hwc
 r,,,SystemFlowTemp,system flow temp,,,b524,020000004b00,ign,,IGN:4,,,,value,,EXP,,°C,Systemvorlauf
-r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,ign,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
-w,,,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
+r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,ign,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump;4=inactive,,
+w,,,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump;4=inactive,,
 r,,,PrFuelSumHcThisMonth,this months fuel consumption heating,,,b524,020000004e00,ign,,IGN:4,,,,value,,ULG,,kWh,Aktueller Monat Brennstoffverbrauch Heizung
 w,,,PrFuelSumHcThisMonth,this months fuel consumption heating,,,b524,020100004e00,value,,ULG,,kWh,Aktueller Monat Brennstoffverbrauch Heizung
 r,,,PrEnergySumHcThisMonth,this months energy consumption heating,,,b524,020000004f00,ign,,IGN:4,,,,value,,ULG,,kWh,Aktueller Monat Stromverbrauch Heizung
@@ -214,6 +214,7 @@ r,,,Z1DayTemp,desired temperature zone 1,,,b524,020003000700,ign,,IGN:4,,,,value
 w,,,Z1DayTemp,desired temperature zone 1,,,b524,020103000700,value,,EXP,,°C,day setpoint for zone 1
 r,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020003000800,ign,,IGN:4,,,,value,,EXP,,°C,manual override setpoint for zone 1
 w,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020103000800,value,,EXP,,°C,manual override setpoint for zone 1
+r,,,RoomHumidity,Room humidity (Zone 1 only?),,,b524,060009010700,ign,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,Z1NightTemp,night temperature zone 1,,,b524,020003000900,ign,,IGN:4,,,,value,,EXP,,°C,night setpoint for zone 1
 w,,,Z1NightTemp,night temperature zone 1,,,b524,020103000900,value,,EXP,,°C,night setpoint for zone 1
 r,,,Z1BankHolidayStartPeriod,bank holiday start zone 1,,,b524,020003000c00,ign,,IGN:4,,,,value,,HDA:3,,,start date of bank holidays for zone 1
@@ -464,5 +465,4 @@ w,,,Z3CoolingTimer_Saturday,timer cooling saturday,,,b524,0403020105,from,,TTM,,
 r,,,Z3CoolingTimer_Sunday,timer cooling sunday,,,b524,0303020106,ign,,IGN:1,,,,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to
 w,,,Z3CoolingTimer_Sunday,timer cooling sunday,,,b524,0403020106,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to,from,,TTM,,,from,to,,TTM,,,to
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

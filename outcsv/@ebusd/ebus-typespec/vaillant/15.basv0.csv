@@ -25,8 +25,8 @@ r,,,PumpAdditionalTime,pump additional time,,,b524,020000001b00,ign,,IGN:4,,,,va
 w,,,PumpAdditionalTime,pump additional time,,,b524,020100001b00,value,,UIN,,min,Ladepumpe Nachlaufzeit
 r,,,HcAlternativePoint,exclusively alternate heating below alternative point (-21=off),,,b524,020000002200,ign,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,HcAlternativePoint,exclusively alternate heating below alternative point (-21=off),,,b524,020100002200,value,,EXP,,°C,temperature
-r,,,BackupBoiler,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc),,,b524,020000002400,ign,,IGN:4,,,,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,
-w,,,BackupBoiler,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc),,,b524,020100002400,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,
+r,,,BackupBoiler,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc),,,b524,020000002400,ign,,IGN:4,,,,value,,UCH,0=off;1=heating_circuit;2=warm_water_circuit;3=heating_warm_water_circuit,,function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
+w,,,BackupBoiler,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc),,,b524,020100002400,value,,UCH,0=off;1=heating_circuit;2=warm_water_circuit;3=heating_warm_water_circuit,,function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
 r,,,HcEmergencyTemperature,Emergency operation temperature,,,b524,020000002600,ign,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,CylinderChargeHyst,hysteresis cylinder charge,,,b524,020000002700,ign,,IGN:4,,,,value,,EXP,,K,Hysterese Speicherladung
 w,,,CylinderChargeHyst,hysteresis cylinder charge,,,b524,020100002700,value,,EXP,,K,Hysterese Speicherladung
@@ -59,8 +59,8 @@ w,,,ESCOBlockFunction,Function to deactivate when Energy Supply Company sends a 
 r,,,HwcMaxFlowTempDesired,hwc max flow temp desired,,,b524,020000004600,ign,,IGN:4,,,,value,,EXP,,°C,maximum flow temperature setpoint of Hwc
 w,,,HwcMaxFlowTempDesired,hwc max flow temp desired,,,b524,020100004600,value,,EXP,,°C,maximum flow temperature setpoint of Hwc
 r,,,SystemFlowTemp,system flow temp,,,b524,020000004b00,ign,,IGN:4,,,,value,,EXP,,°C,Systemvorlauf
-r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,ign,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
-w,,,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
+r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,ign,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump;4=inactive,,
+w,,,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump;4=inactive,,
 r,,,PrFuelSumHcThisMonth,this months fuel consumption heating,,,b524,020000004e00,ign,,IGN:4,,,,value,,ULG,,kWh,Aktueller Monat Brennstoffverbrauch Heizung
 w,,,PrFuelSumHcThisMonth,this months fuel consumption heating,,,b524,020100004e00,value,,ULG,,kWh,Aktueller Monat Brennstoffverbrauch Heizung
 r,,,PrEnergySumHcThisMonth,this months energy consumption heating,,,b524,020000004f00,ign,,IGN:4,,,,value,,ULG,,kWh,Aktueller Monat Stromverbrauch Heizung
@@ -148,12 +148,12 @@ r,,,Hc1MinCoolingFlowTempDesired,minimum cooling flow temperature setpoint of Hc
 w,,,Hc1MinCoolingFlowTempDesired,minimum cooling flow temperature setpoint of Hc1,,,b524,020102001100,value,,EXP,,°C,temperature
 r,,,Hc1MinFlowTempDesired,MinFlowTempDesired Heating Circuit 1,,,b524,020002001200,ign,,IGN:4,,,,value,,EXP,,°C,minimum heating flow temperature setpoint (end emphasis) of Hc1
 w,,,Hc1MinFlowTempDesired,MinFlowTempDesired Heating Circuit 1,,,b524,020102001200,value,,EXP,,°C,minimum heating flow temperature setpoint (end emphasis) of Hc1
-r,,,Hc1ExtHwcOpMode,operation mode of external Hwc circuit,,,b524,020002001300,ign,,IGN:4,,,,value,,UIN,0=off;1=auto;2=manual,,
-w,,,Hc1ExtHwcOpMode,operation mode of external Hwc circuit,,,b524,020102001300,value,,UIN,0=off;1=auto;2=manual,,
+r,,,Hc1ExtHwcOpMode,operation mode of external Hwc circuit,,,b524,020002001300,ign,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,operation mode of external Hwc circuit (off/time_controlled/manual)
+w,,,Hc1ExtHwcOpMode,operation mode of external Hwc circuit,,,b524,020102001300,value,,UIN,0=off;1=time_controlled;2=manual,,operation mode of external Hwc circuit (off/time_controlled/manual)
 r,,,Hc1SummerTempLimit,Switch off temperature threshold Heating Circuit 1,,,b524,020002001400,ign,,IGN:4,,,,value,,EXP,,°C,if outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
 w,,,Hc1SummerTempLimit,Switch off temperature threshold Heating Circuit 1,,,b524,020102001400,value,,EXP,,°C,if outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-r,,,Hc1RoomTempSwitchOn,RoomTempSwitchOn heating circuit 1,,,b524,020002001500,ign,,IGN:4,,,,value,,UIN,0=off;1=modulating;2=thermostat,,room temperature modulation of Hc1
-w,,,Hc1RoomTempSwitchOn,RoomTempSwitchOn heating circuit 1,,,b524,020102001500,value,,UIN,0=off;1=modulating;2=thermostat,,room temperature modulation of Hc1
+r,,,Hc1RoomTempSwitchOn,RoomTempSwitchOn heating circuit 1,,,b524,020002001500,ign,,IGN:4,,,,value,,UIN,0=off;1=activo;2=ampliado,,room temperature modulation of Hc1
+w,,,Hc1RoomTempSwitchOn,RoomTempSwitchOn heating circuit 1,,,b524,020102001500,value,,UIN,0=off;1=activo;2=ampliado,,room temperature modulation of Hc1
 r,,,Hc1ScreedDryingDay,current day of screed Hc1 drying schedule (1 to 29 0=screed drying off),,,b524,020002001600,ign,,IGN:4,,,,value,,UIN,,,
 w,,,Hc1ScreedDryingDay,current day of screed Hc1 drying schedule (1 to 29 0=screed drying off),,,b524,020102001600,value,,UIN,,,
 r,,,Hc1ScreedDryingDesiredTemp,current Hc1 screed drying desired temp,,,b524,020002001700,ign,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -180,8 +180,8 @@ r,,,Hc2MinFlowTempDesired,MinFlowTempDesired heating circuit 2,,,b524,0200020112
 w,,,Hc2MinFlowTempDesired,MinFlowTempDesired heating circuit 2,,,b524,020102011200,value,,EXP,,°C,minimum flow temperature setpoint (end emphasis) of Hc2
 r,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020002011400,ign,,IGN:4,,,,value,,EXP,,°C,if outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
 w,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020102011400,value,,EXP,,°C,if outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-r,,,Hc2RoomTempSwitchOn,RoomTempSwitchOn heating circuit 2,,,b524,020002011500,ign,,IGN:4,,,,value,,UIN,0=off;1=modulating;2=thermostat,,room temperature modulation of Hc2
-w,,,Hc2RoomTempSwitchOn,RoomTempSwitchOn heating circuit 2,,,b524,020102011500,value,,UIN,0=off;1=modulating;2=thermostat,,room temperature modulation of Hc2
+r,,,Hc2RoomTempSwitchOn,RoomTempSwitchOn heating circuit 2,,,b524,020002011500,ign,,IGN:4,,,,value,,UIN,0=off;1=activo;2=ampliado,,room temperature modulation of Hc2
+w,,,Hc2RoomTempSwitchOn,RoomTempSwitchOn heating circuit 2,,,b524,020102011500,value,,UIN,0=off;1=activo;2=ampliado,,room temperature modulation of Hc2
 r,,,Hc2MixerMovement,MixerMovement heating circuit 2,,,b524,020002011a00,ign,,IGN:4,,,,value,,EXP,,,"status of mixer (<0 closing, >0 opening)"
 r,,,Hc2HeatCurveAdaption,HeatCurveAdaption heating circuit 2,,,b524,020002011c00,ign,,IGN:4,,,,value,,EXP,,,adaption applied to heating curve of Hc2
 r,,,Hc2Status,Status heating circuit 2,,,b524,020002011b00,ign,,IGN:4,,,,value,,UCH,,,status of zone 2
@@ -203,8 +203,8 @@ r,,,Hc3MinFlowTempDesired,MinFlowTempDesired heating circuit 3,,,b524,0200020212
 w,,,Hc3MinFlowTempDesired,MinFlowTempDesired heating circuit 3,,,b524,020102021200,value,,EXP,,°C,minimum flow temperature setpoint (end emphasis) of Hc3
 r,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020002021400,ign,,IGN:4,,,,value,,EXP,,°C,if outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
 w,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020102021400,value,,EXP,,°C,if outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-r,,,Hc3RoomTempSwitchOn,RoomTempSwitchOn heating circuit 3,,,b524,020002021500,ign,,IGN:4,,,,value,,UIN,0=off;1=modulating;2=thermostat,,room temperature modulation of Hc3
-w,,,Hc3RoomTempSwitchOn,RoomTempSwitchOn heating circuit 3,,,b524,020102021500,value,,UIN,0=off;1=modulating;2=thermostat,,room temperature modulation of Hc3
+r,,,Hc3RoomTempSwitchOn,RoomTempSwitchOn heating circuit 3,,,b524,020002021500,ign,,IGN:4,,,,value,,UIN,0=off;1=activo;2=ampliado,,room temperature modulation of Hc3
+w,,,Hc3RoomTempSwitchOn,RoomTempSwitchOn heating circuit 3,,,b524,020102021500,value,,UIN,0=off;1=activo;2=ampliado,,room temperature modulation of Hc3
 r,,,Hc3MixerMovement,MixerMovement heating circuit 3,,,b524,020002021a00,ign,,IGN:4,,,,value,,EXP,,,"status of mixer (<0 closing, >0 opening)"
 r,,,Hc3HeatCurveAdaption,HeatCurveAdaption heating circuit 3,,,b524,020002021c00,ign,,IGN:4,,,,value,,EXP,,,adaption applied to heating curve of Hc3
 r,,,Hc3Status,Status heating circuit 3,,,b524,020002021b00,ign,,IGN:4,,,,value,,UCH,,,status of zone 2
@@ -333,5 +333,4 @@ w,,,Z3Name1,label zone 3 part 1,,,b524,020103021700,value,,STR:5,,,name of zone 
 r,,,Z3Name2,label zone 3 part 2,,,b524,020003021800,ign,,IGN:4,,,,value,,STR:5,,,name of zone 3
 w,,,Z3Name2,label zone 3 part 2,,,b524,020103021800,value,,STR:5,,,name of zone 3
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

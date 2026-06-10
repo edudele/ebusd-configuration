@@ -1,0 +1,34 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+*u,
+r,,,RoomTemp,room temperature,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+w,,,RoomTemp,room temperature,,,b509,0e0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,AirInletTemp,Supply air inlet temperature,,,b509,0d0100,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+u,,,AirInletTemp,Supply air inlet temperature,,,b509,290100,ign,,IGN:2,,,,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,AirOutletTemp,Supply air outlet temperature,,,b509,0d0200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+u,,,AirOutletTemp,Supply air outlet temperature,,,b509,290200,ign,,IGN:2,,,,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,ExhaustAirInletTemp,Exhaust air inlet temperature,,,b509,0d0300,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+u,,,ExhaustAirInletTemp,Exhaust air inlet temperature,,,b509,290300,ign,,IGN:2,,,,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,ExhaustAirOutletTemp,Exhaust air outlet temperature,,,b509,0d0400,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+u,,,ExhaustAirOutletTemp,Exhaust air outlet temperature,,,b509,290400,ign,,IGN:2,,,,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
+r,,,BypassValve,Bypass status,,,b509,0d0a00,value,,UCH,0=auto;1=off;2=on,,
+w,,,BypassValve,Bypass status,,,b509,0e0a00,value,,UCH,0=auto;1=off;2=on,,
+r,,,Ventilation,ventilation level,,,b509,0d1500,value,,UIN,12,l/s,
+w,,,Ventilation,ventilation level,,,b509,0e1500,value,,UIN,12,l/s,
+r,,,FlowCorrection,volume flow correction,,,b509,0d2000,value,,SCH,,,
+w,,,FlowCorrection,volume flow correction,,,b509,0e2000,value,,SCH,,,
+r,,,BypassPos,bypass position,,,b509,0d0900,value,,UIN,,%,
+u,,,BypassPos,bypass position,,,b509,290900,ign,,IGN:2,,,,value,,UIN,,%,
+r,,,FrostProtection,frost protection,,,b509,0d4700,value,,UCH,0=off;1=on,,
+w,,,FrostProtection,frost protection,,,b509,0e4700,value,,UCH,0=off;1=on,,
+r,,,FilterDays,filter days,,,b509,0d4600,value,,UCH,,,days
+w,,,FilterDays,filter days,,,b509,0e4600,value,,UCH,,,days
+u,,,FilterDays,filter days,,,b509,294600,ign,,IGN:2,,,,value,,UCH,,,days
+r,,,FilterDaysAlarm,days between two filter change alarms,,,b509,0d4500,value,,UCH,,,days
+u,,,FilterDaysAlarm,days between two filter change alarms,,,b509,294500,ign,,IGN:2,,,,value,,UCH,,,days
+r,,,Yield,total yield,,,b509,0d4d00,value,,UIN,,kWh,
+w,,,Yield,total yield,,,b509,0e4d00,value,,UIN,,kWh,
+u,,,Yield,total yield,,,b509,294d00,ign,,IGN:2,,,,value,,UIN,,kWh,
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

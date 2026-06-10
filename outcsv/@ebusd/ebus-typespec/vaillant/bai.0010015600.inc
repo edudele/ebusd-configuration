@@ -21,14 +21,14 @@ r,,,Storageloadpump,d.12 storage load pump: tank load pump demand,,,b509,0d9e00,
 r,,,CirPump,d.13 Circulation pump: Hot water circulation pump (via external module),,,b509,0d7b00,value,,UCH,0=off;1=on,,
 r,,,PumpPowerDesired,d.14 Desired heating pump power,,,b509,0da100,value,,UCH,0=auto;1=53;2=60;3=70;4=85;5=100,%,PWM-Desired central heating pump power
 w,,install_NOT_YET_CONFIRMED,PumpPowerDesired,d.14 Desired heating pump power,,,b509,0ea100,value,,UCH,0=auto;1=53;2=60;3=70;4=85;5=100,%,PWM-Desired central heating pump power
-r,,,PumpPower,d.15 Current heating pump power: Current central heating pump power,,,b509,0d7300,value,,UCH,,,
+r,,,PumpPower,d.15 Current heating pump power: Current central heating pump power,,,b509,0d7300,value,,UIN,,%,
 r,,,DCRoomthermostat,d.16 Room thermostat 24 V: xternal controls heat demand (Clamp 3-4),,,b509,0d0e00,value,,UCH,0=off;1=on,,
 r,,,HwcDemand,d.22 DHW demand: Domestic hot water demand,,,b509,0d5800,value,,UCH,0=no;1=yes,,
 r,,,HeatingSwitch,d.23 Heating on/off switch,,,b509,0df203,value,,UCH,0=off;1=on,,Central heating on/off switch
 w,,install_NOT_YET_CONFIRMED,HeatingSwitch,d.23 Heating on/off switch,,,b509,0ef203,value,,UCH,0=off;1=on,,Central heating on/off switch
-r,,,PrimaryCircuitFlowrate,d.29 Primary circuit flow rate,,,b509,0dfb00,value,,UIN,100,l/min,Primary circuit water flow rate
-r,,,TargetFanSpeed,d.33 Target fan speed,,,b509,0d2400,value,,UIN,,1/min,Fan speed setpoint
-r,,,FanSpeed,d.34 Current fan speed,,,b509,0d8300,value,,UIN,,1/min,Current fan speed
+r,,,PrimaryCircuitFlowrate,d.29 Primary circuit flow rate,,,b509,0dfb00,value,,UIN,100,l/min,
+r,,,TargetFanSpeed,d.33 Target fan speed,,,b509,0d2400,value,,UIN,,rpm,
+r,,,FanSpeed,d.34 Current fan speed,,,b509,0d8300,value,,UIN,,rpm,
 r,,,PositionValveSet,"d.35 Position TWV: Position of diverter valve; 100 = DHW, 0 = heating, 40 = middle position",,,b509,0d5400,value,,UCH,,,
 r,,,FlowTemp,d.40 Supply temperature: CH supply temperature sensor (VF2),,,b509,0d1800,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
 r,,,ReturnTemp,d.41 Return temperature: CH return temperature sensor,,,b509,0d9800,temp,,D2C,,°C,temperature,tempmirror,,UIN,,°C,,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
@@ -64,7 +64,7 @@ r,,,EbusVoltage,eBUS voltage feedback,,,b509,0d7f00,value,,UCH,0=off;1=on,,
 r,,,FluegasvalveOpen,Flue flap open: Exhaust (flue) flap open,,,b509,0d8900,value,,UCH,0=off;1=on,,
 r,,,Testbyte,Testbyte (relevant for testers),,,b509,0d9900,value,,UCH,,,
 r,,,DSN,DSN: Device Specific number,,,b509,0d9a00,value,,UIN,,,
-r,,,TargetFanSpeedOutput,Target fan speed,,,b509,0d9f00,value,,UIN,,1/min,Target fan speed
+r,,,TargetFanSpeedOutput,Target fan speed,,,b509,0d9f00,value,,UIN,,rpm,
 r,,,PowerValue,Power number,,,b509,0daa00,value,,HEX:6,,,Power value of the boiler (minimum and maximum)
 r,,,Statenumber,Statenumber: Status number,,,b509,0dab00,value,,UCH,,,
 r,,,WaterpressureBranchControlOff,WaterpressureBranchControlOff_DK: Water pressure branch control switch,,,b509,0daf00,value,,UCH,0=off;1=on,,
@@ -78,8 +78,8 @@ r,,,DisplayMode,DisplayMode: Display mode of the appliance,,,b509,0dda00,value,,
 r,,,Gasvalve3UC,Gasventil 3: Gas valve switching signal (from the processor),,,b509,0ddb00,value,,UCH,240=off;15=on,,
 r,,,InitialisationEEPROM,InitialisationEEPROM: EEPROM initialization (for production),,,b509,0ddc00,value,,UCH,0=no;1=yes,,
 r,,,TimerInputHc,Eingang Schaltuhr: Timer input (block heatdemand),,,b509,0dde00,value,,UCH,0=off;1=on,,
-r,,,FanMinSpeedOperation,Minimum fan speed,,,b509,0ddf00,value,,UIN,,1/min,Fan minimum speed
-r,,,FanMaxSpeedOperation,Maximum fan speed,,,b509,0de000,value,,UIN,,1/min,Fan maximum speed
+r,,,FanMinSpeedOperation,FanMinSpeedOperation: Minimum Fan speed of the appliance,,,b509,0ddf00,value,,UIN,,rpm,
+r,,,FanMaxSpeedOperation,FanMaxSpeedOperation: Maximum Fan speed of the appliance,,,b509,0de000,value,,UIN,,rpm,
 r,,,ExternGasvalve,External gas valve: External solenoid valve,,,b509,0de400,value,,UCH,0=off;1=on,,
 r,,,DCFTimeDate,DCF date/time,,,b509,0de500,vti,,VTI,,,,hda,,HDA,,,
 r,,,HwcSwitch,DHW switch,,,b509,0df303,value,,UCH,0=off;1=on,,Domestic hot water switch
@@ -98,16 +98,16 @@ r,,,AccessoriesOne,d.27 Accessory relay 1,,,b509,0db900,value,,UCH,1=circulation
 w,,install_NOT_YET_CONFIRMED,AccessoriesOne,d.27 Accessory relay 1,,,b509,0eb900,value,,UCH,1=circulationpump;2=extheatingpump;3=storagechargingpump;4=fluegasflapextractorhood;5=externalgasvalve;6=externalerrormessage;7=solarpump;8=remotecontrol,,Function of accessory relay 1
 r,,,AccessoriesTwo,d.28 Accessory relay 2,,,b509,0dba00,value,,UCH,1=circulationpump;2=extheatingpump;3=storagechargingpump;4=fluegasflapextractorhood;5=externalgasvalve;6=externalerrormessage;7=solarpump;8=remotecontrol,,Function of accessory relay 2
 w,,install_NOT_YET_CONFIRMED,AccessoriesTwo,d.28 Accessory relay 2,,,b509,0eba00,value,,UCH,1=circulationpump;2=extheatingpump;3=storagechargingpump;4=fluegasflapextractorhood;5=externalgasvalve;6=externalerrormessage;7=solarpump;8=remotecontrol,,Function of accessory relay 2
-r,,,FanSpeedOffsetMin,d.50 Minimum fan speed offset,,,b509,0da700,value,,SIN,,1/min,Fan minimum speed offset
-w,,install_NOT_YET_CONFIRMED,FanSpeedOffsetMin,d.50 Minimum fan speed offset,,,b509,0ea700,value,,SIN,,1/min,Fan minimum speed offset
-r,,,FanSpeedOffsetMax,d.51 Maximum fan speed offset,,,b509,0da800,value,,SIN,,1/min,Fan maximum speed offset
-w,,install_NOT_YET_CONFIRMED,FanSpeedOffsetMax,d.51 Maximum fan speed offset,,,b509,0ea800,value,,SIN,,1/min,Fan maximum speed offset
+r,,,FanSpeedOffsetMin,d.50 Minimum fan speed offset,,,b509,0da700,value,,SIN,,rpm,Fan minimum speed offset
+w,,install_NOT_YET_CONFIRMED,FanSpeedOffsetMin,d.50 Minimum fan speed offset,,,b509,0ea700,value,,SIN,,rpm,Fan minimum speed offset
+r,,,FanSpeedOffsetMax,d.51 Maximum fan speed offset,,,b509,0da800,value,,SIN,,rpm,Fan maximum speed offset
+w,,install_NOT_YET_CONFIRMED,FanSpeedOffsetMax,d.51 Maximum fan speed offset,,,b509,0ea800,value,,SIN,,rpm,Fan maximum speed offset
 r,,,DeactivationsTemplimiter,d.60 Shutdowns by the temp limiter: Number of shutdowns by the safety temperature limiter,,,b509,0d2000,value,,UCH,,,
 r,,,DeactivationsIFC,d.61 Ignition failures: Number of ignition failures (unsuccessful last-run or faulty flame signal),,,b509,0d1f00,value,,UCH,,,
 r,,,AverageIgnitiontime,d.64 average ignition time,,,b509,0d2d00,value,,UCH,10,s,average ignition time
 r,,,MaxIgnitiontime,d.65 Maximum ignition time,,,b509,0d2c00,value,,UCH,10,s,maximum ignition time
-r,,,CounterStartattempts1,d.68 Failed ignition (1nd attempt): Number of unsuccessful ignition attempts (in the first attempt),,,b509,0d6e00,value,,UCH,,°C,temperature
-r,,,CounterStartattempts2,d.69 Failed ignition (2nd attempt): Number of unsuccessful ignition attempts (in the second attempt),,,b509,0d6f00,value,,UCH,,°C,temperature
+r,,,CounterStartAttempts1,d.68 Failed ignition (1nd attempt): Number of unsuccessful ignition attempts (in the first attempt),,,b509,0d6e00,value,,UCH,,,
+r,,,CounterStartAttempts2,d.69 Failed ignition (2nd attempt): Number of unsuccessful ignition attempts (in the second attempt),,,b509,0d6f00,value,,UCH,,,
 r,,,FlowsetHcMax,d.71 CH max flow temperature,,,b509,0d0e04,value,,D2C,,°C,Setting the maximum flow setpoint in heating mode (with left-hand stop of the potentiometer)
 w,,install_NOT_YET_CONFIRMED,FlowsetHcMax,d.71 CH max flow temperature,,,b509,0e0e04,value,,D2C,,°C,Setting the maximum flow setpoint in heating mode (with left-hand stop of the potentiometer)
 r,,,StorageLoadTimeMax,d.75 Maximum storage time,,,b509,0d6600,value,,UCH,,min,Maximum water storing time for storage without own controls
@@ -149,8 +149,8 @@ r,,,DeltaFlowReturnMax,MaxDeltaFlowReturn: Maintenance data,,,b509,0d3d00,value,
 r,,,StorageLoadPumpHours,TankLoadPumpOperationHours: Preditive maintenance data,,,b509,0d4c00,value,,UIN,,h,hours
 r,,,StorageloadPumpStarts,TankloadPumpCommunt: Preditive maintenance data,,,b509,0d4f00,value,,UIN,,,start count
 r,,,HwcWaterflowMax,Max. WW Vorlauftemp.: Maximalwert des Warmwassersensors,,,b509,0d5600,value,,UIN,100,,
-r,,,CounterStartAttempts3,Failed ignition (3rd attempt): Number of unsuccessful ignition attempts (in the 3rd attempt),,,b509,0d8100,value,,UCH,,°C,temperature
-r,,,CounterStartAttempts4,Failed ignition (4th attempt): Number of unsuccessful ignition attempts (in the 4th attempt),,,b509,0d8200,value,,UCH,,°C,temperature
+r,,,CounterStartAttempts3,Failed ignition (3rd attempt): Number of unsuccessful ignition attempts (in the 3rd attempt),,,b509,0d8100,value,,UCH,,,
+r,,,CounterStartAttempts4,Failed ignition (4th attempt): Number of unsuccessful ignition attempts (in the 4th attempt),,,b509,0d8200,value,,UCH,,,
 r,,,ReturnTempMax,Max flow return temperature,,,b509,0dbe00,value,,D2C,,°C,temperature
 r,,,PumpHwcFlowSum,PumpDHWFlowSum: Summed up DHW flow rate,,,b509,0dc100,value,,UIN,,,
 r,,,PumpHwcFlowNumber,PumpDHWFlowNumber: Number of times DHW flow rate was detected,,,b509,0dc200,value,,UCH,,,

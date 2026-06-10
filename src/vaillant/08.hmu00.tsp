@@ -13,7 +13,7 @@ namespace Hmu00 {
   // Elementos adicionales del 08.hmu00.csv que no están en 08.hmu.tsp principal
 
   /** default *r for B511 messages */
-  @base(MF, 0x11, 0)
+  @base(MF, 0x11)
   model r_b511 {}
 
   /** State0 - complete state message with multiple fields */
@@ -193,7 +193,6 @@ namespace Hmu00 {
   @ext(0x25)
   model CurrentCompressorUtil {
     @unit("%")
-    @divisor(10)
     value: D1B;
   }
 
@@ -201,7 +200,8 @@ namespace Hmu00 {
   @inherit(r_stats)
   @ext(0x26)
   model AirInletTemp {
-    value: temps;
+    @unit("°C")
+    value: D2C;
   }
 
   /** D.042 Cooling energy yield current month */
@@ -462,6 +462,13 @@ namespace Hmu00 {
   @base(MF, 0x1a, 0x5, 0xff, 0x34)
   model r_stats_ext_noign {}
 
+  /** default *r for D.3xx region (0x35) statistics with leading IGN:3 */
+  @base(MF, 0x1a, 0x5, 0xff, 0x35)
+  model r_stats_35 {
+    @maxLength(3)
+    ign: IGN;
+  }
+
   /** D.130 Total compressor starts */
   @inherit(r_stats_ext)
   @ext(0x1e)
@@ -523,12 +530,10 @@ namespace Hmu00 {
     value: UIN;
   }
 
-  /** D.366 Fan boost */
-  @inherit(r_stats_ext_noign)
-  @ext(0x54, 0x1, 0x5)
-  model FanBoost {
-    value: UIN;
-  }
+  /** D.366 Fan boost (CHECK) */
+  @inherit(r_stats_35)
+  @ext(0x41)
+  model FanBoost {}
 
   /** default *r Additional values from VWZ menu (Live Monitor Main) */
   @base(MF, 0x3, 0)
