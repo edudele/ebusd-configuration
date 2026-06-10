@@ -31,15 +31,15 @@ namespace Errors_inc {
   @base(MF, 0x3, 0x2)
   model wi_1 {}
 
-  /** Error_History */
-  @inherit(r_2)
-  @ext(1)
-  model Errorhistory {
-    @out
-    index: UCH;
-
-    errorhistory: errorhistory;
-  }
+  // Error_History (commented out to match the legacy CSV, where errorhistory is disabled)
+  // @inherit(r_2)
+  // @ext(1)
+  // model Errorhistory {
+  //   @out
+  //   index: UCH;
+  //
+  //   errorhistory: errorhistory;
+  // }
 
   /** Clear error history */
   @inherit(wi_1)

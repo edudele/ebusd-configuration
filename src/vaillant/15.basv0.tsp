@@ -30,6 +30,36 @@ namespace Basv0 {
   @base(MF, 0x24, 0x2, 1, 0, 0)
   model wi_1 {}
 
+  // Local value sets to keep functional parity with the legacy CSV (15.basv0)
+
+  /** room temperature modulation (off/activo/ampliado) */
+  @values(Values_rcmodv)
+  scalar rcmodv extends UIN;
+  enum Values_rcmodv {
+    off: 0,
+    activo: 1,
+    ampliado: 2,
+  }
+
+  /** operation mode of external Hwc circuit (off/time_controlled/manual) */
+  @values(Values_opmode2v)
+  scalar opmode2v extends UIN;
+  enum Values_opmode2v {
+    off: 0,
+    time_controlled: 1,
+    manual: 2,
+  }
+
+  /** function of back-up boiler (Off/Hc/Hwc/Hc+Hwc) */
+  @values(Values_backmode2v)
+  scalar backmode2v extends UCH;
+  enum Values_backmode2v {
+    off: 0,
+    heating_circuit: 1,
+    warm_water_circuit: 2,
+    heating_warm_water_circuit: 3,
+  }
+
   /** continuos heating */
   @inherit(r_1, w_1)
   @ext(0x2, 0)
@@ -136,7 +166,7 @@ namespace Basv0 {
   @inherit(r_1, w_1)
   @ext(0x24, 0)
   model BackupBoiler {
-    value: backmode2;
+    value: backmode2v;
   }
 
   /** Emergency operation temperature */
@@ -697,7 +727,7 @@ namespace Basv0 {
   @inherit(r_3, w_3)
   @ext(0x13, 0)
   model Hc1ExtHwcOpMode {
-    value: opmode2;
+    value: opmode2v;
   }
 
   /** Switch off temperature threshold Heating Circuit 1 */
@@ -713,7 +743,7 @@ namespace Basv0 {
   @ext(0x15, 0)
   model Hc1RoomTempSwitchOn {
     /** room temperature modulation of Hc1 */
-    value: rcmode;
+    value: rcmodv;
   }
 
   /** current day of screed Hc1 drying schedule (1 to 29 0=screed drying off) */
@@ -868,7 +898,7 @@ namespace Basv0 {
   @ext(0x15, 0)
   model Hc2RoomTempSwitchOn {
     /** room temperature modulation of Hc2 */
-    value: rcmode;
+    value: rcmodv;
   }
 
   /** MixerMovement heating circuit 2 */
@@ -995,7 +1025,7 @@ namespace Basv0 {
   @ext(0x15, 0)
   model Hc3RoomTempSwitchOn {
     /** room temperature modulation of Hc3 */
-    value: rcmode;
+    value: rcmodv;
   }
 
   /** MixerMovement heating circuit 3 */

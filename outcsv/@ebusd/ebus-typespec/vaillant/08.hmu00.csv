@@ -2,8 +2,8 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *r,
 *w,
 *uw,
-r,,,State0,State0 - complete state message with multiple fields,,,b511,0000,field1,,UCH,,,,field2,,UIN,,,,field3,,UCH,,,,field4,,UCH,,,,field5,,UIN,,,,field6,,UCH,,,
-r,,,State,State,,,b511,0007,energy,,UCH,,,,energy_1,,UIN,,kWh,,onoff,,UCH,,,,state,,UCH,,,
+r,,,State0,State0 - complete state message with multiple fields,,,b511,00,field1,,UCH,,,,field2,,UIN,,,,field3,,UCH,,,,field4,,UCH,,,,field5,,UIN,,,,field6,,UCH,,,
+r,,,State,State,,,b511,07,energy,,UCH,,,,energy_1,,UIN,,kWh,,onoff,,UCH,,,,state,,UCH,,,
 r,,,DayHeatingYield,D.000 Heating energy yield current day,,,b51a,05ff3200,ign,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,DayCoolingYield,D.001 Cooling energy yield current day,,,b51a,05ff3201,ign,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,DayHwcYield,D.002 Domestic energy yield current day,,,b51a,05ff3202,ign,,IGN:3,,,,value,,UIN,10,kWh,
@@ -21,8 +21,8 @@ r,,,FlowTemp32,Flow temperature 32,,,b51a,05ff3220,ign,,IGN:3,,,,value,,D2C,,°C
 r,,,EnergyIntegral,D.033 Energy Integral,,,b51a,05ff3221,ign,,IGN:3,,,,value,,SLG,,°min,
 r,,,CurrentYieldPower,D.035 Current yield power,,,b51a,05ff3223,ign,,IGN:3,,,,value,,SCH,10,kW,
 r,,,CurrentConsumedPower,D.036 Current consumed power,,,b51a,05ff3224,ign,,IGN:3,,,,value,,SCH,10,kW,
-r,,,CurrentCompressorUtil,D.037 Current compressor speed,,,b51a,05ff3225,ign,,IGN:3,,,,value,,SCH,10,%,
-r,,,AirInletTemp,D.038 Air inlet temperature,,,b51a,05ff3226,ign,,IGN:3,,,,value,,SCH,,°C,temperature
+r,,,CurrentCompressorUtil,D.037 Current compressor speed,,,b51a,05ff3225,ign,,IGN:3,,,,value,,SCH,,%,
+r,,,AirInletTemp,D.038 Air inlet temperature,,,b51a,05ff3226,ign,,IGN:3,,,,value,,D2C,,°C,
 r,,,MonthCoolingYield,D.042 Cooling energy yield current month,,,b51a,05ff322a,ign,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,MonthCoolingWorkFactor,Monthly cooling work factor (SEER),,,b51a,05ff322b,ign,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,TotalCoolingWorkFactor,Total Cop Cooling,,,b51a,05ff322d,ign,,IGN:3,,,,value,,UIN,10,kWh,
@@ -69,7 +69,7 @@ r,,,MaximunBlockTimeHours,D.145 Maximum block time hours. 0-9 h. Step 1 h. Facto
 w,,,MaximunBlockTimeHours,D.145 Maximum block time hours. 0-9 h. Step 1 h. Factory 5,,,b51a,06ff342d,value,,SCH,,h,
 r,,,CompressorHysteresis,D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K,,,b51a,05ff3443,ign,,IGN:3,,,,value,,UIN,,,
 w,,,CompressorHysteresis,D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K,,,b51a,06ff3443,value,,UIN,,,
-r,,,FanBoost,D.366 Fan boost,,,b51a,05ff34540105,value,,UIN,,,
+r,,,FanBoost,D.366 Fan boost (CHECK),,,b51a,05ff3541,ign,,IGN:3,,,,
 w,,,ReadLiveMonitorMain,Payload needed sent: 03FFFF,,,b503,00,m,,HEX:1,,,
 r,,,CircuitBuildingPumpPower,T.0.01 Building circuit pump power,,,b514,050103ffff,ign,,IGN:2,,,,value,,UIN,,%,
 r,,,Fan1,T.0.02 Fan 1,,,b514,051103ffff,ign,,IGN:2,,,,value,,UIN,,%,
@@ -133,11 +133,9 @@ r,,,RunStatsFan1Hours,Fan 1 hours,,,b509,540200d70b,ign,,IGN:4,,,,value,,UIN,,ho
 r,,,RunStatsFan1Starts,Fan 1 starts,,,b509,540200d80b,ign,,IGN:4,,,,value,,UIN,,,start count
 r,,,RunDataAirIntakeTemp,Air intake temperature,,,b509,540200de08,ign,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp,,D2B,,°C,temperature
-uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,status,,UCH,,,"bits: disablehc, disablehwctapping, disablehwcload",ign_1,,IGN:1,,,,status2,,UCH,,,"bits: remoteControlHcPump, releaseBackup, releaseCooling"
-w,,install,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,status,,UCH,,,"bits: disablehc, disablehwctapping, disablehwcload",ign_1,,IGN:1,,,,status2,,UCH,,,"bits: remoteControlHcPump, releaseBackup, releaseCooling"
+uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=acs;23=sync,,boiler mode (auto/off/heat/acs/sync),flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,disablehc,,BI0,,,,disablehwctapping,,BI1,,,,disablehwcload,,BI2,,,,ign_1,,IGN:1,,,,remotecontrolhcpump,,BI0,,,,releasebackup,,BI1,,,,releasecooling,,BI2,,,
 r,,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatur/Speichertemperatur/Pumpenstatus,,,b511,01,temp,,D1C,,°C,flow temperature,temp_1,,D1C,,°C,return temperature,temp_2,,D2B,,°C,outside temperature,temp_3,,D1C,,°C,hot water temperature,temp_4,,D1C,,°C,storage temperature,pumpstate,,UCH,0=off;1=on;2=overrun;4=hwc,,pump status
 r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/ReglerCurrentTemp,,,b511,02,hwcmode,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode,temp,,UCH,,°C,max temperature,temp_1,,D1C,,°C,current temperature,temp_2,,UCH,,°C,max temperature,temp_3,,D1C,,°C,current temperature
 uw,,,StatusCirPump,Status circulation pump,,,b512,00,onoff,,UCH,0=off;100=on,,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,

@@ -850,6 +850,7 @@ enum Values_mamode {
   dryer: 1,
   zone: 2,
   legiopump: 3,
+  inactive: 4,
 }
 
 enum Values_offmode {

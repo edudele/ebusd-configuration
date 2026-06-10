@@ -70,7 +70,6 @@ r,,,Hc2zPort,Hk2z_Port: Port replay,,,b509,0d5800,value,,UCH,0=off;1=on,,
 r9,,,YieldThisYear,yield this year,,,b509,0d3f00:2;0d3f08:2;0d3f10:2;0d3f18:2;0d3f20:2;0d3f28:2;0d3f30:2;0d3f38:2;0d3f40:2;0d3f48:2;0d3f50:2;0d3f58:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
 r,,,YieldLastYear,yield last year,,,b509,0d4000:2;0d4008:2;0d4010:2;0d4018:2;0d4020:2;0d4028:2;0d4030:2;0d4038:2;0d4040:2;0d4048:2;0d4050:2;0d4058:2,energy,,UIN,,kWh,,energy_1,,UIN,,kWh,,energy_2,,UIN,,kWh,,energy_3,,UIN,,kWh,,energy_4,,UIN,,kWh,,energy_5,,UIN,,kWh,,energy_6,,UIN,,kWh,,energy_7,,UIN,,kWh,,energy_8,,UIN,,kWh,,energy_9,,UIN,,kWh,,energy_10,,UIN,,kWh,,energy_11,,UIN,,kWh,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
 w,,install,Iotest,I/O test,,,b506,02,value,,UCH,1=off;2=col1pump;4=legiopump;8=ma,,
 w,,install,Ioteststop,stop I/O test,,,b506,01,
