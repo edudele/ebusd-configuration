@@ -3,10 +3,10 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *w,
 *uw,
 *[id_sw],scan,,,,SW
-[id_sw>=104]r,,,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0d4a00,value,,D2C,,°C,temperature
-[id_sw>=104]w,,install,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0e4a00,value,,D2C,,°C,temperature
-[id_sw>=104]r,,,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0d4b00,value,,D2C,,°C,temperature
-[id_sw>=104]w,,install,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0e4b00,value,,D2C,,°C,temperature
+[id_sw>=104]r,,,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0d4a00,value,,D2C,,K,
+[id_sw>=104]w,,install,SourceInputSensorOffset,AirInletSensor_Offset: calibration value for air inlet sensor,,,b509,0e4a00,value,,D2C,,K,
+[id_sw>=104]r,,,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0d4b00,value,,D2C,,K,
+[id_sw>=104]w,,install,SourceInputSensorOffsetBrine,Brine_warmSensor_Offset: calibration value for brine sensor,,,b509,0e4b00,value,,D2C,,K,
 [id_sw>=104]r,,,DeiceTimeMax,"MaxDeiceTime: max. deicing time. By exceeding this value, message unsuccessful deicing is released",,,b509,0d4500,value,,UIN,,min,minutes
 [id_sw>=104]w,,install,DeiceTimeMax,"MaxDeiceTime: max. deicing time. By exceeding this value, message unsuccessful deicing is released",,,b509,0e4500,value,,UIN,,min,minutes
 [id_sw>=104]r,,,DeicePeriodMin,"MinDeicePeriod: Min. time between deicings. If time is shorter, something is wrong",,,b509,0d4600,value,,UIN,,min,minutes

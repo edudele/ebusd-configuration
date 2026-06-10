@@ -24,9 +24,10 @@ r,,,FlowTemp,current flow temperature,,,b51a,05ff3220,ign,,IGN:3,,,,value,,D2C,,
 r,,,EnergyIntegral,current energy integral,,,b51a,05ff3221,ign,,IGN:3,,,,value,,SIN,,°min,
 r,,,CurrentYieldPower,current yielded energy from the environment,,,b51a,05ff3223,ign,,IGN:3,,,,value,,SCH,10,kW,
 r,,,CurrentConsumedPower,current power consumption,,,b51a,05ff3224,ign,,IGN:3,,,,value,,SCH,10,kW,
-r,,,CurrentCompressorUtil,current compressor utilization,,,b51a,05ff3225,ign,,IGN:3,,,,value,,SCH,,%,
+r,,,CurrentCompressorUtil,current compressor utilization,,,b51a,05ff3225,ign,,IGN:3,,,,value,,D2C,,%,
 r,,,AirIntakeTemp,air intake temperature,,,b51a,05ff3226,ign,,IGN:3,,,,value,,D2C,,°C,temperature
 r,,,TargetTempHc,heat circuit target temperature,,,b51a,05ff321c,ign,,IGN:3,,,,value,,D2C,,°C,temperature
+r,,,SourceTempInput,,,,b51a,05ff3222,ign,,IGN:3,,,,value,,D2C,,°C,temperature
 r,,,SourceTempOutput,,,,b51a,05ff3227,ign,,IGN:3,,,,value,,D2C,,°C,temperature
 r,,,BuildingCircuitFlow,,,,b51a,05ff323c,ign,,IGN:3,,,,value,,UIN,,l/h,
 r,,,FlowPressure,,,,b51a,05ff323d,ign,,IGN:3,,,,value,,D2C,4,bar,
@@ -202,3 +203,18 @@ r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/R
 uw,,,StatusCirPump,Status circulation pump,,,b512,00,onoff,,UCH,0=off;100=on,,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
+r,,,StatEnergySumYear,,,,b516,1003ffff,source,m,UCH,1=solar;2=environment;3=electricity;4=gas,,the energy source,usage,m,UCH,0=all;3=heat;4=water;5=cool,,the energy usage,ign2,m,UCH,=0,,,year,m,UCH,2,,the year as offset from 2000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySum,,,,b516,1000ffff01000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySumHc,,,,b516,1000ffff01030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySumHwc,,,,b516,1000ffff01040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySum,,,,b516,1000ffff02000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumHc,,,,b516,1000ffff02030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumHwc,,,,b516,1000ffff02040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumCool,,,,b516,1000ffff02050000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySum,,,,b516,1000ffff03000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumHc,,,,b516,1000ffff03030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumHwc,,,,b516,1000ffff03040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumCool,,,,b516,1000ffff03050000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSum,,,,b516,1000ffff04000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSumHc,,,,b516,1000ffff04030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSumHwc,,,,b516,1000ffff04040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,

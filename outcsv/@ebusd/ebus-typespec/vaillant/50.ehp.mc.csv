@@ -103,7 +103,7 @@ w,,install,Iotest,I/O test,,,b506,02,value,,UCH,0=off;1=coolvalve;2=sourcepump;3
 w,,install,Ioteststop,stop I/O test,,,b506,01,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
-w,,,RoomTempOffset,Room offset calculation,,,b505,2d,value,,D2C,,°C,temperature
+w,,,RoomTempOffset,Room offset calculation,,,b505,2d,value,,D2C,,K,
 w,,,Party,Quick - party,,,b505,05,value,,UCH,0=off;1=on,,
 w,,,Load,quick - hot water tank filling,,,b505,06,value,,UCH,0=off;1=on,,
 w,,,Save,Quick - cleaning lady,,,b505,07,value,,TTH,,,

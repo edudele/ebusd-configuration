@@ -28,11 +28,11 @@ r,,,BoilerSwitchSteps,BoilerSwitchSteps: set of the steps from the switching boi
 w,,install,BoilerSwitchSteps,BoilerSwitchSteps: set of the steps from the switching boiler,,,b509,0e3500,value,,UCH,,,
 r,,,SourceType,SourceType,,,b509,0d4e00,value,,UCH,0=noSystem;1=SSR;2=VRC;3=eSys;4=mixedSys,,"noSystem=0, SSR=1, VRC=2, eSys=3, mixedSys=4"
 r,,,RoomTemp,RaumtemperaturIst: room temperature,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
-r,,,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0d1f00,value,,D2C,,°C,temperature
-w,,install,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0e1f00,value,,D2C,,°C,temperature
-r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm,,,b509,0d2000,value,,D2C,,°C,temperature
-r,,,OutsideTempOffset,OutDoorTempCorr,,,b509,0d2100,value,,D2C,,°C,temperature
-w,,install,OutsideTempOffset,OutDoorTempCorr,,,b509,0e2100,value,,D2C,,°C,temperature
+r,,,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0d1f00,value,,D2C,,K,
+w,,install,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0e1f00,value,,D2C,,K,
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm,,,b509,0d2000,value,,D2C,,K,
+r,,,OutsideTempOffset,OutDoorTempCorr,,,b509,0d2100,value,,D2C,,K,
+w,,install,OutsideTempOffset,OutDoorTempCorr,,,b509,0e2100,value,,D2C,,K,
 r,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0d2200,value,,D2C,,°C,temperature
 w,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0e2200,value,,D2C,,°C,temperature
 r,,,HolidayPeriod,HolidayPeriod,,,b509,0d4300,hfrom,,HDA:3,,,holiday period from,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to

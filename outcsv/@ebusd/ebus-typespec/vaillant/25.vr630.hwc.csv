@@ -15,8 +15,8 @@ r,,,ThreeWayValveLoadingPump1,Loading pump status,,,b509,0d1000,value,,UCH,0=off
 r,,,LegioPump2,Legionellenpumpe,,,b509,0d1100,value,,UCH,0=off;1=on,,
 r,,,TeleSwitch,TeleSwitch,,,b509,0d0a00,value,,UCH,0=off;1=on,,
 r,,,OneTimeCirSwitch,OneTimeCirculationSwitch: non-recurring circulation pump running period,,,b509,0d0b00,value,,UCH,0=off;1=on,,
-r,,,IsInHoliday,Ferienmodus aktiv,,,b509,0d2700,value,,UCH,,,
-r,,,IsInParty,Partymodus aktiv,,,b509,0d4e00,value,,UCH,,,
+r,,,IsInHoliday,Ferienmodus aktiv,,,b509,0d2700,value,,UCH,0=no;1=yes,,
+r,,,IsInParty,Partymodus aktiv,,,b509,0d4e00,value,,UCH,0=no;1=yes,,
 r,,,HwcLaggingTime2,Ladepumpennachlauf,,,b509,0d6100,value,,UCH,,min,minutes
 w,,,HwcLaggingTime2,Ladepumpennachlauf,,,b509,0e6100,value,,UCH,,min,minutes
 r,,,FlowTempDesired2,Vorlauftemp. SOLL,,,b509,0d4600,value,,D1C,,°C,temperature

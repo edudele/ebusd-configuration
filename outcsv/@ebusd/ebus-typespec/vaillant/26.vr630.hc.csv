@@ -19,10 +19,10 @@ r,,,SumFlowSensor,Vorlauftemp. IST,,,b509,0d0400,temp,,D2C,,°C,temperature,sens
 r,,,OutsideTemp,Außentemperatur,,,b509,0d0600,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
 r,,,FlowTempDesired,Vorlauftemp. SOLL,,,b509,0d4600,value,,D1C,,°C,temperature
 r,,,TeleSwitch,TeleSwitch,,,b509,0d0a00,value,,UCH,0=off;1=on,,
-r,,,IsInHoliday,Ferienmodus aktiv,,,b509,0d2700,value,,UCH,,,
+r,,,IsInHoliday,Ferienmodus aktiv,,,b509,0d2700,value,,UCH,0=no;1=yes,,
 r,,,IsInStorageFilling,Abschaltung wegen Speicherladung,,,b509,0d4700,value,,UCH,0=no;1=yes,,
-r,,,CleaningLady,Sparfunktion,,,b509,0d4b00,value,,UCH,,,
-r,,,IsInParty,Partymodus aktiv,,,b509,0d4e00,value,,UCH,,,
+r,,,CleaningLady,CleaningLady: saving function is activated for that duration,,,b509,0d4b00,value,,D1C,,h,hours
+r,,,IsInParty,Partymodus aktiv,,,b509,0d4e00,value,,UCH,0=no;1=yes,,
 r,,,Hc1PumpPort,Pump Status,,,b509,0d8e00,value,,UCH,0=off;1=on,,
 r,,,OtShutdownLimit,AT-Abschaltgrenze,,,b509,0d3600,value,,UCH,,°C,desired temperature
 w,,,OtShutdownLimit,AT-Abschaltgrenze,,,b509,0e3600,value,,UCH,,°C,desired temperature

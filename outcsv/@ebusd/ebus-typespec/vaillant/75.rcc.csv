@@ -2,12 +2,14 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *r,
 *w,
 r,,,RoomTemp,RaumtemperaturIst: room temperature,,,b509,0d0000,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
-r,,,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0d1f00,value,,D2C,,°C,temperature
-w,,install,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0e1f00,value,,D2C,,°C,temperature
-r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm,,,b509,0d2000,value,,D2C,,°C,temperature
+r,,,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0d1f00,value,,D2C,,K,
+w,,install,RoomTempOffset,RaumtemperaturIstOffset,,,b509,0e1f00,value,,D2C,,K,
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm,,,b509,0d2000,value,,D2C,,K,
 r,,,HolidayPeriod,HolidayPeriod,,,b509,0d4300,hfrom,,HDA:3,,,holiday period from,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
 w,,,HolidayPeriod,HolidayPeriod,,,b509,0e4300,hfrom,,HDA:3,,,holiday period from,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
 r,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0d2200,value,,D2C,,°C,temperature
 w,,,RoomTempHoliday,RoomSetTempHoliday,,,b509,0e2200,value,,D2C,,°C,temperature
+r,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0d2600,value,,UCH,0=de;1=it;2=es;3=pt;4=fr;5=nl;6=dk;7=fin;8=se;9=no;10=en;11=ee;12=lt;13=lv;14=tr,,display language variant
+w,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0e2600,value,,UCH,0=de;1=it;2=es;3=pt;4=fr;5=nl;6=dk;7=fin;8=se;9=no;10=en;11=ee;12=lt;13=lv;14=tr,,display language variant
 r,,,LcdContrastPwmValue,LcdContrastPwmValue: contrast for the display,,,b509,0d3600,value,,UCH,,,display contrast
 w,,install,LcdContrastPwmValue,LcdContrastPwmValue: contrast for the display,,,b509,0e3600,value,,UCH,,,display contrast

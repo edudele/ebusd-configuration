@@ -36,14 +36,14 @@ r,,,C1C2State,installer level register,,,b509,0d0d00,value,,UCH,0=off;1=on,,
 w,,install,C1C2State,installer level register,,,b509,0e0d00,value,,UCH,0=off;1=on,,
 r,,,BypassValve,installer level register,,,b509,0d0e00,value,,UCH,0=off;1=on,,
 w,,install,BypassValve,installer level register,,,b509,0e0e00,value,,UCH,0=off;1=on,,
-r,,,RoomTempOffsetSelfWarming,installer level register,,,b509,0d1000,value,,D2C,,°C,temperature
-w,,install,RoomTempOffsetSelfWarming,installer level register,,,b509,0e1000,value,,D2C,,°C,temperature
-r,,,RoomTempOffset,installer level register,,,b509,0d1100,value,,D2C,,°C,temperature
-w,,install,RoomTempOffset,installer level register,,,b509,0e1100,value,,D2C,,°C,temperature
+r,,,RoomTempOffsetSelfWarming,installer level register,,,b509,0d1000,value,,D2C,,K,
+w,,install,RoomTempOffsetSelfWarming,installer level register,,,b509,0e1000,value,,D2C,,K,
+r,,,RoomTempOffset,installer level register,,,b509,0d1100,value,,D2C,,K,
+w,,install,RoomTempOffset,installer level register,,,b509,0e1100,value,,D2C,,K,
 r,,,OutsideTemp,act. outside temperature [°C/sensor state],,,b509,0d1200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
 w,,install,OutsideTemp,act. outside temperature [°C/sensor state],,,b509,0e1200,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
-r,,,OutsideTempOffset,installer level register,,,b509,0d1300,value,,D2C,,°C,temperature
-w,,install,OutsideTempOffset,installer level register,,,b509,0e1300,value,,D2C,,°C,temperature
+r,,,OutsideTempOffset,installer level register,,,b509,0d1300,value,,D2C,,K,
+w,,install,OutsideTempOffset,installer level register,,,b509,0e1300,value,,D2C,,K,
 r,,,ActualTempDesired,installer level register,,,b509,0d1400,value,,UCH,,°C,temperature
 w,,install,ActualTempDesired,installer level register,,,b509,0e1400,value,,UCH,,°C,temperature
 r,,,OperatingMode,installer level register,,,b509,0d1500,value,,UCH,0=disabled;1=on;2=off;3=auto;4=eco;5=low,,mixer mode
@@ -84,8 +84,8 @@ r,,,StatusDcf,installer level register,,,b509,0d2600,value,,UCH,0=nosignal;1=ok;
 w,,install,StatusDcf,installer level register,,,b509,0e2600,value,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state
 r,,,DcfDaten,installer level register,,,b509,0d2700,value,,UIN,,,
 w,,install,DcfDaten,installer level register,,,b509,0e2700,value,,UIN,,,
-r,,,IsInHoliday,installer level register,,,b509,0d2800,value,,UCH,,,
-w,,install,IsInHoliday,installer level register,,,b509,0e2800,value,,UCH,,,
+r,,,IsInHoliday,installer level register,,,b509,0d2800,value,,UCH,0=off;1=on,,
+w,,install,IsInHoliday,installer level register,,,b509,0e2800,value,,UCH,0=off;1=on,,
 r,,,IsInParty,installer level register,,,b509,0d2900,value,,UCH,0=off;1=on,,
 w,,install,IsInParty,installer level register,,,b509,0e2900,value,,UCH,0=off;1=on,,
 r,,,IsInSingleHwcLoadingMode,installer level register,,,b509,0d2a00,value,,UCH,0=off;1=on,,
@@ -124,8 +124,8 @@ r,,,ComfTempEnabled,installer level register,,,b509,0d3a00,value,,UCH,0=off;1=on
 w,,install,ComfTempEnabled,installer level register,,,b509,0e3a00,value,,UCH,0=off;1=on,,
 r,,,ComfTempDesired,,,,b509,0d3b00,temp,,D2C,,°C,temperature,temp_1,,D2C,,°C,temperature,temp_2,,D2C,,°C,temperature,temp_3,,D2C,,°C,temperature
 w,,install,ComfTempDesired,,,,b509,0e3b00,temp,,D2C,,°C,temperature,temp_1,,D2C,,°C,temperature,temp_2,,D2C,,°C,temperature,temp_3,,D2C,,°C,temperature
-r,,,FrostProtectDelay,installer level register,,,b509,0d3c00,value,,UCH,,,
-w,,install,FrostProtectDelay,installer level register,,,b509,0e3c00,value,,UCH,,,
+r,,,FrostProtectDelay,installer level register,,,b509,0d3c00,value,,UCH,,h,hours
+w,,install,FrostProtectDelay,installer level register,,,b509,0e3c00,value,,UCH,,h,hours
 r,,,HydraulicScheme,installer level register,,,b509,0d3d00,value,,UCH,,,
 w,,install,HydraulicScheme,installer level register,,,b509,0e3d00,value,,UCH,,,
 r,,,SolHwcMaxLoadTemp,,,,b509,0d3e00,value,,HEX:2,,,
@@ -146,8 +146,8 @@ r,,,SolPumpBlockingTime,installer level register,,,b509,0d4500,value,,UCH,,,
 w,,install,SolPumpBlockingTime,installer level register,,,b509,0e4500,value,,UCH,,,
 r,,,LoadingDelayEnabled,installer level register,,,b509,0d4600,value,,UCH,0=off;1=on,,
 w,,install,LoadingDelayEnabled,installer level register,,,b509,0e4600,value,,UCH,0=off;1=on,,
-r,,,SolFlowRate,Solar flow rate [l/h],,,b509,0d4700,value,,UIN,,,
-w,,install,SolFlowRate,Solar flow rate [l/h],,,b509,0e4700,value,,UIN,,,
+r,,,SolFlowRate,Solar flow rate,,,b509,0d4700,value,,UIN,,l/h,
+w,,install,SolFlowRate,Solar flow rate,,,b509,0e4700,value,,UIN,,l/h,
 r,,,EDControlEnabled,installer level register,,,b509,0d4800,value,,UCH,0=off;1=on,,
 w,,install,EDControlEnabled,installer level register,,,b509,0e4800,value,,UCH,0=off;1=on,,
 r,,,ResetYield,installer level register,,,b509,0d4900,value,,UCH,0=off;1=on,,
@@ -166,8 +166,8 @@ r,,,OtShutdownLimit,installer level register,,,b509,0d4f00,value,,D2C,,°C,tempe
 w,,install,OtShutdownLimit,installer level register,,,b509,0e4f00,value,,D2C,,°C,temperature
 r,,,FlowTempMin,installer level register,,,b509,0d5000,value,,D2C,,°C,temperature
 w,,install,FlowTempMin,installer level register,,,b509,0e5000,value,,D2C,,°C,temperature
-r,,,DisableAutoSync,installer level register,,,b509,0d5100,value,,UCH,,,
-w,,install,DisableAutoSync,installer level register,,,b509,0e5100,value,,UCH,,,
+r,,,DisableAutoSync,installer level register,,,b509,0d5100,value,,UCH,0=off;1=on,,
+w,,install,DisableAutoSync,installer level register,,,b509,0e5100,value,,UCH,0=off;1=on,,
 r,,,ONMINDiff,installer level register,,,b509,0d5200,value,,UCH,,,
 w,,install,ONMINDiff,installer level register,,,b509,0e5200,value,,UCH,,,
 r,,,ONMAXDiff,installer level register,,,b509,0d5300,value,,UCH,,,
@@ -176,8 +176,8 @@ r,,,HydraulicMixer,installer level register,,,b509,0d5400,value,,UCH,0=off;1=on,
 w,,install,HydraulicMixer,installer level register,,,b509,0e5400,value,,UCH,0=off;1=on,,
 r,,,EBUSFifoDiffCntMax,installer level register,,,b509,0d5500,value,,UCH,,,
 w,,install,EBUSFifoDiffCntMax,installer level register,,,b509,0e5500,value,,UCH,,,
-r,,,TwoPointAnalogCtrl,installer level register,,,b509,0d5600,value,,UCH,,,
-w,,install,TwoPointAnalogCtrl,installer level register,,,b509,0e5600,value,,UCH,,,
+r,,,TwoPointAnalogCtrl,installer level register,,,b509,0d5600,value,,UCH,0=two_point;1=analog,,two-point / analogue control
+w,,install,TwoPointAnalogCtrl,installer level register,,,b509,0e5600,value,,UCH,0=two_point;1=analog,,two-point / analogue control
 r,,,ActualRoomTempDesired,Actual roomtemperature setpoint [°C],,,b509,0d5700,value,,D2C,,°C,temperature
 w,,install,ActualRoomTempDesired,Actual roomtemperature setpoint [°C],,,b509,0e5700,value,,D2C,,°C,temperature
 r,,,WeekDayProgSwitch,installer level register,,,b509,0d5800,value,,UCH,0=off;1=on,,

@@ -22,7 +22,7 @@ r,,,FlowTempDesired,Flow setpoint: Flow temperature BK1 want to have to fullfill
 r,,,TeleSwitch,State of the Teleswitch,,,b509,0d0a00,value,,UCH,0=off;1=on,,
 r,,,IsInHoliday,Holiday function active: Every bit of this byte represents a heating circuit; holiday function can be started by setting the HC's corresponding bit,,,b509,0d2700,value,,UCH,,,
 r,,,IsInStorageFilling,IsInTankFilling: burner circuit is locked because of ongoing tank loading,,,b509,0d4700,value,,UCH,0=no;1=yes,,
-r,,,CleaningLady,CleaningLady: saving function is activated until read value * 1/2 h,,,b509,0d4b00,value,,UCH,,,
+r,,,CleaningLady,CleaningLady: saving function is activated for that duration,,,b509,0d4b00,value,,D1C,,h,hours
 r,,,IsInParty,IsInParty: Every bit of this byte represents a heating circuit; if bit is set the party function is activated for the corresponding HC,,,b509,0d4e00,value,,UCH,,,
 r,,,Hc1PumpPort,Hk1P_Port: State of burner cicuit pump on HK1P,,,b509,0d8e00,value,,UCH,0=off;1=on,,
 r,,,OutsideTempCorrection,OutsideTempSensorCorrection: Correction for outside temperature sensor,,,b509,0d2d00,value,,SCH,,°C,temperature

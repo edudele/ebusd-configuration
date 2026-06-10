@@ -214,6 +214,7 @@ r,,,Z1DayTemp,desired temperature zone 1,,,b524,020003000700,ign,,IGN:4,,,,value
 w,,,Z1DayTemp,desired temperature zone 1,,,b524,020103000700,value,,EXP,,°C,day setpoint for zone 1
 r,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020003000800,ign,,IGN:4,,,,value,,EXP,,°C,manual override setpoint for zone 1
 w,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020103000800,value,,EXP,,°C,manual override setpoint for zone 1
+r,,,RoomHumidity,Room humidity (Zone 1 only?),,,b524,060009010700,ign,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,Z1NightTemp,night temperature zone 1,,,b524,020003000900,ign,,IGN:4,,,,value,,EXP,,°C,night setpoint for zone 1
 w,,,Z1NightTemp,night temperature zone 1,,,b524,020103000900,value,,EXP,,°C,night setpoint for zone 1
 r,,,Z1BankHolidayStartPeriod,bank holiday start zone 1,,,b524,020003000c00,ign,,IGN:4,,,,value,,HDA:3,,,start date of bank holidays for zone 1

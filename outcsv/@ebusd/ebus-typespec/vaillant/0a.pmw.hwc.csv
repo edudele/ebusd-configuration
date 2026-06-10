@@ -34,7 +34,7 @@ r,,,AutoTappingTempDesired,AutoTappingSetpoint,,,b509,0d0c00,value,,D2C,,°C,tem
 r,,,QuickVetoTempDesired,QuickVetoSetpoint,,,b509,0d0d00,value,,D2C,,°C,temperature
 r,,,ActualTappingTempDesired,ActualTappingSetpoint,,,b509,0d0e00,value,,D2C,,°C,temperature
 r,,,QuickVetoStart,QuickVetoStart,,,b509,0d0f00,value,,UCH,0=off;1=on,,
-r,,,LegioStartDay,LegioStartDay,,,b509,0d1000,value,,UCH,,,"0=Monday, 1=Tue, … 6=Sunday, 7=LegioProtect off, 8=every day"
+r,,,LegioStartDay,LegioStartDay,,,b509,0d1000,value,,UCH,0=Mon;1=Tue;2=Wed;3=Thu;4=Fri;5=Sat;6=Sun;7=off;8=Mon_Sun,,Start day for legio protection
 r,,,LegioStartTime,LegioStartTime: Time when LegioProtect starts on specific day,,,b509,0d1100,value,,VTI,,,time
 r,,,PartyStart,PartyStart: Start Party Mode,,,b509,0d1200,value,,UCH,0=off;1=on,,
 r,,,HolidayStart,HolidayStart: Start Holiday Mode,,,b509,0d1300,value,,UCH,0=off;1=on,,

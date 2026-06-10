@@ -27,9 +27,9 @@ r,,,OutsideTemp,Aussentemperatur: out door temperature,,,b509,0d0100,temp,,D2C,,
 r,,,EhpHydraulicMap,EhpHydraulicMap: hydraulic scheme,,,b509,0d2900,value,,UCH,,,
 w,,service,EhpHydraulicMap,EhpHydraulicMap: hydraulic scheme,,,b509,0e2900,value,,UCH,,,
 r,,,EhpBasicStatus,EhpBasicStatus: AMU basic state (copy from AMU),,,b509,0d5000,value,,UCH,,,
-r,,,StateEM,"StateEM: state of energie manager:0: EmOff,1: EmDhwRequest,2: EmDhw,3: EmTankPunmpOverrun,4: EmHeating,5: EmOverpressureFromDhw,6: EmOverpressureFromCh,7: EmWaitForChDemandOverpressure,8: EmWaitForChDemandHeating,9: EmWaitForChDemandEndOfDhw",,,b509,0d4b00,value,,UCH,,,
-r,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0d2600,value,,UCH,,,
-w,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0e2600,value,,UCH,,,
+r,,,StateEM,StateEM: state of energie manager,,,b509,0d4b00,value,,UCH,0=off;1=waterrequest;2=water;3=tankpumpoverrun;4=heat;5=overpresswater;6=overpressheat;7=waitheatdemandoverpress;8=waitheatdemandheating;9=waitheatdemandendofwater,,
+r,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0d2600,value,,UCH,0=de;1=it;2=es;3=pt;4=fr;5=nl;6=dk;7=fin;8=se;9=no;10=en;11=ee;12=lt;13=lv;14=tr,,display language variant
+w,,,LanguageVariant,LanguageVariant: language of the menue,,,b509,0e2600,value,,UCH,0=de;1=it;2=es;3=pt;4=fr;5=nl;6=dk;7=fin;8=se;9=no;10=en;11=ee;12=lt;13=lv;14=tr,,display language variant
 r,,,HolidayPeriods,Holiday periods,,,b509,0d4300,hfrom,,HDA:3,,,Holiday periods,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
 w,,,HolidayPeriods,Holiday periods,,,b509,0e4300,hfrom,,HDA:3,,,Holiday periods,hto,,HDA:3,,,holiday period to,hfrom_1,,HDA:3,,,holiday period from,hto_1,,HDA:3,,,holiday period to
 r,,,RoomTempHoliday,RoomSetTempHoliday: desired room setpoint for holiday,,,b509,0d2200,value,,D2C,,°C,temperature
