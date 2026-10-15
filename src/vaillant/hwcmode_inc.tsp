@@ -16,7 +16,7 @@ namespace Hwcmode_inc {
     dcfstate: dcfstate;
     btime: btime;
     bdate: bdate;
-    temp: temp2;
+    temp2: temp2;
   }
 
   /** Operation mode */

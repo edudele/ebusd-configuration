@@ -1,0 +1,439 @@
+{
+ "basv0|FM5Config|r": {
+  "0": ""
+ },
+ "basv0|FM5Config|w": {
+  "0": ""
+ },
+ "basv0|Hc1HeatCurve|r": {
+  "0": ""
+ },
+ "basv0|Hc1HeatCurve|w": {
+  "0": ""
+ },
+ "basv0|Hc1HeatCurveAdaption|r": {
+  "0": ""
+ },
+ "basv0|Hc1MixerMovement|r": {
+  "0": ""
+ },
+ "basv0|Hc1PumpStatus|r": {
+  "0": ""
+ },
+ "basv0|Hc1PumpStatus|w": {
+  "0": ""
+ },
+ "basv0|Hc1ScreedDryingDay|r": {
+  "0": ""
+ },
+ "basv0|Hc1ScreedDryingDay|w": {
+  "0": ""
+ },
+ "basv0|Hc1Status|r": {
+  "0": ""
+ },
+ "basv0|Hc1Status|w": {
+  "0": ""
+ },
+ "basv0|Hc2HeatCurve|r": {
+  "0": ""
+ },
+ "basv0|Hc2HeatCurve|w": {
+  "0": ""
+ },
+ "basv0|Hc2HeatCurveAdaption|r": {
+  "0": ""
+ },
+ "basv0|Hc2MixerMovement|r": {
+  "0": ""
+ },
+ "basv0|Hc2PumpStatus|r": {
+  "0": ""
+ },
+ "basv0|Hc2PumpStatus|w": {
+  "0": ""
+ },
+ "basv0|Hc2Status|r": {
+  "0": ""
+ },
+ "basv0|Hc2Status|w": {
+  "0": ""
+ },
+ "basv0|Hc3HeatCurve|r": {
+  "0": ""
+ },
+ "basv0|Hc3HeatCurve|w": {
+  "0": ""
+ },
+ "basv0|Hc3HeatCurveAdaption|r": {
+  "0": ""
+ },
+ "basv0|Hc3MixerMovement|r": {
+  "0": ""
+ },
+ "basv0|Hc3PumpStatus|r": {
+  "0": ""
+ },
+ "basv0|Hc3PumpStatus|w": {
+  "0": ""
+ },
+ "basv0|Hc3Status|r": {
+  "0": ""
+ },
+ "basv0|Hc3Status|w": {
+  "0": ""
+ },
+ "basv0|HwcBivalencePoint|r": {
+  "0": ""
+ },
+ "basv0|HwcBivalencePoint|w": {
+  "0": ""
+ },
+ "basv0|HwcStatus|r": {
+  "0": "zoneStatus"
+ },
+ "basv0|HybridManager|r": {
+  "0": ""
+ },
+ "basv0|HydraulicScheme|r": {
+  "0": ""
+ },
+ "basv0|HydraulicScheme|w": {
+  "0": ""
+ },
+ "basv0|KeyCodeforConfigMenu|r": {
+  "0": ""
+ },
+ "basv0|KeyCodeforConfigMenu|w": {
+  "0": ""
+ },
+ "basv0|MaxRoomHumidity|r": {
+  "0": ""
+ },
+ "basv0|MaxRoomHumidity|w": {
+  "0": ""
+ },
+ "basv0|MultiInputSetting|r": {
+  "0": ""
+ },
+ "basv0|MultiInputSetting|w": {
+  "0": ""
+ },
+ "basv0|SolarFlowRateQuantity|r": {
+  "0": ""
+ },
+ "basv0|SolarFlowRateQuantity|w": {
+  "0": ""
+ },
+ "basv0|TariffAuxHeater|r": {
+  "0": ""
+ },
+ "basv0|Z1QuickVetoDuration|r": {
+  "0": ""
+ },
+ "basv0|Z1QuickVetoDuration|w": {
+  "0": ""
+ },
+ "basv0|Z1QuickVetoEndTime|r": {
+  "0": ""
+ },
+ "basv0|Z1RoomHumidity|r": {
+  "0": ""
+ },
+ "basv0|Z1Status|r": {
+  "0": "zoneStatus"
+ },
+ "basv0|Z1ValveStatus|r": {
+  "0": ""
+ },
+ "basv0|Z1ValveStatus|w": {
+  "0": ""
+ },
+ "basv0|Z2ValveStatus|r": {
+  "0": ""
+ },
+ "basv0|Z2ValveStatus|w": {
+  "0": ""
+ },
+ "basv0|Z3ValveStatus|r": {
+  "0": ""
+ },
+ "basv0|Z3ValveStatus|w": {
+  "0": ""
+ },
+ "broadcast|HwcStatus|u": {
+  "1": "VF1"
+ },
+ "hmu00|AirInletTempSens|r": {
+  "0": ""
+ },
+ "hmu00|BuildingPumpStarts|r": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingCoolingPumpSpeed|r": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingCoolingPumpSpeed|w": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingFlowRate|r": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingHeatingPumpSpeed|r": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingHeatingPumpSpeed|w": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingHwcPumpSpeed|r": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingHwcPumpSpeed|w": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingPumpPower|r": {
+  "0": ""
+ },
+ "hmu00|CircuitBuildingWaterPressure|r": {
+  "0": ""
+ },
+ "hmu00|CompressorBlocktime|r": {
+  "0": ""
+ },
+ "hmu00|CompressorInletTemp|r": {
+  "0": ""
+ },
+ "hmu00|CompressorOutletTemp|r": {
+  "0": ""
+ },
+ "hmu00|CompressorSpeed|r": {
+  "0": ""
+ },
+ "hmu00|CompressorStarts|r": {
+  "0": ""
+ },
+ "hmu00|CondensateTrayHeater|r": {
+  "0": ""
+ },
+ "hmu00|CondensationTemp|r": {
+  "0": ""
+ },
+ "hmu00|CondenserOutletTemp|r": {
+  "0": ""
+ },
+ "hmu00|CoolingEnabled|r": {
+  "0": ""
+ },
+ "hmu00|CurrentCompressorUtil|r": {
+  "0": ""
+ },
+ "hmu00|CurrentConsumedPower|r": {
+  "0": ""
+ },
+ "hmu00|CurrentYieldPower|r": {
+  "0": ""
+ },
+ "hmu00|CylinderTemp|r": {
+  "0": ""
+ },
+ "hmu00|DCFStatus|r": {
+  "0": ""
+ },
+ "hmu00|EEVOutletTemp|r": {
+  "0": ""
+ },
+ "hmu00|EEVSteps|r": {
+  "0": ""
+ },
+ "hmu00|EnergyIntegral|r": {
+  "0": ""
+ },
+ "hmu00|EvaporationTemp|r": {
+  "0": ""
+ },
+ "hmu00|Fan1|r": {
+  "0": ""
+ },
+ "hmu00|Fan1Starts|r": {
+  "0": ""
+ },
+ "hmu00|Fan2Starts|r": {
+  "0": ""
+ },
+ "hmu00|FlowPressure|r": {
+  "0": ""
+ },
+ "hmu00|FlowTemp|r": {
+  "0": ""
+ },
+ "hmu00|FlowTemp32|r": {
+  "0": ""
+ },
+ "hmu00|FlowTempImmersionHeater|r": {
+  "0": ""
+ },
+ "hmu00|FourPortValve|r": {
+  "0": ""
+ },
+ "hmu00|FourWayValveSwitchingOperations|r": {
+  "0": ""
+ },
+ "hmu00|HeatExchangerEnabled|r": {
+  "0": ""
+ },
+ "hmu00|HeatingCoilCompressor|r": {
+  "0": ""
+ },
+ "hmu00|HighPressure|r": {
+  "0": ""
+ },
+ "hmu00|HighPressureSwitch|r": {
+  "0": ""
+ },
+ "hmu00|HwcMode|r": {
+  "0": ""
+ },
+ "hmu00|HwcMode|w": {
+  "0": ""
+ },
+ "hmu00|ImmersionHeaterSafetyCutOut|r": {
+  "0": ""
+ },
+ "hmu00|LockoutContactS20|r": {
+  "0": ""
+ },
+ "hmu00|LockoutContactS21|r": {
+  "0": ""
+ },
+ "hmu00|LowPressure|r": {
+  "0": ""
+ },
+ "hmu00|MainsBlocktimeMinDuration|r": {
+  "0": ""
+ },
+ "hmu00|MainsBlocktimeMinDuration|w": {
+  "0": ""
+ },
+ "hmu00|MaximunBlockTimeHours|r": {
+  "0": ""
+ },
+ "hmu00|MaximunBlockTimeHours|w": {
+  "0": ""
+ },
+ "hmu00|MaximunExteriorPowerUnit|r": {
+  "0": ""
+ },
+ "hmu00|MaximunExteriorPowerUnit|w": {
+  "0": ""
+ },
+ "hmu00|MO1Output|r": {
+  "0": ""
+ },
+ "hmu00|MO2Output|r": {
+  "0": ""
+ },
+ "hmu00|MO3Output|r": {
+  "0": ""
+ },
+ "hmu00|MonthHeatingWorkFactor|r": {
+  "0": ""
+ },
+ "hmu00|MonthHwcWorkFactor|r": {
+  "0": ""
+ },
+ "hmu00|MPIInput|r": {
+  "0": ""
+ },
+ "hmu00|NoOfSwitchingOps|r": {
+  "0": ""
+ },
+ "hmu00|OutdoorTemp|r": {
+  "0": ""
+ },
+ "hmu00|OverheatingActualValue|r": {
+  "0": ""
+ },
+ "hmu00|OverheatingTargetValue|r": {
+  "0": ""
+ },
+ "hmu00|PositionEEV|r": {
+  "0": ""
+ },
+ "hmu00|PrioritySwitchingValve|r": {
+  "0": ""
+ },
+ "hmu00|ReadLiveMonitorMain|w": {
+  "0": ""
+ },
+ "hmu00|ReturnTemp|r": {
+  "0": ""
+ },
+ "hmu00|RunDataBuildingCPumpPower|r": {
+  "0": ""
+ },
+ "hmu00|RunDataCompressorSpeed|r": {
+  "0": ""
+ },
+ "hmu00|RunDataEEVPositionAbs|r": {
+  "0": ""
+ },
+ "hmu00|RunDataFan1Speed|r": {
+  "0": ""
+ },
+ "hmu00|RunDataFan2Speed|r": {
+  "0": ""
+ },
+ "hmu00|RunStats4PortValveHours|r": {
+  "0": ""
+ },
+ "hmu00|RunStatsBuildingPumpHours|r": {
+  "0": ""
+ },
+ "hmu00|RunStatsCompressorHours|r": {
+  "0": ""
+ },
+ "hmu00|RunStatsFan1Hours|r": {
+  "0": ""
+ },
+ "hmu00|RunStatsHcHours|r": {
+  "0": ""
+ },
+ "hmu00|RunStatsHMUHours|r": {
+  "0": ""
+ },
+ "hmu00|SetMode|u": {
+  "7": "remoteControlHcPump",
+  "8": "releaseBackup",
+  "9": "releaseCooling"
+ },
+ "hmu00|StatusCirPump|u": {
+  "0": ""
+ },
+ "hmu00|SubcoolingActualValue|r": {
+  "0": ""
+ },
+ "hmu00|SubcoolingTargetValue|r": {
+  "0": ""
+ },
+ "hmu00|SupplyTempWeighted|r": {
+  "0": ""
+ },
+ "hmu00|SystemTemp|r": {
+  "0": ""
+ },
+ "hmu00|TempSwitchCompressorOutlet|r": {
+  "0": ""
+ },
+ "hmu00|TotalCompressorStarts|r": {
+  "0": ""
+ },
+ "hmu00|TotalHeatingWorkFactor|r": {
+  "0": ""
+ },
+ "hmu00|TotalHwcWorkFactor|r": {
+  "0": ""
+ },
+ "hmu00|WaterThroughput|r": {
+  "0": ""
+ }
+}

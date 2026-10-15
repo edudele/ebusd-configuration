@@ -16,7 +16,7 @@ namespace Hcmode_inc {
     dcfstate: dcfstate;
     btime: btime;
     bdate: bdate;
-    temp: temp2;
+    temp2: temp2;
   }
 
   // /** outside temperature */
@@ -55,14 +55,16 @@ namespace Hcmode_inc {
     @maxLength(1)
     ign: IGN;
 
-    /** bits: disablehc, disablehwctapping, disablehwcload */
-    status: UCH;
+    disablehc: BI0;
+    disablehwctapping: BI1;
+    disablehwcload: BI2;
 
     @maxLength(1)
     ign_1: IGN;
 
-    /** bits: remoteControlHcPump, releaseBackup, releaseCooling */
-    status2: UCH;
+    remoteControlHcPump: BI0;
+    releaseBackup: BI1;
+    releaseCooling: BI2;
   }
   // potential last byte: currentmode,s,UCH,0=off;1=standby;2=heat;3=water
 
@@ -71,19 +73,19 @@ namespace Hcmode_inc {
   @ext(1)
   model Status01 {
     /** flow temperature */
-    temp: temp1;
+    temp1: temp1;
 
     /** return temperature */
-    temp_1: temp1;
+    temp1_2: temp1;
 
     /** outside temperature */
-    temp_2: temp2;
+    temp2: temp2;
 
     /** hot water temperature */
-    temp_3: temp1;
+    temp1_3: temp1;
 
     /** storage temperature */
-    temp_4: temp1;
+    temp1_4: temp1;
 
     /** pump status */
     pumpstate: pumpstate;
@@ -97,16 +99,16 @@ namespace Hcmode_inc {
     hwcmode: hwcmode;
 
     /** max temperature */
-    temp: temp0;
+    temp0: temp0;
 
     /** current temperature */
-    temp_1: temp1;
+    temp1: temp1;
 
     /** max temperature */
-    temp_2: temp0;
+    temp0_2: temp0;
 
     /** current temperature */
-    temp_3: temp1;
+    temp1_2: temp1;
   }
 
   // /** Status */
@@ -130,7 +132,7 @@ namespace Hcmode_inc {
   @inherit(uw_1)
   @ext(0)
   model StatusCirPump {
-    onoff: StatusCirPump_Onoff;
+    uch: StatusCirPump_Onoff;
   }
 
   @values(Values_StatusCirPump_Onoff)

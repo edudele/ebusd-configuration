@@ -1,0 +1,2309 @@
+# Aerotermia Vaillant (ebusd) - programas horarios del termostato desde Home Assistant
+# Package generado con build/build_package.cjs. Ver README.md (requisitos, instalacion, avisos).
+# Los scripts *_aplicar_* ESCRIBEN en el bus eBUS.
+# Topics: todos usan el prefijo ebusd/basv0/ (circuito basv0 del termostato); si el tuyo se llama distinto,
+# sustituye 'ebusd/basv0/' en este fichero.
+input_select:
+  acs_horario_dia:
+    name: ACS horario día
+    icon: mdi:calendar-week
+    options:
+      - Lunes
+      - Martes
+      - Miércoles
+      - Jueves
+      - Viernes
+      - Sábado
+      - Domingo
+  acs_horario_programa:
+    name: ACS horario programa
+    icon: mdi:timetable
+    options:
+      - ACS
+      - Refrigeración
+      - Reducción de ruido
+  calefaccion_horario_dia:
+    name: Calefaccion horario dia
+    icon: mdi:calendar-week
+    options:
+      - Lunes
+      - Martes
+      - Miércoles
+      - Jueves
+      - Viernes
+      - Sábado
+      - Domingo
+input_datetime:
+  acs_horario_desde:
+    name: ACS horario franja 1 desde
+    icon: mdi:clock-start
+    has_date: false
+    has_time: true
+  acs_horario_hasta:
+    name: ACS horario franja 1 hasta
+    icon: mdi:clock-end
+    has_date: false
+    has_time: true
+  acs_horario_franja_2_desde:
+    name: ACS horario franja 2 desde
+    icon: mdi:clock-start
+    has_date: false
+    has_time: true
+  acs_horario_franja_2_hasta:
+    name: ACS horario franja 2 hasta
+    icon: mdi:clock-end
+    has_date: false
+    has_time: true
+  acs_horario_franja_3_desde:
+    name: ACS horario franja 3 desde
+    icon: mdi:clock-start
+    has_date: false
+    has_time: true
+  acs_horario_franja_3_hasta:
+    name: ACS horario franja 3 hasta
+    icon: mdi:clock-end
+    has_date: false
+    has_time: true
+input_text:
+  calefaccion_horario_texto:
+    name: Calefaccion horario texto
+    icon: mdi:text-box-edit
+    min: 0
+    max: 255
+    mode: text
+    initial: ""
+mqtt:
+  sensor:
+    - name: ACS horario Lunes 1
+      unique_id: acs_horario_lunes_1
+      state_topic: ebusd/basv0/HwcTimer_Monday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Lunes 2
+      unique_id: acs_horario_lunes_2
+      state_topic: ebusd/basv0/HwcTimer_Monday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Lunes 3
+      unique_id: acs_horario_lunes_3
+      state_topic: ebusd/basv0/HwcTimer_Monday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Martes 1
+      unique_id: acs_horario_martes_1
+      state_topic: ebusd/basv0/HwcTimer_Tuesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Martes 2
+      unique_id: acs_horario_martes_2
+      state_topic: ebusd/basv0/HwcTimer_Tuesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Martes 3
+      unique_id: acs_horario_martes_3
+      state_topic: ebusd/basv0/HwcTimer_Tuesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Miercoles 1
+      unique_id: acs_horario_miercoles_1
+      state_topic: ebusd/basv0/HwcTimer_Wednesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Miercoles 2
+      unique_id: acs_horario_miercoles_2
+      state_topic: ebusd/basv0/HwcTimer_Wednesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Miercoles 3
+      unique_id: acs_horario_miercoles_3
+      state_topic: ebusd/basv0/HwcTimer_Wednesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Jueves 1
+      unique_id: acs_horario_jueves_1
+      state_topic: ebusd/basv0/HwcTimer_Thursday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Jueves 2
+      unique_id: acs_horario_jueves_2
+      state_topic: ebusd/basv0/HwcTimer_Thursday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Jueves 3
+      unique_id: acs_horario_jueves_3
+      state_topic: ebusd/basv0/HwcTimer_Thursday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Viernes 1
+      unique_id: acs_horario_viernes_1
+      state_topic: ebusd/basv0/HwcTimer_Friday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Viernes 2
+      unique_id: acs_horario_viernes_2
+      state_topic: ebusd/basv0/HwcTimer_Friday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Viernes 3
+      unique_id: acs_horario_viernes_3
+      state_topic: ebusd/basv0/HwcTimer_Friday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Sabado 1
+      unique_id: acs_horario_sabado_1
+      state_topic: ebusd/basv0/HwcTimer_Saturday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Sabado 2
+      unique_id: acs_horario_sabado_2
+      state_topic: ebusd/basv0/HwcTimer_Saturday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Sabado 3
+      unique_id: acs_horario_sabado_3
+      state_topic: ebusd/basv0/HwcTimer_Saturday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Domingo 1
+      unique_id: acs_horario_domingo_1
+      state_topic: ebusd/basv0/HwcTimer_Sunday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Domingo 2
+      unique_id: acs_horario_domingo_2
+      state_topic: ebusd/basv0/HwcTimer_Sunday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: ACS horario Domingo 3
+      unique_id: acs_horario_domingo_3
+      state_topic: ebusd/basv0/HwcTimer_Sunday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:water-boiler-auto
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Lunes 1
+      unique_id: refrigeracion_horario_lunes_1
+      state_topic: ebusd/basv0/Z1TimerCool_Monday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Lunes 2
+      unique_id: refrigeracion_horario_lunes_2
+      state_topic: ebusd/basv0/Z1TimerCool_Monday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Lunes 3
+      unique_id: refrigeracion_horario_lunes_3
+      state_topic: ebusd/basv0/Z1TimerCool_Monday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Martes 1
+      unique_id: refrigeracion_horario_martes_1
+      state_topic: ebusd/basv0/Z1TimerCool_Tuesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Martes 2
+      unique_id: refrigeracion_horario_martes_2
+      state_topic: ebusd/basv0/Z1TimerCool_Tuesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Martes 3
+      unique_id: refrigeracion_horario_martes_3
+      state_topic: ebusd/basv0/Z1TimerCool_Tuesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Miercoles 1
+      unique_id: refrigeracion_horario_miercoles_1
+      state_topic: ebusd/basv0/Z1TimerCool_Wednesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Miercoles 2
+      unique_id: refrigeracion_horario_miercoles_2
+      state_topic: ebusd/basv0/Z1TimerCool_Wednesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Miercoles 3
+      unique_id: refrigeracion_horario_miercoles_3
+      state_topic: ebusd/basv0/Z1TimerCool_Wednesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Jueves 1
+      unique_id: refrigeracion_horario_jueves_1
+      state_topic: ebusd/basv0/Z1TimerCool_Thursday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Jueves 2
+      unique_id: refrigeracion_horario_jueves_2
+      state_topic: ebusd/basv0/Z1TimerCool_Thursday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Jueves 3
+      unique_id: refrigeracion_horario_jueves_3
+      state_topic: ebusd/basv0/Z1TimerCool_Thursday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Viernes 1
+      unique_id: refrigeracion_horario_viernes_1
+      state_topic: ebusd/basv0/Z1TimerCool_Friday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Viernes 2
+      unique_id: refrigeracion_horario_viernes_2
+      state_topic: ebusd/basv0/Z1TimerCool_Friday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Viernes 3
+      unique_id: refrigeracion_horario_viernes_3
+      state_topic: ebusd/basv0/Z1TimerCool_Friday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Sabado 1
+      unique_id: refrigeracion_horario_sabado_1
+      state_topic: ebusd/basv0/Z1TimerCool_Saturday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Sabado 2
+      unique_id: refrigeracion_horario_sabado_2
+      state_topic: ebusd/basv0/Z1TimerCool_Saturday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Sabado 3
+      unique_id: refrigeracion_horario_sabado_3
+      state_topic: ebusd/basv0/Z1TimerCool_Saturday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Domingo 1
+      unique_id: refrigeracion_horario_domingo_1
+      state_topic: ebusd/basv0/Z1TimerCool_Sunday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Domingo 2
+      unique_id: refrigeracion_horario_domingo_2
+      state_topic: ebusd/basv0/Z1TimerCool_Sunday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Refrigeracion horario Domingo 3
+      unique_id: refrigeracion_horario_domingo_3
+      state_topic: ebusd/basv0/Z1TimerCool_Sunday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:snowflake
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 1
+      unique_id: calefaccion_horario_lunes_1
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 2
+      unique_id: calefaccion_horario_lunes_2
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 3
+      unique_id: calefaccion_horario_lunes_3
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 4
+      unique_id: calefaccion_horario_lunes_4
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday3
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 5
+      unique_id: calefaccion_horario_lunes_5
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday4
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 6
+      unique_id: calefaccion_horario_lunes_6
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday5
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 1
+      unique_id: calefaccion_horario_martes_1
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 2
+      unique_id: calefaccion_horario_martes_2
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 3
+      unique_id: calefaccion_horario_martes_3
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 4
+      unique_id: calefaccion_horario_martes_4
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday3
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 5
+      unique_id: calefaccion_horario_martes_5
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday4
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 6
+      unique_id: calefaccion_horario_martes_6
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday5
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 1
+      unique_id: calefaccion_horario_miercoles_1
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 2
+      unique_id: calefaccion_horario_miercoles_2
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 3
+      unique_id: calefaccion_horario_miercoles_3
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 4
+      unique_id: calefaccion_horario_miercoles_4
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday3
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 5
+      unique_id: calefaccion_horario_miercoles_5
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday4
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 6
+      unique_id: calefaccion_horario_miercoles_6
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday5
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 1
+      unique_id: calefaccion_horario_jueves_1
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 2
+      unique_id: calefaccion_horario_jueves_2
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 3
+      unique_id: calefaccion_horario_jueves_3
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 4
+      unique_id: calefaccion_horario_jueves_4
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday3
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 5
+      unique_id: calefaccion_horario_jueves_5
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday4
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 6
+      unique_id: calefaccion_horario_jueves_6
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday5
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 1
+      unique_id: calefaccion_horario_viernes_1
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 2
+      unique_id: calefaccion_horario_viernes_2
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 3
+      unique_id: calefaccion_horario_viernes_3
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 4
+      unique_id: calefaccion_horario_viernes_4
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday3
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 5
+      unique_id: calefaccion_horario_viernes_5
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday4
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 6
+      unique_id: calefaccion_horario_viernes_6
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday5
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 1
+      unique_id: calefaccion_horario_sabado_1
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 2
+      unique_id: calefaccion_horario_sabado_2
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 3
+      unique_id: calefaccion_horario_sabado_3
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 4
+      unique_id: calefaccion_horario_sabado_4
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday3
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 5
+      unique_id: calefaccion_horario_sabado_5
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday4
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 6
+      unique_id: calefaccion_horario_sabado_6
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday5
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 1
+      unique_id: calefaccion_horario_domingo_1
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 2
+      unique_id: calefaccion_horario_domingo_2
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 3
+      unique_id: calefaccion_horario_domingo_3
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 4
+      unique_id: calefaccion_horario_domingo_4
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday3
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 5
+      unique_id: calefaccion_horario_domingo_5
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday4
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 6
+      unique_id: calefaccion_horario_domingo_6
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday5
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 7
+      unique_id: calefaccion_horario_lunes_7
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday6
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 8
+      unique_id: calefaccion_horario_lunes_8
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday7
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 9
+      unique_id: calefaccion_horario_lunes_9
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday8
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 10
+      unique_id: calefaccion_horario_lunes_10
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday9
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 11
+      unique_id: calefaccion_horario_lunes_11
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday10
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Lunes 12
+      unique_id: calefaccion_horario_lunes_12
+      state_topic: ebusd/basv0/Z1TimerHeat_Monday11
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 7
+      unique_id: calefaccion_horario_martes_7
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday6
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 8
+      unique_id: calefaccion_horario_martes_8
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday7
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 9
+      unique_id: calefaccion_horario_martes_9
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday8
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 10
+      unique_id: calefaccion_horario_martes_10
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday9
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 11
+      unique_id: calefaccion_horario_martes_11
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday10
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Martes 12
+      unique_id: calefaccion_horario_martes_12
+      state_topic: ebusd/basv0/Z1TimerHeat_Tuesday11
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 7
+      unique_id: calefaccion_horario_miercoles_7
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday6
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 8
+      unique_id: calefaccion_horario_miercoles_8
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday7
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 9
+      unique_id: calefaccion_horario_miercoles_9
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday8
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 10
+      unique_id: calefaccion_horario_miercoles_10
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday9
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 11
+      unique_id: calefaccion_horario_miercoles_11
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday10
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Miercoles 12
+      unique_id: calefaccion_horario_miercoles_12
+      state_topic: ebusd/basv0/Z1TimerHeat_Wednesday11
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 7
+      unique_id: calefaccion_horario_jueves_7
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday6
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 8
+      unique_id: calefaccion_horario_jueves_8
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday7
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 9
+      unique_id: calefaccion_horario_jueves_9
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday8
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 10
+      unique_id: calefaccion_horario_jueves_10
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday9
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 11
+      unique_id: calefaccion_horario_jueves_11
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday10
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Jueves 12
+      unique_id: calefaccion_horario_jueves_12
+      state_topic: ebusd/basv0/Z1TimerHeat_Thursday11
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 7
+      unique_id: calefaccion_horario_viernes_7
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday6
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 8
+      unique_id: calefaccion_horario_viernes_8
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday7
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 9
+      unique_id: calefaccion_horario_viernes_9
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday8
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 10
+      unique_id: calefaccion_horario_viernes_10
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday9
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 11
+      unique_id: calefaccion_horario_viernes_11
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday10
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Viernes 12
+      unique_id: calefaccion_horario_viernes_12
+      state_topic: ebusd/basv0/Z1TimerHeat_Friday11
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 7
+      unique_id: calefaccion_horario_sabado_7
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday6
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 8
+      unique_id: calefaccion_horario_sabado_8
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday7
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 9
+      unique_id: calefaccion_horario_sabado_9
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday8
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 10
+      unique_id: calefaccion_horario_sabado_10
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday9
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 11
+      unique_id: calefaccion_horario_sabado_11
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday10
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Sabado 12
+      unique_id: calefaccion_horario_sabado_12
+      state_topic: ebusd/basv0/Z1TimerHeat_Saturday11
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 7
+      unique_id: calefaccion_horario_domingo_7
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday6
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 8
+      unique_id: calefaccion_horario_domingo_8
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday7
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 9
+      unique_id: calefaccion_horario_domingo_9
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday8
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 10
+      unique_id: calefaccion_horario_domingo_10
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday9
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 11
+      unique_id: calefaccion_horario_domingo_11
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday10
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Calefaccion horario Domingo 12
+      unique_id: calefaccion_horario_domingo_12
+      state_topic: ebusd/basv0/Z1TimerHeat_Sunday11
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
+      icon: mdi:radiator
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Lunes 1
+      unique_id: ruido_horario_lunes_1
+      state_topic: ebusd/basv0/SilentTimer_Monday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Lunes 2
+      unique_id: ruido_horario_lunes_2
+      state_topic: ebusd/basv0/SilentTimer_Monday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Lunes 3
+      unique_id: ruido_horario_lunes_3
+      state_topic: ebusd/basv0/SilentTimer_Monday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Martes 1
+      unique_id: ruido_horario_martes_1
+      state_topic: ebusd/basv0/SilentTimer_Tuesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Martes 2
+      unique_id: ruido_horario_martes_2
+      state_topic: ebusd/basv0/SilentTimer_Tuesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Martes 3
+      unique_id: ruido_horario_martes_3
+      state_topic: ebusd/basv0/SilentTimer_Tuesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Miercoles 1
+      unique_id: ruido_horario_miercoles_1
+      state_topic: ebusd/basv0/SilentTimer_Wednesday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Miercoles 2
+      unique_id: ruido_horario_miercoles_2
+      state_topic: ebusd/basv0/SilentTimer_Wednesday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Miercoles 3
+      unique_id: ruido_horario_miercoles_3
+      state_topic: ebusd/basv0/SilentTimer_Wednesday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Jueves 1
+      unique_id: ruido_horario_jueves_1
+      state_topic: ebusd/basv0/SilentTimer_Thursday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Jueves 2
+      unique_id: ruido_horario_jueves_2
+      state_topic: ebusd/basv0/SilentTimer_Thursday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Jueves 3
+      unique_id: ruido_horario_jueves_3
+      state_topic: ebusd/basv0/SilentTimer_Thursday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Viernes 1
+      unique_id: ruido_horario_viernes_1
+      state_topic: ebusd/basv0/SilentTimer_Friday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Viernes 2
+      unique_id: ruido_horario_viernes_2
+      state_topic: ebusd/basv0/SilentTimer_Friday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Viernes 3
+      unique_id: ruido_horario_viernes_3
+      state_topic: ebusd/basv0/SilentTimer_Friday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Sabado 1
+      unique_id: ruido_horario_sabado_1
+      state_topic: ebusd/basv0/SilentTimer_Saturday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Sabado 2
+      unique_id: ruido_horario_sabado_2
+      state_topic: ebusd/basv0/SilentTimer_Saturday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Sabado 3
+      unique_id: ruido_horario_sabado_3
+      state_topic: ebusd/basv0/SilentTimer_Saturday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Domingo 1
+      unique_id: ruido_horario_domingo_1
+      state_topic: ebusd/basv0/SilentTimer_Sunday0
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Domingo 2
+      unique_id: ruido_horario_domingo_2
+      state_topic: ebusd/basv0/SilentTimer_Sunday1
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+    - name: Ruido horario Domingo 3
+      unique_id: ruido_horario_domingo_3
+      state_topic: ebusd/basv0/SilentTimer_Sunday2
+      value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
+      icon: mdi:volume-off
+      device:
+        identifiers:
+          - aerotermia_horarios
+        name: Horarios aerotermia
+        manufacturer: ebusd
+        model: Programas horarios del termostato (b555)
+      entity_category: diagnostic
+template:
+  - sensor:
+      - name: ACS resumen Lunes
+        unique_id: acs_resumen_lunes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.acs_horario_lunes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: ACS resumen Martes
+        unique_id: acs_resumen_martes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.acs_horario_martes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: ACS resumen Miercoles
+        unique_id: acs_resumen_miercoles
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.acs_horario_miercoles_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: ACS resumen Jueves
+        unique_id: acs_resumen_jueves
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.acs_horario_jueves_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: ACS resumen Viernes
+        unique_id: acs_resumen_viernes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.acs_horario_viernes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: ACS resumen Sabado
+        unique_id: acs_resumen_sabado
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.acs_horario_sabado_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: ACS resumen Domingo
+        unique_id: acs_resumen_domingo
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.acs_horario_domingo_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Refrigeracion resumen Lunes
+        unique_id: refrigeracion_resumen_lunes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.refrigeracion_horario_lunes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Refrigeracion resumen Martes
+        unique_id: refrigeracion_resumen_martes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.refrigeracion_horario_martes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Refrigeracion resumen Miercoles
+        unique_id: refrigeracion_resumen_miercoles
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.refrigeracion_horario_miercoles_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Refrigeracion resumen Jueves
+        unique_id: refrigeracion_resumen_jueves
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.refrigeracion_horario_jueves_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Refrigeracion resumen Viernes
+        unique_id: refrigeracion_resumen_viernes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.refrigeracion_horario_viernes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Refrigeracion resumen Sabado
+        unique_id: refrigeracion_resumen_sabado
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.refrigeracion_horario_sabado_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Refrigeracion resumen Domingo
+        unique_id: refrigeracion_resumen_domingo
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.refrigeracion_horario_domingo_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Calefaccion resumen Lunes
+        unique_id: calefaccion_resumen_lunes
+        state: "{% set ns = namespace(n=0, t=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_lunes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}{% set ns.n = ns.n + 1 %}{% set ns.t = ns.t + [v.split('@')[1] | float(0)] %}{% endif %}{% endfor %}{{ (ns.n ~ (' franja' if ns.n == 1 else ' franjas') ~ ' · ' ~ ns.t | min ~ '–' ~ ns.t | max ~ ' °C') if ns.n else '—' }}"
+      - name: Calefaccion resumen Martes
+        unique_id: calefaccion_resumen_martes
+        state: "{% set ns = namespace(n=0, t=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_martes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}{% set ns.n = ns.n + 1 %}{% set ns.t = ns.t + [v.split('@')[1] | float(0)] %}{% endif %}{% endfor %}{{ (ns.n ~ (' franja' if ns.n == 1 else ' franjas') ~ ' · ' ~ ns.t | min ~ '–' ~ ns.t | max ~ ' °C') if ns.n else '—' }}"
+      - name: Calefaccion resumen Miercoles
+        unique_id: calefaccion_resumen_miercoles
+        state: "{% set ns = namespace(n=0, t=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_miercoles_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}{% set ns.n = ns.n + 1 %}{% set ns.t = ns.t + [v.split('@')[1] | float(0)] %}{% endif %}{% endfor %}{{ (ns.n ~ (' franja' if ns.n == 1 else ' franjas') ~ ' · ' ~ ns.t | min ~ '–' ~ ns.t | max ~ ' °C') if ns.n else '—' }}"
+      - name: Calefaccion resumen Jueves
+        unique_id: calefaccion_resumen_jueves
+        state: "{% set ns = namespace(n=0, t=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_jueves_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}{% set ns.n = ns.n + 1 %}{% set ns.t = ns.t + [v.split('@')[1] | float(0)] %}{% endif %}{% endfor %}{{ (ns.n ~ (' franja' if ns.n == 1 else ' franjas') ~ ' · ' ~ ns.t | min ~ '–' ~ ns.t | max ~ ' °C') if ns.n else '—' }}"
+      - name: Calefaccion resumen Viernes
+        unique_id: calefaccion_resumen_viernes
+        state: "{% set ns = namespace(n=0, t=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_viernes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}{% set ns.n = ns.n + 1 %}{% set ns.t = ns.t + [v.split('@')[1] | float(0)] %}{% endif %}{% endfor %}{{ (ns.n ~ (' franja' if ns.n == 1 else ' franjas') ~ ' · ' ~ ns.t | min ~ '–' ~ ns.t | max ~ ' °C') if ns.n else '—' }}"
+      - name: Calefaccion resumen Sabado
+        unique_id: calefaccion_resumen_sabado
+        state: "{% set ns = namespace(n=0, t=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_sabado_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}{% set ns.n = ns.n + 1 %}{% set ns.t = ns.t + [v.split('@')[1] | float(0)] %}{% endif %}{% endfor %}{{ (ns.n ~ (' franja' if ns.n == 1 else ' franjas') ~ ' · ' ~ ns.t | min ~ '–' ~ ns.t | max ~ ' °C') if ns.n else '—' }}"
+      - name: Calefaccion resumen Domingo
+        unique_id: calefaccion_resumen_domingo
+        state: "{% set ns = namespace(n=0, t=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_domingo_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}{% set ns.n = ns.n + 1 %}{% set ns.t = ns.t + [v.split('@')[1] | float(0)] %}{% endif %}{% endfor %}{{ (ns.n ~ (' franja' if ns.n == 1 else ' franjas') ~ ' · ' ~ ns.t | min ~ '–' ~ ns.t | max ~ ' °C') if ns.n else '—' }}"
+      - name: Ruido resumen Lunes
+        unique_id: ruido_resumen_lunes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_lunes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Ruido resumen Martes
+        unique_id: ruido_resumen_martes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_martes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Ruido resumen Miercoles
+        unique_id: ruido_resumen_miercoles
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_miercoles_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Ruido resumen Jueves
+        unique_id: ruido_resumen_jueves
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_jueves_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Ruido resumen Viernes
+        unique_id: ruido_resumen_viernes
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_viernes_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Ruido resumen Sabado
+        unique_id: ruido_resumen_sabado
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_sabado_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+      - name: Ruido resumen Domingo
+        unique_id: ruido_resumen_domingo
+        state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_domingo_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+script:
+  acs_aplicar_horario:
+    alias: ACS/Refrigeración/Ruido - Aplicar horario del día al termostato
+    icon: mdi:water-boiler-auto
+    description: "Escribe en el termostato (b555, circuito basv0) las franjas del día y programa elegidos (ACS, Refrigeración Z1 o Reducción de ruido), en orden, usando los helpers 'ACS horario ...'. El número de franjas se deduce: cuenta hasta la última franja rellena (desde = hasta, p. ej. 00:00-00:00, es vacía). Sin huecos ni solapes. El termostato rechaza (código 04) una franja suelta, por eso se manda el día completo desde la franja 1. 'hasta' 23:59 y 00:00 se envían como 24:00. Escribe de verdad en el bus eBUS. Solo en Reducción de ruido se permite dejar el día vacío (0 franjas): se envía 0;0;00:00;00:00."
+    mode: single
+    sequence:
+      - variables:
+          dias_en:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+          programa: "{{ states('input_select.acs_horario_programa') }}"
+          set_pref: "{{ {'ACS': 'HwcTimerSet_', 'Refrigeración': 'Z1TimerCoolSet_', 'Reducción de ruido': 'SilentTimerSet_'}[programa] }}"
+          get_pref: "{{ {'ACS': 'HwcTimer_', 'Refrigeración': 'Z1TimerCool_', 'Reducción de ruido': 'SilentTimer_'}[programa] }}"
+          slots_topic: "{{ {'ACS': 'HwcTimerSlots', 'Refrigeración': 'Z1TimerCoolSlots', 'Reducción de ruido': 'SilentTimerSlots'}[programa] }}"
+          dia_idx: "{{ state_attr('input_select.acs_horario_dia', 'options').index(states('input_select.acs_horario_dia')) }}"
+          dia_en: "{{ dias_en[dia_idx | int] }}"
+          desde: "{{ [states('input_datetime.acs_horario_desde')[:5], states('input_datetime.acs_horario_franja_2_desde')[:5], states('input_datetime.acs_horario_franja_3_desde')[:5]] }}"
+          hasta_raw: "{{ [states('input_datetime.acs_horario_hasta')[:5], states('input_datetime.acs_horario_franja_2_hasta')[:5], states('input_datetime.acs_horario_franja_3_hasta')[:5]] }}"
+          hasta: "{{ hasta_raw | map('replace', '00:00', '24:00') | map('replace', '23:59', '24:00') | list }}"
+          total: "{% set ns = namespace(n=0) %}{% for i in range(3) %}{% if desde[i] != hasta_raw[i] %}{% set ns.n = i + 1 %}{% endif %}{% endfor %}{{ ns.n }}"
+          valido: "{% set ns = namespace(ok=(total | int > 0 or programa == 'Reducción de ruido')) %}{% for i in range(total | int) %}{% if desde[i] == hasta_raw[i] or desde[i] >= hasta[i] %}{% set ns.ok = false %}{% endif %}{% if i > 0 and desde[i] < hasta[i - 1] %}{% set ns.ok = false %}{% endif %}{% endfor %}{{ ns.ok }}"
+      - if:
+          - condition: template
+            value_template: "{{ valido }}"
+        then:
+          - repeat:
+              count: "{{ [total | int, 1] | max }}"
+              sequence:
+                - action: mqtt.publish
+                  data:
+                    topic: ebusd/basv0/{{ set_pref }}{{ dia_en }}/set
+                    payload: "{{ '0;0;00:00;00:00' if total | int == 0 else (repeat.index - 1) ~ ';' ~ total ~ ';' ~ desde[repeat.index - 1] ~ ';' ~ hasta[repeat.index - 1] }}"
+                    qos: 1
+                    retain: false
+                - delay:
+                    milliseconds: 1500
+          - delay:
+              seconds: 2
+          - action: mqtt.publish
+            data:
+              topic: ebusd/basv0/{{ slots_topic }}/get
+              payload: "1"
+              retain: false
+          - repeat:
+              count: 3
+              sequence:
+                - action: mqtt.publish
+                  data:
+                    topic: ebusd/basv0/{{ get_pref }}{{ dia_en }}{{ repeat.index - 1 }}/get
+                    payload: "1"
+                    retain: false
+                - delay:
+                    milliseconds: 700
+          - action: persistent_notification.create
+            data:
+              title: Horario {{ programa }} enviado
+              message: "{{ programa }} - {{ states('input_select.acs_horario_dia') }}: {{ total }} franja(s) -> {% for i in range(total | int) %}{{ desde[i] }}-{{ hasta[i] }}{% if not loop.last %}, {% endif %}{% endfor %}. Comprueba el resultado en las listas de la vista Aerotermia Horarios."
+              notification_id: acs_horario
+        else:
+          - action: persistent_notification.create
+            data:
+              title: Horario {{ programa }} NO enviado
+              message: "Franjas no válidas: cada 'desde' debe ser anterior a su 'hasta', no pueden solaparse ni dejar huecos (franja 2 vacía con la 3 rellena), y debe haber al menos una. Desde={{ desde }} Hasta={{ hasta_raw }}"
+              notification_id: acs_horario
+          - stop: Franjas no válidas
+            error: true
+  acs_cargar_horario_dia:
+    alias: ACS/Refrigeración/Ruido - Cargar horario actual del día en el formulario
+    icon: mdi:download
+    description: Copia a los helpers 'ACS horario ...' las franjas que tiene ahora el termostato para el día y programa elegidos (solo lectura; no escribe en el bus). Una franja inexistente se carga como 00:00-00:00 (vacía); 24:00 se carga como 23:59.
+    mode: single
+    sequence:
+      - variables:
+          dias_en:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+          slugs:
+            - lunes
+            - martes
+            - miercoles
+            - jueves
+            - viernes
+            - sabado
+            - domingo
+          programa: "{{ states('input_select.acs_horario_programa') }}"
+          get_pref: "{{ {'ACS': 'HwcTimer_', 'Refrigeración': 'Z1TimerCool_', 'Reducción de ruido': 'SilentTimer_'}[programa] }}"
+          sens_pref: "{{ {'ACS': 'acs_horario_', 'Refrigeración': 'refrigeracion_horario_', 'Reducción de ruido': 'ruido_horario_'}[programa] }}"
+          dia_idx: "{{ state_attr('input_select.acs_horario_dia', 'options').index(states('input_select.acs_horario_dia')) }}"
+          dia_en: "{{ dias_en[dia_idx | int] }}"
+          slug: "{{ slugs[dia_idx | int] }}"
+          desde_ids:
+            - input_datetime.acs_horario_desde
+            - input_datetime.acs_horario_franja_2_desde
+            - input_datetime.acs_horario_franja_3_desde
+          hasta_ids:
+            - input_datetime.acs_horario_hasta
+            - input_datetime.acs_horario_franja_2_hasta
+            - input_datetime.acs_horario_franja_3_hasta
+      - repeat:
+          count: 3
+          sequence:
+            - action: mqtt.publish
+              data:
+                topic: ebusd/basv0/{{ get_pref }}{{ dia_en }}{{ repeat.index - 1 }}/get
+                payload: "1"
+                retain: false
+            - delay:
+                milliseconds: 700
+      - delay:
+          seconds: 1
+      - repeat:
+          count: 3
+          sequence:
+            - variables:
+                valor: "{{ states('sensor.' ~ sens_pref ~ slug ~ '_' ~ repeat.index) }}"
+                hay: "{{ '-' in valor }}"
+                d: "{{ (valor.split('-')[0] if hay else '00:00') ~ ':00' }}"
+                h: "{{ ((valor.split('-')[1] if hay else '00:00') | replace('24:00', '23:59')) ~ ':00' }}"
+            - action: input_datetime.set_datetime
+              target:
+                entity_id: "{{ desde_ids[repeat.index - 1] }}"
+              data:
+                time: "{{ d }}"
+            - action: input_datetime.set_datetime
+              target:
+                entity_id: "{{ hasta_ids[repeat.index - 1] }}"
+              data:
+                time: "{{ h }}"
+  acs_seleccionar_y_cargar:
+    alias: ACS/Refrigeración/Ruido - Seleccionar día y cargar su horario
+    icon: mdi:cursor-default-click
+    description: Pone programa y día en el formulario y carga el horario actual del termostato (solo lectura; no escribe en el bus). Lo usan las filas de las listas de la vista Aerotermia Horarios.
+    mode: single
+    fields:
+      dia:
+        name: Día
+        description: Lunes ... Domingo
+        required: true
+        selector:
+          select:
+            options:
+              - Lunes
+              - Martes
+              - Miércoles
+              - Jueves
+              - Viernes
+              - Sábado
+              - Domingo
+      programa:
+        name: Programa
+        description: ACS, Refrigeración o Reducción de ruido
+        required: true
+        selector:
+          select:
+            options:
+              - ACS
+              - Refrigeración
+              - Reducción de ruido
+    sequence:
+      - action: input_select.select_option
+        target:
+          entity_id: input_select.acs_horario_programa
+        data:
+          option: "{{ programa }}"
+      - action: input_select.select_option
+        target:
+          entity_id: input_select.acs_horario_dia
+        data:
+          option: "{{ dia }}"
+      - action: script.acs_cargar_horario_dia
+  acs_leer_todos_horarios:
+    alias: ACS/Refrigeración/Ruido - Leer todos los horarios del termostato
+    icon: mdi:refresh
+    description: "Solo lectura (no escribe en el bus): pide a ebusd que relea del termostato el número de franjas y las 3 franjas de los 7 días del programa indicado, o de los tres si es 'Todos', para refrescar las tablas de la vista Aerotermia Horarios."
+    mode: single
+    fields:
+      programa:
+        name: Programa
+        description: ACS, Refrigeración, Reducción de ruido o Todos
+        required: false
+        default: Todos
+        selector:
+          select:
+            options:
+              - Todos
+              - ACS
+              - Refrigeración
+              - Reducción de ruido
+    sequence:
+      - variables:
+          prog: "{{ programa | default('Todos') }}"
+          dias:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+          topics: "{% set m = {'ACS': ['HwcTimer_', 'HwcTimerSlots'], 'Refrigeración': ['Z1TimerCool_', 'Z1TimerCoolSlots'], 'Reducción de ruido': ['SilentTimer_', 'SilentTimerSlots']} %}{% set sel = (m.keys() | list) if prog == 'Todos' else [prog] %}{% set ns = namespace(l=[]) %}{% for k in sel %}{% set ns.l = ns.l + [m[k][1]] %}{% for d in dias %}{% for i in range(3) %}{% set ns.l = ns.l + [m[k][0] ~ d ~ i] %}{% endfor %}{% endfor %}{% endfor %}{{ ns.l }}"
+      - repeat:
+          for_each: "{{ topics }}"
+          sequence:
+            - action: mqtt.publish
+              data:
+                topic: ebusd/basv0/{{ repeat.item }}/get
+                payload: "1"
+                retain: false
+            - delay:
+                milliseconds: 250
+  calefaccion_aplicar_horario:
+    alias: Calefacción Z1 - Aplicar horario del día al termostato
+    icon: mdi:radiator
+    description: Escribe en el termostato (b555, circuito basv0) el programa horario de calefacción Z1 del día elegido a partir del texto 'Calefaccion horario texto' (formato HH:MM-HH:MM@T separado por comas, p. ej. 03:10-09:30@19.0, 09:30-24:00@21.0). Valida el formato, desde<hasta, que no se solapen, de 1 a 12 franjas y temperaturas de 5 a 30 en pasos de 0,5. El termostato exige el día completo en orden desde la franja 1. Escribe de verdad en el bus eBUS.
+    mode: single
+    sequence:
+      - variables:
+          dias_en:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+          dia_idx: "{{ state_attr('input_select.calefaccion_horario_dia', 'options').index(states('input_select.calefaccion_horario_dia')) }}"
+          dia_en: "{{ dias_en[dia_idx | int] }}"
+          texto: "{{ states('input_text.calefaccion_horario_texto') }}"
+          plan: "{% set ns = namespace(ok=true, d=[], h=[], t=[]) %}{% for p in texto.split(',') if p.strip() != '' %}{% set q = p.strip().split('@') %}{% set r = q[0].split('-') %}{% if q | length == 2 and r | length == 2 %}{% set a = r[0].strip() %}{% set b = r[1].strip() %}{% set c = q[1].strip() %}{% if (a | regex_match('^([01][0-9]|2[0-3]):[0-5][0-9]$')) and ((b | regex_match('^([01][0-9]|2[0-3]):[0-5][0-9]$')) or b == '24:00') and (c | regex_match('^[0-9]+([.][0-9])?$')) %}{% set ns.d = ns.d + [a] %}{% set ns.h = ns.h + [b] %}{% set ns.t = ns.t + [c | float] %}{% else %}{% set ns.ok = false %}{% endif %}{% else %}{% set ns.ok = false %}{% endif %}{% endfor %}{% set n = ns.d | length %}{% if n == 0 or n > 12 %}{% set ns.ok = false %}{% endif %}{% for i in range(n) %}{% if ns.d[i] >= ns.h[i] %}{% set ns.ok = false %}{% endif %}{% if i > 0 and ns.d[i] < ns.h[i - 1] %}{% set ns.ok = false %}{% endif %}{% if ns.t[i] < 5 or ns.t[i] > 30 or (ns.t[i] * 2) % 1 != 0 %}{% set ns.ok = false %}{% endif %}{% endfor %}{{ {'ok': ns.ok, 'd': ns.d, 'h': ns.h, 't': ns.t, 'n': n} }}"
+      - if:
+          - condition: template
+            value_template: "{{ plan.ok }}"
+        then:
+          - repeat:
+              count: "{{ plan.n }}"
+              sequence:
+                - action: mqtt.publish
+                  data:
+                    topic: ebusd/basv0/Z1TimerHeatSet_{{ dia_en }}/set
+                    payload: "{{ repeat.index - 1 }};{{ plan.n }};{{ plan.d[repeat.index - 1] }};{{ plan.h[repeat.index - 1] }};{{ '%.1f' | format(plan.t[repeat.index - 1]) }}"
+                    qos: 1
+                    retain: false
+                - delay:
+                    milliseconds: 1500
+          - delay:
+              seconds: 2
+          - action: mqtt.publish
+            data:
+              topic: ebusd/basv0/Z1TimerHeatSlots/get
+              payload: "1"
+              retain: false
+          - repeat:
+              count: 12
+              sequence:
+                - action: mqtt.publish
+                  data:
+                    topic: ebusd/basv0/Z1TimerHeat_{{ dia_en }}{{ repeat.index - 1 }}/get
+                    payload: "1"
+                    retain: false
+                - delay:
+                    milliseconds: 700
+          - action: persistent_notification.create
+            data:
+              title: Horario de calefacción enviado
+              message: "{{ states('input_select.calefaccion_horario_dia') }}: {{ plan.n }} franja(s). Comprueba el resultado en la lista de la vista Aerotermia Horarios."
+              notification_id: calefaccion_horario
+        else:
+          - action: persistent_notification.create
+            data:
+              title: Horario de calefacción NO enviado
+              message: "Texto no válido. Formato: HH:MM-HH:MM@T separado por comas (p. ej. 03:10-09:30@19.0, 09:30-24:00@21.0); de 1 a 12 franjas, desde anterior a hasta, sin solapes, temperaturas de 5 a 30 en pasos de 0,5. Texto recibido: {{ texto }}"
+              notification_id: calefaccion_horario
+          - stop: Texto no válido
+            error: true
+  calefaccion_cargar_horario_dia:
+    alias: Calefacción Z1 - Cargar horario actual del día en el campo de texto
+    icon: mdi:download
+    description: Lee del termostato (solo lectura, no escribe en el bus) las franjas de calefacción Z1 del día elegido en 'Calefaccion horario dia' y las deja en 'Calefaccion horario texto' con el formato HH:MM-HH:MM@T, separadas por comas.
+    mode: single
+    sequence:
+      - variables:
+          dias_en:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+          slugs:
+            - lunes
+            - martes
+            - miercoles
+            - jueves
+            - viernes
+            - sabado
+            - domingo
+          dia_idx: "{{ state_attr('input_select.calefaccion_horario_dia', 'options').index(states('input_select.calefaccion_horario_dia')) }}"
+          dia_en: "{{ dias_en[dia_idx | int] }}"
+          slug: "{{ slugs[dia_idx | int] }}"
+      - repeat:
+          count: 12
+          sequence:
+            - action: mqtt.publish
+              data:
+                topic: ebusd/basv0/Z1TimerHeat_{{ dia_en }}{{ repeat.index - 1 }}/get
+                payload: "1"
+                retain: false
+            - delay:
+                milliseconds: 500
+      - delay:
+          seconds: 1
+      - variables:
+          texto: "{% set ns = namespace(l=[]) %}{% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_' ~ slug ~ '_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(', ') }}"
+      - action: input_text.set_value
+        target:
+          entity_id: input_text.calefaccion_horario_texto
+        data:
+          value: "{{ texto }}"
+  calefaccion_seleccionar_y_cargar:
+    alias: Calefacción Z1 - Seleccionar día y cargar su horario
+    icon: mdi:cursor-default-click
+    description: Pone el día en el formulario de calefacción y carga su horario actual (solo lectura). Lo usan las filas de la tabla de calefacción de la vista Aerotermia Horarios.
+    mode: single
+    fields:
+      dia:
+        name: Día
+        description: Lunes ... Domingo
+        required: true
+        selector:
+          select:
+            options:
+              - Lunes
+              - Martes
+              - Miércoles
+              - Jueves
+              - Viernes
+              - Sábado
+              - Domingo
+    sequence:
+      - action: input_select.select_option
+        target:
+          entity_id: input_select.calefaccion_horario_dia
+        data:
+          option: "{{ dia }}"
+      - action: script.calefaccion_cargar_horario_dia
+  calefaccion_leer_todos_horarios:
+    alias: Calefacción Z1 - Leer todos los horarios del termostato
+    icon: mdi:refresh
+    description: "Solo lectura (no escribe en el bus): pide a ebusd que relea del termostato el número de franjas y las 12 franjas posibles de los 7 días del programa de calefacción Z1, para refrescar la lista de la vista Aerotermia Horarios."
+    mode: single
+    sequence:
+      - variables:
+          dias:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+          topics: "{% set ns = namespace(l=['Z1TimerHeatSlots']) %}{% for d in dias %}{% for i in range(12) %}{% set ns.l = ns.l + ['Z1TimerHeat_' ~ d ~ i] %}{% endfor %}{% endfor %}{{ ns.l }}"
+      - repeat:
+          for_each: "{{ topics }}"
+          sequence:
+            - action: mqtt.publish
+              data:
+                topic: ebusd/basv0/{{ repeat.item }}/get
+                payload: "1"
+                retain: false
+            - delay:
+                milliseconds: 250

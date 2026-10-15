@@ -275,10 +275,10 @@ scalar error extends UIN;
 
 model errors {
   error: error;
-  error_1: error;
   error_2: error;
   error_3: error;
   error_4: error;
+  error_5: error;
 }
 
 model errorhistory {
@@ -538,21 +538,21 @@ scalar hmucode extends UIN;
 
 enum Values_daysel {
   selected: 0,
-  Mo_Fr: 1,
-  Sa_Su: 2,
-  Mo_Su: 3,
+  `Mo-Fr`: 1,
+  `Sa-Su`: 2,
+  `Mo-Su`: 3,
 }
 
 enum Values_daysel2 {
   off: 0,
-  Mo: 1,
-  Tu: 2,
-  We: 3,
-  Th: 4,
-  Fr: 5,
-  Sa: 6,
-  Su: 7,
-  daily: 8,
+  Mon: 1,
+  Tue: 2,
+  Wed: 3,
+  Thu: 4,
+  Fri: 5,
+  Sat: 6,
+  Sun: 7,
+  Daily: 8,
 }
 
 enum Values_opmode3 {
@@ -566,7 +566,8 @@ enum Values_hcmode {
   auto: 0,
   off: 1,
   heat: 2,
-  water: 3,
+  acs: 3,
+  sync: 23,
 }
 
 enum Values_hcmode2 {
@@ -617,12 +618,12 @@ enum Values_mctype7 {
 }
 
 enum Values_escomode {
-  heatpump: 0,
-  backup: 1,
-  heatpumpandbackup: 2,
-  heat: 3,
-  cool: 4,
-  heatandcool: 5,
+  `HeatPump off`: 0,
+  `Backup Boiler off`: 1,
+  `HP+BB off`: 2,
+  `Heating off`: 3,
+  `Cooling off`: 4,
+  `Heating+Cooling off`: 5,
 }
 
 enum Values_hwcmode {
@@ -710,7 +711,7 @@ enum Values_phase3 {
 }
 
 enum Values_backtype {
-  not_present: 0,
+  `not present`: 0,
   externalheat: 1,
   externalwater: 2,
   externalheatandwater: 3,
@@ -718,26 +719,26 @@ enum Values_backtype {
 }
 
 enum Values_backmode {
-  no_backup: 0,
+  `no backup`: 0,
   withbackup: 1,
   onlybackup: 2,
 }
 
 enum Values_backmode2 {
   off: 0,
-  heat: 1,
-  water: 2,
-  heatandwater: 3,
+  `heating circuit`: 1,
+  `warm water circuit`: 2,
+  `heating + warm water circuit`: 3,
 }
 
 enum Values_pumppow {
-  _0: 0,
-  _1: 1,
-  _2: 2,
-  _3: 3,
-  _4: 4,
-  _5: 5,
-  _6: 6,
+  `0`: 0,
+  `1`: 1,
+  `2`: 2,
+  `3`: 3,
+  `4`: 4,
+  `5`: 5,
+  `6`: 6,
   off: 7,
 }
 
@@ -782,23 +783,23 @@ enum Values_hpstatus {
 
 enum Values_zonesel {
   alle: 0,
-  _1: 1,
-  _2: 2,
-  _3: 3,
-  _4: 4,
-  _5: 5,
-  _6: 6,
+  `1`: 1,
+  `2`: 2,
+  `3`: 3,
+  `4`: 4,
+  `5`: 5,
+  `6`: 6,
 }
 
 enum Values_zonestatus {
   auto: 0,
-  ventilation: 1,
+  `ventilation boost`: 1,
   party: 3,
-  veto: 4,
-  onedayaway: 5,
-  onedayathome: 6,
-  holidayaway: 7,
-  holidayathome: 8,
+  `quick veto`: 4,
+  `one day away from home`: 5,
+  `one day at home`: 6,
+  `holiday away`: 7,
+  `holiday at home`: 8,
   load: 9,
   off: 10,
 }
@@ -808,8 +809,8 @@ enum Values_sfmode {
   ventilation: 1,
   party: 2,
   veto: 3,
-  onedayaway: 4,
-  onedayathome: 5,
+  onedayaatway: 4,
+  onedayhome: 5,
   load: 6,
 }
 
@@ -833,16 +834,16 @@ enum Values_opmode {
 
 enum Values_opmode2 {
   off: 0,
-  auto: 1,
+  `time controlled`: 1,
   manual: 2,
 }
 
 enum Values_zmapping {
   none: 0,
   VRC700: 1,
-  VR91_1: 2,
-  VR91_2: 3,
-  VR91_3: 4,
+  `VR91.1`: 2,
+  `VR91.2`: 3,
+  `VR91.3`: 4,
 }
 
 enum Values_mamode {
@@ -850,6 +851,7 @@ enum Values_mamode {
   dryer: 1,
   zone: 2,
   legiopump: 3,
+  inactive: 4,
 }
 
 enum Values_offmode {
@@ -864,8 +866,8 @@ enum Values_offmode2 {
 
 enum Values_rcmode {
   off: 0,
-  modulating: 1,
-  thermostat: 2,
+  activo: 1,
+  ampliado: 2,
 }
 
 enum Values_rcmode2 {
@@ -1091,63 +1093,63 @@ enum Values_zoneStatus {
 
 /** Status code values for heat pump */
 enum Values_scode {
-  S_34_Modo_calefaccion_Proteccion_heladas: 34,
-  S_100_En_espera: 100,
-  S_101_Calefaccion_desconexion_del_compresor: 101,
-  S_102_Calefaccion_compresor_bloqueado: 102,
-  S_103_Calefaccion_pre_funcionamiento: 103,
-  S_104_Calefaccion_compresor_activo: 104,
-  S_107_Calefaccion_post_funcionamiento: 107,
-  S_111_Refrigeracion_desconexion_del_compresor: 111,
-  S_112_Refrigeracion_compresor_bloqueado: 112,
-  S_113_Refrigeracion_pre_funcionamiento_compresor: 113,
-  S_114_Refrigeracion_compresor_activo: 114,
-  S_117_Refrigeracion_post_funcionamiento_compresor: 117,
-  S_125_Calefaccion_calentador_inmersion_activo: 125,
-  S_132_ACS_compresor_bloqueado: 132,
-  S_133_ACS_pre_funcionamiento: 133,
-  S_134_ACS_compresor_activo: 134,
-  S_135_ACS_calentador_inmersion_activo: 135,
-  S_137_ACS_post_funcionamiento: 137,
-  S_141_Calefaccion_desconexion_calentador_inmersion: 141,
-  S_142_Calefaccion_calentador_de_inmersion_bloqueado: 142,
-  S_151_ACS_desconexion_calentador_inmersion: 151,
-  S_152_ACS_calentador_inmersion_bloqueado: 152,
-  S_173_Tiempo_bloqueo_empresa_suministro_electricidad: 173,
-  S_202_Programa_comprobacion_purga_circuito_del_edificio_activa: 202,
-  S_203_Prueba_actuadores_activa: 203,
-  S_212_Error_conexion_regulador_no_detectado: 212,
-  S_240_Aceite_compresor_y_ambiente_demasiado_frios: 240,
-  S_252_Unidad_ventilador_1_ventilador_bloqueado: 252,
-  S_255_Unidad_ventilador_1_temperatura_entrada_aire_muy_alta: 255,
-  S_256_Unidad_ventilador_1_temperatura_entrada_aire_muy_baja: 256,
-  S_260_Unidad_ventilador_2_ventilador_bloqueado: 260,
-  S_272_Circuito_edificio_presion_disponible_bomba_limitacion_activa: 272,
-  S_273_Circuito_edificio_temperatura_ida_demasiado_baja: 273,
-  S_275_Circuito_edificio_caudal_demasiado_bajo: 275,
-  S_276_Circuito_edificio_contacto_bloqueo_S20_abierto: 276,
-  S_277_Circuito_edificio_error_en_bomba: 277,
-  S_280_Error_convertidor_Compresor: 280,
-  S_281_Error_convertidor_Tension_de_red: 281,
-  S_282_Error_convertidor_Sobrecalentamiento: 282,
-  S_283_Tiempo_eliminacion_hielo_demasiado_largo: 283,
-  S_284_Temperatura_ida_eliminacion_hielo_muy_justa: 284,
-  S_285_Temperatura_de_salida_compresor_muy_baja: 285,
-  S_286_Interruptor_temperatura_gas_caliente_abierto: 286,
-  S_287_Ventilador_1_viento: 287,
-  S_288_Ventilador_2_viento: 288,
-  S_289_Limitacion_tension_activada: 289,
-  S_290_Retardo_de_conexion_activo: 290,
-  S_302_Interruptor_de_alta_presion_abierto: 302,
-  S_303_Temperatura_salida_compresor_demasiado_alta: 303,
-  S_304_Temperatura_evaporacion_demasiado_baja: 304,
-  S_305_Temperatura_condensacion_demasiado_baja: 305,
-  S_306_Temperatura_evaporacion_demasiado_alta: 306,
-  S_308_Temperatura_condensacion_demasiado_alta: 308,
-  S_312_Circuito_edificio_temperatura_retorno_demasiado_baja: 312,
-  S_314_Circuito_edificio_temperatura_retorno_demasiado_alta: 314,
-  S_516_Eliminacion_de_hielo_activa: 516,
-  S_575_Convertidor_frecuencia_error_interno: 575,
-  S_581_Error_de_conexion_convertidor_frecuencia_no_detectado: 581,
-  S_590_Error_posicion_incorrecta_valvula_de_4_vias: 590,
+  `S.34 Modo calefacción: Protección heladas`: 34,
+  `S.100 En espera`: 100,
+  `S.101 Calefacción: desconexión del compresor`: 101,
+  `S.102 Calefacción: compresor bloqueado`: 102,
+  `S.103 Calefacción: pre-funcionamiento`: 103,
+  `S.104 Calefacción: compresor activo`: 104,
+  `S.107 Calefacción: post-funcionamiento`: 107,
+  `S.111 Refrigeración: desconexión del compresor`: 111,
+  `S.112 Refrigeración: compresor bloqueado`: 112,
+  `S.113 Refrigeración: pre-funcionamiento compresor`: 113,
+  `S.114 Refrigeración: compresor activo`: 114,
+  `S.117 Refrigeración: post-funcionamiento compresor`: 117,
+  `S.125 Calefacción: calentador inmersión activo`: 125,
+  `S.132 ACS: compresor bloqueado`: 132,
+  `S.133 ACS: pre-funcionamiento`: 133,
+  `S.134 ACS: compresor activo`: 134,
+  `S.135 ACS: calentador inmersión activo`: 135,
+  `S.137 ACS: post-funcionamiento`: 137,
+  `S.141 Calefacción: desconexión calentador inmersión`: 141,
+  `S.142 Calefacción: calentador de inmersión bloqueado`: 142,
+  `S.151 ACS: desconexión calentador inmersión`: 151,
+  `S.152 ACS: calentador inmersión bloqueado`: 152,
+  `S.173 Tiempo bloqueo empresa suministro electricidad`: 173,
+  `S.202 Programa comprobación: purga circuito del edificio activa`: 202,
+  `S.203 Prueba actuadores activa`: 203,
+  `S.212 Error conexión: regulador no detectado`: 212,
+  `S.240 Aceite compresor y ambiente demasiado fríos`: 240,
+  `S.252 Unidad ventilador 1: ventilador bloqueado`: 252,
+  `S.255 Unidad ventilador 1: temperatura entrada aire muy alta`: 255,
+  `S.256 Unidad ventilador 1: temperatura entrada aire muy baja`: 256,
+  `S.260 Unidad ventilador 2: ventilador bloqueado`: 260,
+  `S.272 Circuito edificio: presión disponible (bomba) limitación activa`: 272,
+  `S.273 Circuito edificio: temperatura ida demasiado baja`: 273,
+  `S.275 Circuito edificio: caudal demasiado bajo`: 275,
+  `S.276 Circuito edificio: contacto bloqueo S20 abierto`: 276,
+  `S.277 Circuito edificio: error en bomba`: 277,
+  `S.280 Error convertidor: Compresor`: 280,
+  `S.281 Error convertidor: Tensión de red`: 281,
+  `S.282 Error convertidor: Sobrecalentamiento`: 282,
+  `S.283 Tiempo eliminación hielo demasiado largo`: 283,
+  `S.284 Temperatura ida eliminación hielo muy justa`: 284,
+  `S.285 Temperatura de salida compresor muy baja`: 285,
+  `S.286 Interruptor temperatura gas caliente abierto`: 286,
+  `S.287 Ventilador 1: viento`: 287,
+  `S.288 Ventilador 2: viento`: 288,
+  `S.289 Limitación tensión activada`: 289,
+  `S.290 Retardo de conexión activo`: 290,
+  `S.302 Interruptor de alta presión abierto`: 302,
+  `S.303 Temperatura salida compresor demasiado alta`: 303,
+  `S.304 Temperatura evaporación demasiado baja`: 304,
+  `S.305 Temperatura condensación demasiado baja`: 305,
+  `S.306 Temperatura evaporación demasiado alta`: 306,
+  `S.308 Temperatura condensación demasiado alta`: 308,
+  `S.312 Circuito edificio: temperatura retorno demasiado baja`: 312,
+  `S.314 Circuito edificio: temperatura retorno demasiado alta`: 314,
+  `S.516 Eliminación de hielo activa`: 516,
+  `S.575 Convertidor frecuencia: error interno`: 575,
+  `S.581 Error de conexión: convertidor frecuencia no detectado`: 581,
+  `S.590 Error: posición incorrecta válvula de 4 vías`: 590,
 }

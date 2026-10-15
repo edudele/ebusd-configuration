@@ -220,18 +220,18 @@ r,,,Weekday,Actual Weekday,,,b509,0d2a00,value,,BDY,,,weekday
 r,,,Time,Actual Time,,,b509,0d2800,value,,VTI,,,time
 r,,,HeatPumpStatus,Heat_Pump_Status: contains the status of the heatpump shown to the installer. Values do not fit here. Please ask R&D for values.,,,b509,0dd000,value,,UCH,0=off;3=heat;6=standby;7=otshutdown;8=water,,heating state
 u,,,HeatPumpStatus,Heat_Pump_Status: contains the status of the heatpump shown to the installer. Values do not fit here. Please ask R&D for values.,,,b509,29d000,ign,,IGN:2,,,,value,,UCH,0=off;3=heat;6=standby;7=otshutdown;8=water,,heating state
-r,,,BackupType,Ext_Backup: Configuration of backup heater installation location,,,b509,0d9200,value,,UCH,0=not_present;1=externalheat;2=externalwater;3=externalheatandwater;4=internalheatandwater,,
-w,,install,BackupType,Ext_Backup: Configuration of backup heater installation location,,,b509,0e9200,value,,UCH,0=not_present;1=externalheat;2=externalwater;3=externalheatandwater;4=internalheatandwater,,
+r,,,BackupType,Ext_Backup: Configuration of backup heater installation location,,,b509,0d9200,value,,UCH,0=not present;1=externalheat;2=externalwater;3=externalheatandwater;4=internalheatandwater,,
+w,,install,BackupType,Ext_Backup: Configuration of backup heater installation location,,,b509,0e9200,value,,UCH,0=not present;1=externalheat;2=externalwater;3=externalheatandwater;4=internalheatandwater,,
 r,,,BivalentTemp,Bivalent_Temperature: outside temperature must be lower than this temperature in order to use backup heater for CH,,,b509,0d6500,value,,D2C,,°C,temperature
 w,,install,BivalentTemp,Bivalent_Temperature: outside temperature must be lower than this temperature in order to use backup heater for CH,,,b509,0e6500,value,,D2C,,°C,temperature
 r,,,BackupHysteresis,Backup_Hysteresis: difference between actual flow temperature and setpoit at which backup heater should start,,,b509,0d7e00,value,,D2C,,°C,temperature
 w,,install,BackupHysteresis,Backup_Hysteresis: difference between actual flow temperature and setpoit at which backup heater should start,,,b509,0e7e00,value,,D2C,,°C,temperature
 r,,,BackupIntegral,Integral_Backup_Start: integral at which backup heater should start,,,b509,0d7f00,value,,SIN,,°min,
 w,,install,BackupIntegral,Integral_Backup_Start: integral at which backup heater should start,,,b509,0e7f00,value,,SIN,,°min,
-r,,,BackupModeHc,"Backup_Heater_Mode_CH: backup heater mode for CH: no backup, comfort or backup only",,,b509,0d6300,value,,UCH,0=no_backup;1=withbackup;2=onlybackup,,
-w,,install,BackupModeHc,"Backup_Heater_Mode_CH: backup heater mode for CH: no backup, comfort or backup only",,,b509,0e6300,value,,UCH,0=no_backup;1=withbackup;2=onlybackup,,
-r,,,BackupModeHwc,"Backup_Heater_Mode_DHW: backup heater mode for DHW: no backup, comfort or backup only",,,b509,0d6400,value,,UCH,0=no_backup;1=withbackup;2=onlybackup,,
-w,,install,BackupModeHwc,"Backup_Heater_Mode_DHW: backup heater mode for DHW: no backup, comfort or backup only",,,b509,0e6400,value,,UCH,0=no_backup;1=withbackup;2=onlybackup,,
+r,,,BackupModeHc,"Backup_Heater_Mode_CH: backup heater mode for CH: no backup, comfort or backup only",,,b509,0d6300,value,,UCH,0=no backup;1=withbackup;2=onlybackup,,
+w,,install,BackupModeHc,"Backup_Heater_Mode_CH: backup heater mode for CH: no backup, comfort or backup only",,,b509,0e6300,value,,UCH,0=no backup;1=withbackup;2=onlybackup,,
+r,,,BackupModeHwc,"Backup_Heater_Mode_DHW: backup heater mode for DHW: no backup, comfort or backup only",,,b509,0d6400,value,,UCH,0=no backup;1=withbackup;2=onlybackup,,
+w,,install,BackupModeHwc,"Backup_Heater_Mode_DHW: backup heater mode for DHW: no backup, comfort or backup only",,,b509,0e6400,value,,UCH,0=no backup;1=withbackup;2=onlybackup,,
 r,,,BackupPowerCut,"Backup_Power_Cut: This enables the backup heater to run while power cuts as compressor replacement, only applicable if electrical scheme is two.",,,b509,0d8600,value,,UCH,0=no;1=yes,,
 w,,service,BackupPowerCut,"Backup_Power_Cut: This enables the backup heater to run while power cuts as compressor replacement, only applicable if electrical scheme is two.",,,b509,0e8600,value,,UCH,0=no;1=yes,,
 r,,,CompHysteresis,Compressor_Hysteresis: difference between actual flow temperature and setpoit at which compressor should start,,,b509,0d7d00,value,,D2C,,°C,temperature
@@ -316,12 +316,12 @@ r,,,StorageTempTopOffset,T_HB_Top_Offset: Offset for calibrating temperature sen
 w,,install,StorageTempTopOffset,T_HB_Top_Offset: Offset for calibrating temperature sensor,,,b509,0e3301,value,,D2C,,K,
 w,,install,Iotest,I/O test,,,b506,02,value,,UCH,0=off;1=coolvalve;2=sourcepump;3=hcpump;4=injector;5=caseheater;6=backup;7=hwchcvalve;8=cirpump;9=sc2pump;10=hc2pump;11=hc2mixeropen;12=hc2mixerclose,,
 w,,install,Ioteststop,stop I/O test,,,b506,01,
-r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
+r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number,error_5,,UIN,,,error number
 r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
-r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp,,D2B,,°C,temperature
-uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,status,,UCH,,,"bits: disablehc, disablehwctapping, disablehwcload",ign_1,,IGN:1,,,,status2,,UCH,,,"bits: remoteControlHcPump, releaseBackup, releaseCooling"
-w,,install,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=water,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,status,,UCH,,,"bits: disablehc, disablehwctapping, disablehwcload",ign_1,,IGN:1,,,,status2,,UCH,,,"bits: remoteControlHcPump, releaseBackup, releaseCooling"
-r,,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatur/Speichertemperatur/Pumpenstatus,,,b511,01,temp,,D1C,,°C,flow temperature,temp_1,,D1C,,°C,return temperature,temp_2,,D2B,,°C,outside temperature,temp_3,,D1C,,°C,hot water temperature,temp_4,,D1C,,°C,storage temperature,pumpstate,,UCH,0=off;1=on;2=overrun;4=hwc,,pump status
-r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/ReglerCurrentTemp,,,b511,02,hwcmode,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode,temp,,UCH,,°C,max temperature,temp_1,,D1C,,°C,current temperature,temp_2,,UCH,,°C,max temperature,temp_3,,D1C,,°C,current temperature
-uw,,,StatusCirPump,Status circulation pump,,,b512,00,onoff,,UCH,0=off;100=on,,
+r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp2,,D2B,,°C,temperature
+uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=acs;23=sync,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,disablehc,,BI0,,,,disablehwctapping,,BI1,,,,disablehwcload,,BI2,,,,ign_1,,IGN:1,,,,remotecontrolhcpump,,BI0,,,,releasebackup,,BI1,,,,releasecooling,,BI2,,,
+w,,install,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=acs;23=sync,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,disablehc,,BI0,,,,disablehwctapping,,BI1,,,,disablehwcload,,BI2,,,,ign_1,,IGN:1,,,,remotecontrolhcpump,,BI0,,,,releasebackup,,BI1,,,,releasecooling,,BI2,,,
+r,,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatur/Speichertemperatur/Pumpenstatus,,,b511,01,temp1,,D1C,,°C,flow temperature,temp1_2,,D1C,,°C,return temperature,temp2,,D2B,,°C,outside temperature,temp1_3,,D1C,,°C,hot water temperature,temp1_4,,D1C,,°C,storage temperature,pumpstate,,UCH,0=off;1=on;2=overrun;4=hwc,,pump status
+r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/ReglerCurrentTemp,,,b511,02,hwcmode,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode,temp0,,UCH,,°C,max temperature,temp1,,D1C,,°C,current temperature,temp0_2,,UCH,,°C,max temperature,temp1_2,,D1C,,°C,current temperature
+uw,,,StatusCirPump,Status circulation pump,,,b512,00,uch,,UCH,0=off;100=on,,

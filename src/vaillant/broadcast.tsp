@@ -31,7 +31,7 @@ namespace Broadcast {
   @inherit(b)
   @ext(1)
   model Outsidetemp {
-    value: temp2;
+    temp2: temp2;
   }
 
   /** default *b */
@@ -45,15 +45,15 @@ namespace Broadcast {
   @ext(0x27)
   model HwcStatus {
     onoff: onoff;
-    vf1: temp0;
-    onoff_1: onoff;
+    VF1: temp0;
+    onoff_2: onoff;
   }
 
   /** quick - hot water tank filling */
   @inherit(b_1)
   @ext(0x6)
   model Load {
-    value: onoff;
+    onoff: onoff;
   }
 
   /** default *b for b508 */

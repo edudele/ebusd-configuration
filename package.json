@@ -6,7 +6,7 @@
     "maintsp": "find src/ -name '*.tsp' -not -type l|grep -Ev 'main.tsp|_templates.tsp'|sort|grep -v '_inc.'|sed -e 's#src/##' -e 's#^#import \"./#' -e 's#$#\";#' > src/main.tsp",
     "format": "npx tsp format src/*.tsp src/**/*.tsp",
     "lint": "npx tsp compile src/main.tsp --import @typespec/library-linter --emit @ebusd/ebus-typespec --no-emit",
-    "compile-en": "npx tsp compile --emit @ebusd/ebus-typespec src/main.tsp --output-dir outcsv",
+    "compile-en": "npx tsp compile --emit @ebusd/ebus-typespec src/main.tsp --output-dir outcsv && python3 utils/apply_compat_fieldnames.py outcsv/@ebusd/ebus-typespec",
     "compile-de": "npx tsp compile --emit @ebusd/ebus-typespec --option @ebusd/ebus-typespec.translations=src/de.yaml src/main.tsp --output-dir outcsv.de",
     "compile": "npm run compile-en && npm run compile-de",
     "preparepublish": "./utils/precheck.sh"

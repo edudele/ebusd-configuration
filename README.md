@@ -27,6 +27,37 @@ Este repositorio utiliza **TypeSpec** (`.tsp`) como formato fuente para definir 
    # etc.
    ```
 
+### Compatibilidad de entidades con el repositorio antiguo
+
+`npm run compile-en` ejecuta, tras compilar, `utils/apply_compat_fieldnames.py`: restituye en `15.basv0`, `08.hmu00` y
+`vaillant/broadcast` los nombres de campo del repositorio antiguo (campo sin nombre para los tipos base, mayúsculas
+originales) para que los `entity_id`/`unique_id` de Home Assistant **no cambien al actualizar**. La tabla
+(`utils/compat_fieldnames.json`) se genera con `utils/gen_compat_fieldnames.py` comparando los volcados de
+`ebusd --checkconfig --dumpconfig=json` de ambos repositorios (instrucciones en la cabecera del script). Si compilas
+directamente con `npx tsp compile` sin este paso, los nombres de campo salen en minúsculas y con el nombre del tipo.
+
+Los ficheros `15.bass*`, `15.basv*`, `15.ctlv*` (y `15.ctls2`) del repositorio antiguo eran copias del mismo
+contenido. Aquí son enlaces simbólicos en `src/vaillant` a `15.basv0.tsp` (convención del repositorio, como
+`15.720.tsp -> 15.700.tsp`); el mismo paso posterior los replica en la salida (`15.bass0.csv -> 15.basv0.csv`, ya con los
+nombres compat aplicados). ebusd toma el circuito del nombre de fichero, así que `bass0`, `ctlv2`… generan los mismos
+mensajes y entidades que `basv0`. Para añadir otro nombre basta `ln -s 15.basv0.tsp 15.<nombre>.tsp` y recompilar.
+
+### Panel de horarios (planificadores) para Home Assistant
+
+[`homeassistant/aerotermia_horarios`](homeassistant/aerotermia_horarios/README.md) contiene un paquete de Home Assistant y
+una vista/dashboard para ver y editar los programas horarios del termostato `basv0` (ACS, refrigeración, calefacción Z1 y
+reducción de ruido) usando los mensajes `b555` de `src/vaillant/b555sched_inc.tsp`. Resumen de la instalación (detalle,
+requisitos y avisos en su README):
+
+1. Compila y despliega esta configuración en ebusd (`npm run compile-en`) con `EBUSD_MQTTJSON=true`, y usa el
+   `mqtt-hassio.cfg` de este repositorio (excluye del autodiscovery las franjas `hwctimer|z1timer|silenttimer`).
+2. Activa los packages en HA (`homeassistant: packages: !include_dir_named packages`) y copia
+   `homeassistant/aerotermia_horarios/packages/aerotermia_horarios.yaml` a tu carpeta `packages/`. Reinicia HA.
+3. Añade la pestaña: pega `homeassistant/aerotermia_horarios/dashboard/vista_horarios.yaml` dentro de `views:` de tu
+   dashboard (opción A), o instala el dashboard propio con entrada en el menú lateral usando
+   `aerotermia_horarios_dashboard.yaml` y `configuracion_lovelace_ejemplo.yaml` (opción B).
+4. Pulsa ↻ en la vista para leer las franjas actuales. **Los scripts `*_aplicar_*` escriben en el bus eBUS.**
+
 ### Flujo de trabajo para modificar configuraciones
 
 1. **Edita los archivos `.tsp`** en el directorio `src/` (por ejemplo, `src/vaillant/08.hmu.tsp`)

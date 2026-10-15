@@ -1,0 +1,463 @@
+# Dashboard completo para la opcion B del README (entrada propia en el menu lateral).
+# Copiar a <config>/dashboards/aerotermia_horarios.yaml y registrarlo con configuracion_lovelace_ejemplo.yaml.
+title: Aerotermia Horarios
+views:
+  - type: sections
+    max_columns: 5
+    title: Aerotermia Horarios
+    path: horarios_aerotermia
+    icon: mdi:air-filter
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading: Programas horarios del termostato
+            icon: mdi:water-boiler-auto
+            badges:
+              - type: button
+                icon: mdi:refresh
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_leer_todos_horarios
+                  data:
+                    programa: Todos
+          - type: markdown
+            grid_options:
+              columns: full
+            content: |-
+              **Modo ACS del termostato:** {{ states('select.ebusd_basv0_hwcopmode_opmode3') }} · **Reducción de ruido ahora:** {{ states('binary_sensor.ebusd_broadcast_noisereduction_onoff') }} (nivel {{ states('number.ebusd_hmu00_noisereductionlevel_value') }} %)  
+              {% if states('select.ebusd_basv0_hwcopmode_opmode3') != 'programado' %}⚠️ **El ACS no sigue el programa horario** (modo «{{ states('select.ebusd_basv0_hwcopmode_opmode3') }}»). Pon el modo en `programado` para que se aplique.  
+              {% endif %}*Pulsa un día para cargarlo en el formulario de la derecha. La refrigeración y la reducción de ruido siguen su programa.*
+          - type: heading
+            heading: ACS
+            heading_style: subtitle
+            icon: mdi:water-boiler-auto
+            badges:
+              - type: button
+                icon: mdi:refresh
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_leer_todos_horarios
+                  data:
+                    programa: ACS
+          - type: entities
+            grid_options:
+              columns: full
+            entities:
+              - entity: sensor.acs_resumen_lunes
+                name: Lunes
+                icon: mdi:water-boiler-auto
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Lunes
+                    programa: ACS
+              - entity: sensor.acs_resumen_martes
+                name: Martes
+                icon: mdi:water-boiler-auto
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Martes
+                    programa: ACS
+              - entity: sensor.acs_resumen_miercoles
+                name: Miércoles
+                icon: mdi:water-boiler-auto
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Miércoles
+                    programa: ACS
+              - entity: sensor.acs_resumen_jueves
+                name: Jueves
+                icon: mdi:water-boiler-auto
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Jueves
+                    programa: ACS
+              - entity: sensor.acs_resumen_viernes
+                name: Viernes
+                icon: mdi:water-boiler-auto
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Viernes
+                    programa: ACS
+              - entity: sensor.acs_resumen_sabado
+                name: Sábado
+                icon: mdi:water-boiler-auto
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Sábado
+                    programa: ACS
+              - entity: sensor.acs_resumen_domingo
+                name: Domingo
+                icon: mdi:water-boiler-auto
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Domingo
+                    programa: ACS
+          - type: heading
+            heading: Refrigeración Z1
+            heading_style: subtitle
+            icon: mdi:snowflake
+            badges:
+              - type: button
+                icon: mdi:refresh
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_leer_todos_horarios
+                  data:
+                    programa: Refrigeración
+          - type: entities
+            grid_options:
+              columns: full
+            entities:
+              - entity: sensor.refrigeracion_resumen_lunes
+                name: Lunes
+                icon: mdi:snowflake
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Lunes
+                    programa: Refrigeración
+              - entity: sensor.refrigeracion_resumen_martes
+                name: Martes
+                icon: mdi:snowflake
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Martes
+                    programa: Refrigeración
+              - entity: sensor.refrigeracion_resumen_miercoles
+                name: Miércoles
+                icon: mdi:snowflake
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Miércoles
+                    programa: Refrigeración
+              - entity: sensor.refrigeracion_resumen_jueves
+                name: Jueves
+                icon: mdi:snowflake
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Jueves
+                    programa: Refrigeración
+              - entity: sensor.refrigeracion_resumen_viernes
+                name: Viernes
+                icon: mdi:snowflake
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Viernes
+                    programa: Refrigeración
+              - entity: sensor.refrigeracion_resumen_sabado
+                name: Sábado
+                icon: mdi:snowflake
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Sábado
+                    programa: Refrigeración
+              - entity: sensor.refrigeracion_resumen_domingo
+                name: Domingo
+                icon: mdi:snowflake
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Domingo
+                    programa: Refrigeración
+          - type: heading
+            heading: Reducción de ruido
+            heading_style: subtitle
+            icon: mdi:volume-off
+            badges:
+              - type: button
+                icon: mdi:refresh
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_leer_todos_horarios
+                  data:
+                    programa: Reducción de ruido
+          - type: entities
+            grid_options:
+              columns: full
+            entities:
+              - entity: sensor.ruido_resumen_lunes
+                name: Lunes
+                icon: mdi:volume-off
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Lunes
+                    programa: Reducción de ruido
+              - entity: sensor.ruido_resumen_martes
+                name: Martes
+                icon: mdi:volume-off
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Martes
+                    programa: Reducción de ruido
+              - entity: sensor.ruido_resumen_miercoles
+                name: Miércoles
+                icon: mdi:volume-off
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Miércoles
+                    programa: Reducción de ruido
+              - entity: sensor.ruido_resumen_jueves
+                name: Jueves
+                icon: mdi:volume-off
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Jueves
+                    programa: Reducción de ruido
+              - entity: sensor.ruido_resumen_viernes
+                name: Viernes
+                icon: mdi:volume-off
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Viernes
+                    programa: Reducción de ruido
+              - entity: sensor.ruido_resumen_sabado
+                name: Sábado
+                icon: mdi:volume-off
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Sábado
+                    programa: Reducción de ruido
+              - entity: sensor.ruido_resumen_domingo
+                name: Domingo
+                icon: mdi:volume-off
+                tap_action:
+                  action: perform-action
+                  perform_action: script.acs_seleccionar_y_cargar
+                  data:
+                    dia: Domingo
+                    programa: Reducción de ruido
+      - type: grid
+        cards:
+          - type: heading
+            heading: Editar un día
+            icon: mdi:calendar-edit
+          - type: markdown
+            grid_options:
+              columns: full
+            content: |-
+              Editando: **{{ states('input_select.acs_horario_programa') }} · {{ states('input_select.acs_horario_dia') }}** — hoy es {{ ['lunes','martes','miércoles','jueves','viernes','sábado','domingo'][now().weekday()] }}{% if is_state('script.acs_cargar_horario_dia', 'on') %}  
+              ⏳ **Cargando horario del termostato…**{% endif %}
+
+              **1.** Elige programa y día, y carga su horario actual (24:00 se muestra como 23:59)
+          - type: entities
+            grid_options:
+              columns: full
+            entities:
+              - entity: input_select.acs_horario_programa
+                name: Programa
+              - entity: input_select.acs_horario_dia
+                name: Día
+              - type: button
+                name: Cargar el horario actual del día
+                icon: mdi:download
+                action_name: CARGAR
+                tap_action:
+                  action: perform-action
+                  perform_action: script.turn_on
+                  target:
+                    entity_id: script.acs_cargar_horario_dia
+              - type: section
+                label: 2. Modifica las franjas (una franja en 00:00 - 00:00 se considera vacía; no dejes huecos)
+              - entity: input_datetime.acs_horario_desde
+                name: Franja 1 desde
+              - entity: input_datetime.acs_horario_hasta
+                name: Franja 1 hasta
+              - entity: input_datetime.acs_horario_franja_2_desde
+                name: Franja 2 desde
+              - entity: input_datetime.acs_horario_franja_2_hasta
+                name: Franja 2 hasta
+              - entity: input_datetime.acs_horario_franja_3_desde
+                name: Franja 3 desde
+              - entity: input_datetime.acs_horario_franja_3_hasta
+                name: Franja 3 hasta
+          - type: tile
+            grid_options:
+              columns: full
+            entity: script.acs_aplicar_horario
+            name: ⚠️ APLICAR al termostato (escribe en el bus)
+            icon: mdi:content-save-alert
+            color: red
+            hide_state: true
+            tap_action:
+              action: perform-action
+              perform_action: script.turn_on
+              target:
+                entity_id: script.acs_aplicar_horario
+              confirmation:
+                text: Se escribirán en el termostato todas las franjas del programa (ACS, Refrigeración o Reducción de ruido) y día elegidos. En Reducción de ruido, con las tres franjas en 00:00-00:00 el día se vacía. ¿Continuar?
+      - type: grid
+        cards:
+          - type: heading
+            heading: Calefacción Z1 - Programa horario
+            icon: mdi:radiator
+            badges:
+              - type: button
+                icon: mdi:refresh
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_leer_todos_horarios
+          - type: markdown
+            grid_options:
+              columns: full
+            content: |-
+              **Modo Z1:** {{ states('select.ebusd_basv0_z1opmode_opmode') }} · **Consigna actual:** {{ states('number.ebusd_basv0_z1actualroomtempdesired_tempv') }} °C  
+              {% if states('select.ebusd_basv0_z1opmode_opmode') != 'auto' %}⚠️ **La calefacción no sigue el programa horario** (modo «{{ states('select.ebusd_basv0_z1opmode_opmode') }}»). Pon el modo Z1 en `auto` para que se aplique.  
+              {% endif %}*Pulsa un día para cargarlo en el campo de texto (hasta 12 franjas por día).*
+          - type: heading
+            heading: Resumen por día (pulsa para cargar)
+            heading_style: subtitle
+            icon: mdi:radiator
+          - type: entities
+            grid_options:
+              columns: full
+            entities:
+              - entity: sensor.calefaccion_resumen_lunes
+                name: Lunes
+                icon: mdi:radiator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_seleccionar_y_cargar
+                  data:
+                    dia: Lunes
+              - entity: sensor.calefaccion_resumen_martes
+                name: Martes
+                icon: mdi:radiator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_seleccionar_y_cargar
+                  data:
+                    dia: Martes
+              - entity: sensor.calefaccion_resumen_miercoles
+                name: Miércoles
+                icon: mdi:radiator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_seleccionar_y_cargar
+                  data:
+                    dia: Miércoles
+              - entity: sensor.calefaccion_resumen_jueves
+                name: Jueves
+                icon: mdi:radiator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_seleccionar_y_cargar
+                  data:
+                    dia: Jueves
+              - entity: sensor.calefaccion_resumen_viernes
+                name: Viernes
+                icon: mdi:radiator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_seleccionar_y_cargar
+                  data:
+                    dia: Viernes
+              - entity: sensor.calefaccion_resumen_sabado
+                name: Sábado
+                icon: mdi:radiator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_seleccionar_y_cargar
+                  data:
+                    dia: Sábado
+              - entity: sensor.calefaccion_resumen_domingo
+                name: Domingo
+                icon: mdi:radiator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.calefaccion_seleccionar_y_cargar
+                  data:
+                    dia: Domingo
+          - type: markdown
+            grid_options:
+              columns: full
+            content: |-
+              {% set m = {'Lunes':'lunes','Martes':'martes','Miércoles':'miercoles','Jueves':'jueves','Viernes':'viernes','Sábado':'sabado','Domingo':'domingo'} %}{% set dia = states('input_select.calefaccion_horario_dia') %}**{{ dia }}**{% if is_state('script.calefaccion_cargar_horario_dia', 'on') %}  
+              ⏳ **Leyendo las franjas del termostato…**{% else %}
+              {% for i in range(1, 13) %}{% set v = states('sensor.calefaccion_horario_' ~ m.get(dia, '') ~ '_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] and '@' in v %}
+              - {{ v.split('@')[0] }} → **{{ v.split('@')[1] }} °C**{% endif %}{% endfor %}{% endif %}
+      - type: grid
+        cards:
+          - type: heading
+            heading: Editar un día de calefacción
+            icon: mdi:calendar-edit
+          - type: markdown
+            grid_options:
+              columns: full
+            content: |-
+              Editando: **Calefacción · {{ states('input_select.calefaccion_horario_dia') }}**{% if is_state('script.calefaccion_cargar_horario_dia', 'on') %}  
+              ⏳ **Cargando franjas del termostato…**{% endif %}
+
+              **1.** Pulsa un día de la lista (o elige aquí) y carga su horario
+          - type: entities
+            grid_options:
+              columns: full
+            entities:
+              - entity: input_select.calefaccion_horario_dia
+                name: Día
+              - type: button
+                name: Cargar el horario actual del día
+                icon: mdi:download
+                action_name: CARGAR
+                tap_action:
+                  action: perform-action
+                  perform_action: script.turn_on
+                  target:
+                    entity_id: script.calefaccion_cargar_horario_dia
+              - type: section
+                label: "2. Edita el texto: HH:MM-HH:MM@T, separadas por comas (1 a 12 franjas, T de 5 a 30 en pasos de 0,5; 24:00 vale como final)"
+              - entity: input_text.calefaccion_horario_texto
+                name: Franjas
+          - type: tile
+            grid_options:
+              columns: full
+            entity: script.calefaccion_aplicar_horario
+            name: ⚠️ APLICAR al termostato (escribe en el bus)
+            icon: mdi:content-save-alert
+            color: red
+            hide_state: true
+            tap_action:
+              action: perform-action
+              perform_action: script.turn_on
+              target:
+                entity_id: script.calefaccion_aplicar_horario
+              confirmation:
+                text: Se escribirá en el termostato el programa de calefacción completo del día elegido. ¿Continuar?

@@ -219,8 +219,8 @@ w,,install,PrEnergyCountHc3,PrEnergyCountCH3_DK: Predictive Maintenance data,,,b
 [id_15_id='EMM00']w,,,HwcHolidayStartPeriod,hwc holiday start period,,,b524,020101000900,value,,HDA:3,,,start date of holidays
 [id_15_id='EMM00']r,,,HwcHolidayEndPeriod,hwc holiday end period,,,b524,020001000a00,ign,,IGN:4,,,,value,,HDA:3,,,end date of holidays
 [id_15_id='EMM00']w,,,HwcHolidayEndPeriod,hwc holiday end period,,,b524,020101000a00,value,,HDA:3,,,end date of holidays
-[id_15_id='EMM00']r,,,HwcSFMode,hwc SF mode,,,b524,020001000d00,ign,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
-[id_15_id='EMM00']w,,,HwcSFMode,hwc SF mode,,,b524,020101000d00,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
+[id_15_id='EMM00']r,,,HwcSFMode,hwc SF mode,,,b524,020001000d00,ign,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaatway;5=onedayhome;6=load,,
+[id_15_id='EMM00']w,,,HwcSFMode,hwc SF mode,,,b524,020101000d00,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaatway;5=onedayhome;6=load,,
 [id_15_id='EMM00']r,,,Z1HolidayStartPeriod,Ferienzeitraum Start Zone 1,,,b524,020003000300,ign,,IGN:4,,,,value,,HDA:3,,,start date of holidays for zone 1
 [id_15_id='EMM00']w,,,Z1HolidayStartPeriod,Ferienzeitraum Start Zone 1,,,b524,020103000300,value,,HDA:3,,,start date of holidays for zone 1
 [id_15_id='EMM00']r,,,Z1HolidayEndPeriod,Ferienzeitraum Ende Zone 1,,,b524,020003000400,ign,,IGN:4,,,,value,,HDA:3,,,end date of holidays for zone 1
@@ -241,13 +241,13 @@ w,,install,PrEnergyCountHc3,PrEnergyCountCH3_DK: Predictive Maintenance data,,,b
 [id_15_id='EMM00']w,,,Z1BankHolidayStartPeriod,Bank Feiertag Start Zone 1 (untested),,,b524,020103000c00,value,,HDA:3,,,start date of bank holidays for zone 1
 [id_15_id='EMM00']r,,,Z1BankHolidayEndPeriod,Bank Feiertag Ende Zone 1 (untested),,,b524,020003000d00,ign,,IGN:4,,,,value,,HDA:3,,,end date of bank holidays for zone 1
 [id_15_id='EMM00']w,,,Z1BankHolidayEndPeriod,Bank Feiertag Ende Zone 1 (untested),,,b524,020103000d00,value,,HDA:3,,,end date of bank holidays for zone 1
-[id_15_id='EMM00']r,,,Z1SFMode,SF mode zone 1,,,b524,020003000e00,ign,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
-[id_15_id='EMM00']w,,,Z1SFMode,SF mode zone 1,,,b524,020103000e00,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaway;5=onedayathome;6=load,,
+[id_15_id='EMM00']r,,,Z1SFMode,SF mode zone 1,,,b524,020003000e00,ign,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaatway;5=onedayhome;6=load,,
+[id_15_id='EMM00']w,,,Z1SFMode,SF mode zone 1,,,b524,020103000e00,value,,UCH,0=auto;1=ventilation;2=party;3=veto;4=onedayaatway;5=onedayhome;6=load,,
 [id_15_id='EMM00']r,,,Z1RoomTemp,Raumisttemperatur Zone 1 (untested),,,b524,020003000f00,ign,,IGN:4,,,,value,,EXP,,°C,aktuelle Raumtemperatur in Zone 1
 [id_15_id='EMM00']r,,,Z1ValveStatus,Ventilstatus Zone 1 (untested),,,b524,020003001200,ign,,IGN:4,,,,value,,UCH,,,valve status of zone 1
 [id_15_id='EMM00']w,,,Z1ValveStatus,Ventilstatus Zone 1 (untested),,,b524,020103001200,value,,UCH,,,valve status of zone 1
-[id_15_id='EMM00']r,,,Z1RoomZoneMapping,Raumregler Zuordnung Zone 1 (untested),,,b524,020003001300,ign,,IGN:4,,,,value,,UIN,0=none;1=VRC700;2=VR91_1;3=VR91_2;4=VR91_3,,configures which room temperature is assigned to zone 1
-[id_15_id='EMM00']w,,,Z1RoomZoneMapping,Raumregler Zuordnung Zone 1 (untested),,,b524,020103001300,value,,UIN,0=none;1=VRC700;2=VR91_1;3=VR91_2;4=VR91_3,,configures which room temperature is assigned to zone 1
+[id_15_id='EMM00']r,,,Z1RoomZoneMapping,Raumregler Zuordnung Zone 1 (untested),,,b524,020003001300,ign,,IGN:4,,,,value,,UIN,0=none;1=VRC700;2=VR91.1;3=VR91.2;4=VR91.3,,configures which room temperature is assigned to zone 1
+[id_15_id='EMM00']w,,,Z1RoomZoneMapping,Raumregler Zuordnung Zone 1 (untested),,,b524,020103001300,value,,UIN,0=none;1=VRC700;2=VR91.1;3=VR91.2;4=VR91.3,,configures which room temperature is assigned to zone 1
 [id_15_id='EMM00']r,,,Z1ActualRoomTempDesired,Raumsolltemperatur Zone 1,,,b524,020003001400,ign,,IGN:4,,,,value,,EXP,,°C,current room setpoint considering all basic conditions passed to the control algorithms
 [id_15_id='EMM00']w,,,Z1ActualRoomTempDesired,Raumsolltemperatur Zone 1,,,b524,020103001400,value,,EXP,,°C,current room setpoint considering all basic conditions passed to the control algorithms
 [id_15_id='EMM00']r,,,Z1Shortname,Kurzbezeichnung Zone 1 (untested),,,b524,020003001600,ign,,IGN:4,,,,value,,STR:6,,,short name of zone 1

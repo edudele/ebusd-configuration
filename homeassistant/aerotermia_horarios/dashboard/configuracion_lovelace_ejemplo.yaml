@@ -1,0 +1,10 @@
+# Opcion B: anadir a configuration.yaml (si ya tienes la clave lovelace:, anade solo la entrada de dashboards:).
+# Tras reiniciar, "Aerotermia Horarios" aparece solo en el menu lateral.
+lovelace:
+  dashboards:
+    aerotermia-horarios:
+      mode: yaml
+      filename: dashboards/aerotermia_horarios.yaml
+      title: Aerotermia Horarios
+      icon: mdi:air-filter
+      show_in_sidebar: true
