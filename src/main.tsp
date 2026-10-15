@@ -27,7 +27,6 @@ import "./vaillant/15.430.tsp";
 import "./vaillant/15.470.tsp";
 import "./vaillant/15.700.tsp";
 import "./vaillant/15.basv0.tsp";
-import "./vaillant/15.ctlv2.tsp";
 import "./vaillant/15.e7c.tsp";
 import "./vaillant/15.e7f.tsp";
 import "./vaillant/15.f37.tsp";

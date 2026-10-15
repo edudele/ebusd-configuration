@@ -36,12 +36,12 @@ originales) para que los `entity_id`/`unique_id` de Home Assistant **no cambien 
 `ebusd --checkconfig --dumpconfig=json` de ambos repositorios (instrucciones en la cabecera del script). Si compilas
 directamente con `npx tsp compile` sin este paso, los nombres de campo salen en minúsculas y con el nombre del tipo.
 
-Los ficheros `15.bass0`–`15.bass3`, `15.basv1`, `15.ctlv`, `15.ctlv0` y `15.ctlv1` del repositorio antiguo eran copias del mismo
-contenido que `15.basv0`. Aquí son enlaces simbólicos en `src/vaillant` a `15.basv0.tsp` (convención del repositorio, como
-`15.720.tsp -> 15.700.tsp`); el mismo paso posterior los replica en la salida (`15.bass0.csv -> 15.basv0.csv`, ya con los
-nombres compat aplicados). ebusd toma el circuito del nombre de fichero, así que `bass0`, `ctlv1`… generan los mismos
-mensajes y entidades que `basv0`. Los nombres que el repositorio de origen ya define aparte (`15.bass`, `15.basv`,
-`15.basv2`, `15.basv3`, `15.ctlv2`, `15.ctlv3`, `15.ctls2`, que apuntan a `15.ctlv2.tsp`, VRC 720) se mantienen como están. Para añadir otro nombre basta `ln -s 15.basv0.tsp 15.<nombre>.tsp` y recompilar.
+Los ficheros `15.bass*`, `15.basv*`, `15.ctlv*` y `15.ctls2` del repositorio antiguo eran copias del mismo contenido que
+`15.basv0` (otros termostatos con los mismos sensores; solo cambia el circuito). Aquí son enlaces simbólicos en
+`src/vaillant` a `15.basv0.tsp` (convención del repositorio, como `15.720.tsp -> 15.700.tsp`); el mismo paso posterior los
+replica en la salida (`15.bass0.csv -> 15.basv0.csv`, ya con los nombres compat aplicados). ebusd toma el circuito del
+nombre de fichero, así que `bass0`, `basv2`, `ctlv3`… generan los mismos mensajes y entidades que `basv0`. Esto sustituye
+a la definición VRC 720 de upstream (`15.ctlv2.tsp`), que sigue disponible en el historial de git. Para añadir otro nombre basta `ln -s 15.basv0.tsp 15.<nombre>.tsp` y recompilar.
 
 ### Panel de horarios (planificadores) para Home Assistant
 
