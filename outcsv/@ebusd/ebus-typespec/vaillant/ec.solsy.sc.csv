@@ -26,18 +26,18 @@ r,,,TeleSwitch,State of the Teleswitch,,,b509,0d0a00,value,,UCH,0=off;1=on,,
 r,,,HasSolCollVolumeSensor,HasSolarCollectorVolumeSensor: -,,,b509,0d9a00,value,,UCH,0=no;1=yes,,
 r,,,SolCollVolumeSensorPowerLastMinut,SolarCollectorVolumeSensorPowerLastMinute,,,b509,0d9b00,value,,UIN,,l/h,
 r,,,OutputMA,State of multi purpose output,,,b509,0d1c00,value,,UCH,0=off;1=on,,
-r,,,SolEnableDiffTemp1,"SolEnableDiffTemp1: Temperature difference between collector 1 and tank, which is necassary to start solar pump",,,b509,0d6300,value,,UCH,,°C,temperature
-w,,,SolEnableDiffTemp1,"SolEnableDiffTemp1: Temperature difference between collector 1 and tank, which is necassary to start solar pump",,,b509,0e6300,value,,UCH,,°C,temperature
+r,,,SolEnableDiffTemp1,"SolEnableDiffTemp1: Temperature difference between collector 1 and tank, which is necassary to start solar pump",,,b509,0d6300,value,,UCH,,K,
+w,,,SolEnableDiffTemp1,"SolEnableDiffTemp1: Temperature difference between collector 1 and tank, which is necassary to start solar pump",,,b509,0e6300,value,,UCH,,K,
 r,,,DeltaTOnFlexDtController,"DeltaTOnFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to start solar pump",,,b509,0da600,value,,UCH,,K,
 w,,,DeltaTOnFlexDtController,"DeltaTOnFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to start solar pump",,,b509,0ea600,value,,UCH,,K,
 r,,,DeltaTOffFlexDtController,"DeltaTOffFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to stop solar pump",,,b509,0da700,value,,UCH,,K,
 w,,,DeltaTOffFlexDtController,"DeltaTOffFlexDtController: Temperature difference between flexible deltaT sensors, which is necassary to stop solar pump",,,b509,0ea700,value,,UCH,,K,
-r,,,SolEnableDiffTemp2,"SolEnableDiffTemp2: Temperature difference between collector 2 and tank, which is necassary to start solar pump",,,b509,0d6308,value,,UCH,,°C,temperature
-w,,,SolEnableDiffTemp2,"SolEnableDiffTemp2: Temperature difference between collector 2 and tank, which is necassary to start solar pump",,,b509,0e6308,value,,UCH,,°C,temperature
-r,,,SolDisableDiffTemp1,"SolDisableDiffTemp1: Temperature difference between collector 1 and tank, at which pump stops",,,b509,0d6400,value,,UCH,,°C,temperature
-w,,,SolDisableDiffTemp1,"SolDisableDiffTemp1: Temperature difference between collector 1 and tank, at which pump stops",,,b509,0e6400,value,,UCH,,°C,temperature
-r,,,SolDisableDiffTemp2,"SolDisableDiffTemp2: Temperature difference between collector 2 and tank, at which pump stops",,,b509,0d6408,value,,UCH,,°C,temperature
-w,,,SolDisableDiffTemp2,"SolDisableDiffTemp2: Temperature difference between collector 2 and tank, at which pump stops",,,b509,0e6408,value,,UCH,,°C,temperature
+r,,,SolEnableDiffTemp2,"SolEnableDiffTemp2: Temperature difference between collector 2 and tank, which is necassary to start solar pump",,,b509,0d6308,value,,UCH,,K,
+w,,,SolEnableDiffTemp2,"SolEnableDiffTemp2: Temperature difference between collector 2 and tank, which is necassary to start solar pump",,,b509,0e6308,value,,UCH,,K,
+r,,,SolDisableDiffTemp1,"SolDisableDiffTemp1: Temperature difference between collector 1 and tank, at which pump stops",,,b509,0d6400,value,,UCH,,K,
+w,,,SolDisableDiffTemp1,"SolDisableDiffTemp1: Temperature difference between collector 1 and tank, at which pump stops",,,b509,0e6400,value,,UCH,,K,
+r,,,SolDisableDiffTemp2,"SolDisableDiffTemp2: Temperature difference between collector 2 and tank, at which pump stops",,,b509,0d6408,value,,UCH,,K,
+w,,,SolDisableDiffTemp2,"SolDisableDiffTemp2: Temperature difference between collector 2 and tank, at which pump stops",,,b509,0e6408,value,,UCH,,K,
 r,,,SolHwcMaxLoadTemp1,SolDhwMaxLoadTemp1: Maximal temperature for solar loading of tank1,,,b509,0d6500,value,,UCH,,°C,temperature
 w,,,SolHwcMaxLoadTemp1,SolDhwMaxLoadTemp1: Maximal temperature for solar loading of tank1,,,b509,0e6500,value,,UCH,,°C,temperature
 r,,,SolHwcMaxLoadTemp2,SolDhwMaxLoadTemp2: Maximal temperature for solar loading of tank2,,,b509,0d6508,value,,UCH,,°C,temperature
@@ -50,13 +50,13 @@ r,,,ColKickGradient,ColKickGradient,,,b509,0d9d00,value,,UCH,300,°min,
 w,,service,ColKickGradient,ColKickGradient,,,b509,0e9d00,value,,UCH,300,°min,
 r,,,ColKickPumpTime,ColKickPumpTime,,,b509,0d9e00,value,,UCH,,s,seconds
 w,,service,ColKickPumpTime,ColKickPumpTime,,,b509,0e9e00,value,,UCH,,s,seconds
-r,,,ScProtectionHysteresis,"SolarCircuitProtectionHysteresis: After collector pump protection in case of too high temperatures, the collector has to cool down at least this temperature",,,b509,0d9f00,value,,UCH,,°C,desired temperature
-w,,,ScProtectionHysteresis,"SolarCircuitProtectionHysteresis: After collector pump protection in case of too high temperatures, the collector has to cool down at least this temperature",,,b509,0e9f00,value,,UCH,,°C,desired temperature
+r,,,ScProtectionHysteresis,"SolarCircuitProtectionHysteresis: After collector pump protection in case of too high temperatures, the collector has to cool down at least this temperature",,,b509,0d9f00,value,,UCH,,K,
+w,,,ScProtectionHysteresis,"SolarCircuitProtectionHysteresis: After collector pump protection in case of too high temperatures, the collector has to cool down at least this temperature",,,b509,0e9f00,value,,UCH,,K,
 r,,,FrostProtectionLimit,FrostProtectionLimit,,,b509,0da200,value,,SCH,,K,limits for the solar collector frost protection
 r,,,FrostProtectionEnabled,FrostProtectionEnabled: Solar collector frost protection on/off,,,b509,0da300,value,,UCH,0=off;1=on,,
 r,,,SolCollVolumeSensorTicksPer10Lite,SolarCollectorVolumeSensorTicksPer10Liter,,,b509,0db000,value,,UCH,,,How often the volume sensor has to pulse for the detection of 10 liters
-r,,,SolFlowRate,SolarFlowRate,,,b509,0d7400,value,,UIN,60,l/min,Flow rate the collector pumps are able to deliver for 100% power
-w,,,SolFlowRate,SolarFlowRate,,,b509,0e7400,value,,UIN,60,l/min,Flow rate the collector pumps are able to deliver for 100% power
+r,,,SolFlowRate,SolarFlowRate: Flow rate the collector pumps are able to deliver for 100% power,,,b509,0d7400,value,,UIN,,l/h,
+w,,,SolFlowRate,SolarFlowRate: Flow rate the collector pumps are able to deliver for 100% power,,,b509,0e7400,value,,UIN,,l/h,
 r,,,SolEnablePumpPWM,SolEnablePumpPWM: Collector pumps should be driven by a slow pulse width modulation,,,b509,0dae00,value,,UCH,0=off;1=on,,
 w,,,SolEnablePumpPWM,SolEnablePumpPWM: Collector pumps should be driven by a slow pulse width modulation,,,b509,0eae00,value,,UCH,0=off;1=on,,
 r,,,ExtendedYieldCalculation,ExtendedYieldCalculation: calculate solar yield like specified by austrian regulation. Uses SP3 or this purpose!,,,b509,0d7f00,value,,UCH,0=off;1=on,,

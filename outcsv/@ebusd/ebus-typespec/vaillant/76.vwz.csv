@@ -7,3 +7,18 @@ w,,service,EnableTestHwcTemp,enable test hwc temperature,,,b514,052c,ignore,,HEX
 r,,service,TestHwcTemp,hwc temperature,,,b514,052c,ign,,IGN:2,,,,value,,SIN,10,°C,temperature
 w,,service,EnableTestOutdoorTemp,enable test outdoor temperature,,,b514,05,ignore,,HEX:3,=03FFFF,,,
 r,,service,TestOutdoorTemp,outdoor temperature,,,b514,0545,ign,,IGN:2,,,,value,,SIN,10,°C,temperature
+r,,,StatEnergySumYear,,,,b516,1003ffff,source,m,UCH,1=solar;2=environment;3=electricity;4=gas,,the energy source,usage,m,UCH,0=all;3=heat;4=water;5=cool,,the energy usage,ign2,m,UCH,=0,,,year,m,UCH,2,,the year as offset from 2000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySum,,,,b516,1000ffff01000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySumHc,,,,b516,1000ffff01030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatSolarEnergySumHwc,,,,b516,1000ffff01040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySum,,,,b516,1000ffff02000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumHc,,,,b516,1000ffff02030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumHwc,,,,b516,1000ffff02040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatEnvironmentEnergySumCool,,,,b516,1000ffff02050000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySum,,,,b516,1000ffff03000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumHc,,,,b516,1000ffff03030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumHwc,,,,b516,1000ffff03040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatElectricEnergySumCool,,,,b516,1000ffff03050000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSum,,,,b516,1000ffff04000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSumHc,,,,b516,1000ffff04030000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
+r,,,StatFuelSumHwc,,,,b516,1000ffff04040000,ign,,IGN:7,,,,value,,EXP,1000,kWh,

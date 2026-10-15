@@ -45,7 +45,7 @@ w,,,SummerWinterTimeAdjust,SummerWinterTimeAdjust,,,b509,0e5300,value,,UCH,0=off
 r,,,LanguageVariant,LanguageVariant,,,b509,0d1600,value,,UCH,0=german;1=english;2=french;3=italian;4=danish;5=dutch;6=spanish;7=turkish;8=hungarian;9=russian;10=ukrainian;11=estonian;12=latvian;13=lithuanian;14=swedish;15=norwegian;16=polish;17=czech;18=croatian;19=slovakian;20=romanian;21=slovenian;22=serbian,,display language
 w,,,LanguageVariant,LanguageVariant,,,b509,0e1600,value,,UCH,0=german;1=english;2=french;3=italian;4=danish;5=dutch;6=spanish;7=turkish;8=hungarian;9=russian;10=ukrainian;11=estonian;12=latvian;13=lithuanian;14=swedish;15=norwegian;16=polish;17=czech;18=croatian;19=slovakian;20=romanian;21=slovenian;22=serbian,,display language
 r,,,BMUFlowTempOrVF1,BMU_FlowTempOrVF_1: value of either an externally connected flow temperature sensor or the BMU's internal flow sensor if an external sensor is missing,,,b509,0d8700,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
-r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm: room temperature intrinsic heating offset,,,b509,0d1500,value,,D2C,,°C,temperature
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm: room temperature intrinsic heating offset,,,b509,0d1500,value,,D2C,,K,
 r,,,Hc12stepanalogCtrl,HC1_2stepanalogCtrl,,,b509,0d3600,value,,UCH,0=two_point_control;1=analogue_control,,two-point / analogue control
 w,,install,Hc12stepanalogCtrl,HC1_2stepanalogCtrl,,,b509,0e3600,value,,UCH,0=two_point_control;1=analogue_control,,two-point / analogue control
 r,,,Hc1LineMatchingAdaption,HC1_LineMatchingAdaption: adjustment of closed loop control,,,b509,0d3700,value,,SCH,,,
@@ -75,9 +75,9 @@ r,,,B51000M10HwcFlowSetMon,B51000M10DHWFlowSetMon: flow setpoint DHW sent via B5
 r,,,B51000M12DisableBitsMon,"B51000M12DisableBitsMon: bits 0-7: disable CH/disable DHW tapping/disable DHW tank loading/not used/clear burner blocking DHW/dis, disable bits sent via B5 10 00 (left bit 0, right bit 7)",,,b509,0d6700,value,,UCH,,,
 r,,,B51000M14Monitor,"B51000M14Monitor: bits 0-7: remote control CH pump/release backup heater/release cooling/not used/left stop position DHW o, bits sent in M14 of B5 10 00 (left bit 0, right bit 7; relevant is bit 0: remote control of CH pump)",,,b509,0d6800,value,,UCH,,,
 r,,,TestVarActivateFunction,TestVarActivateFunction: 0=All SF_OFF11/2=1DayHolON/OFF13/4=1DayBankON/OFF19/10=1xDHWLoadON/OFF11/12=QVetoON/OFF115/16=PartyON/OFF119/20=Ventil.ON/OFF123/24=SystemOff_ON/OFF,,,b509,0d0b00,value,,UCH,,,
-r,,,HwcOPMode,"DHW_OPMode: operation mode of the domestic hot water circuit set implicitly (0 = off, 1 = on, 2 = auto, 3 = auto sunday, 4 = party, 6 = one time tank loading, 7 = holiday)",,,b509,0d4200,value,,UCH,,,
-r,,,BMUB51101HwcState,BMUB51101_DHWState: flame is on because of either tapping or tank loading,,,b509,0d7500,value,,UCH,,,
-r,,,B51000TempDesiredLoadingPump,B51000SetPointLoadingPump: loading pump's setpoint sent via B5 10 00 to the BMU,,,b509,0d7b00,value,,D1C,,,
+r,,,HwcOPMode,DHW_OPMode: operation mode of the domestic hot water circuit,,,b509,0d4200,value,,UCH,0=off;1=on;2=auto;3=sunday;4=party;6=load;7=holiday,,hot water mode with holiday
+r,,,BMUB51101HwcState,BMUB51101_DHWState: flame is on because of either tapping or tank loading,,,b509,0d7500,value,,UCH,0=off;1=on,,
+r,,,B51000TempDesiredLoadingPump,B51000SetPointLoadingPump: loading pump's setpoint sent via B5 10 00 to the BMU,,,b509,0d7b00,value,,D1C,,°C,temperature
 r,,,BMUB51101BoilerFlowTemp,BMUB51101_BoilerFlowTemp: current flow temperature inside the BMU,,,b509,0d7700,value,,D1C,,°C,temperature
 r,,,BMUB51101StorageTemp,BMUB51101_TankTemp: hot water storage temperature received via eBUS service B5 11 01,,,b509,0d7100,value,,D1C,,°C,temperature
 r,,,BMUB51101ErrorStatus,BMUB51101_ErrorStatus: error state of BMU received via eBUS service B51101,,,b509,0d7000,value,,UCH,,,

@@ -269,8 +269,8 @@ r,,,Code1Code2Valid,Code1Code2Valid: changes of Code 1 /2 have to be commited by
 w,,install,Code1Code2Valid,Code1Code2Valid: changes of Code 1 /2 have to be commited by setting this flag,,,b509,0e2400,value,,UCH,0=no;1=yes,,
 r,,,HydraulicScheme,Hzdraulic plan,,,b509,0d6000,value,,UCH,,,Hydraulic Schematic
 w,,control,HydraulicScheme,Hzdraulic plan,,,b509,0e6000,value,,UCH,,,Hydraulic Schematic
-r,,,HwcLaggingTime,DhwLaggingTime: Backup heater use for CH,,,b509,0d6100,value,,UCH,,,
-r,,,HwcLoadingDelay,DhwLoadingDelay: Backup heater use for DHW,,,b509,0d6200,value,,UCH,,,
+r,,,HwcLaggingTime,DhwLaggingTime: Backup heater use for CH,,,b509,0d6100,value,,UCH,,min,minutes
+r,,,HwcLoadingDelay,DhwLoadingDelay: Backup heater use for DHW,,,b509,0d6200,value,,UCH,,min,minutes
 r,,,SourceHours,Brine_Fan_Hours: operating hours of Fan_Brine,,,b509,0d9d00,value,,ULG,,h,hours
 r,,,Source2PumpHours,Brine2_P_Hours: operating hours of Sk2P,,,b509,0d9e00,value,,ULG,,h,hours
 r,,,SoftwareCode,SoftwareCode: 4 Bytes holding several software status info,,,b509,0d1801,value,,UCH,,,

@@ -48,9 +48,9 @@ r,,,Time,current time,,,b509,0d0900,value,,VTI,,,time
 r,,,ActualTempDesired,ActualDesiredTemp: current setpoint for the second heating circuit considering all basic conditions passed to the control algorithms,,,b509,0d2f00,value,,D1C,,°C,temperature
 r,,,DayNightState,"DayNightState: 0 = day, 1 = night",,,b509,0d5000,value,,UCH,,,
 r,,,FrostProtectDelay,FrostProtectDelay: delay before frost protection is activated,,,b509,0d2500,value,,UCH,,h,hours
-r,,,HcPumpIdlePeriod,"HcPumpIdlePeriod: 0=off, heating circuit pump's maximum blocking time for pump's energy saving function",,,b509,0d2800,value,,UCH,,,
+r,,,HcPumpIdlePeriod,"HcPumpIdlePeriod: 0=off, heating circuit pump's maximum blocking time for pump's energy saving function",,,b509,0d2800,value,,UCH,,min,minutes
 r,,,PreheatingMinutesMax,"MaxPreheatingMinutes: in steps of 10, maximum time of enabling the heating before the heating time window starts",,,b509,0d2400,value,,UIN,,,
-r,,,BoilerMaxPreShutdown,"BoilerMaxPreShutdown: in steps of 10, maximum time of starting the lowering operation before the heating time window ends",,,b509,0d1800,value,,UCH,,,
+r,,,BoilerMaxPreShutdown,"BoilerMaxPreShutdown: in steps of 10, maximum time of starting the lowering operation before the heating time window ends",,,b509,0d1800,value,,UCH,,min,minutes
 r,,,Hc2ContinuosHeating,"HC2_ContinuosHeating: -26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)",,,b509,0d3600,value,,SCH,,,
 r,,,HcFlowIncrease,HcFlowIncrease: excess temperature (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range),,,b509,0d1900,value,,D1C,,K,
 r,,,IsInHoliday,Holiday function active,,,b509,0d0800,value,,UCH,0=no;1=yes,,
@@ -61,8 +61,8 @@ r,,,IsInParty,IsInParty,,,b509,0d5500,value,,UCH,0=no;1=yes,,
 r,,,IsInImpactVentilation,IsInImpactVentilation: indicates that the VR61 is in impact ventilation mode,,,b509,0d5700,value,,UCH,0=no;1=yes,,
 r,,,IsInSystemOff,IsInSystemOff: indicates that the VR61 is in system off mode,,,b509,0d5400,value,,UCH,0=no;1=yes,,
 r,,,Hc2QuickVetoActive,HC2_QuickVetoActive: manual override of the second heating circuit enabled,,,b509,0d3300,value,,UCH,0=no;1=yes,,
-r,,,HcPreHeatingActive,HcPreHeatingActive: bit-array where a set bit indicates that preheating is active for the corresponding heating circuit,,,b509,0d2a00,value,,UCH,0=no;1=yes,,
-r,,,HcPreShutdownActive,HcPreShutdownActive: bit-array where a set bit indicates that early cut off is active for the corresponding heating circuit,,,b509,0d2900,value,,UCH,0=no;1=yes,,
+r,,,HcPreHeatingActive,HcPreHeatingActive: bit-array where a set bit indicates that preheating is active for the corresponding heating circuit,,,b509,0d2a00,value,,UCH,,,
+r,,,HcPreShutdownActive,HcPreShutdownActive: bit-array where a set bit indicates that early cut off is active for the corresponding heating circuit,,,b509,0d2900,value,,UCH,,,
 r,,,HcPumpIdlePeriodActive,HcPumpIdlePeriodActive: bit-array where a set bit indicates that pump's energy saving function is active for the corresponding heating circuit,,,b509,0d2b00,value,,UCH,0=no;1=yes,,
 r,,,MonitorEEpromInconsCnt,MonitorEEpromInkonsiNumber,,,b509,0d4600,value,,HEX:8,,,identification of the last eight EEPROM inconsistencies
 r,,,Hc2aLegPumpP2Port,Hk2a_LegP_P2_Port: port: open mixer,,,b509,0d4400,value,,UCH,0=off;1=on,,

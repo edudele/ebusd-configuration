@@ -170,6 +170,7 @@ namespace Hmu_HW5103 {
   /** current compressor utilization */
   @inherit(r_2)
   @ext(0x25)
+  @Ebus.example("52%", "3108b51a0405ff3225", "0aff08384d030000000000")
   model CurrentCompressorUtil {
     value: percent;
   }
@@ -252,15 +253,13 @@ namespace Hmu_HW5103 {
   @inherit(r_7)
   @ext(0x47, 0xa)
   model RunDataFan1Speed {
-    @unit("rpm")
-    value: EXP;
+    value: fanspeedv;
   }
 
   @inherit(r_7)
   @ext(0x49, 0xa)
   model RunDataFan2Speed {
-    @unit("rpm")
-    value: EXP;
+    value: fanspeedv;
   }
 
   @inherit(r_7)

@@ -51,8 +51,8 @@ r,,,HolidayStartPeriod,HolidayStartPeriod: start date of holidays,,,b509,0d1100,
 w,,,HolidayStartPeriod,HolidayStartPeriod: start date of holidays,,,b509,0e1100,value,,HDA:3,,,date
 r,,,HolidayEndPeriod,HolidayEndPeriod: end date of holidays,,,b509,0d1200,value,,HDA:3,,,date
 w,,,HolidayEndPeriod,HolidayEndPeriod: end date of holidays,,,b509,0e1200,value,,HDA:3,,,date
-r,,,HwcOPMode,DHW_OPMode,,,b509,0d4200,value,,UCH,0=off;1=manual;2=auto,,operation mode of the domestic hot water circuit
-w,,,HwcOPMode,DHW_OPMode,,,b509,0e4200,value,,UCH,0=off;1=manual;2=auto,,operation mode of the domestic hot water circuit
+r,,,HwcOPMode,DHW_OPMode: operation mode of the domestic hot water circuit,,,b509,0d4200,value,,UCH,0=off;1=on;2=auto;3=sunday;4=party;6=load;7=holiday,,hot water mode with holiday
+w,,,HwcOPMode,DHW_OPMode: operation mode of the domestic hot water circuit,,,b509,0e4200,value,,UCH,0=off;1=on;2=auto;3=sunday;4=party;6=load;7=holiday,,hot water mode with holiday
 r,,,HwcTempDesired,DHW_DesiredTemp: setpoint of domestic hot water circuit,,,b509,0d4400,value,,D1C,,°C,temperature
 w,,,HwcTempDesired,DHW_DesiredTemp: setpoint of domestic hot water circuit,,,b509,0e4400,value,,D1C,,°C,temperature
 r,,,HwcQuickVetoTemp,DHW_QuickVetoTemp: manual override setpoint for the domestic hot water circuit,,,b509,0d4500,value,,D1C,,°C,temperature
@@ -92,8 +92,8 @@ r,,,HwcCircuitActive,DHW_CircuitActive: domestic hot water circuit is enabled,,,
 w,,install,HwcCircuitActive,DHW_CircuitActive: domestic hot water circuit is enabled,,,b509,0e4b00,value,,UCH,0=no;1=yes,,
 r,,,AutoOffMode,AutoOFF_Mode,,,b509,0d4d00,value,,UCH,0=frostprotection;1=lowering;2=eco,,operation during the lowering time
 w,,install,AutoOffMode,AutoOFF_Mode,,,b509,0e4d00,value,,UCH,0=frostprotection;1=lowering;2=eco,,operation during the lowering time
-r,,,ContinuosHeating,"ContinuosHeating: -26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)",,,b509,0d4f00,value,,SCH,,,
-w,,install,ContinuosHeating,"ContinuosHeating: -26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)",,,b509,0e4f00,value,,SCH,,,
+r,,,ContinuosHeating,"ContinuosHeating: -26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)",,,b509,0d4f00,value,,SCH,,°C,temperature
+w,,install,ContinuosHeating,"ContinuosHeating: -26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)",,,b509,0e4f00,value,,SCH,,°C,temperature
 r,,,PreheatingTime,"PreheatingTime: in steps of 10, maximum time of enabling the heating before the heating time window starts",,,b509,0d5000,value,,UIN,,,
 w,,install,PreheatingTime,"PreheatingTime: in steps of 10, maximum time of enabling the heating before the heating time window starts",,,b509,0e5000,value,,UIN,,,
 r,,,PreStopTime,"PreStopTime: in steps of 10, maximum time of starting the lowering operation before the heating time window ends",,,b509,0d5100,value,,UCH,,,
@@ -120,7 +120,7 @@ r,,,HwcActualTempDesired,DHW_ActualDesired_Setpoint: current domestic hot water 
 r,,,BMUFlowTempOrVF1,BMU_FlowTempOrVF_1: value of either an externally connected flow temperature sensor or the BMU's internal flow sensor if an external sensor is missing,,,b509,0d8700,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
 r,,,StartEepromUpdate,StarteEepromAktualisierung: update of the EEPROM is to be started,,,b509,0d0e00,value,,UCH,0=off;1=on,,
 r,,,EepromUpdateActive,EepromAktualisierungAktiv: update of the EEPROM has been started,,,b509,0d0f00,value,,UCH,0=off;1=on,,
-r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm: room temperature intrinsic heating offset,,,b509,0d1500,value,,D2C,,°C,temperature
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm: room temperature intrinsic heating offset,,,b509,0d1500,value,,D2C,,K,
 r,,,CountryVariant,"CountryVariant: country variant (0 = west, 1 = east)",,,b509,0d1700,value,,UCH,,,
 r,,,ActualRoomTempDesiredHc1,ActualRoomTempSetpointHC1: current room setpoint considering all basic conditions passed to the control algorithms,,,b509,0d6300,value,,D2C,,°C,temperature
 r,,,SolModuleDetected,SolarModuleDetected: indicates that a VR68 has been detected,,,b509,0d6c00,value,,UCH,0=no;1=yes,,
@@ -134,7 +134,7 @@ r,,,BMUB51101HwcState,BMUB51101_DHWState: flame is on because of either tapping 
 r,,,VF1,VF_1: current external flow temperature and sensorstate,,,b509,0d7600,temp,,D2C,,°C,temperature,sensor,,UCH,0=ok;85=circuit;170=cutoff,,sensor status
 r,,,BMUB51101BoilerFlowTemp,BMUB51101_BoilerFlowTemp: current flow temperature inside the BMU,,,b509,0d7700,value,,D1C,,°C,temperature
 r,,,EnermanState,"EnermanState: current energy-manager-state (Off = 0, Heating = 1, DHW = 2, DHW pump lag = 3)",,,b509,0d7a00,value,,UCH,,,
-r,,,B51000TempDesiredLoadingPump,B51000SetPointLoadingPump: loading pump's setpoint sent via B5 10 00 to the BMU,,,b509,0d7b00,value,,D1C,,,
+r,,,B51000TempDesiredLoadingPump,B51000SetPointLoadingPump: loading pump's setpoint sent via B5 10 00 to the BMU,,,b509,0d7b00,value,,D1C,,°C,temperature
 r,,,HcMc1CPLPState,BKMK1CPLPState: nominal condition of the VR61's circulation or loading pump,,,b509,0d7f00,value,,UCH,0=off;1=on,,
 r,,,CPLPLast24started,CP_LPLast24started: circulation respectively loading pump has been started during the last 24h,,,b509,0d8300,value,,UCH,0=no;1=yes,,
 r,,,Hc1PumpLast24started,HK1PumpLast24started: first heating circuit's pump has been started during the last 24h,,,b509,0d8400,value,,UCH,0=no;1=yes,,

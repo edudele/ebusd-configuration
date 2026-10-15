@@ -9,9 +9,9 @@ r,,,HcActiveSpecialFunction,"HCActiveSpecialFunction: if unequal zero a special 
 r,,,OperatingMode430,OperatingMode430,,,b509,0d0400,value,,UCH,0=off;1=manual;2=auto,,operation mode of the heating circuit for 430
 w,,,OperatingMode430,OperatingMode430,,,b509,0e0400,value,,UCH,0=off;1=manual;2=auto,,operation mode of the heating circuit for 430
 r,,,SelectedHc,SelectedHeatCircuit: number of heating circuit to which this remote control is assigned,,,b509,0d1c00,value,,UCH,,,
-r,,,RoomTempOffset,RaumtemperaturIstOffset: room temperature correction,,,b509,0d0200,value,,D2C,,°C,temperature
-w,,,RoomTempOffset,RaumtemperaturIstOffset: room temperature correction,,,b509,0e0200,value,,D2C,,°C,temperature
-r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm: room temperature intrinsic heating offset,,,b509,0d0100,value,,D2C,,°C,temperature
+r,,,RoomTempOffset,RaumtemperaturIstOffset: room temperature correction,,,b509,0d0200,value,,D2C,,K,
+w,,,RoomTempOffset,RaumtemperaturIstOffset: room temperature correction,,,b509,0e0200,value,,D2C,,K,
+r,,,RoomTempOffsetSelfWarming,RaumTempOffsetEigenErwaerm: room temperature intrinsic heating offset,,,b509,0d0100,value,,D2C,,K,
 r,,,StackeBUSTaskMax,MaxStackeBUSTask: maximum number of bytes needed for the eBUS task stack,,,b509,0d0c00,value,,UCH,,,
 r,,,StackMainTaskMax,MaxStackMainTask: maximum number of bytes needed for the main task stack,,,b509,0d0d00,value,,UCH,,,
 r,,,StackLifeCheckTaskMax,MaxStackLifeCheckTask: maximum number of bytes needed for the life check task stack,,,b509,0d0e00,value,,UCH,,,
