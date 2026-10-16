@@ -44,6 +44,16 @@ def run(root, check=False):
         if not check and new != raw:
             open(path, 'wb').write(new.encode('utf-8'))
     return changed
+def scan_lowercase(root):
+    """vaillant/scan.csv: el repo antiguo usa circuito 'scan' y mensaje 'id' en minusculas. Con 'Scan'/'Id' ebusd publica
+    el circuito 'Scan.08' ademas del 'scan.08' interno y Home Assistant crea dispositivos y entidades duplicados."""
+    path = os.path.join(root, 'vaillant', 'scan.csv')
+    if not os.path.exists(path): return 0
+    raw = open(path, 'rb').read().decode('utf-8')
+    new = raw.replace('\nr,Scan,,Id,', '\nr,scan,,id,').replace('\r\nr,Scan,,Id,', '\r\nr,scan,,id,')
+    if new != raw: open(path, 'wb').write(new.encode('utf-8'))
+    return int(new != raw)
+
 def link_outputs(root):
     """Replica en la salida los enlaces simbolicos de src (misma convencion que utils/copylink.sh): cada
     15.<x>.tsp -> 15.basv0.tsp pasa a 15.<x>.csv -> 15.basv0.csv (ya con los nombres de campo compat aplicados).
@@ -70,4 +80,5 @@ if __name__ == '__main__':
     n = run(sys.argv[1], check=len(sys.argv) > 2 and sys.argv[2] == '--check')
     print(f'compat_fieldnames: {n} nombres de campo ajustados')
     if not (len(sys.argv) > 2 and sys.argv[2] == '--check'):
+        print(f'scan.csv en minusculas: {scan_lowercase(sys.argv[1])}')
         print(f'enlaces simbolicos creados: {link_outputs(sys.argv[1])}')
