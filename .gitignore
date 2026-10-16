@@ -4,3 +4,5 @@ out*
 dist/
 package-lock.json
 .vscode
+# la salida compilada (outcsv) se versiona, incluidos los enlaces simbolicos
+!outcsv/
