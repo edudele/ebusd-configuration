@@ -43,6 +43,21 @@ replica en la salida (`15.bass0.csv -> 15.basv0.csv`, ya con los nombres compat 
 nombre de fichero, así que `bass0`, `basv2`, `ctlv3`… generan los mismos mensajes y entidades que `basv0`. Esto sustituye
 a la definición VRC 720 de upstream (`15.ctlv2.tsp`), que sigue disponible en el historial de git. Para añadir otro nombre basta `ln -s 15.basv0.tsp 15.<nombre>.tsp` y recompilar.
 
+### Actualizar desde el repositorio antiguo
+
+1. `git pull` (o `git clone`). La salida compilada ya está en `outcsv/`: **no hace falta compilar**, salvo que cambies algo de `src/`
+   (entonces `npm run compile-en`, nunca `npx tsp compile` a pelo).
+2. En el `docker-compose` de ebusd: `EBUSD_CONFIGPATH=…/outcsv/@ebusd/ebus-typespec` (ruta real de tu carpeta),
+   `EBUSD_MQTTJSON=true` y `EBUSD_MQTTINT=…/mqtt-hassio.cfg` (el de este repositorio). Ejemplo: `edudele-usb.docker-compose.example.yaml`.
+3. `docker compose up -d` para redesplegar. Si reinicias Home Assistant, reinicia también ebusd (solo publica los valores cuando cambian).
+
+Qué cambia respecto al repositorio antiguo:
+- Los `entity_id` y `unique_id` de Home Assistant se conservan.
+- El código de estado de la bomba es ahora `S.100 En espera` (antes `S_100_En_espera`): revisa automatizaciones que lo comparen.
+- `HwcOpMode` termina en `_opmode3` (el `_opmode` anterior era un error).
+- `15.bass*`, `15.basv*`, `15.ctlv*` y `15.ctls2` son copias de `15.basv0` (otros termostatos con los mismos sensores; solo cambia el circuito).
+- Si tienes el VWZIO (dirección 76), aparecen sus estadísticas de energía: ebusd no las consulta solo, hay que pedirlas con `/get`.
+
 ### Panel de horarios (planificadores) para Home Assistant
 
 [`homeassistant/aerotermia_horarios`](homeassistant/aerotermia_horarios/README.md) contiene un paquete de Home Assistant y
