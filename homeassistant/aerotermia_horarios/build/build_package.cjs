@@ -15,8 +15,9 @@ const pkgPrevio = fs.existsSync(pkgFile) ? Y.parse(fs.readFileSync(pkgFile,'utf8
 const esHorario = x => /^(acs|refrigeracion|calefaccion|ruido)_horario_/.test(x.unique_id);
 let sens = (mqtt.sensor || mqtt.mqtt?.sensor || []).filter(esHorario);
 if (!sens.length) sens = (pkgPrevio.mqtt?.sensor || []).filter(esHorario); // HA ya migrado: partir del package existente
-const dev = {identifiers:['aerotermia_horarios'], name:'Horarios aerotermia', manufacturer:'ebusd', model:'Programas horarios del termostato (b555)'};
-for (const x of sens) { x.device = JSON.parse(JSON.stringify(dev)); x.entity_category = 'diagnostic'; }
+const dev = {identifiers:['aerotermia_horarios'], name:'Horarios aerotermia', manufacturer:'ebusd', model:'Programas horarios del termostato (b555)', via_device:'ebusd'};
+// default_entity_id: sin el, HA (formato de ID de entidad con nombre de dispositivo) crearia sensor.horarios_aerotermia_acs_horario_...
+for (const x of sens) { x.device = JSON.parse(JSON.stringify(dev)); x.entity_category = 'diagnostic'; x.default_entity_id = 'sensor.' + x.unique_id; }
 if (sens.length !== 147) throw new Error('se esperaban 147 sensores, hay '+sens.length);
 
 // --- scripts ---

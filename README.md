@@ -50,10 +50,12 @@ una vista/dashboard para ver y editar los programas horarios del termostato `bas
 reducción de ruido) usando los mensajes `b555` de `src/vaillant/b555sched_inc.tsp`. Resumen de la instalación (detalle,
 requisitos y avisos en su README):
 
-1. Compila y despliega esta configuración en ebusd (`npm run compile-en`) con `EBUSD_MQTTJSON=true`, y usa el
+1. Usa esta configuración en ebusd (la salida compilada ya está en `outcsv/`: `git clone` y apunta `EBUSD_CONFIGPATH` a
+   `outcsv/@ebusd/ebus-typespec`; solo hace falta `npm run compile-en` si cambias `src/`) con `EBUSD_MQTTJSON=true`, y usa el
    `mqtt-hassio.cfg` de este repositorio (excluye del autodiscovery las franjas `hwctimer|z1timer|silenttimer`).
 2. Activa los packages en HA (`homeassistant: packages: !include_dir_named packages`) y copia
-   `homeassistant/aerotermia_horarios/packages/aerotermia_horarios.yaml` a tu carpeta `packages/`. Reinicia HA.
+   `homeassistant/aerotermia_horarios/packages/aerotermia_horarios.yaml` a tu carpeta `packages/`, **cambiando antes `basv0`
+   por el circuito de tu termostato si es otro** (buscar y reemplazar). Reinicia HA.
 3. Añade la pestaña: pega `homeassistant/aerotermia_horarios/dashboard/vista_horarios.yaml` dentro de `views:` de tu
    dashboard (opción A), o instala el dashboard propio con entrada en el menú lateral usando
    `aerotermia_horarios_dashboard.yaml` y `configuracion_lovelace_ejemplo.yaml` (opción B).

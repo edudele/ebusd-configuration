@@ -76,6 +76,7 @@ mqtt:
   sensor:
     - name: ACS horario Lunes 1
       unique_id: acs_horario_lunes_1
+      default_entity_id: sensor.acs_horario_lunes_1
       state_topic: ebusd/basv0/HwcTimer_Monday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -83,11 +84,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Lunes 2
       unique_id: acs_horario_lunes_2
+      default_entity_id: sensor.acs_horario_lunes_2
       state_topic: ebusd/basv0/HwcTimer_Monday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -95,11 +98,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Lunes 3
       unique_id: acs_horario_lunes_3
+      default_entity_id: sensor.acs_horario_lunes_3
       state_topic: ebusd/basv0/HwcTimer_Monday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -107,11 +112,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Martes 1
       unique_id: acs_horario_martes_1
+      default_entity_id: sensor.acs_horario_martes_1
       state_topic: ebusd/basv0/HwcTimer_Tuesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -119,11 +126,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Martes 2
       unique_id: acs_horario_martes_2
+      default_entity_id: sensor.acs_horario_martes_2
       state_topic: ebusd/basv0/HwcTimer_Tuesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -131,11 +140,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Martes 3
       unique_id: acs_horario_martes_3
+      default_entity_id: sensor.acs_horario_martes_3
       state_topic: ebusd/basv0/HwcTimer_Tuesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -143,11 +154,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Miercoles 1
       unique_id: acs_horario_miercoles_1
+      default_entity_id: sensor.acs_horario_miercoles_1
       state_topic: ebusd/basv0/HwcTimer_Wednesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -155,11 +168,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Miercoles 2
       unique_id: acs_horario_miercoles_2
+      default_entity_id: sensor.acs_horario_miercoles_2
       state_topic: ebusd/basv0/HwcTimer_Wednesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -167,11 +182,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Miercoles 3
       unique_id: acs_horario_miercoles_3
+      default_entity_id: sensor.acs_horario_miercoles_3
       state_topic: ebusd/basv0/HwcTimer_Wednesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -179,11 +196,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Jueves 1
       unique_id: acs_horario_jueves_1
+      default_entity_id: sensor.acs_horario_jueves_1
       state_topic: ebusd/basv0/HwcTimer_Thursday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -191,11 +210,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Jueves 2
       unique_id: acs_horario_jueves_2
+      default_entity_id: sensor.acs_horario_jueves_2
       state_topic: ebusd/basv0/HwcTimer_Thursday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -203,11 +224,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Jueves 3
       unique_id: acs_horario_jueves_3
+      default_entity_id: sensor.acs_horario_jueves_3
       state_topic: ebusd/basv0/HwcTimer_Thursday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -215,11 +238,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Viernes 1
       unique_id: acs_horario_viernes_1
+      default_entity_id: sensor.acs_horario_viernes_1
       state_topic: ebusd/basv0/HwcTimer_Friday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -227,11 +252,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Viernes 2
       unique_id: acs_horario_viernes_2
+      default_entity_id: sensor.acs_horario_viernes_2
       state_topic: ebusd/basv0/HwcTimer_Friday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -239,11 +266,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Viernes 3
       unique_id: acs_horario_viernes_3
+      default_entity_id: sensor.acs_horario_viernes_3
       state_topic: ebusd/basv0/HwcTimer_Friday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -251,11 +280,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Sabado 1
       unique_id: acs_horario_sabado_1
+      default_entity_id: sensor.acs_horario_sabado_1
       state_topic: ebusd/basv0/HwcTimer_Saturday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -263,11 +294,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Sabado 2
       unique_id: acs_horario_sabado_2
+      default_entity_id: sensor.acs_horario_sabado_2
       state_topic: ebusd/basv0/HwcTimer_Saturday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -275,11 +308,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Sabado 3
       unique_id: acs_horario_sabado_3
+      default_entity_id: sensor.acs_horario_sabado_3
       state_topic: ebusd/basv0/HwcTimer_Saturday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -287,11 +322,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Domingo 1
       unique_id: acs_horario_domingo_1
+      default_entity_id: sensor.acs_horario_domingo_1
       state_topic: ebusd/basv0/HwcTimer_Sunday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -299,11 +336,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Domingo 2
       unique_id: acs_horario_domingo_2
+      default_entity_id: sensor.acs_horario_domingo_2
       state_topic: ebusd/basv0/HwcTimer_Sunday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -311,11 +350,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: ACS horario Domingo 3
       unique_id: acs_horario_domingo_3
+      default_entity_id: sensor.acs_horario_domingo_3
       state_topic: ebusd/basv0/HwcTimer_Sunday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:water-boiler-auto
@@ -323,11 +364,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Lunes 1
       unique_id: refrigeracion_horario_lunes_1
+      default_entity_id: sensor.refrigeracion_horario_lunes_1
       state_topic: ebusd/basv0/Z1TimerCool_Monday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -335,11 +378,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Lunes 2
       unique_id: refrigeracion_horario_lunes_2
+      default_entity_id: sensor.refrigeracion_horario_lunes_2
       state_topic: ebusd/basv0/Z1TimerCool_Monday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -347,11 +392,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Lunes 3
       unique_id: refrigeracion_horario_lunes_3
+      default_entity_id: sensor.refrigeracion_horario_lunes_3
       state_topic: ebusd/basv0/Z1TimerCool_Monday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -359,11 +406,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Martes 1
       unique_id: refrigeracion_horario_martes_1
+      default_entity_id: sensor.refrigeracion_horario_martes_1
       state_topic: ebusd/basv0/Z1TimerCool_Tuesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -371,11 +420,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Martes 2
       unique_id: refrigeracion_horario_martes_2
+      default_entity_id: sensor.refrigeracion_horario_martes_2
       state_topic: ebusd/basv0/Z1TimerCool_Tuesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -383,11 +434,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Martes 3
       unique_id: refrigeracion_horario_martes_3
+      default_entity_id: sensor.refrigeracion_horario_martes_3
       state_topic: ebusd/basv0/Z1TimerCool_Tuesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -395,11 +448,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Miercoles 1
       unique_id: refrigeracion_horario_miercoles_1
+      default_entity_id: sensor.refrigeracion_horario_miercoles_1
       state_topic: ebusd/basv0/Z1TimerCool_Wednesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -407,11 +462,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Miercoles 2
       unique_id: refrigeracion_horario_miercoles_2
+      default_entity_id: sensor.refrigeracion_horario_miercoles_2
       state_topic: ebusd/basv0/Z1TimerCool_Wednesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -419,11 +476,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Miercoles 3
       unique_id: refrigeracion_horario_miercoles_3
+      default_entity_id: sensor.refrigeracion_horario_miercoles_3
       state_topic: ebusd/basv0/Z1TimerCool_Wednesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -431,11 +490,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Jueves 1
       unique_id: refrigeracion_horario_jueves_1
+      default_entity_id: sensor.refrigeracion_horario_jueves_1
       state_topic: ebusd/basv0/Z1TimerCool_Thursday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -443,11 +504,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Jueves 2
       unique_id: refrigeracion_horario_jueves_2
+      default_entity_id: sensor.refrigeracion_horario_jueves_2
       state_topic: ebusd/basv0/Z1TimerCool_Thursday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -455,11 +518,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Jueves 3
       unique_id: refrigeracion_horario_jueves_3
+      default_entity_id: sensor.refrigeracion_horario_jueves_3
       state_topic: ebusd/basv0/Z1TimerCool_Thursday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -467,11 +532,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Viernes 1
       unique_id: refrigeracion_horario_viernes_1
+      default_entity_id: sensor.refrigeracion_horario_viernes_1
       state_topic: ebusd/basv0/Z1TimerCool_Friday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -479,11 +546,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Viernes 2
       unique_id: refrigeracion_horario_viernes_2
+      default_entity_id: sensor.refrigeracion_horario_viernes_2
       state_topic: ebusd/basv0/Z1TimerCool_Friday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -491,11 +560,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Viernes 3
       unique_id: refrigeracion_horario_viernes_3
+      default_entity_id: sensor.refrigeracion_horario_viernes_3
       state_topic: ebusd/basv0/Z1TimerCool_Friday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -503,11 +574,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Sabado 1
       unique_id: refrigeracion_horario_sabado_1
+      default_entity_id: sensor.refrigeracion_horario_sabado_1
       state_topic: ebusd/basv0/Z1TimerCool_Saturday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -515,11 +588,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Sabado 2
       unique_id: refrigeracion_horario_sabado_2
+      default_entity_id: sensor.refrigeracion_horario_sabado_2
       state_topic: ebusd/basv0/Z1TimerCool_Saturday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -527,11 +602,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Sabado 3
       unique_id: refrigeracion_horario_sabado_3
+      default_entity_id: sensor.refrigeracion_horario_sabado_3
       state_topic: ebusd/basv0/Z1TimerCool_Saturday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -539,11 +616,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Domingo 1
       unique_id: refrigeracion_horario_domingo_1
+      default_entity_id: sensor.refrigeracion_horario_domingo_1
       state_topic: ebusd/basv0/Z1TimerCool_Sunday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -551,11 +630,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Domingo 2
       unique_id: refrigeracion_horario_domingo_2
+      default_entity_id: sensor.refrigeracion_horario_domingo_2
       state_topic: ebusd/basv0/Z1TimerCool_Sunday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -563,11 +644,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Refrigeracion horario Domingo 3
       unique_id: refrigeracion_horario_domingo_3
+      default_entity_id: sensor.refrigeracion_horario_domingo_3
       state_topic: ebusd/basv0/Z1TimerCool_Sunday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:snowflake
@@ -575,11 +658,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 1
       unique_id: calefaccion_horario_lunes_1
+      default_entity_id: sensor.calefaccion_horario_lunes_1
       state_topic: ebusd/basv0/Z1TimerHeat_Monday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -587,11 +672,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 2
       unique_id: calefaccion_horario_lunes_2
+      default_entity_id: sensor.calefaccion_horario_lunes_2
       state_topic: ebusd/basv0/Z1TimerHeat_Monday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -599,11 +686,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 3
       unique_id: calefaccion_horario_lunes_3
+      default_entity_id: sensor.calefaccion_horario_lunes_3
       state_topic: ebusd/basv0/Z1TimerHeat_Monday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -611,11 +700,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 4
       unique_id: calefaccion_horario_lunes_4
+      default_entity_id: sensor.calefaccion_horario_lunes_4
       state_topic: ebusd/basv0/Z1TimerHeat_Monday3
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -623,11 +714,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 5
       unique_id: calefaccion_horario_lunes_5
+      default_entity_id: sensor.calefaccion_horario_lunes_5
       state_topic: ebusd/basv0/Z1TimerHeat_Monday4
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -635,11 +728,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 6
       unique_id: calefaccion_horario_lunes_6
+      default_entity_id: sensor.calefaccion_horario_lunes_6
       state_topic: ebusd/basv0/Z1TimerHeat_Monday5
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -647,11 +742,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 1
       unique_id: calefaccion_horario_martes_1
+      default_entity_id: sensor.calefaccion_horario_martes_1
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -659,11 +756,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 2
       unique_id: calefaccion_horario_martes_2
+      default_entity_id: sensor.calefaccion_horario_martes_2
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -671,11 +770,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 3
       unique_id: calefaccion_horario_martes_3
+      default_entity_id: sensor.calefaccion_horario_martes_3
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -683,11 +784,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 4
       unique_id: calefaccion_horario_martes_4
+      default_entity_id: sensor.calefaccion_horario_martes_4
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday3
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -695,11 +798,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 5
       unique_id: calefaccion_horario_martes_5
+      default_entity_id: sensor.calefaccion_horario_martes_5
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday4
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -707,11 +812,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 6
       unique_id: calefaccion_horario_martes_6
+      default_entity_id: sensor.calefaccion_horario_martes_6
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday5
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -719,11 +826,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 1
       unique_id: calefaccion_horario_miercoles_1
+      default_entity_id: sensor.calefaccion_horario_miercoles_1
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -731,11 +840,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 2
       unique_id: calefaccion_horario_miercoles_2
+      default_entity_id: sensor.calefaccion_horario_miercoles_2
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -743,11 +854,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 3
       unique_id: calefaccion_horario_miercoles_3
+      default_entity_id: sensor.calefaccion_horario_miercoles_3
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -755,11 +868,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 4
       unique_id: calefaccion_horario_miercoles_4
+      default_entity_id: sensor.calefaccion_horario_miercoles_4
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday3
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -767,11 +882,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 5
       unique_id: calefaccion_horario_miercoles_5
+      default_entity_id: sensor.calefaccion_horario_miercoles_5
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday4
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -779,11 +896,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 6
       unique_id: calefaccion_horario_miercoles_6
+      default_entity_id: sensor.calefaccion_horario_miercoles_6
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday5
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -791,11 +910,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 1
       unique_id: calefaccion_horario_jueves_1
+      default_entity_id: sensor.calefaccion_horario_jueves_1
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -803,11 +924,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 2
       unique_id: calefaccion_horario_jueves_2
+      default_entity_id: sensor.calefaccion_horario_jueves_2
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -815,11 +938,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 3
       unique_id: calefaccion_horario_jueves_3
+      default_entity_id: sensor.calefaccion_horario_jueves_3
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -827,11 +952,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 4
       unique_id: calefaccion_horario_jueves_4
+      default_entity_id: sensor.calefaccion_horario_jueves_4
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday3
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -839,11 +966,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 5
       unique_id: calefaccion_horario_jueves_5
+      default_entity_id: sensor.calefaccion_horario_jueves_5
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday4
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -851,11 +980,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 6
       unique_id: calefaccion_horario_jueves_6
+      default_entity_id: sensor.calefaccion_horario_jueves_6
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday5
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -863,11 +994,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 1
       unique_id: calefaccion_horario_viernes_1
+      default_entity_id: sensor.calefaccion_horario_viernes_1
       state_topic: ebusd/basv0/Z1TimerHeat_Friday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -875,11 +1008,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 2
       unique_id: calefaccion_horario_viernes_2
+      default_entity_id: sensor.calefaccion_horario_viernes_2
       state_topic: ebusd/basv0/Z1TimerHeat_Friday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -887,11 +1022,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 3
       unique_id: calefaccion_horario_viernes_3
+      default_entity_id: sensor.calefaccion_horario_viernes_3
       state_topic: ebusd/basv0/Z1TimerHeat_Friday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -899,11 +1036,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 4
       unique_id: calefaccion_horario_viernes_4
+      default_entity_id: sensor.calefaccion_horario_viernes_4
       state_topic: ebusd/basv0/Z1TimerHeat_Friday3
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -911,11 +1050,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 5
       unique_id: calefaccion_horario_viernes_5
+      default_entity_id: sensor.calefaccion_horario_viernes_5
       state_topic: ebusd/basv0/Z1TimerHeat_Friday4
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -923,11 +1064,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 6
       unique_id: calefaccion_horario_viernes_6
+      default_entity_id: sensor.calefaccion_horario_viernes_6
       state_topic: ebusd/basv0/Z1TimerHeat_Friday5
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -935,11 +1078,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 1
       unique_id: calefaccion_horario_sabado_1
+      default_entity_id: sensor.calefaccion_horario_sabado_1
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -947,11 +1092,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 2
       unique_id: calefaccion_horario_sabado_2
+      default_entity_id: sensor.calefaccion_horario_sabado_2
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -959,11 +1106,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 3
       unique_id: calefaccion_horario_sabado_3
+      default_entity_id: sensor.calefaccion_horario_sabado_3
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -971,11 +1120,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 4
       unique_id: calefaccion_horario_sabado_4
+      default_entity_id: sensor.calefaccion_horario_sabado_4
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday3
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -983,11 +1134,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 5
       unique_id: calefaccion_horario_sabado_5
+      default_entity_id: sensor.calefaccion_horario_sabado_5
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday4
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -995,11 +1148,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 6
       unique_id: calefaccion_horario_sabado_6
+      default_entity_id: sensor.calefaccion_horario_sabado_6
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday5
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1007,11 +1162,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 1
       unique_id: calefaccion_horario_domingo_1
+      default_entity_id: sensor.calefaccion_horario_domingo_1
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1019,11 +1176,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 2
       unique_id: calefaccion_horario_domingo_2
+      default_entity_id: sensor.calefaccion_horario_domingo_2
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1031,11 +1190,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 3
       unique_id: calefaccion_horario_domingo_3
+      default_entity_id: sensor.calefaccion_horario_domingo_3
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1043,11 +1204,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 4
       unique_id: calefaccion_horario_domingo_4
+      default_entity_id: sensor.calefaccion_horario_domingo_4
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday3
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1055,11 +1218,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 5
       unique_id: calefaccion_horario_domingo_5
+      default_entity_id: sensor.calefaccion_horario_domingo_5
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday4
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1067,11 +1232,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 6
       unique_id: calefaccion_horario_domingo_6
+      default_entity_id: sensor.calefaccion_horario_domingo_6
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday5
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1079,11 +1246,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 7
       unique_id: calefaccion_horario_lunes_7
+      default_entity_id: sensor.calefaccion_horario_lunes_7
       state_topic: ebusd/basv0/Z1TimerHeat_Monday6
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1091,11 +1260,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 8
       unique_id: calefaccion_horario_lunes_8
+      default_entity_id: sensor.calefaccion_horario_lunes_8
       state_topic: ebusd/basv0/Z1TimerHeat_Monday7
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1103,11 +1274,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 9
       unique_id: calefaccion_horario_lunes_9
+      default_entity_id: sensor.calefaccion_horario_lunes_9
       state_topic: ebusd/basv0/Z1TimerHeat_Monday8
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1115,11 +1288,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 10
       unique_id: calefaccion_horario_lunes_10
+      default_entity_id: sensor.calefaccion_horario_lunes_10
       state_topic: ebusd/basv0/Z1TimerHeat_Monday9
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1127,11 +1302,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 11
       unique_id: calefaccion_horario_lunes_11
+      default_entity_id: sensor.calefaccion_horario_lunes_11
       state_topic: ebusd/basv0/Z1TimerHeat_Monday10
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1139,11 +1316,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Lunes 12
       unique_id: calefaccion_horario_lunes_12
+      default_entity_id: sensor.calefaccion_horario_lunes_12
       state_topic: ebusd/basv0/Z1TimerHeat_Monday11
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1151,11 +1330,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 7
       unique_id: calefaccion_horario_martes_7
+      default_entity_id: sensor.calefaccion_horario_martes_7
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday6
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1163,11 +1344,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 8
       unique_id: calefaccion_horario_martes_8
+      default_entity_id: sensor.calefaccion_horario_martes_8
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday7
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1175,11 +1358,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 9
       unique_id: calefaccion_horario_martes_9
+      default_entity_id: sensor.calefaccion_horario_martes_9
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday8
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1187,11 +1372,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 10
       unique_id: calefaccion_horario_martes_10
+      default_entity_id: sensor.calefaccion_horario_martes_10
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday9
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1199,11 +1386,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 11
       unique_id: calefaccion_horario_martes_11
+      default_entity_id: sensor.calefaccion_horario_martes_11
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday10
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1211,11 +1400,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Martes 12
       unique_id: calefaccion_horario_martes_12
+      default_entity_id: sensor.calefaccion_horario_martes_12
       state_topic: ebusd/basv0/Z1TimerHeat_Tuesday11
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1223,11 +1414,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 7
       unique_id: calefaccion_horario_miercoles_7
+      default_entity_id: sensor.calefaccion_horario_miercoles_7
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday6
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1235,11 +1428,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 8
       unique_id: calefaccion_horario_miercoles_8
+      default_entity_id: sensor.calefaccion_horario_miercoles_8
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday7
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1247,11 +1442,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 9
       unique_id: calefaccion_horario_miercoles_9
+      default_entity_id: sensor.calefaccion_horario_miercoles_9
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday8
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1259,11 +1456,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 10
       unique_id: calefaccion_horario_miercoles_10
+      default_entity_id: sensor.calefaccion_horario_miercoles_10
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday9
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1271,11 +1470,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 11
       unique_id: calefaccion_horario_miercoles_11
+      default_entity_id: sensor.calefaccion_horario_miercoles_11
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday10
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1283,11 +1484,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Miercoles 12
       unique_id: calefaccion_horario_miercoles_12
+      default_entity_id: sensor.calefaccion_horario_miercoles_12
       state_topic: ebusd/basv0/Z1TimerHeat_Wednesday11
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1295,11 +1498,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 7
       unique_id: calefaccion_horario_jueves_7
+      default_entity_id: sensor.calefaccion_horario_jueves_7
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday6
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1307,11 +1512,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 8
       unique_id: calefaccion_horario_jueves_8
+      default_entity_id: sensor.calefaccion_horario_jueves_8
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday7
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1319,11 +1526,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 9
       unique_id: calefaccion_horario_jueves_9
+      default_entity_id: sensor.calefaccion_horario_jueves_9
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday8
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1331,11 +1540,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 10
       unique_id: calefaccion_horario_jueves_10
+      default_entity_id: sensor.calefaccion_horario_jueves_10
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday9
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1343,11 +1554,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 11
       unique_id: calefaccion_horario_jueves_11
+      default_entity_id: sensor.calefaccion_horario_jueves_11
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday10
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1355,11 +1568,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Jueves 12
       unique_id: calefaccion_horario_jueves_12
+      default_entity_id: sensor.calefaccion_horario_jueves_12
       state_topic: ebusd/basv0/Z1TimerHeat_Thursday11
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1367,11 +1582,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 7
       unique_id: calefaccion_horario_viernes_7
+      default_entity_id: sensor.calefaccion_horario_viernes_7
       state_topic: ebusd/basv0/Z1TimerHeat_Friday6
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1379,11 +1596,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 8
       unique_id: calefaccion_horario_viernes_8
+      default_entity_id: sensor.calefaccion_horario_viernes_8
       state_topic: ebusd/basv0/Z1TimerHeat_Friday7
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1391,11 +1610,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 9
       unique_id: calefaccion_horario_viernes_9
+      default_entity_id: sensor.calefaccion_horario_viernes_9
       state_topic: ebusd/basv0/Z1TimerHeat_Friday8
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1403,11 +1624,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 10
       unique_id: calefaccion_horario_viernes_10
+      default_entity_id: sensor.calefaccion_horario_viernes_10
       state_topic: ebusd/basv0/Z1TimerHeat_Friday9
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1415,11 +1638,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 11
       unique_id: calefaccion_horario_viernes_11
+      default_entity_id: sensor.calefaccion_horario_viernes_11
       state_topic: ebusd/basv0/Z1TimerHeat_Friday10
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1427,11 +1652,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Viernes 12
       unique_id: calefaccion_horario_viernes_12
+      default_entity_id: sensor.calefaccion_horario_viernes_12
       state_topic: ebusd/basv0/Z1TimerHeat_Friday11
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1439,11 +1666,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 7
       unique_id: calefaccion_horario_sabado_7
+      default_entity_id: sensor.calefaccion_horario_sabado_7
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday6
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1451,11 +1680,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 8
       unique_id: calefaccion_horario_sabado_8
+      default_entity_id: sensor.calefaccion_horario_sabado_8
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday7
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1463,11 +1694,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 9
       unique_id: calefaccion_horario_sabado_9
+      default_entity_id: sensor.calefaccion_horario_sabado_9
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday8
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1475,11 +1708,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 10
       unique_id: calefaccion_horario_sabado_10
+      default_entity_id: sensor.calefaccion_horario_sabado_10
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday9
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1487,11 +1722,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 11
       unique_id: calefaccion_horario_sabado_11
+      default_entity_id: sensor.calefaccion_horario_sabado_11
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday10
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1499,11 +1736,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Sabado 12
       unique_id: calefaccion_horario_sabado_12
+      default_entity_id: sensor.calefaccion_horario_sabado_12
       state_topic: ebusd/basv0/Z1TimerHeat_Saturday11
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1511,11 +1750,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 7
       unique_id: calefaccion_horario_domingo_7
+      default_entity_id: sensor.calefaccion_horario_domingo_7
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday6
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1523,11 +1764,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 8
       unique_id: calefaccion_horario_domingo_8
+      default_entity_id: sensor.calefaccion_horario_domingo_8
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday7
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1535,11 +1778,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 9
       unique_id: calefaccion_horario_domingo_9
+      default_entity_id: sensor.calefaccion_horario_domingo_9
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday8
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1547,11 +1792,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 10
       unique_id: calefaccion_horario_domingo_10
+      default_entity_id: sensor.calefaccion_horario_domingo_10
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday9
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1559,11 +1806,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 11
       unique_id: calefaccion_horario_domingo_11
+      default_entity_id: sensor.calefaccion_horario_domingo_11
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday10
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1571,11 +1820,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Calefaccion horario Domingo 12
       unique_id: calefaccion_horario_domingo_12
+      default_entity_id: sensor.calefaccion_horario_domingo_12
       state_topic: ebusd/basv0/Z1TimerHeat_Sunday11
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}@{{ '%.1f' | format(value_json.temp.value | float(0)) }}{% endif %}"
       icon: mdi:radiator
@@ -1583,11 +1834,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Lunes 1
       unique_id: ruido_horario_lunes_1
+      default_entity_id: sensor.ruido_horario_lunes_1
       state_topic: ebusd/basv0/SilentTimer_Monday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1595,11 +1848,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Lunes 2
       unique_id: ruido_horario_lunes_2
+      default_entity_id: sensor.ruido_horario_lunes_2
       state_topic: ebusd/basv0/SilentTimer_Monday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1607,11 +1862,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Lunes 3
       unique_id: ruido_horario_lunes_3
+      default_entity_id: sensor.ruido_horario_lunes_3
       state_topic: ebusd/basv0/SilentTimer_Monday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1619,11 +1876,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Martes 1
       unique_id: ruido_horario_martes_1
+      default_entity_id: sensor.ruido_horario_martes_1
       state_topic: ebusd/basv0/SilentTimer_Tuesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1631,11 +1890,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Martes 2
       unique_id: ruido_horario_martes_2
+      default_entity_id: sensor.ruido_horario_martes_2
       state_topic: ebusd/basv0/SilentTimer_Tuesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1643,11 +1904,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Martes 3
       unique_id: ruido_horario_martes_3
+      default_entity_id: sensor.ruido_horario_martes_3
       state_topic: ebusd/basv0/SilentTimer_Tuesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1655,11 +1918,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Miercoles 1
       unique_id: ruido_horario_miercoles_1
+      default_entity_id: sensor.ruido_horario_miercoles_1
       state_topic: ebusd/basv0/SilentTimer_Wednesday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1667,11 +1932,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Miercoles 2
       unique_id: ruido_horario_miercoles_2
+      default_entity_id: sensor.ruido_horario_miercoles_2
       state_topic: ebusd/basv0/SilentTimer_Wednesday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1679,11 +1946,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Miercoles 3
       unique_id: ruido_horario_miercoles_3
+      default_entity_id: sensor.ruido_horario_miercoles_3
       state_topic: ebusd/basv0/SilentTimer_Wednesday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1691,11 +1960,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Jueves 1
       unique_id: ruido_horario_jueves_1
+      default_entity_id: sensor.ruido_horario_jueves_1
       state_topic: ebusd/basv0/SilentTimer_Thursday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1703,11 +1974,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Jueves 2
       unique_id: ruido_horario_jueves_2
+      default_entity_id: sensor.ruido_horario_jueves_2
       state_topic: ebusd/basv0/SilentTimer_Thursday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1715,11 +1988,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Jueves 3
       unique_id: ruido_horario_jueves_3
+      default_entity_id: sensor.ruido_horario_jueves_3
       state_topic: ebusd/basv0/SilentTimer_Thursday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1727,11 +2002,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Viernes 1
       unique_id: ruido_horario_viernes_1
+      default_entity_id: sensor.ruido_horario_viernes_1
       state_topic: ebusd/basv0/SilentTimer_Friday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1739,11 +2016,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Viernes 2
       unique_id: ruido_horario_viernes_2
+      default_entity_id: sensor.ruido_horario_viernes_2
       state_topic: ebusd/basv0/SilentTimer_Friday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1751,11 +2030,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Viernes 3
       unique_id: ruido_horario_viernes_3
+      default_entity_id: sensor.ruido_horario_viernes_3
       state_topic: ebusd/basv0/SilentTimer_Friday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1763,11 +2044,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Sabado 1
       unique_id: ruido_horario_sabado_1
+      default_entity_id: sensor.ruido_horario_sabado_1
       state_topic: ebusd/basv0/SilentTimer_Saturday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1775,11 +2058,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Sabado 2
       unique_id: ruido_horario_sabado_2
+      default_entity_id: sensor.ruido_horario_sabado_2
       state_topic: ebusd/basv0/SilentTimer_Saturday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1787,11 +2072,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Sabado 3
       unique_id: ruido_horario_sabado_3
+      default_entity_id: sensor.ruido_horario_sabado_3
       state_topic: ebusd/basv0/SilentTimer_Saturday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1799,11 +2086,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Domingo 1
       unique_id: ruido_horario_domingo_1
+      default_entity_id: sensor.ruido_horario_domingo_1
       state_topic: ebusd/basv0/SilentTimer_Sunday0
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1811,11 +2100,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Domingo 2
       unique_id: ruido_horario_domingo_2
+      default_entity_id: sensor.ruido_horario_domingo_2
       state_topic: ebusd/basv0/SilentTimer_Sunday1
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1823,11 +2114,13 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
     - name: Ruido horario Domingo 3
       unique_id: ruido_horario_domingo_3
+      default_entity_id: sensor.ruido_horario_domingo_3
       state_topic: ebusd/basv0/SilentTimer_Sunday2
       value_template: "{% if value_json.from.value == value_json.to.value %}sin franja{% else %}{{ value_json.from.value }}-{{ value_json.to.value }}{% endif %}"
       icon: mdi:volume-off
@@ -1835,6 +2128,7 @@ mqtt:
         identifiers:
           - aerotermia_horarios
         name: Horarios aerotermia
+        via_device: ebusd
         manufacturer: ebusd
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic

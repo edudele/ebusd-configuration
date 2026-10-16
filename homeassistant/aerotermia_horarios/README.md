@@ -18,8 +18,8 @@ Scripts: `acs_leer_todos_horarios`, `acs_cargar_horario_dia`, `acs_seleccionar_y
 
 ## Requisitos
 
-1. **ebusd con las definiciones `b555`** de este repositorio compiladas: `src/vaillant/b555sched_inc.tsp`, incluido desde `15.basv0.tsp` (`npm run compile-en`). Sin ellas no existen los mensajes `HwcTimer_*`, `Z1TimerHeat_*`, `SilentTimer_*`, `*TimerSet_*`, etc.
-2. **Termostato con circuito `basv0`** y topics MQTT `ebusd/basv0/...`. Si tu circuito se llama distinto, sustituye `ebusd/basv0/` en el package.
+1. **ebusd con las definiciones `b555`** de este repositorio: `src/vaillant/b555sched_inc.tsp`, incluido desde `15.basv0.tsp`. La salida ya compilada está en `outcsv/` (basta con `git clone`/`git pull` y apuntar `EBUSD_CONFIGPATH` a `outcsv/@ebusd/ebus-typespec`); solo hay que ejecutar `npm run compile-en` si modificas algo de `src/`. Sin esas definiciones no existen los mensajes `HwcTimer_*`, `Z1TimerHeat_*`, `SilentTimer_*`, `*TimerSet_*`, etc.
+2. **Termostato con circuito `basv0`** y topics MQTT `ebusd/basv0/...`. **Si tu circuito se llama distinto (`basv2`, `ctlv2`, `bass0`…), haz un «buscar y reemplazar» de `basv0` por el tuyo en el package antes de copiarlo** (el nombre del circuito es el de tus topics `ebusd/<circuito>/…`; también lo ves en `ebusctl info`).
 3. **Integración MQTT** de HA conectada al mismo broker que ebusd, con `EBUSD_MQTTJSON=true` (los sensores leen `value_json.from.value` / `to.value`).
 4. Para el panel informativo de la vista (no para los scripts) se usan entidades que crea el autodiscovery de ebusd; ajusta sus nombres si los tuyos difieren:
    `select.ebusd_basv0_hwcopmode_opmode3`, `select.ebusd_basv0_z1opmode_opmode`, `number.ebusd_basv0_z1actualroomtempdesired_tempv`, `binary_sensor.ebusd_broadcast_noisereduction_onoff`, `number.ebusd_hmu00_noisereductionlevel_value`.
@@ -32,7 +32,7 @@ Scripts: `acs_leer_todos_horarios`, `acs_cargar_horario_dia`, `acs_seleccionar_y
    homeassistant:
      packages: !include_dir_named packages
    ```
-2. Copia `packages/aerotermia_horarios.yaml` a tu carpeta `packages/`.
+2. **Adapta y copia** `packages/aerotermia_horarios.yaml` a tu carpeta `packages/`: cambia `basv0` por tu circuito si es otro (ver Requisitos) y comprueba que las entidades se crean con los nombres de los ejemplos (`sensor.acs_horario_domingo_1`, no `sensor.horarios_aerotermia_acs_…`). Cada sensor lleva `default_entity_id` para fijar el ID aunque tengas activado el «formato de ID de entidad» con nombre de dispositivo (Home Assistant 2025.10 o posterior), y el dispositivo «Horarios aerotermia» cuelga de «ebusd» (`via_device`).
 3. Comprueba la configuración (Herramientas para desarrolladores → YAML) y **reinicia** Home Assistant (los `input_*`, `template` y `mqtt` nuevos requieren reinicio la primera vez).
 4. **Dashboard** (los packages no pueden crear dashboards; elige una de las dos opciones):
    - **Opción A: pestaña en tu dashboard** (recomendada). Abre tu dashboard → ⋮ → *Editar* → ⋮ → *Editor de código* y pega el contenido de `dashboard/vista_horarios.yaml` dentro de `views:`. Aparece como pestaña «Aerotermia Horarios». Si usas el dashboard automático por defecto, primero pulsa *Tomar el control* en ese menú.
