@@ -1,0 +1,2 @@
+# Estadisticas de bus de ebusd -> MQTT (sensores HA "ebusd bus *"). Copiar a /etc/cron.d/ebusd_bus_stats
+* * * * * root /usr/bin/python3 /docker/ebusd/ebusd-configuration/tools/ebusd_bus_stats.py >/dev/null 2>&1

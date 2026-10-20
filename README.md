@@ -76,6 +76,10 @@ requisitos y avisos en su README):
    `aerotermia_horarios_dashboard.yaml` y `configuracion_lovelace_ejemplo.yaml` (opción B).
 4. Pulsa ↻ en la vista para leer las franjas actuales. **Los scripts `*_aplicar_*` escriben en el bus eBUS.**
 
+### Monitorización del bus en Home Assistant
+
+El directorio [`tools/`](tools/README.md) incluye `ebusd_bus_stats.py`, que publica por MQTT sensores de salud del bus (símbolos/s, latencia, arbitraje, bytes sueltos, peticiones sin respuesta, NAK, último pico de latencia). Solo lee; se ejecuta por cron en el host. Instalación y detalles en `tools/README.md`.
+
 ### Flujo de trabajo para modificar configuraciones
 
 1. **Edita los archivos `.tsp`** en el directorio `src/` (por ejemplo, `src/vaillant/08.hmu.tsp`)
