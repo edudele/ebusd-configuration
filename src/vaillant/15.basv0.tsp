@@ -232,6 +232,14 @@ namespace Basv0 {
     pressv: pressv;
   }
 
+  /** Heat pump operating state (0=idle, 1=heating, 3=hot water) */
+  @inherit(r_1)
+  @ext(0x48, 0)
+  model OperationState {
+    @values(Values_OperationState)
+    uin: UIN;
+  }
+
   /** Subtract from z1RoomTemp to get dew point */
   @inherit(r_1)
   @ext(0x3a, 0)
@@ -1615,6 +1623,12 @@ namespace Basv0 {
 enum Values_HybridManager {
   `Trivalence (tariff based)`: 0,
   `Bivalence (Outside temperature based)`: 1,
+}
+
+enum Values_OperationState {
+  idle: 0,
+  heating: 1,
+  `hot water`: 3,
 }
 
 enum Values_MultiInputSetting {

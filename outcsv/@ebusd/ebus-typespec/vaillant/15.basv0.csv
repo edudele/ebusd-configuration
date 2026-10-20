@@ -49,6 +49,7 @@ w,,,Time,time,,,b524,020100003500,value,,HTI,,,Aktuelle Uhrzeit
 r,,,HydraulicScheme,Systemschema,,,b524,020000003600,ign,,IGN:4,,,,,,UIN,,,Systemschema
 w,,,HydraulicScheme,Systemschema,,,b524,020100003600,,,UIN,,,Systemschema
 r,,,WaterPressure,water pressure,,,b524,020000003900,ign,,IGN:4,,,,pressv,,EXP,,bar,Wasserdruck
+r,,,OperationState,"Heat pump operating state (0=idle, 1=heating, 3=hot water)",,,b524,020000004800,ign,,IGN:4,,,,uin,,UIN,0=idle;1=heating;3=hot water,,
 r,,,DewPointOffset,Subtract from z1RoomTemp to get dew point,,,b524,020000003a00,ign,,IGN:4,,,,tempv,,EXP,,°C,temperature
 r,,,SolarYieldTotal,total solar yield,,,b524,020000003d00,ign,,IGN:4,,,,energy4,,ULG,,kWh,Solarertrag gesamt
 w,,,SolarYieldTotal,total solar yield,,,b524,020100003d00,energy4,,ULG,,kWh,Solarertrag gesamt

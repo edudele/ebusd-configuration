@@ -1061,6 +1061,20 @@ namespace Hmu00 {
     tempv: tempv;
   }
 
+  /** Flow temperature (float, same sensor as Status01 flow) */
+  @inherit(r_run)
+  @ext(0xfc, 8)
+  model RunDataFlowTemp {
+    tempv: tempv;
+  }
+
+  /** Return temperature (float, same sensor as Status01 return) */
+  @inherit(r_run)
+  @ext(0x06, 9)
+  model RunDataReturnTemp {
+    tempv: tempv;
+  }
+
   // Enums for Values
   enum Values_CoolingEnabled {
     off: 0,
