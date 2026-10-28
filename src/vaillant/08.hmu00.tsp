@@ -490,6 +490,7 @@ namespace Hmu00 {
   @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x21)
   model CoolingCompressorStartkMin {
+    @unit("°min")
     value: UIN;
   }
 
