@@ -518,27 +518,22 @@ namespace Hmu00 {
   }
 
   /** D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K */
-  @inherit(r_stats_ext, rw_stats_ext)
+  @inherit(r_stats_ext)
   @ext(0x43)
   model CompressorHysteresis {
     @unit("K")
     value: D2C;
   }
 
-  /** default *r block 05ff35 */
+  /** default *r block 05ff35. The old csv template is B51A + 05FF, and 353f is appended. */
   @base(MF, 0x1a, 0x5, 0xff, 0x35)
   model r_stats_35 {
     @maxLength(3)
     ign: IGN;
   }
 
-  /** default *rw block 06ff35 */
-  @write
-  @base(MF, 0x1a, 0x6, 0xff, 0x35)
-  model rw_stats_35 {}
-
-  /** D.363 Coolant compressor hysteresis */
-  @inherit(r_stats_35, rw_stats_35)
+  /** D.363 Coolant compressor hysteresis. Read only, D2C in K. */
+  @inherit(r_stats_35)
   @ext(0x3f)
   model CoolantCompressorHysteresis {
     @unit("K")
