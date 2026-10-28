@@ -521,7 +521,28 @@ namespace Hmu00 {
   @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x43)
   model CompressorHysteresis {
-    value: UIN;
+    @unit("K")
+    value: D2C;
+  }
+
+  /** default *r block 05ff35 */
+  @base(MF, 0x1a, 0x5, 0xff, 0x35)
+  model r_stats_35 {
+    @maxLength(3)
+    ign: IGN;
+  }
+
+  /** default *rw block 06ff35 */
+  @write
+  @base(MF, 0x1a, 0x6, 0xff, 0x35)
+  model rw_stats_35 {}
+
+  /** D.363 Coolant compressor hysteresis */
+  @inherit(r_stats_35, rw_stats_35)
+  @ext(0x3f)
+  model CoolantCompressorHysteresis {
+    @unit("K")
+    value: D2C;
   }
 
   /** D.366 Fan boost */
