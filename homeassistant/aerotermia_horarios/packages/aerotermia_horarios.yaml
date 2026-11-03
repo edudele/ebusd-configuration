@@ -64,6 +64,16 @@ input_datetime:
     icon: mdi:clock-end
     has_date: false
     has_time: true
+  ruido_horario_desde:
+    name: Ruido semanal desde
+    icon: mdi:clock-start
+    has_date: false
+    has_time: true
+  ruido_horario_hasta:
+    name: Ruido semanal hasta
+    icon: mdi:clock-end
+    has_date: false
+    has_time: true
 input_text:
   calefaccion_horario_texto:
     name: Calefaccion horario texto
@@ -72,6 +82,10 @@ input_text:
     max: 255
     mode: text
     initial: ""
+input_boolean:
+  ruido_horario_semana:
+    name: Reducción de ruido semanal activa
+    icon: mdi:volume-off
 mqtt:
   sensor:
     - name: ACS horario Lunes 1
@@ -2133,6 +2147,26 @@ mqtt:
         model: Programas horarios del termostato (b555)
       entity_category: diagnostic
 template:
+  - switch:
+      - name: Reducción de ruido
+        unique_id: aerotermia_reduccion_ruido
+        icon: >-
+          {% if is_state('input_boolean.ruido_horario_semana', 'on') %}
+            mdi:volume-off
+          {% else %}
+            mdi:volume-high
+          {% endif %}
+        state: "{{ is_state('input_boolean.ruido_horario_semana', 'on') }}"
+        turn_on:
+          - action: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.ruido_horario_semana
+          - action: script.ruido_activar_semana
+        turn_off:
+          - action: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.ruido_horario_semana
+          - action: script.ruido_desactivar_semana
   - sensor:
       - name: ACS resumen Lunes
         unique_id: acs_resumen_lunes
@@ -2218,6 +2252,46 @@ template:
       - name: Ruido resumen Domingo
         unique_id: ruido_resumen_domingo
         state: "{% set ns = namespace(l=[]) %}{% for i in [1, 2, 3] %}{% set v = states('sensor.ruido_horario_domingo_' ~ i) %}{% if v not in ['sin franja', 'unknown', 'unavailable'] %}{% set ns.l = ns.l + [v] %}{% endif %}{% endfor %}{{ ns.l | join(' · ') if ns.l else '—' }}"
+automation:
+  - id: aerotermia_ruido_sincronizar_estado
+    alias: Reducción de ruido - Sincronizar estado semanal
+    description: Mantiene sincronizado el interruptor con el estado real de los sensores de resumen de ruido de la semana.
+    mode: restart
+    trigger:
+      - trigger: state
+        entity_id:
+          - sensor.ruido_resumen_lunes
+          - sensor.ruido_resumen_martes
+          - sensor.ruido_resumen_miercoles
+          - sensor.ruido_resumen_jueves
+          - sensor.ruido_resumen_viernes
+          - sensor.ruido_resumen_sabado
+          - sensor.ruido_resumen_domingo
+    action:
+      - variables:
+          hay_franjas: >-
+            {{ [states('sensor.ruido_resumen_lunes'),
+                states('sensor.ruido_resumen_martes'),
+                states('sensor.ruido_resumen_miercoles'),
+                states('sensor.ruido_resumen_jueves'),
+                states('sensor.ruido_resumen_viernes'),
+                states('sensor.ruido_resumen_sabado'),
+                states('sensor.ruido_resumen_domingo')] | reject('in', ['—', 'sin franja', 'unknown', 'unavailable']) | list | count > 0 }}
+      - if:
+          - condition: template
+            value_template: "{{ hay_franjas and not is_state('input_boolean.ruido_horario_semana', 'on') }}"
+        then:
+          - action: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.ruido_horario_semana
+      - if:
+          - condition: template
+            value_template: "{{ not hay_franjas and not is_state('input_boolean.ruido_horario_semana', 'off') }}"
+        then:
+          - action: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.ruido_horario_semana
+
 script:
   acs_aplicar_horario:
     alias: ACS/Refrigeración/Ruido - Aplicar horario del día al termostato
@@ -2601,3 +2675,106 @@ script:
                 retain: false
             - delay:
                 milliseconds: 250
+
+  ruido_activar_semana:
+    alias: Reducción de ruido - Activar toda la semana
+    icon: mdi:volume-off
+    description: "Aplica el horario de reducción de ruido configurado en los helpers a los 7 días de la semana en el termostato (b555, basv0). Si cruza la medianoche (desde > hasta), genera automáticamente 2 franjas por día."
+    mode: single
+    sequence:
+      - action: input_boolean.turn_on
+        target:
+          entity_id: input_boolean.ruido_horario_semana
+      - variables:
+          dias_en:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+          d_raw: "{{ states('input_datetime.ruido_horario_desde') }}"
+          h_raw: "{{ states('input_datetime.ruido_horario_hasta') }}"
+          desde: "{{ (d_raw[:5] if d_raw not in ['unknown', 'unavailable', ''] else '00:00') }}"
+          hasta_val: "{{ (h_raw[:5] if h_raw not in ['unknown', 'unavailable', ''] else '23:59') }}"
+          cruza_medianoche: "{{ desde > hasta_val and hasta_val not in ['00:00', '23:59'] }}"
+          hasta_eff: "{{ '24:00' if hasta_val in ['00:00', '23:59'] else hasta_val }}"
+          payloads: >-
+            {% if cruza_medianoche %}
+              {{ ['0;2;00:00;' ~ hasta_val, '1;2;' ~ desde ~ ';24:00'] }}
+            {% else %}
+              {{ ['0;1;' ~ desde ~ ';' ~ hasta_eff] }}
+            {% endif %}
+      - repeat:
+          for_each: "{{ dias_en }}"
+          sequence:
+            - variables:
+                dia: "{{ repeat.item }}"
+            - repeat:
+                for_each: "{{ payloads }}"
+                sequence:
+                  - action: mqtt.publish
+                    data:
+                      topic: "ebusd/basv0/SilentTimerSet_{{ dia }}/set"
+                      payload: "{{ repeat.item }}"
+                      qos: 1
+                      retain: false
+                  - delay:
+                      milliseconds: 1200
+      - delay:
+          seconds: 2
+      - action: script.acs_leer_todos_horarios
+        data:
+          programa: "Reducción de ruido"
+      - action: persistent_notification.create
+        data:
+          title: "Reducción de ruido activada"
+          message: >-
+            Horario aplicado a toda la semana (Lunes a Domingo):
+            {% if cruza_medianoche %}
+              00:00-{{ hasta_val }} y {{ desde }}-24:00.
+            {% else %}
+              {{ desde }}-{{ hasta_eff }}.
+            {% endif %}
+          notification_id: ruido_semana
+
+  ruido_desactivar_semana:
+    alias: Reducción de ruido - Desactivar toda la semana (limpiar)
+    icon: mdi:volume-high
+    description: "Elimina las franjas de reducción de ruido en los 7 días de la semana en el termostato (b555, basv0), dejando el planificador limpio (0 franjas)."
+    mode: single
+    sequence:
+      - action: input_boolean.turn_off
+        target:
+          entity_id: input_boolean.ruido_horario_semana
+      - variables:
+          dias_en:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+            - Sunday
+      - repeat:
+          for_each: "{{ dias_en }}"
+          sequence:
+            - action: mqtt.publish
+              data:
+                topic: "ebusd/basv0/SilentTimerSet_{{ repeat.item }}/set"
+                payload: "0;0;00:00;00:00"
+                qos: 1
+                retain: false
+            - delay:
+                milliseconds: 1200
+      - delay:
+          seconds: 2
+      - action: script.acs_leer_todos_horarios
+        data:
+          programa: "Reducción de ruido"
+      - action: persistent_notification.create
+        data:
+          title: "Reducción de ruido desactivada"
+          message: "Se han eliminado todas las franjas de reducción de ruido de la semana (Lunes a Domingo)."
+          notification_id: ruido_semana
