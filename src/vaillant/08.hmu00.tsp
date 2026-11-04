@@ -518,7 +518,7 @@ namespace Hmu00 {
   }
 
   /** D.167 Compressor Hysteresis. 0-15 K. Step 1 K. Factory 7 K */
-  @inherit(r_stats_ext)
+  @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x43)
   model CompressorHysteresis {
     @unit("K")
@@ -532,8 +532,13 @@ namespace Hmu00 {
     ign: IGN;
   }
 
-  /** D.363 Coolant compressor hysteresis. Read only, D2C in K. */
-  @inherit(r_stats_35)
+  /** default *rw block 06ff35 */
+  @write
+  @base(MF, 0x1a, 0x6, 0xff, 0x35)
+  model rw_stats_35 {}
+
+  /** D.363 Coolant compressor hysteresis */
+  @inherit(r_stats_35, rw_stats_35)
   @ext(0x3f)
   model CoolantCompressorHysteresis {
     @unit("K")

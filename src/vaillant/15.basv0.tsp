@@ -470,7 +470,7 @@ namespace Basv0 {
   @inherit(r_1, w_1)
   @ext(1, 0)
   model HwcBivalencePoint {
-    exp: EXP;
+    tempv: tempv;
   }
 
   // ##### hot water circuit #####

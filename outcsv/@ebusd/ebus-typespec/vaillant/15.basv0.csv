@@ -101,8 +101,8 @@ r,,,HwcCylinderOffset,Offset storage tank loading. Offset,,,b524,02000000a200,ig
 w,,,HwcCylinderOffset,Offset storage tank loading. Offset,,,b524,02010000a200,calibrationv,,EXP,,K,
 r,,,HcBivalencePoint,Bivalence point heating,,,b524,020000002300,ign,,IGN:4,,,,tempv,,EXP,,°C,temperature
 w,,,HcBivalencePoint,Bivalence point heating,,,b524,020100002300,tempv,,EXP,,°C,temperature
-r,,,HwcBivalencePoint,Bivalence point heating HWC,,,b524,020000000100,ign,,IGN:4,,,,,,EXP,,,
-w,,,HwcBivalencePoint,Bivalence point heating HWC,,,b524,020100000100,,,EXP,,,
+r,,,HwcBivalencePoint,Bivalence point heating HWC,,,b524,020000000100,ign,,IGN:4,,,,,,EXP,,°C,temperature
+w,,,HwcBivalencePoint,Bivalence point heating HWC,,,b524,020100000100,,,EXP,,°C,temperature
 r,,,HwcEnabled,Indicates if Hwc is enabled/disabled,,,b524,020001000100,ign,,IGN:4,,,,yesno,,UCH,0=no;1=yes,,
 w,,,HwcEnabled,Indicates if Hwc is enabled/disabled,,,b524,020101000100,yesno,,UCH,0=no;1=yes,,
 r,,,HwcCircPumpStatus,Hwc circulation pump status (also turns on during a legionella run),,,b524,020001000200,ign,,IGN:4,,,,onoff,,UCH,0=off;1=on,,
