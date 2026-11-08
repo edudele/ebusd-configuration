@@ -46,6 +46,7 @@ r,,,CoolingEnabled,D.227 Cooling Enabled,,,b51a,05ff331b,ign,,IGN:3,,,,,,UIN,0=o
 r,,,MaximunExteriorPowerUnit,D.231 Maximum exterior unit power,,,b51a,05ff331f,ign,,IGN:3,,,,,,SCH,,A,
 w,,,MaximunExteriorPowerUnit,D.231 Maximum exterior unit power,,,b51a,06ff331f,,,SCH,,A,
 r,,,HeatExchangerEnabled,D.233 Heat exchanger,,,b51a,05ff3321,ign,,IGN:3,,,,,,UIN,0=off;1=on,,
+w,,,HeatExchangerEnabled,D.233 Heat exchanger,,,b51a,06ff3321,uin,,UIN,0=off;1=on,,
 r,,,CompressorHours,D.100 Compressor hours,,,b51a,05ff3400,ign,,IGN:3,,,,hoursum,,ULG,,h,hours
 r,,,CompressorStarts,D.101 Compressor starts,,,b51a,05ff3401,ign,,IGN:3,,,,,,UIN,,,
 r,,,BuildingPumpHours,D.102 Building hours,,,b51a,05ff3402,ign,,IGN:3,,,,hoursum,,ULG,,h,hours
@@ -59,8 +60,10 @@ r,,,Fan1Hours,D.181 Fan 1 hours,,,b51a,05ff3451,ign,,IGN:3,,,,hoursum,,ULG,,h,ho
 r,,,Fan1Starts,D.182 Fan 1 starts,,,b51a,05ff3452,ign,,IGN:3,,,,,,UIN,,,
 r,,,Fan2Hours,D.194 Fan 2 hours,,,b51a,05ff345e,ign,,IGN:3,,,,hoursum,,ULG,,h,hours
 r,,,Fan2Starts,D.195 Fan 2 starts,,,b51a,05ff345f,ign,,IGN:3,,,,,,UIN,,,
-r,,,TotalCompressorStarts,D.130 Total compressor starts,,,b51a,05ff341e,ign,,IGN:3,,,,,,UIN,,,
+r,,,HeatingCompressorStartkMin,"D.130 Heating compressor start integral (min -100, max -30, step 5)",,,b51a,05ff341e,ign,,IGN:3,,,,value,,SIN,,°min,
+w,,,HeatingCompressorStartkMin,"D.130 Heating compressor start integral (min -100, max -30, step 5)",,,b51a,06ff341e,value,,SIN,,°min,
 r,,,MaxWaterPumpPressure,D.131 Max water pump pressure,,,b51a,05ff341f,ign,,IGN:3,,,,value,,UIN,,mbar,,minimun,,UIN,,mbar,,maximun,,UIN,,mbar,,step,,SCH,,mbar,
+w,,,MaxWaterPumpPressure,D.131 Max water pump pressure,,,b51a,06ff341f,value,,UIN,,mbar,
 r,,,CoolingCompressorStartkMin,D.133 Cooling compressor start ºmin,,,b51a,05ff3421,ign,,IGN:3,,,,value,,UIN,,°min,
 w,,,CoolingCompressorStartkMin,D.133 Cooling compressor start ºmin,,,b51a,06ff3421,value,,UIN,,°min,
 r,,,NoiseReductionLevel,D.140 Noise reduction level min 30% max 60%,,,b51a,05ff3428,ign,,IGN:3,,,,value,,SCH,,%,

@@ -350,7 +350,7 @@ namespace Hmu00 {
   }
 
   /** D.233 Heat exchanger */
-  @inherit(r_config)
+  @inherit(r_config, rw_config)
   @ext(0x21)
   model HeatExchangerEnabled {
     @values(Values_HeatExchangerEnabled)
@@ -462,26 +462,30 @@ namespace Hmu00 {
   @base(MF, 0x1a, 0x5, 0xff, 0x34)
   model r_stats_ext_noign {}
 
-  /** D.130 Total compressor starts */
-  @inherit(r_stats_ext)
+  /** D.130 Heating compressor start integral (min -100, max -30, step 5) */
+  @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x1e)
-  model TotalCompressorStarts {
-    uin: UIN;
+  model HeatingCompressorStartkMin {
+    @unit("°min")
+    value: SIN;
   }
 
   /** D.131 Max water pump pressure */
-  @inherit(r_stats_ext)
+  @inherit(r_stats_ext, rw_stats_ext)
   @ext(0x1f)
   model MaxWaterPumpPressure {
     @unit("mbar")
     value: UIN;
 
+    @in(false)
     @unit("mbar")
     minimun: UIN;
 
+    @in(false)
     @unit("mbar")
     maximun: UIN;
 
+    @in(false)
     @unit("mbar")
     step: D1B;
   }
