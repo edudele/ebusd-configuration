@@ -6,3 +6,6 @@ package-lock.json
 .vscode
 # la salida compilada (outcsv) se versiona, incluidos los enlaces simbolicos
 !outcsv/
+# archivos locales que no pertenecen al repo
+.bashrc
+*.bak_*
