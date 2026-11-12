@@ -25,7 +25,7 @@ Todas las entidades llevan el prefijo del área (`sensor.heating_ebusd_bus_...`)
 | `..._bus_min_arbitration` / `..._max_arbitration` | `ebusctl info` | Arbitraje mín/máx en µs desde el arranque |
 | `..._bus_min_symbol_latency` / `..._max_symbol_latency` | `ebusctl info` | Latencia de símbolo mín/máx en ms desde el arranque |
 | `..._bus_last_latency_peak` | derivado | Hora del último récord de `max_symbol_latency` (timestamp) |
-| `..._bus_stray_bytes` | log crudo | Líneas del log con un solo byte (~700/h de base; sube con perturbaciones) |
+| `..._bus_stray_bytes` | log crudo | Líneas del log con un solo byte (~130-150/h de base; sube con perturbaciones) |
 | `..._bus_unanswered_requests` | log crudo | Peticiones nuestras (`>`) sin respuesta (~1/h de base) |
 | `..._bus_nak` | log crudo | Peticiones nuestras respondidas con NAK (0 normal) |
 
